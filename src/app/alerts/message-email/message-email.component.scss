@@ -1,0 +1,24 @@
+
+.BP-messageSendBox{
+    .BP-messageSendBox__formContent{
+        margin: 20px 0;
+        .BP-formGroup{
+            margin-bottom: 14px;
+        }
+        .BP-formLabel{
+            padding-right: 20px;
+        }
+        .BP-textarea{            
+            resize: none;
+        }
+        .BP-inputBox{
+            width: 100%;
+        }
+        .BP-checkBox{
+            input{
+                display: none;
+            }
+        }
+       
+    }
+}

@@ -1,0 +1,11 @@
+<div class="BP-CR-filter">
+    <div class="BP-CR-filter__label">Bet Fold <i class="bp-icon-info"></i></div>
+    <div class="BP-formGroup">
+        <angular2-multiselect [data]="betfoldData" [(ngModel)]="selectedBetfoldData"
+        [settings]="dropdownSettings"
+        (onSelect)="onItemSelect($event)"
+        (onDeSelect)="OnItemDeSelect($event)"
+        (onSelectAll)="onSelectAll($event)"
+        (onDeSelectAll)="onDeSelectAll($event)"></angular2-multiselect>
+    </div>
+  </div>

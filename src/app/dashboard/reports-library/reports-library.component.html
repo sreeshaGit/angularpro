@@ -1,0 +1,109 @@
+<div class="BP-reportLibrary-Popup">
+    <div class="BP-breadCrumb BP-rlbreadCrumb">
+        <div class="BP-breadCrumb__title BP-rlbreadCrumb__title">
+            <div class="grid-middle-noGutter">
+                <div class="col-6">
+                    <span class="BP-breadCrumb__titleText BP-rlbreadCrumb__titleText">Report Library</span>
+                </div>
+                <div class="col-6 text-right" >
+                    <span class="BP-close" (click)="close()">
+                        <i class="bp-icon-close"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="BP-reportLibraryCharts">
+
+        <div class="BP-contentBox">
+            <div class="BP-rlLeftContent">
+                <div class="BP-rlleftMenu">
+                    <div class="BP-rlListContent">
+                        <ul class="BP-menuItem">
+                            <li *ngFor="let reports of reportList" [ngClass]="{'active': reportIdSel == reports.id}" (click)="selectReport(reports.id,reports.name,reports)">{{reports.name}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="BP-selectText BP-align" *ngIf="noColData">
+                <div class="BP-errorText text-center">There is no data for this query.</div>
+            </div>
+
+          
+            <div class="BP-rlRightContent" *ngIf="!noColData">
+                <div class="grid-center-noGutter" *ngIf="showMsg">
+                    <div class="col-12_sm-12_md-12_lg-12">
+                        <div class="BP-rlchartContent">
+                            <div class="grid">
+                                <div class="col-4_sm-4_md-4_lg-4">
+                                    <div class="BP-formGroup">
+                                        <div class="BP-formLabel">Select chart Type:</div>
+                                        <p-dropdown [options]="repTypes" class="BP-selectReport" [(ngModel)]="selectedReportType" [style]="{'width':'100%'}" (onChange)="selReportType()"
+                                            placeholder="Select">
+                                        </p-dropdown>
+                                    </div>
+                                </div>
+                             
+                                <div class="col-4_sm-4_md-4_lg-4">
+                                    <div class="BP-formGroup" *ngIf="!hideOption">
+                                        <div class="BP-formLabel">Name:</div>
+                                        <p-dropdown [options]="nameOption" class="BP-selectReport" [(ngModel)]="selectedName" [style]="{'width':'100%'}" placeholder="Select"
+                                            (onChange)="selReportType()" optionLabel="header">
+                                        </p-dropdown>
+                                    </div>
+                                </div>
+                                <div class="col-4_sm-4_md-4_lg-4">
+                                    <div class="BP-formGroup" *ngIf="!hideOption && !showDropdownForPie">
+                                        <div class="BP-formLabel">Values:</div>
+                                        <p-multiSelect [options]="nameOption" class="BP-multiselectProfile BP-db-multiselect" optionLabel="header" [(ngModel)]="selectedValues" [style]="{'width':'100%'}"
+                                            placeholder="Select" (onChange)="selReportType()">
+                                        </p-multiSelect>
+                                    </div>
+                                    <div class="BP-formGroup" *ngIf="showDropdownForPie">
+                                        <div class="BP-formLabel">Values:</div>
+                                        <p-dropdown [options]="nameOption" class="BP-selectReport" [(ngModel)]="selectedValuesForPie" [style]="{'width':'100%'}"
+                                            placeholder="Select" optionLabel="header" (onChange)="selReportType()">
+                                        </p-dropdown>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                            <div class="grid" *ngIf="displayValidationMsg">
+                                <div class="col-12 BP-errorText text-center">Name and value fields couldn't be the same.</div>
+                              </div>
+                            <div class="grid-center">
+                                <div class="col-12">
+                                    <div class="BP-DB-chartBox">
+                                        <div class="BP-DB-chartBox__content">
+                                            <div *ngIf="selectedReportType == 'table'" class="BP-dashboardTable BP-addTable">
+                                                <app-table [id] = "reportIdSel"  [reportCol] = "reportCol" [stakeBandRange] ="stakeBandRange" [oddBandRange]="oddBandRange" *ngIf ="showTable"></app-table>
+                                            </div>
+                                            <div class="text-center" *ngIf="selectedReportType !='' && selectedReportType != 'table'">
+                                                <app-line-chart [name]="selectedName" [values]="selectedValues" [rowData]="rows" [colData]="reportCol" [reportType]="selectedReportType"
+                                                    [fromPage]="'lib'"></app-line-chart>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-center">
+                                <div class="col-5_sm-6_md-6_lg-5" *ngIf="!updateMode">
+                                    <button type="button" class="BP-btn BP-btnRed active BP-btnAdd" (click)="addReportToDashboard()">Add Report to Dashboard</button>
+                                </div>
+                                <div class="col-5_sm-6_md-6_lg-5" *ngIf="updateMode">
+                                    <button type="button" class="BP-btn BP-btnRed active BP-btnAdd" (click)="updateReportToDashboard()">Update Report to Dashboard</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="BP-selectText BP-align">
+                    <div *ngIf="!showMsg" class="BP-errorText text-center">Please select report from list.</div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>

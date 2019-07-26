@@ -1,0 +1,101 @@
+<div class=" BP-messageBox BP-messageSendBox">
+	<div class="BP-messageBox__close-btn" (click)="popUpClose()">
+		<i class="bp-icon-close"></i>
+	</div>
+	<div class="BP-messageBox__header BP-messageSendBox__header text-center">
+		<div class="BP-messageBox__header-title">{{setHeaderText()}}</div>
+	</div>
+
+	<div class="BP-messageSendBox__formContent" *ngIf="displayType == 'Send Email'">
+		<div class="BP-formGroup">
+			<div class="grid-middle-noGutter">
+				<div class="col-5_lg-5_md-5_sm-5">
+					<div class="BP-formLabel">Subject:</div>
+				</div>
+				<div class="col-7_lg-7_md-7_sm-7">
+					<input type="text" name="emailSub" class="BP-inputBox BP-formInput" [(ngModel)]="emailSub" />
+				</div>
+			</div>
+		</div>
+		<div class="BP-formGroup">
+			<div class="grid-middle-noGutter">
+				<div class="col-5_lg-5_md-5_sm-5">
+					<div class="BP-formLabel">Message:</div>
+				</div>
+				<div class="col-7_lg-7_md-7_sm-7">
+					<textarea rows="4" cols="50" class="BP-textarea" [(ngModel)]="message"></textarea>
+				</div>
+			</div>
+		</div>
+		<div class="BP-formGroup">
+			<div class="grid-middle-noGutter">
+				<div class="col-5_lg-5_md-5_sm-5">
+					<div class="BP-formLabel">Landing Page:</div>
+				</div>
+				<div class="col-7_lg-7_md-7_sm-7">
+					<input type="text" name="page" class="BP-inputBox BP-formInput" [(ngModel)]="page" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="BP-messageSendBox__formContent" *ngIf="displayType == 'Send SMS' || displayType == 'Send WhatsApp'">
+		<div class="BP-formGroup">
+			<div class="grid-middle-noGutter">
+				<div class="col-5_lg-5_md-5_sm-5">
+					<div class="BP-formLabel">Message:</div>
+				</div>
+				<div class="col-7_lg-7_md-7_sm-7">
+					<textarea rows="4" cols="50" class="BP-textarea" [(ngModel)]="smsMsg"></textarea>
+				</div>
+			</div>
+		</div>
+		<div class="BP-formGroup">
+			<div class="grid-middle-noGutter">
+				<div class="col-5_lg-5_md-5_sm-5">
+					<div class="BP-formLabel">Landing Page:</div>
+				</div>
+				<div class="col-7_lg-7_md-7_sm-7">
+					<input type="text" name="sms" class="BP-inputBox BP-formInput" [(ngModel)]="landingPage" />
+				</div>
+			</div>
+		</div>
+		<div class="BP-formGroup">
+			<div class="grid-middle-noGutter">
+				<div class="col-5_lg-5_md-5_sm-5">
+					<div class="BP-formLabel">Send email if mobile number is not available:</div>
+				</div>
+				<div class="col-7_lg-7_md-7_sm-7 text-left">
+					<div class="BP-checkBox BP-textBox">
+						<input id="BP-sendMessage" type="checkbox" name="check" [checked]="checkEmail"
+							(input)="updateCheckedOptions($event)" />
+						<label for="BP-sendMessage"></label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="BP-formGroup" *ngIf="checkEmail">
+			<div class="grid-middle-noGutter">
+				<div class="col-5_lg-5_md-5_sm-5">
+					<div class="BP-formLabel">Email Subject:</div>
+				</div>
+				<div class="col-7_lg-7_md-7_sm-7">
+					<input type="text" name="sms" class="BP-inputBox BP-formInput" [(ngModel)]="emailmsg" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="BP-form-errorMessage text-center" *ngIf="emailDetError">
+		Please enter valid details.
+	</div>
+	<div class="BP-messageBox__footer text-center">
+		<div class="grid-center-noGutter">			
+			<div class="col-5_lg-5_md-5_sm-5">
+
+			</div>
+			<div class="col-7_lg-7_md-7_sm-7">
+				<button class="BP-btn BP-btnGreen BP-btnLarge" (click)="sendTo(displayType)">Send</button>
+			</div>
+		</div>
+	</div>
+</div>

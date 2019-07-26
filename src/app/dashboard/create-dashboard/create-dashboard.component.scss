@@ -1,0 +1,192 @@
+@import "../../../assets/css/variables.scss";
+@import "../../../assets/css/pages/report.scss";
+@import "../../../assets/css/pages/common.scss";
+@import "../../../assets/css/pages/header.scss";
+@import "../../../assets/css/pages/dashboard.scss";
+
+.BP-DB-addReport {
+  height: 400px;
+  //margin: 10px 0 0 10px;
+  .BP-addReport {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .BP-addReportBox {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background-color: $red;
+      cursor: pointer;
+
+      i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 60px;
+        height: 100%;
+      }
+    }
+
+    .BP-addReport-title {
+      font-size: 26px;
+      font-weight: 500;
+      color: $red;
+    }
+  }
+}
+
+/* in-flight clone */
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  pointer-events: none;
+}
+/* high-performance display:none; helper */
+.gu-hide {
+  left: -9999px !important;
+}
+/* added to mirrorContainer (default = body) while dragging */
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+/* added to the source element while its mirror is dragged */
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+
+.rectangle {
+  position: relative;
+  /*top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 150px;
+  background-color: #fd4140;*/
+  border: solid 1px #fd4140;
+  /*color: #121621;
+  margin: auto;*/
+}
+.resize-handle-top,
+.resize-handle-bottom {
+  position: absolute;
+  height: 5px;
+  cursor: row-resize;
+  width: 100%;
+}
+
+.resize-handle-top {
+  top: 0;
+  /*background-color: #fd4140;*/
+}
+
+.resize-handle-bottom {
+  bottom: 0;
+  /*background-color: #fd4140;*/
+}
+
+.resize-handle-left,
+.resize-handle-right {
+  position: absolute;
+  height: 100%;
+  cursor: col-resize;
+  width: 5px;
+}
+
+.resize-handle-left {
+  left: 0;
+  top: 0;
+  /*background-color: #fd4140;*/
+}
+
+.resize-handle-right {
+  right: 0;
+  top: 0;
+  /*background-color: #fd4140;*/
+}
+
+
+mwlResizable {
+  box-sizing: border-box; // required for the enableGhostResize option to work
+}
+
+.BP-dashBoardGrid {
+  .BP-dashBoardGridList {
+    display: inline-block;
+    width: 100%;
+
+    li {
+      width: 25%;
+      float: left;
+      padding: 0 10px;
+      /*margin: 0 10px;*/
+      &.BP-chart-width-double {
+        width: 50%;
+      }
+
+      &.BP-chart-height-double {
+        highcharts-chart {
+          height: 680px !important;
+        }
+        .BP-dashboard-chart-table {
+          .ui-table-scrollable-body{            
+            height:auto !important;
+          }
+          
+        }
+        .BP-dashboardTable{
+          height: 680px;
+        }
+      }
+
+      &.BP-chart-table {
+        width: 50%;
+      }
+    }
+  }
+}
+
+
+.BP-dashboard-chart-table{
+  .ui-table-scrollable-body{
+    height: auto;
+  }
+}
+.BP-zoomBtn {
+  display: inline-block;
+  text-align: right;
+  width: 100%;
+  padding-right: 10px;
+
+  .BP-zoomIcon {
+    display: inline-block;
+    i {
+      font-size: 30px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+}
+.BP-addTable {
+  .ui-paginator{
+    margin: 0 auto;
+  }
+}
+.BP-dashboard-chart-table .ui-table .ui-sortable-column.ui-state-highlight{
+background-color: #4a4a4a !important;
+
+}
+  

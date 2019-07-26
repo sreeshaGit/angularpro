@@ -1,0 +1,24 @@
+<div class="BP-modalBox BP-messageBox BP-successBox">
+  <div class="BP-messageBox__close-btn" (click)="popUpClose()">
+    <i class="bp-icon-close"></i>
+  </div>
+  <div class="BP-messageBox__header text-center">
+    <div class="BP-messageBox__messageIcon">
+      <i class="bp-icon-checkmark"></i>
+    </div>
+    <div class="BP-messageBox__header-title">SUCCESS</div>
+    <div class="BP-messageBox__messageTxt ">
+      {{displayText}}
+    </div>
+  </div>
+  <div class="BP-messageBox__content">
+
+  </div>
+  <div class="BP-messageBox__footer text-center">
+    <div class="grid-center-noGutter">
+      <div class="col-6">
+        <button class="BP-btn BP-btnGreen BP-btnLarge" (click)="popUpClose()">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>

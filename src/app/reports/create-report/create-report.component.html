@@ -1,0 +1,81 @@
+<div class="BP-createReport">
+    <div class="grid-top-noGutter-equalHeights" *ngIf ="checkData">
+        <div class="col-3_lg-3_md_3_sm-12_xs-12 BP-createReport-filterBox BP-CR-view">
+            <div class=""> 
+                <div class="BP-filterBox-content">
+                    <div class="BP-createReport-filterBox__title">View</div>
+                </div>
+                <app-number-of-records></app-number-of-records>
+                <app-output-data></app-output-data>
+                              
+                <div class="BP-filterBox-content BP-bb-1">
+                    <app-period [reportId]="reportId" [queryJson]="editInfo"></app-period>
+                </div>  
+                
+                <app-time-period [reportId]="reportId" [queryJson]="editInfo"></app-time-period>
+                
+            </div>
+        </div>
+        <div class="col-3_lg-3_md_3_sm-12_xs-12 BP-createReport-filterBox BP-CR-player">
+            <div class="">
+                <div class="BP-filterBox-content">
+                    <div class="BP-createReport-filterBox__title">Select Player</div>
+                </div>
+                <div class="BP-filterBox-content">                    
+                    <app-frequency [queryJson]="editInfo"></app-frequency>
+                </div>
+                <div class="BP-filterBox-content BP-bb-1">
+                    <app-player [queryJson]="editInfo"></app-player>
+                    <app-countries></app-countries>
+                </div>
+                <div class="BP-filterBox-content">
+                    <app-bet-number [queryJson]="editInfo"></app-bet-number>
+                </div>
+            </div>
+        </div>
+        <div class="col-3_lg-3_md_3_sm-12_xs-12 BP-createReport-filterBox BP-CR-criteria">
+            <div class="">                
+                <div class="BP-filterBox-content BP-bb-1">
+                    <div class="BP-createReport-filterBox__title">Select Criteria</div>
+                    <app-sport></app-sport>
+                </div>
+                <div class="BP-filterBox-content BP-bb-1">
+                        <app-event></app-event>
+                </div>
+                <div class="BP-filterBox-content BP-bb-1">
+                        <app-market></app-market>
+                </div>
+                <div class="">
+                    <app-bet-status [reportId]="reportId" [queryJson]="editInfo"></app-bet-status>
+                </div>
+                <div class="BP-filterBox-content">
+                    <app-bet-type [reportId]="reportId" [queryJson]="editInfo"></app-bet-type>
+                    
+                    <app-bet-fold></app-bet-fold>
+                </div>
+            </div>
+        </div>
+        <div class="col-3_lg-3_md_3_sm-12_xs-12 BP-createReport-filterBox BP-CR-criteria">
+            <div class="">     
+                <div class="BP-filterBox-content BP-bb-1">
+                    <app-stake [reportId]="reportId" [queryJson]="editInfo"></app-stake>                
+                </div>
+                <div class="BP-filterBox-content BP-bb-1">
+                    <app-odds [reportId]="reportId" [queryJson]="editInfo"></app-odds>
+                </div>
+                <div class="space-10"></div>
+                <div class="grid-middle-center">                    
+                    <div class="col-9">
+                        <button class="BP-btn BP-btnBlue BP-btnLarge active" (click)="previewReport()">Preview Report</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="space-10"></div>
+
+
+

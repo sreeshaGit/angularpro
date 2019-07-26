@@ -1,0 +1,87 @@
+
+
+<div class="BP-reportCompare-popup">
+    <div class="BP-messageBox BP-errorBox">
+        <div class="BP-messageBox__close-btn">
+            <span class="BP-close" (click)="popUpClose()"><i class="bp-icon-close"></i></span>
+       </div>
+      <!--<div class="BP-filterBox__header">
+      <div class="BP-filterBox__header-title BP-skew-right-top">Report Comparison</div>s
+    </div>-->
+    <div class="BP-messageBox__header text-center">
+        <div class="BP-messageBox__header-title BP-popupBox__headerText">Compare Report</div>
+      </div>
+      <div class="BP-messageBox__multiSelect">
+        <div class="grid-top">
+          <div class="col-12">
+            <div class="BP-formGroup BP-messageBox__filter">
+                
+              <div class="grid-middle">
+                <div class="col-4_lg-4_md-4-sm-5">
+                  <div class="BP-formLabel text-center">Select reports to compare:</div>
+                </div>
+                <div class="col-8_lg-8_md-8-sm-7">
+                 
+                  <div class="BP-filterBox__multiselect">
+                    
+                    <angular2-multiselect [data]="compatableReports" [(ngModel)]="selectCompatableReports"
+                                          [settings]="dropdownSettingsForCompare"
+                                          (onSelect)="onItemSelect($event,'compare')"
+                                          (onDeSelect)="OnItemDeSelect($event,'compare')"
+                                          (onSelectAll)="onSelectAll($event,'compare')"
+                                          (onDeSelectAll)="onDeSelectAll($event,'compare')">
+
+                      <c-item>
+                        <ng-template let-item="item">
+                          <label style="color: #333;min-width: 150px;" [ngClass]="{'BP-multiSelect':!item.disabled}"> {{item.name}} </label>
+
+                        </ng-template>
+                      </c-item>
+
+                    </angular2-multiselect>
+
+
+                  </div>
+                </div>
+              </div>
+              <div class="text-center BP-errorText " *ngIf="errorMsg">Please select reports.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="BP-messageBox__footer text-center">
+        <div class="grid-center">
+          <div class="col-6_sm-6_md-6_lg-6">
+            <div class="BP-exportResultsbtn">
+              <button class="BP-btn BP-btnOrange BP-btnLarge" (click)="preview()">Preview</button>
+            </div>
+          </div>
+          <div class="col-6_sm-6_md-6_lg-6">
+            <div class="BP-exportResultsbtn">
+              <button class="BP-btn BP-btnOrange BP-btnLarge" (click)="popUpClose()">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

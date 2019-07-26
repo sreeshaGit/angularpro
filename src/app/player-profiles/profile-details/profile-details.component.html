@@ -1,0 +1,642 @@
+<div class="BP-playerProfile">
+	<div class="BP-formGroup">
+		<div class="grid-middle-noGutter">
+			<div class="col-6">
+				<span class="BP-formLabel">Player ID:</span>
+				<input class="BP-formInput BP-formInput-playerID" [(ngModel)]="playerId" (keypress)="onlyNumber($event)"
+					(input)="onPlayerIdChange($event.target.value)" />
+				<button class="BP-btn BP-btnGreen active BP-btnGo" (click)="getPlayerDetails()"
+					[disabled]="disabled">Go</button>
+				<div class="BP-form-errorMessage BP-errorText" *ngIf="errorMsg">
+					Please enter Player ID.
+				</div>
+			</div>
+			<div class="col-6 text-right" *ngIf="!hideData">
+				<button class="BP-btn BP-btnGreen active BP-btnGo" (click)="getExportCSV(playerId)"
+					[disabled]="disabledExport">
+					<i class="bp-icon-export" id="MyBtn"></i> Export</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="text-center BP-errorText " *ngIf="displayError">
+		No records found.
+	</div>
+	<div class="space-5"></div>
+	<div class="">
+		<div class="grid-top">
+			<div class="col-6_lg-6_md-6_sm-8">
+				<div class="BP-playerInfoBox">
+					<div class="BP-playerInfoBox_Header BG-lightGreen">
+						Primary Profile
+					</div>
+					<div class="BP-playerInfoBox_Content">
+						<table class="BP-playerInfoBox__table">
+							<tbody>
+								<tr>
+									<td ><b>Bet Frequency:</b></td>
+									<td>Daily Bettor</td>
+									<td ><b>Total Odds:</b></td>
+									<td>Multiples 15-20 (55%)</td>
+								</tr>
+								<tr>
+									<td><b> Sport:</b></td>
+									<td>
+										<!-- <span class="BP-sportBadge BP-primary">Football</span> -->
+										<span class="BP-sportBadge BP-primary" *ngIf="playerSummary?.pri_1_sport?.sport_name">{{playerSummary?.pri_1_sport?.sport_name}}</span>
+										<span class="BP-sportBadge BP-primary"	*ngIf="playerSummary?.pri_2_sport?.sport_name">{{playerSummary?.pri_2_sport?.sport_name}}</span>
+									</td>
+									<td ><b>Stake:</b></td>
+									<td>Single $25-50 (75%) <br>
+										Multiple $5 - 10 (65%)	
+									</td>
+								</tr>
+								<tr>
+									<td ><b> Event:</b></td>
+									<td>Premier League</td>
+									<td ><b> Avg Odds:</b></td>
+									<td>Singles - 1.5 to 2.5 (65%</td>
+								</tr>
+								<tr>
+									<td ><b> Markets:</b></td>
+									<td>Both Teams To Score</td>
+									<td></td>
+									<td></td>
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-3_lg-3_md-4_sm-6">
+				<div class="BP-playerInfoBox">
+					<div class="BP-playerInfoBox_Header BG-lightOrange">
+						Secondary Profile
+					</div>
+					<div class="BP-playerInfoBox_Content">
+						<table class="BP-playerInfoBox__table">
+							<tbody>
+								<tr>
+									<td ><b>Bet Frequency:</b></td>
+									<td>Weekly</td>									
+								</tr>
+								<tr>
+									<td><b> Sport:</b></td>
+									<td><span class="BP-sportBadge BP-secondary" *ngIf="playerSummary?.sec_sport">{{playerSummary?.sec_sport?.sport_name}}</span></td>
+								</tr>
+								<tr>
+									<td ><b> Avg Odds:</b></td>
+									<td>Singles - 1.5 to 2.5 (65%)</td>
+									
+								</tr>
+								<tr>
+									<td ><b>&nbsp;</b></td>
+									<td></td>									
+								</tr>								
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-3_lg-3_md-4_sm-6">
+				<div class="BP-playerInfoBox">
+					<div class="BP-playerInfoBox_Header BG-TurquoiseGreen">
+						Profile 3 months ago
+					</div>
+					<div class="BP-playerInfoBox_Content">
+						<table class="BP-playerInfoBox__table">
+							<tbody>
+								<tr>
+									<td ><b>Bet Frequency:</b></td>
+									<td>Monthly</td>									
+								</tr>		
+								<tr>
+									<td ><b> Event:</b></td>
+									<td>Premier League</td>
+								</tr>
+								<tr>
+									<td ><b> Markets:</b></td>
+									<td>Match Odds</td>
+								</tr>														
+								<tr>
+									<td ><b> Avg Odds:</b></td>
+									<td>Singles - 1.5 to 2.5 (65%)</td>									
+								</tr>
+																
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="BP-playerSummaryGraph">
+
+	</div>
+
+	<div *ngIf="!hideData">
+		<div class="grid-top">
+			<div class="col-3_lg-3_md-4_sm-6">
+				<div class="BP-playerInfoBox">
+					<div class="BP-playerInfoBox_Header BG-skyBlue">
+						Player Information
+					</div>
+					<div class="BP-playerInfoBox_Content">
+						<table class="BP-playerInfoBox__table">
+							<tbody>
+								<tr>
+									<td class="BP-playerInfoBox__table-label"><b>Player:</b></td>
+									<td>{{playerSummary?.id}}</td>
+								</tr>
+								<tr>
+									<td class="BP-playerInfoBox__table-label"><b> Country:</b></td>
+									<td>{{playerSummary?.country}}</td>
+								</tr>
+								<tr>
+									<td class="BP-playerInfoBox__table-label"><b> Age:</b></td>
+									<td>{{playerSummary?.age}}</td>
+								</tr>
+								<tr>
+									<td class="BP-playerInfoBox__table-label"><b> Gender:</b></td>
+									<td>{{playerSummary?.gender}}</td>
+								</tr>
+								<tr>
+									<td class="BP-playerInfoBox__table-label"><b> Registration:</b></td>
+									<td>{{playerSummary?.reg_date}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-3_lg-3_md-4_sm-6">
+				<div class="BP-playerInfoBox">
+					<div class="BP-playerInfoBox_Header BG-orange">
+						<div class="BP-heading">Account Summary</div>
+					</div>
+					<div class="BP-playerInfoBox_Content">
+						<table class="BP-playerInfoBox__table">
+							<tbody>
+								<tr>
+									<td class="BP-playerInfoBox__table-label"><b> Total Turnover:</b></td>
+									<td>{{playerSummary?.total_turnover}}</td>
+								</tr>
+								<tr>
+									<td class="BP-playerInfoBox__table-label"><b> Total P&L:</b></td>
+									<td>{{playerSummary?.total_pl}}</td>
+								</tr>
+								<tr>
+									<td class="BP-playerInfoBox__table-label"><b> Total Deposit:</b></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="BP-playerInfoBox__table-label"><b> Total Withdraw:</b></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="BP-playerInfoBox__table-label"><b> First Deposit Date:</b></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-3_lg-3_md-4_sm-6">
+				<div class="BP-playerInfoBox">
+					<div class="BP-playerInfoBox_Header BG-yellow">
+						<div class="BP-heading">Betting Summary</div>
+					</div>
+					<div class="BP-playerInfoBox_Content">
+						<table class="BP-playerInfoBox__table">
+							<tbody>
+								<tr>
+									<td class="BP-playerInfoBox__table-label"><b> Bet Frequency:</b></td>
+									<td>
+										<span class="BP-bg BG-green"
+											*ngIf="playerSummary?.bet_freq?.bet_freq_12_months">{{playerSummary?.bet_freq?.bet_freq_12_months}}</span>
+									</td>
+									
+								</tr>
+								<tr>
+									<td class="BP-playerInfoBox__table-label"><b> Total Bets:</b></td>
+									<td>{{playerSummary?.total_bets}}</td>
+									
+								</tr>
+								<tr>
+									<td class="BP-playerInfoBox__table-label"><b> Total In-Play Bets:</b></td>
+									<td>{{playerSummary?.total_in_play_bets}}</td>
+									<!--<td><span class="BP-bg">25.41%</span></td>-->
+								</tr>
+								<tr>
+									<td class="BP-playerInfoBox__table-label"><b> Total Pre-Match Bets:</b></td>
+									<td>{{playerSummary?.total_pre_match_bets}}</td>
+									<!--<td><span class="BP-bg">83.27%</span></td>-->
+								</tr>
+								<tr>
+									<td class="BP-playerInfoBox__table-label"><b> Last Bet Date:</b></td>
+									<td>{{playerSummary?.last_bet_date}}</td>
+									
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>	 
+
+		<div class="BP-playerSummary-sportInfoBox BP-primarySport" *ngIf="playerSummary?.pri_1_sport && playerSummary?.pri_1_sport !=''">
+			<div class="BP-playerSummary-sportInfoBox__header">
+					{{playerSummary?.pri_1_sport?.sport_name}}
+			</div>
+			<div class="BP-playerSummary-sportInfoBox__content">
+				<div class="grid-top">
+					<div class="col-3_lg-3_md-4_sm-6">
+						<div class="BP-playerInfoBox__table-header">&nbsp;</div>
+						<table class="BP-playerInfoBox__table">
+							<tbody>
+								<!--<tr>
+									<th>Bet Frequency:<span class="BP-betsBox">4474</span></th>
+									<td>{{playerSummary?.bet_freq?.bet_freq_12_months}}</td>
+									<td></td>
+								</tr>-->
+								<tr>
+									<td>Bets:</td>
+									<td>{{playerSummary?.pri_1_sport?.bet_count}}
+										<span class="BP-sportBadge BP-badgeSmall">{{playerSummary?.pri_1_sport?.bet_count_percent}}%</span>
+									</td>									
+								</tr>
+								<tr>
+									<td>Pre-Play Bets:
+										<!--<span class="BP-betsBox">3598</span>-->
+									</td>
+									<td>{{playerSummary?.pri_1_sport?.pre_match_bets}}</td>
+									<!--<td><span class="BP-bg">82.99%</span></td>-->
+								</tr>
+								<tr>
+									<td>Last Bet Date:</td>
+									<td>{{playerSummary?.last_bet_date}}</td>									
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-3_lg-3_md-4_sm-6">
+						<div class="BP-playerInfoBox__table-header">By Odds:</div>
+						<table class="BP-playerInfoBox__table text-center">
+							<thead>
+								<tr>
+									<th>Odds Band</th>
+									<th># of Bets</th>
+									<th>% of Bets</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let player of playerSummary?.pri_1_sport?.odds_range_spread">
+									<td> {{player.range}}</td>
+									<td> {{player.count}}</td>
+									<td> {{player.percent}}%</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-3_lg-3_md-4_sm-6">
+						<div class="BP-playerInfoBox__table-header">Bet Types:</div>
+						<table class="BP-playerInfoBox__table text-center">
+							<thead>
+								<tr>
+									<th>Types</th>
+									<th># of Bets</th>
+									<th>% of Bets</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let betSum of playerSummary?.pri_1_sport?.bet_type_spread">
+									<td> {{betSum.type}}</td>
+									<td> {{betSum.count}}</td>
+									<td> {{betSum.percent}}%</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-3_lg-3_md-4_sm-6">
+						<div class="BP-playerInfoBox__table-header">By Frequency:</div>
+						<table class="BP-playerInfoBox__table text-left">
+							<tbody>
+								<tr>
+									<td>Last 3 Months:</td>
+									<td>
+										<span class="BP-sportBadge BP-badgeSmall"
+											*ngIf="playerSummary?.pri_1_sport?.bet_freq?.bet_freq_3_months">{{playerSummary?.pri_1_sport?.bet_freq?.bet_freq_3_months}}</span>
+									</td>
+								</tr>
+								<tr>
+									<td>Last 6 Months:</td>
+									<td>
+										<span class="BP-sportBadge BP-badgeSmall"
+											*ngIf="playerSummary?.pri_1_sport?.bet_freq?.bet_freq_6_months">{{playerSummary?.pri_1_sport?.bet_freq?.bet_freq_6_months}}</span>
+									</td>
+								</tr>
+								<tr>
+									<td>Last 9 Months:</td>									
+									<td>
+										<span class="BP-sportBadge BP-badgeSmall"
+											*ngIf="playerSummary?.pri_1_sport?.bet_freq?.bet_freq_9_months">{{playerSummary?.pri_1_sport?.bet_freq?.bet_freq_9_months}}</span>
+									</td>
+								</tr>
+								<tr>
+									<td>Last 12 Months:</td>									
+									<td>
+										<span class="BP-sportBadge BP-badgeSmall"
+											*ngIf="playerSummary?.pri_1_sport?.bet_freq?.bet_freq_12_months">{{playerSummary?.pri_1_sport?.bet_freq?.bet_freq_12_months}}</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-3_lg-3_md-4_sm-6">
+						<div class="BP-playerInfoBox__table-header">Market:</div>
+						<table class="BP-playerInfoBox__table text-center">
+							<thead>
+								<tr>
+									<th>Market</th>
+									<th># of Bets</th>
+									<th>% of Bets</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td> Both Teams To Score</td>
+									<td> 15</td>
+									<td> 38%</td>
+								</tr>
+								<tr>
+									<td> Match Odds</td>
+									<td> 20</td>
+									<td> 47%</td>
+								</tr>
+								<tr>
+									<td> Total Goals</td>
+									<td> 10</td>
+									<td> 25%</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-3_lg-3_md-4_sm-6">
+						<div class="BP-playerInfoBox__table-header">Event:</div>
+						<table class="BP-playerInfoBox__table text-center">
+							<thead>
+								<tr>
+									<th>Events</th>
+									<th># of Bets</th>
+									<th>% of Bets</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td> Premier League</td>
+									<td> 15</td>
+									<td> 38%</td>
+								</tr>
+								<tr>
+									<td> Bundersliga</td>
+									<td> 20</td>
+									<td> 47%</td>
+								</tr>
+								<tr>
+									<td> Laliga</td>
+									<td> 10</td>
+									<td> 25%</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="BP-playerSummary-sportInfoBox__footer">
+
+			</div>
+		</div>
+
+		<div class="BP-playerSummary-sportInfoBox BP-primarySport" *ngIf="playerSummary?.pri_2_sport && playerSummary?.pri_2_sport !=''">
+				<div class="BP-playerSummary-sportInfoBox__header">
+						{{playerSummary?.pri_2_sport?.sport_name}}
+				</div>
+				<div class="BP-playerSummary-sportInfoBox__content">
+					<div class="grid-top">
+						<div class="col-3_lg-3_md-4_sm-6">
+							<div class="BP-playerInfoBox__table-header">&nbsp;</div>
+							<table class="BP-playerInfoBox__table">
+								<tbody>
+									<tr>
+										<td>Bets:</td>
+										<td>{{playerSummary?.pri_2_sport?.bet_count}}
+											<span class="BP-sportBadge BP-badgeSmall">{{playerSummary?.pri_2_sport?.bet_count_percent}}%</span>
+										</td>										
+									</tr>
+									<tr>
+										<td>Pre-Play Bets:</td>
+										<td>{{playerSummary?.pri_2_sport?.pre_match_bets}}</td>										
+									</tr>
+									<tr>
+										<td>Last Bet Date:</td>
+										<td>{{playerSummary?.last_bet_date}}</td>										
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-3_lg-3_md-4_sm-6">
+							<div class="BP-playerInfoBox__table-header">By Odds:</div>
+							<table class="BP-playerInfoBox__table text-center">
+								<thead>
+									<tr>
+										<th>Odds Band</th>
+										<th># of Bets</th>
+										<th>% of Bets</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr *ngFor="let player of playerSummary?.pri_sport?.odds_range_spread">
+										<td> {{player.range}}</td>
+										<td> {{player.count}}</td>
+										<td> {{player.percent}}%</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-3_lg-3_md-4_sm-6">
+							<div class="BP-playerInfoBox__table-header">Bet Types:</div>
+							<table class="BP-playerInfoBox__table text-center">
+								<thead>
+									<tr>
+										<th>Types</th>
+										<th># of Bets</th>
+										<th>% of Bets</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr *ngFor="let betSum of playerSummary?.pri_sport?.bet_type_spread">
+										<td> {{betSum.type}}</td>
+										<td> {{betSum.count}}</td>
+										<td> {{betSum.percent}}%</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-3_lg-3_md-4_sm-6">
+							<div class="BP-playerInfoBox__table-header">By Frequency:</div>
+							<table class="BP-playerInfoBox__table text-left">
+								<tbody>
+									<tr>
+										<th>Last 3 Months:</th>
+										<td>
+											<span class="BP-sportBadge BP-badgeSmall"
+												*ngIf="playerSummary?.pri_2_sport?.bet_freq?.bet_freq_3_months">{{playerSummary?.pri_2_sport?.bet_freq?.bet_freq_3_months}}</span>
+										</td>
+									</tr>
+									<tr>
+										<th>Last 6 Months:</th>
+										<td>
+											<span class="BP-sportBadge BP-badgeSmall"
+												*ngIf="playerSummary?.pri_2_sport?.bet_freq?.bet_freq_6_months">{{playerSummary?.pri_2_sport?.bet_freq?.bet_freq_6_months}}</span>
+										</td>
+									</tr>
+									<tr>
+										<th>Last 9 Months:</th>
+										<td>
+											<span class="BP-sportBadge BP-badgeSmall"
+												*ngIf="playerSummary?.pri_2_sport?.bet_freq?.bet_freq_9_months">{{playerSummary?.pri_2_sport?.bet_freq?.bet_freq_9_months}}</span>
+										</td>
+									</tr>
+									<tr>
+										<th>Last 12 Months:</th>
+										<td>
+											<span class="BP-sportBadge BP-badgeSmall"
+												*ngIf="playerSummary?.pri_2_sport?.bet_freq?.bet_freq_12_months">{{playerSummary?.pri_2_sport?.bet_freq?.bet_freq_12_months}}</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="BP-playerSummary-sportInfoBox__footer">
+	
+				</div>
+			</div>
+
+
+			<div class="BP-playerSummary-sportInfoBox BP-secondarySport" *ngIf="playerSummary?.sec_sport && playerSummary?.sec_sport !=''">
+					<div class="BP-playerSummary-sportInfoBox__header">
+						{{playerSummary?.sec_sport?.sport_name}}	
+					</div>
+					<div class="BP-playerSummary-sportInfoBox__content">
+						<div class="grid-top">
+							<div class="col-3_lg-3_md-3_sm-6">
+								<div class="BP-playerInfoBox__table-header">&nbsp;</div>
+								<table class="BP-playerInfoBox__table">
+									<tbody>
+										<!--<tr>
+											<td>Bet Frequency:<span class="BP-betsBox">174</span></td>
+											<td>Daily</td>
+											<td></td>
+										</tr>-->
+										<tr>
+											<td>Bets:</td>
+											<td>{{playerSummary?.sec_sport?.bet_count}}
+												<span class="BP-sportBadge BP-badgeSmall">{{playerSummary?.sec_sport?.bet_count_percent}}%</span>
+											</td>											
+										</tr>
+										<tr>
+											<td>Pre-Match Bets:	</td>
+											<td>{{playerSummary?.sec_sport?.pre_match_bets}}</td>											
+										</tr>
+										<tr>
+											<td>Last Bet Date:</td>
+											<td>{{playerSummary?.last_bet_date}}</td>											
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="col-3_lg-3_md-3_sm-6">
+								<div class="BP-playerInfoBox__table-header">By Odds:</div>
+								<table class="BP-playerInfoBox__table text-center">
+									<thead>
+										<tr>
+											<th>Odds Band</th>
+											<th># of Bets</th>
+											<th>% of Bets</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr *ngFor="let player of playerSummary?.sec_sport?.odds_range_spread">
+											<td> {{player.range}}</td>
+											<td> {{player.count}}</td>
+											<td> {{player.percent}}%</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="col-3_lg-3_md-3_sm-6">
+								<div class="BP-playerInfoBox__table-header">Bet Types:</div>
+								<table class="BP-playerInfoBox__table text-center">
+									<thead>
+										<tr>
+											<th>Types</th>
+											<th># of Bets</th>
+											<th>% of Bets</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr *ngFor="let betSum of playerSummary?.sec_sport?.bet_type_spread">
+											<td> {{betSum.type}}</td>
+											<td> {{betSum.count}}</td>
+											<td> {{betSum.percent}}%</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="col-3_lg-3_md-3_sm-6">
+								<div class="BP-playerInfoBox__table-header">By Frequency:</div>
+								<table class="BP-playerInfoBox__table text-left">
+									<tbody>
+										<tr>
+											<td>Last 3 Months:</td>											
+											<td>
+												<span class="BP-sportBadge BP-badgeSmall"
+													*ngIf="playerSummary?.sec_sport?.bet_freq?.bet_freq_3_months">{{playerSummary?.sec_sport?.bet_freq?.bet_freq_3_months}}</span>
+											</td>
+										</tr>
+										<tr>
+											<td>Last 6 Months:</td>											
+											<td>
+												<span class="BP-sportBadge BP-badgeSmall"
+													*ngIf="playerSummary?.sec_sport?.bet_freq?.bet_freq_6_months">{{playerSummary?.sec_sport?.bet_freq?.bet_freq_6_months}}</span>
+											</td>
+										</tr>
+										<tr>
+											<td>Last 9 Months:</td>											
+											<td>
+												<span class="BP-sportBadge BP-badgeSmall"
+													*ngIf="playerSummary?.sec_sport?.bet_freq?.bet_freq_9_months">{{playerSummary?.sec_sport?.bet_freq?.bet_freq_9_months}}</span>
+											</td>
+										</tr>
+										<tr>
+											<td>Last 12 Months:</td>											
+											<td>
+												<span class="BP-sportBadge BP-badgeSmall"
+													*ngIf="playerSummary?.sec_sport?.bet_freq?.bet_freq_12_months">{{playerSummary?.sec_sport?.bet_freq?.bet_freq_12_months}}</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="BP-playerSummary-sportInfoBox__footer">
+		
+					</div>
+				</div>
+	</div>
+</div>

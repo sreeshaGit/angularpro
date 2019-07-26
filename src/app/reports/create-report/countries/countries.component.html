@@ -1,0 +1,16 @@
+
+<div class="BP-CR-filter">
+    <div class="BP-CR-filter__label">Country <i class="bp-icon-info"></i>
+    </div>
+    <div class="BP-formGroup">
+        <angular2-multiselect [data]="tempEvents" [(ngModel)]="selectedCountriesData"
+        [settings]="dropdownSettings"
+        (onSelect)="onItemSelect($event)"
+        (onDeSelect)="OnItemDeSelect($event)"
+        (onSelectAll)="onSelectAll($event)"
+        (onDeSelectAll)="onDeSelectAll($event)"></angular2-multiselect>
+    </div>
+</div>
+
+
+

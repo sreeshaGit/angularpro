@@ -1,0 +1,26 @@
+
+<div class="BP-filterBox-content BP-bb-1">
+                    
+        <div class="BP-CR-filter">
+            <div class="BP-formGroup">
+                <div class="BP-CR-filter__label">Select by Results
+                    <i class="bp-icon-info"></i>
+                </div>
+                <ul class="BP-checkBoxGroup__default BP-threeInRow">
+                      <li *ngFor="let records of recordFields; let i = index">
+                          <div class="BP-radioBox">
+                              <input id="BP-CB-dayAll{{i}}" value="records.display_text" name="records" [checked]="records.checked" 
+                              type="radio" (input)="updateCheckedOptions(records,$event,i)">
+                              <label for="BP-CB-dayAll{{i}}">
+                                  <span class="BP-checkBoxSpace">{{records.dispalyName}}</span>
+                              </label>
+                          </div>
+                      </li>
+                   
+                </ul>
+                <div *ngIf="displayInput">
+                  <input class="BP-formInput" type="text"  [(ngModel)]="noOfRecords"  maxlength="4" placeholder="keep empty to return all results." (keypress)="onlyNumber($event)" (blur)=noOfRecordChange($event.target.value)>
+                </div>
+              </div>
+        </div>                    
+      </div>

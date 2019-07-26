@@ -1,0 +1,75 @@
+<div class="BP-filterBox-content BP-bb-1">
+    <div class="BP-CR-filter">
+        <div class="BP-CR-filter__label">Day:</div>
+        <div class="BP-formGroup">
+            <ul class="BP-checkBoxGroup__default BP-threeInRow">
+                <li *ngFor="let day of dayFields; let i = index">
+                    <div class="BP-checkBox">
+                        <input id="BP-CB-day{{i}}"  value="day.dispalyName" name="day" [checked]="day.checked" 
+                              type="checkbox" (input)="updateDateSel(day,$event,i)">
+                        <label for="BP-CB-day{{i}}">
+                            <span class="BP-checkBoxSpace">{{day.dispalyName}}</span>
+                        </label>
+                    </div>
+                </li>
+               
+            </ul>
+        </div>
+        <div class="BP-formGroup">
+         
+                <div class="BP-CR-filter">
+                        <div class="BP-CR-filter__label">Time of day
+                          
+                        </div>
+                        <div class="BP-formGroup">
+                          <div class="grid-middle">
+                            <div class="col-6">
+                              <div class="">
+                                <p-dropdown [options]="timeActions"  [(ngModel)]="selectedTimeActions" [style]="{'width':'100%'}" (onChange)="selectTimeOfDay()" placeholder = "Please select."></p-dropdown>
+                              </div>
+                            </div>
+                            <div class="col-6">                            
+                              <div class="">
+                                <p-dropdown [options]="timeDayHours"  [(ngModel)]="selectedTimeOfDayHours" [style]="{'width':'100%'}" (onChange)="selectTimeOfDayHours()" placeholder="Please select hours"></p-dropdown>
+                              </div>
+ 
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+              </div>
+          </div>
+      </div>
+<div class="BP-filterBox-content">
+    <div class="BP-CR-filter">
+        <div class="BP-CR-filter__label">Time prior to event
+            <i class="bp-icon-info"></i>
+        </div>
+        <div class="BP-formGroup">
+            <div class="grid-middle">
+                <div class="col-6">
+                    <div class="">
+                      <p-dropdown [options]="timePriorDay" class="BP-timePeriod" [(ngModel)]="selectedPriorDay" [style]="{'width':'100%'}" (onChange)="selectPriorDay()" placeholder="Please select day"></p-dropdown>                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="BP-formGroup">
+            <div class="grid-middle">
+                <div class="col-6">
+                    <div class="">
+                      <p-dropdown [options]="timePriorHours" class="BP-timePeriod" [(ngModel)]="selectedPriorHours" [style]="{'width':'100%'}" (onChange)="selectPriorHours()" placeholder="Please select hours"></p-dropdown>                       
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="">
+                      <p-dropdown [options]="timePriorMin" class="BP-timePeriod" [(ngModel)]="selectedTimePriorMin" [style]="{'width':'100%'}" (onChange)="selectPriorMin()" placeholder="Please select mins"></p-dropdown>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

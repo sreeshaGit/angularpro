@@ -1,0 +1,15 @@
+<div *ngIf ="displayOnDemand">
+  <highcharts-chart [Highcharts]="Highcharts"
+                    [constructorType]="chartConstructor"
+                    [options]="chartOptions"
+                    [(update)]="updateFlag"
+                    [oneToOne]="oneToOneFlag" style="height: 300px"></highcharts-chart>
+
+</div>
+<div class="BP-loader" *ngIf="!displayOnDemand && !pieError">
+  <app-loader></app-loader>
+</div>
+<div class="BP-loader BP-errorText text-center" *ngIf="pieError">
+    There is no data available for the selection.
+</div>
+

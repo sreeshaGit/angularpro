@@ -1,0 +1,45 @@
+@import "../../../../assets/css/variables";
+@import "../../../../assets/css/pages/common";
+
+
+.BP-profilePopup{
+    font-size: 12px;
+    .ui-dialog {
+        border: 20px solid #535353;
+        background-color: #f0f0f0;
+        width: 1200px;
+        .ui-dialog-titlebar{
+           padding: 0;
+        }
+        .ui-widget-header{
+            background: rgb(240, 240, 240) !important;
+            padding: 4px 4px 0 0;
+        }
+    }
+}
+.BP-formGroupContent{
+    .BP-formSelectDropdown{
+        border: 1px solid #ccc;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) { 
+
+    .BP-profilePopup{
+        .ui-dialog {
+            width: 750px;
+        }
+    }
+    .BP-popupPlayerContent .BP-playerContentBox .BP-btnProfile{
+        font-size: 11px;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1200px) { 
+
+    .BP-profilePopup{
+        .ui-dialog {
+            width: 1000px;
+        }
+    }
+
+}
+

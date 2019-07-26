@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\config",
+    "\\app\\player-profiles",
+    "\\app\\player-profiles\\player-profile-result",
+    "\\app\\player-profiles\\profile-details"
+  ],
+  "SelectedNode": "\\app\\player-profiles\\player-profile-result\\player-profile-result.component.scss",
+  "PreviewInSolutionExplorer": false
+}

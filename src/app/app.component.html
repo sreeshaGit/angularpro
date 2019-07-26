@@ -1,0 +1,13 @@
+<div class="BP-container-fuild">
+    <app-header [isUserLoggedIn]="isLoggedIn"></app-header>
+    <div class="BP-contentBox " [ngClass]="{'BP-menuCollapsed':sideBarVar}">
+        <div class="BP-leftMenuContent" *ngIf="router.url!=='/home' && isLoggedIn &&  router.url !== '/aboutus' &&  router.url !== '/help'   &&  router.url !== '/contact' && router.url!=='/login_admin' && router.url!=='/login'">         
+          <app-side-menu-bar></app-side-menu-bar>
+        </div>
+        <div [ngClass]="(router.url =='/home' || router.url == '/aboutus' || router.url == '/help'   ||  router.url == '/contact' || router.url == '/login' || router.url == '')?'BP-container' : 'BP-rightContent'">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+

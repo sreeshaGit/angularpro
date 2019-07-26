@@ -1,0 +1,7 @@
+<div class="BP-CR-filter">
+  <div class="BP-CR-filter__label">Sport:</div>
+  <div class="BP-formGroup">
+    <angular2-multiselect [data]="tempSports" [(ngModel)]="selectedSportData" [settings]="dropdownSettings" (onSelect)="onItemSelect($event,'outputData')"
+      (onDeSelect)="OnItemDeSelect($event,'outputData')" (onSelectAll)="onSelectAll($event,'outputData')" (onDeSelectAll)="onDeSelectAll($event,'outputData')"></angular2-multiselect>
+  </div>
+</div>

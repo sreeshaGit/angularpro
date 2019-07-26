@@ -1,0 +1,26 @@
+
+
+<div class="BP-filterBox-content BP-bb-1">
+        <div class="BP-CR-filter">
+                <ul class="BP-checkBoxGroup__default BP-threeInRow">
+                        <li *ngFor="let outputData of outputDataFields; let i = index">
+                            <div class="BP-radioBox">
+                                <input id="BP-CB-Player{{i}}" value="outputData.itemName" name="outputData" [checked]="outputData.checked" 
+                                              type="radio" (input)="updateCheckedOptions(outputData,$event,i)">
+                                <label for="BP-CB-Player{{i}}">
+                                    <span class="BP-checkBoxSpace">{{outputData.itemName}}</span>
+                                </label>
+                            </div>
+                        </li>                       
+                    </ul>
+
+          <div *ngIf="displayInput" class="BP-formGroup">
+            <angular2-multiselect [data]="outputDataList" [(ngModel)]="selectedOutputData"
+                                  [settings]="dropdownSettings"
+                                  (onSelect)="onItemSelect($event,'outputData')"
+                                  (onDeSelect)="OnItemDeSelect($event,'outputData')"
+                                  (onSelectAll)="onSelectAll($event,'outputData')"
+                                  (onDeSelectAll)="onDeSelectAll($event,'outputData')"></angular2-multiselect>           
+          </div>
+        </div>
+      </div>

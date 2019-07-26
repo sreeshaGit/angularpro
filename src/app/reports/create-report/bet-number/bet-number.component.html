@@ -1,0 +1,55 @@
+<div class="BP-CR-filter">
+  <div class="BP-CR-filter__label">
+    Bet Number Order:
+    <i class="bp-icon-info"></i>
+  </div>
+  <div class="BP-formGroup">
+    <div class="grid-middle">
+      <div class="col-6 BP-radioBox">
+        <input class="BP-formInput" type="radio" name="lastToFirst1"  id="lastToFirst" [checked]="!betNoOrder" (change)="updateBetNoOrder()">
+        <label for="lastToFirst"><span class="BP-checkBoxSpace">Last to First </span></label>
+      </div>
+      <div class="col-6 BP-radioBox">
+        <input class="BP-formInput" type="radio" name="firstToLast2" id="firstToLast" [checked]="betNoOrder" (change)="updateBetNoOrder()">
+        <label for="firstToLast"><span class="BP-checkBoxSpace">First to Last </span></label>       
+      </div>
+    </div>
+  </div>
+
+    <div class="BP-CR-filter__label">Bet Number:
+        <i class="bp-icon-info"></i>
+    </div>
+    <div class="BP-formGroup">
+        <div class="grid-middle">
+            <div class="col-6">             
+                <input class="BP-formInput" type="number" placeholder="From" [(ngModel)]="betFrom" (blur)="getValue('betnumber',betFrom,'betFrom')" (keypress)="onlyTwoDigitsNumber($event,betFrom)">
+            </div>
+            <div class="col-6">
+                <input class="BP-formInput" type="number" placeholder="To" [(ngModel)]="betTo" (blur)="getValue('betnumber',betTo,'betTo')" (keypress)="onlyTwoDigitsNumber($event,betTo)">
+            </div>
+        </div>
+    </div>
+    <div class="BP-CR-filter__label">Win %:</div>
+    <div class="BP-formGroup">
+        <div class="grid-middle">
+            <div class="col-6">
+                <input class="BP-formInput" type="number" placeholder="From" [(ngModel)]="winFrom" (blur)="getValue('win',winFrom,'winFrom')" [maxLength]=2 (keypress)="onlyTwoDigitsNumber($event,winFrom)">
+            </div>
+            <div class="col-6">
+                <input class="BP-formInput" type="number" placeholder="To" [(ngModel)]="winTo" (blur)="getValue('win', winTo,'winTo')" [maxLength]=2 (keypress)="onlyTwoDigitsNumber($event,winTo)">
+            </div>
+        </div>
+    </div>
+    <div class="BP-CR-filter__label">Loss %:</div>
+    <div class="BP-formGroup">
+        <div class="grid-middle">
+            <div class="col-6">
+                <input class="BP-formInput" type="number" placeholder="From" [(ngModel)]="lossFrom" (blur)="getValue('loss',lossFrom,'lossFrom')" [maxLength]=2 (keypress)="onlyTwoDigitsNumber($event,lossFrom)">
+            </div>
+            <div class="col-6">
+                <input class="BP-formInput" type="number" placeholder="To" [(ngModel)]="lossTo" (blur)="getValue('loss',lossTo,'lossTo')" [maxLength]=2 (keypress)="onlyTwoDigitsNumber($event,lossTo)">
+            </div>
+        </div>
+    </div>
+</div>
+

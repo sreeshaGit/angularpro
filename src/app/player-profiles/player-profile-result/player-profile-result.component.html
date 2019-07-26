@@ -1,0 +1,94 @@
+<div class="BP-createQuery__header BP-formGroup">
+    <div class="grid-middle-noGutter">
+        <div class="col-5_lg-5_md-5_sm-5_xs-12 grid-middle-noGutter">
+            <div class="col-3_lg-3_md-5_sm-8 text-right">
+                <button class="BP-btn BP-btnRed BP-btnLarge" (click)="back()">{{showUpdate? 'Edit Profile' : 'go back to edit'}}</button>
+            </div>
+        </div>
+        <div class="col-7_lg-7_md-7_sm-7_xs-12 BP-formGroup text-right">
+            <div class="BP-createQuery__header-right" *ngIf="!reportId">
+                <span>Profile Name:</span>
+                <input class="BP-formInput" placeholder="Enter Query Name" type="text" [(ngModel)]=reportName (input)="reportValid($event)">
+                <button class="BP-btn BP-btnRed BP-btnLarge active BP-editReport" (click)="saveReport()" (keyup.enter)="saveReport()" [disabled]="disableButton">Save Profile</button>
+            </div>
+            <div class="BP-createQuery__header-right" *ngIf="reportId">
+                    <div class="BP-editBox" [attr.contenteditable]="!showUpdate" [textContent]="reportName" (input)="reportName=$event.target.textContent">{{reportName}}</div>
+            </div>            
+
+            <button class="BP-btn BP-btnRed BP-btnLarge active BP-editReport" *ngIf="reportId && !showUpdate" (click)="updateReport()" [disabled]="disableButton">Update Profile</button>
+           
+            <div class="BP-form-errorMessage text-right" *ngIf="nameError">              
+                <span>Please give report name.</span>
+            </div>           
+            
+        </div>
+    </div>
+</div>
+
+
+<div class="text-center BP-errorText ">
+    {{displayMessage}}
+</div>
+
+<!--<app-player-table [previewId]="previewId" [pageNo]="pageNo" [playersData]="playersData" *ngIf="loadPlayerData"
+                  [reportId]="reportId" [totalRecords] ="totalRecords" [reportName] ="reportName"></app-player-table>-->
+
+<div class="BP-form-errorMessage BP-errorText text-center" *ngIf="error">
+  There is no data matching your query.
+</div>
+
+<div class="BP-table BP-tableStripped BP-report__resultTable BP-report__playerTable" *ngIf="!loader">
+  <p-table #dt class="" [columns]="selectedColumns" [value]="rowsData" [autoLayout]="true" [responsive]="true"
+           [style]=width1 [scrollable]="true" scrollHeight="500px" scrollWidth="1800px" *ngIf="columns && rowsData.length"
+           sortMode="multiple" (onFilter)="onColumnChange($event)" [reorderableColumns]="true" [resizableColumns]="true" [exportFilename]="reportName +'-'+ displayReportTime">
+    <ng-template pTemplate="caption">
+      <div class="table-heading">
+        <div class="grid-middle">
+          <div class="col-4 text-left">
+            <div class="tablehead_SelectBox">
+              <p-multiSelect class="BP-ui-multiselect" [options]="cols" [(ngModel)]="selectedColumns" optionLabel="header"
+                             selectedItemsLabel="{0} columns selected" [style]="{minWidth: '200px'}" defaultLabel="Choose Columns" ></p-multiSelect>
+            </div>
+          </div>
+          <div class="col-8 text-right">
+            <div class="tablehead_search">
+              <!--<input type="text" class="" pInputText size="50" placeholder="Search Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')" (onChange)="onColumnChange($event)">-->
+              <!--<i class="fa fa-search"></i>-->
+            </div>
+            <button class="BP-btn BP-btnRed BP-report-result-btnExport" (click)="exportCSVFile(dt)" ><i class="bp-icon-import" id="MyBtn"></i>&nbsp;Export</button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th class="BP-ui-sortable-column" *ngFor="let col of columns" [pSortableColumn]="col.field" pReorderableColumn>
+          {{col.header}}
+          <p-sortIcon [field]="col.field"></p-sortIcon>
+        </th>
+      </tr>
+      <tr>
+        <th *ngFor="let col of columns" [ngSwitch]="col.field" class="BP-formGroup mb-0">
+          <input class="BP-columnSearchInput BP-formInput" placeholder="Search column" *ngSwitchCase="col.field" pInputText type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td class="BP-ui-sortable-column" *ngFor="let col of columns">
+          <span *ngIf="col.field == 'id'"><a (click)="gotoUserSummary(rowData[col.field])">{{rowData[col.field]}}</a></span>
+          <span *ngIf=" col.field != 'id'">{{rowData[col.field] | findPmIp : col.field}}</span>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="footer" let-columns>
+      <tr></tr>
+    </ng-template>
+  </p-table>  
+  <p-paginator [style]=width1 [rows]="limit" [totalRecords]="totalRecords" [first] ="selectedPage" [alwaysShow] = false (onPageChange)="paginate($event)" *ngIf="rowsData?.length > 0"></p-paginator>
+</div>
+
+
+<div class="BP-loader" *ngIf="loader">
+    <app-loader></app-loader>
+</div>

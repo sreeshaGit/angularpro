@@ -1,0 +1,126 @@
+
+
+    <div class="BP-homeAfterLogin">
+      <div class="grid-middle BP-services">
+        <div class="col-3_lg-3_md-3_sm-6_xs-12">
+          <div class="BP-serviceBox BP-SB-yellow" (click)="goToDashboard()">
+            <div class="BP-serviceBox__title">
+              Dashboards
+            </div>
+            <div class="BP-serviceBox__icon">
+              <i class="bp-icon-dashboard"></i>
+            </div>
+            <div class="BP-serviceBox__btn">
+              <button class="BP-btn" >LAUNCH</button>
+            </div>
+            <!--<div class="BP-comingSoon">
+              Coming Soon...!
+            </div>-->
+          </div>
+        </div>
+        <div class="col-3_lg-3_md-3_sm-6_xs-12">
+          <div class="BP-serviceBox BP-SB-blue" (click)="goToReports()">
+            <div class="BP-serviceBox__title">
+              REPORTS
+            </div>
+            <div class="BP-serviceBox__icon">
+              <i class="bp-icon-report"></i>
+            </div>
+            <div class="BP-serviceBox__btn">
+              <button class="BP-btn" >LAUNCH</button>
+            </div>
+            <!--<div class="BP-comingSoon">
+              Coming Soon...!
+            </div>-->
+          </div>
+        </div>
+        <!--<div class="col-3_lg-3_md-3_sm-6_xs-12">
+          <div class="BP-serviceBox BP-SB-red">
+            <div class="BP-serviceBox__title">
+              IMPORT DATA
+            </div>
+            <div class="BP-serviceBox__icon">
+              <i class="bp-icon-import"></i>
+            </div>
+            <div class="BP-serviceBox__btn">
+              <button class="BP-btn" (click)="goToImportData()">LAUNCH</button>
+            </div>
+            <div class="BP-comingSoon">
+              Coming Soon...!
+            </div>
+          </div>
+        </div>-->
+
+        <div class="col-3_lg-3_md-3_sm-6_xs-12">
+          <div class="BP-serviceBox BP-SB-orange" (click)="goToUserProfile()">
+            <div class="BP-serviceBox__title">
+              User Profiles
+            </div>
+            <div class="BP-serviceBox__icon">
+              <i class="bp-icon-profile"></i>
+            </div>
+            <div class="BP-serviceBox__btn">
+              <button class="BP-btn">LAUNCH</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-3_lg-3_md-3_sm-6_xs-12" (click)='gotoHelp()'>
+          <div class="BP-serviceBox BP-SB-green">
+            <div class="BP-serviceBox__title">
+              HELP
+            </div>
+            <div class="BP-serviceBox__icon">
+              <i class="bp-icon-help"></i>
+            </div>
+            <div class="BP-serviceBox__btn">
+              <button class="BP-btn">LAUNCH</button>
+            </div>
+            <!--<div class="BP-comingSoon">
+              Coming Soon...!
+            </div>-->
+          </div>
+        </div>
+        <!--<div class="col-3_lg-3_md-3_sm-6_xs-12">
+          <div class="BP-serviceBox BP-SB-orange" (click)="goToDataAnalysis()">
+            <div class="BP-serviceBox__title">
+              Data Analysis
+            </div>
+            <div class="BP-serviceBox__icon">
+              <i class="bp-icon-data-analysis"></i>
+            </div>
+            <div class="BP-serviceBox__btn">
+              <button class="BP-btn" >LAUNCH</button>
+            </div>
+          </div>
+        </div>-->
+
+
+
+      </div>
+    </div>
+
+<app-dialog [(visible)]="onSuccess" (visibleChange)="modalPopupClosedCallback($event)">
+
+  <div class="BP-modalBox BP-messageBox BP-successBox">
+    <div class="BP-messageBox__close-btn">
+      <i class="bp-icon-close"></i>
+    </div>
+    <div class="BP-messageBox__header text-center">
+      <div class="BP-messageBox__messageIcon">
+        <i class="bp-icon-checkmark"></i>
+      </div>
+      <div class="BP-messageBox__header-title"> You have registered successfully</div>
+    </div>
+    <div class="BP-messageBox__content">
+
+    </div>
+    <div class="BP-messageBox__footer text-center">
+      <div class="grid-center-noGutter">
+        <div class="col-6">
+          <button class="BP-btn BP-btnGreen BP-btnLarge" (click)="close()">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</app-dialog>

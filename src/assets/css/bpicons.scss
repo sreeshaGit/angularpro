@@ -1,0 +1,134 @@
+
+@font-face {
+  font-family: 'bp-icons';
+  src:  url('./assets/fonts/bp-icons.eot?xqckuj');
+  src:  url('./assets/fonts/bp-icons.eot?xqckuj#iefix') format('embedded-opentype'),
+    url('./assets/fonts/bp-icons.ttf?xqckuj') format('truetype'),
+    url('./assets/fonts/bp-icons.woff?xqckuj') format('woff'),
+    url('./assets/fonts/bp-icons.svg?xqckuj#bp-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'bp-icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bp-icon-data-analysis:before {
+  content: "\e900";
+}
+.bp-icon-down-arrow:before {
+  content: "\e901";
+}
+.bp-icon-left-arrow:before {
+  content: "\e902";
+}
+.bp-icon-right-arrow:before {
+  content: "\e903";
+}
+.bp-icon-import:before {
+  content: "\e904";
+}
+.bp-icon-export:before {
+  content: "\e905";
+}
+.bp-icon-report:before {
+  content: "\e906";
+}
+.bp-icon-view-report:before {
+  content: "\e907";
+}
+.bp-icon-dashboard:before {
+  content: "\e908";
+}
+.bp-icon-help:before {
+  content: "\e909";
+}
+.bp-icon-checkmark:before {
+  content: "\e910";
+}
+.bp-icon-close:before {
+  content: "\e911";
+}
+.bp-icon-more:before {
+  content: "\e912";
+}
+.bp-icon-calendar:before {
+  content: "\e913";
+}
+.bp-icon-add:before {
+  content: "\e914";
+}
+.bp-icon-delete:before {
+  content: "\e915";
+}
+.bp-icon-expand:before {
+  content: "\e916";
+}
+.bp-icon-edit:before {
+  content: "\e917";
+}
+.bp-icon-sort:before {
+  content: "\e918";
+}
+.bp-icon-error:before {
+  content: "\e919";
+}
+.bp-icon-profile:before {
+  content: "\e920";
+}
+.bp-icon-query-result:before {
+  content: "\e921";
+}
+.bp-icon-playerReports:before {
+  content: "\e922";
+}
+.bp-icon-createReport:before {
+  content: "\e923";
+}
+.bp-icon-viewReport:before {
+  content: "\e924";
+}
+.bp-icon-editReport:before {
+  content: "\e925";
+}
+.bp-icon-exportReport:before {
+  content: "\e926";
+}
+.bp-icon-compareReport:before {
+  content: "\e927";
+}
+.bp-icon-deleteReport:before {
+  content: "\e928";
+}
+.bp-icon-info:before {
+  content: "\e929";
+}
+.bp-icon-ShareReport:before {
+  content: "\e930";
+}
+.bp-icon-info-outline:before {
+  content: "\e931";
+}
+.bp-icon-long-arrow-up:before {
+  content: "\e90b";
+}
+.bp-icon-long-arrow-right:before {
+  content: "\e933";
+}
+.bp-icon-long-arrow-down:before {
+  content: "\e934";
+}
+.bp-icon-long-arrow-left:before {
+  content: "\e935";
+}

@@ -1,0 +1,255 @@
+
+
+.BP-tableAction{
+	text-align: center !important;
+	i{
+		font-size: 24px;
+		padding-right: 5px;
+		vertical-align: middle;
+		cursor: pointer;		
+		color: #9B9B9B;
+	}		
+	.bp-icon-viewReport {
+	    color: #4A90E2;
+	}
+	.bp-icon-editReport {
+	    color: #0B9A83;	    
+	}
+	.bp-icon-compareReport{
+		color: #A544E3;
+	}
+	.bp-icon-deleteReport {
+    	color: #F47887;
+	}
+}
+.BP-tableAction__info{
+	ul{
+		float: right;
+		padding-bottom: 40px;
+		li{
+			float: left;
+			font-size: 14px;
+			padding: 0 20px;
+			border-right: 1px solid $BP-table-borderColor;
+			vertical-align: middle;
+			color: #999;
+			i{
+				font-size: 20px !important;
+				margin-left: 10px;
+				vertical-align: middle;
+
+				&.icon-report-icon{
+					color: $blue;
+				}
+				&.icon-import-data{
+					color: $green;					
+				}
+			}
+			&:last-child{
+				border-right: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}
+	
+.BP-reportViewTitle{
+	padding-bottom: 20px;
+	font-size: 24px;
+}
+
+.BP-sort i {
+    vertical-align: middle;
+    float: right;
+    cursor: pointer;
+    line-height: 20px;
+}
+
+
+.BP-reportActionsDropDown{
+	display: inline-block;
+	.BP-formSelect{
+		width: 160px !important;
+		display: inline-block;
+    select{
+      outline:none;
+    }
+	}
+	label{
+		display: inline-block;
+	}
+
+}
+// ============================================================
+// Create Report 
+// ============================================================
+.BP-skew-right-top {
+    background: $blue none repeat scroll 0 0;
+    position: relative;
+    z-index: 0;
+}
+.BP-skew-right-top:after {
+    background-color: $blue;
+    content: " ";
+    display: block;
+    height: 100%;
+    right: -14px;
+    position: absolute;
+    top: 0;
+		-moz-transform: skewX(-35deg);
+	-webkit-transform: skewX(-35deg);
+	-o-transform: skewX(-35deg);
+	-ms-transform: skewX(-35deg);
+	transform: skewX(-35deg);
+    width: 35px;
+    z-index: -1;
+}
+
+
+.BP-createReport{
+	//background-color: #EEEEEE;
+}
+.BP-filterBox{
+	background-color: $white;
+	font-size: 14px;
+	margin-bottom: 20px;
+	-webkit-box-shadow: 0 0 6px 2px rgba(0,0,0,0.1);
+	-ms-box-shadow: 0 0 6px 2px rgba(0,0,0,0.1);
+	box-shadow: 0 0 6px 2px rgba(0,0,0,0.1);
+	.BP-filterBox__header{
+		border-top: 2px solid #11BAD5;
+		.BP-filterBox__header-title{
+			display: inline-block;
+			min-width: 120px;
+			padding: 6px 12px 9px 15px;
+			color: $white;
+			font-weight: 700;
+			font-size: 16px;
+		}
+	}
+	.BP-filterBox__content{
+		padding: 20px 15px 0;
+	}
+}
+
+.BP-checkBoxGroup__default{
+	display: inline-block;
+	width: 100%;	
+	li{
+		float: left;
+		padding: 0 5px 8px 0;
+	}
+	&.BP-twoInRow{
+		li{
+			width: 50%;
+		}
+	}
+	&.BP-threeInRow{
+		li{
+			width: 33.3%
+		}
+	}
+}
+
+.BP-createQuery__header{
+	.BP-createQuery__header-right{
+		display: inline-block;
+		input{
+			width: 300px;
+			margin-right: 10px;
+		}
+	}
+	.BP-formLabel{
+		vertical-align: middle;
+	}
+	.cuppa-dropdown{
+		display: inline-block;
+		width: 350px;
+		vertical-align: middle;
+	}
+}
+
+.BP-editBox{
+	margin-right: 10px;
+	font-size: 25px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+
+.BP-reportSummaryTable{
+	.BP-reportSummaryTable__header{
+		background-color: #23ae7b;
+		color: #FFF;
+		font-size: 20px;
+		font-weight: 600;
+		padding: 10px 20px;
+		height: 55px;
+	}
+	table{
+		width: 100%;
+		thead{
+			tr{
+				th{
+					font-weight: 600px;
+					text-align: center;
+					font-size: 18px;
+					height: 90px;
+					vertical-align: middle;
+					border: 2px solid #FFF;
+					i{
+						color: #1178c1;
+						cursor: pointer;
+					}
+				}
+				th:first-child{
+					background-color: #f5f5f5 !important;
+				}
+				th:nth-child(odd){
+					background-color: #d7edfc;
+				}
+				th:nth-child(even){
+					background-color: #bbdbf1;
+				}
+			}
+		}
+		tbody{
+			tr{
+				border-bottom: 1px solid #cfcece;
+				td{
+					font-size: 16px;
+					vertical-align: middle;
+					padding: 12px;
+					border: 0;
+					.BP-increased{
+						color: #06aa38;
+						font-size: 14px;
+						margin-left: 5px;
+						&::before{
+							content: "\e90b";
+							font-family: 'bp-icons';
+							font-size: 11px;
+						}
+					}
+					.BP-decreased{
+						color: #f24040;
+						font-size: 14px;
+						margin-left: 5px;
+						&::before{
+							content: "\e934";
+							font-family: 'bp-icons';
+							font-size: 11px;
+						}
+					}
+				}
+				td:first-child{
+					font-weight: 600;
+					color: #1178c1;
+				}
+			}
+			tr:nth-child(odd){
+
+			}
+		}
+	}
+}

@@ -1,0 +1,93 @@
+/*============================================================
+	Page Layout - CSS
+============================================================*/
+
+.BP-container-fuild {
+    min-width: 1366px;
+    overflow-x: auto;
+}
+
+.BP-container {
+    max-width: 98em;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.BP-header-container-fluid{
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.BP-fullWidth {
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.BP-contentBox {
+    position: relative;
+    height: 100%;
+    min-height: calc(100vh - 340px);
+    .BP-leftMenuContent {
+        width: 180px;
+        float: left;
+        background-color: $BP-bgColor-leftMenu;
+        position: absolute;
+        height: 100%;
+        transition: all 0.5s ease;
+    }
+    .BP-rightContent {
+        width: calc(100% - 180px);
+        margin-left: 180px;
+        padding: 20px 20px 20px;
+        transition: all 0.5s ease; // min-height: 500px;	
+        min-height: calc(100vh - 344px);
+    }
+    &.BP-menuCollapsed {
+        .BP-rightContent {
+            width: 100%;
+            margin-left: 0;
+        }
+        .BP-leftMenuContent {
+            width: 0px;
+            overflow: hidden;
+        }
+    }
+}
+
+/*============================================================
+  Leftmenu
+  ============================================================ */
+
+.BP-menu {
+  //  border-top: 1px solid $greyDark;
+    overflow-y: auto;
+    height: 100%;
+    .BP-menuItem {
+        position: relative;
+        color: $white;
+        /*background-color: $BP-bgColor-leftMenu;*/
+        border-bottom: 1px solid $greyDark;
+        padding: 14px 12px;
+        cursor: pointer;
+        white-space: nowrap;
+        &:hover {
+            background-color: $BP-black;
+        }
+        &.BP-active {
+            background-color: #E6E6E6 !important;
+            color: $red;
+            font-weight: 500;
+        }
+        &i {
+            color: $red;
+        }
+        i {
+            font-size: 16px;
+            padding-right: 6px;
+            vertical-align: middle;
+        }
+        span {
+            vertical-align: middle;
+        }
+    }
+}

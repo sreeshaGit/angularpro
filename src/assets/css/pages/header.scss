@@ -1,0 +1,105 @@
+/*============================================================
+  Home Page - Header 
+  ============================================================ */
+.BP-pageHeader{
+	padding: 10px 0;
+	height: 65px;
+}
+.BP-logo{
+	color: $red;
+	font-size: 30px;
+	font-weight: 600;
+//	text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.44);
+	cursor: pointer;
+
+	.BP-colorText{
+		color: $BP-black;
+	}
+
+	&.BP-logo__big{
+		font-size: 42px;
+		text-shadow: none;
+		cursor: default;
+	}
+}
+.BP-logout{
+	background-color: $red;
+	color: #FFF;
+	padding: 4px;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-top: 5px;
+}
+.BP-profilePic {
+	vertical-align: middle;
+		display:inline-block;
+    img{
+    	border-radius: 100px;
+		border: 1px solid $yellow;
+		width: 54px;
+		vertical-align: middle;
+		margin-left: 30px;
+		-webkit-box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.3);
+		-moz-box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.3);
+		box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.3);
+    }
+
+}
+.BP-pageHeader{
+	.BP-dropdown{	
+		
+		.BP-header__profilePic {
+			cursor: pointer;
+			width: 45px;
+		}
+	}
+}
+
+/*============================================================
+	Home Page - BreadCrumb 
+  ============================================================ */
+
+.BP-breadCrumb {
+	background-color: $red;
+	height: 65px;
+}
+.BP-breadCrumb__title{
+	color: $white;
+	width: calc(100% - 180px);
+	padding: 0 20px;
+	i{
+		font-size: 36px; 
+		vertical-align: middle;
+	}
+	.BP-breadCrumb__titleText{
+	  font-size: 28px;
+	  font-weight: 600;
+	  padding-left: 14px;
+	  vertical-align: middle;
+	  cursor:default;
+
+	}
+
+}
+.BP-closeMenu {
+	width: 180px;
+	color: $white;
+	float: left;
+	padding-left: 12px;
+	font-weight: 500;
+	position: relative;
+	cursor: pointer;	
+	& img{
+		margin-right: 8px;
+		top: -2px;        
+        vertical-align: middle;
+        width: 24px;
+	}
+	&.collapsed{
+		img{
+			transform: rotate(180deg);
+		}
+	}
+}
+
+

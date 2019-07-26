@@ -1,0 +1,325 @@
+<div class="grid-top">
+  <div class="col-6_lg-6_md-12_sm-12" *ngIf ="displayPrimary">
+    <div class="BP-filterBox">
+      <div class="BP-filterBox__header">
+        <div class="BP-filterBox__header-title BP-skew-right-top">Primary</div>
+      </div>
+      <div class="BP-filterBox__content">
+        <div class="grid-top">
+          <div class="col-8 pr-15">
+            <div class="BP-formGroup">
+              <div class="grid-middle">
+                <div class="col-4">
+                  <div class="BP-formLabel">Sport:</div>
+                </div>
+                <div class="col-8">
+                  <angular2-multiselect [data]="sportData" [(ngModel)]="selectedSport"
+                                        [settings]="dropdownSettings"
+                                        (onSelect)="onItemSelect($event,'sportPrimary')"
+                                        (onDeSelect)="OnItemDeSelect($event,'sportPrimary')"
+                                        (onSelectAll)="onSelectAll($event,'sportPrimary')"
+                                        (onDeSelectAll)="onDeSelectAll($event,'sportPrimary')"></angular2-multiselect>
+                </div>
+              </div>
+            </div>
+            <div class="grid-top">
+              <div class="col-4">
+                <div class="BP-formLabel">PM/IP:</div>
+              </div>
+              <div class="col-8">
+                <ul class="BP-checkBoxGroup__default BP-twoInRow">
+                  <li *ngFor="let data of betStatus; let i= index">
+                    <div class="BP-checkBox">
+                      <input id="BP-PP-PR1-Prematch{{i}}" name="data.display_text" value="data.display_text" [checked]="data.checked" type="checkbox" (change)="updateCheckedOptions(data,$event,i,'Primary')">
+                      <label for="BP-PP-PR1-Prematch{{i}}">
+                        <span class="BP-checkBoxSpace">{{data.display_text}}</span>
+                      </label>
+                    </div>
+                  </li>                 
+                </ul>
+              </div>
+            </div>
+            <div class="BP-formGroup">
+              <div class="grid-middle">
+                <div class="col-4">
+                  <div class="BP-formLabel">League:</div>
+                </div>
+                <div class="col-8">
+                  <angular2-multiselect [data]="leagueData" [(ngModel)]="selectedLeague"
+                                        [settings]="multiSettings"
+                                        (onSelect)="onItemSelect($event,'leaguePrimary')"
+                                        (onDeSelect)="OnItemDeSelect($event,'leaguePrimary')"
+                                        (onSelectAll)="onSelectAll($event,'leaguePrimary')"
+                                        (onDeSelectAll)="onDeSelectAll($event,'leaguePrimary')">
+                     <c-search>
+                      <ng-template>
+                        <input type="text" (keyup)="onLeague($event)" placeholder="Search" style="border: none;width: 100%; height: 100%;outline: none;" />
+
+                        <div class="BP-loader" *ngIf="loader">
+                           <app-loader></app-loader>
+
+                          </div>
+
+                      </ng-template>
+                    </c-search>        
+                    <c-item>
+                      <ng-template let-item="item">
+                        <label style="color: #333;width: 150px;">{{item.name}}</label>
+
+                      </ng-template>
+                    </c-item>
+                  </angular2-multiselect>
+                </div>
+              </div>
+            </div>
+            <div class="BP-formGroup">
+              <div class="grid-middle">
+                <div class="col-4">
+                  <div class="BP-formLabel">Market:</div>
+                </div>
+                <div class="col-8">
+                  <angular2-multiselect [data]="marketsData" [(ngModel)]="selectedMarkets" [settings]="multiSettings" (onSelect)="onItemSelect($event,'marketPrimary')"
+                                        (onDeSelect)="OnItemDeSelect($event,'marketPrimary')" (onSelectAll)="onSelectAll($event,'marketPrimary')" (onDeSelectAll)="onDeSelectAll($event,'marketPrimary')">
+                    <c-search>
+                      <ng-template>
+                        <input type="text" (keyup)="onSearch($event)" placeholder="Search" style="border: none;width: 100%; height: 100%;outline: none;" />
+
+                        <div class="BP-loader" *ngIf="loader">
+                          
+                            <app-loader></app-loader>
+                          </div>
+
+                      </ng-template>
+                    </c-search>
+                    <c-item>
+                      <ng-template let-item="item">
+                        <label style="color: #333;width: 150px;">{{item.name}}</label>
+
+                      </ng-template>
+                    </c-item>
+                  </angular2-multiselect>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6_lg-6_md-12_sm-12" *ngIf="displayPrimary2">
+    <div class="BP-filterBox">
+      <div class="BP-filterBox__header">
+        <div class="BP-filterBox__header-title BP-skew-right-top">Primary 2</div>
+      </div>
+      <div class="BP-filterBox__content">
+        <div class="grid-top">
+          <div class="col-8 pr-15">
+            <div class="BP-formGroup">
+              <div class="grid-middle">
+                <div class="col-4">
+                  <div class="BP-formLabel">Sport:</div>
+                </div>
+                <div class="col-8">
+                  <angular2-multiselect [data]="sportData" [(ngModel)]="selectedSportPrimary2"
+                                        [settings]="dropdownSettings"
+                                        (onSelect)="onItemSelect($event,'sportPrimary2')"
+                                        (onDeSelect)="OnItemDeSelect($event,'sportPrimary2')"
+                                        (onSelectAll)="onSelectAll($event,'sportPrimary2')"
+                                        (onDeSelectAll)="onDeSelectAll($event,'sportPrimary2')"></angular2-multiselect>
+                </div>
+              </div>
+            </div>
+            <div class="grid-top">
+              <div class="col-4">
+                <div class="BP-formLabel">PM/IP:</div>
+              </div>
+              <div class="col-8">
+                <ul class="BP-checkBoxGroup__default BP-twoInRow">
+                  <li *ngFor="let data of betStatusPrimary2; let i= index">
+                    <div class="BP-checkBox">
+                      <input id="BP-PP-PR1-Primary2{{i}}" name="data.display_text" value="data.display_text" [checked]="data.checked" type="checkbox" (change)="updateCheckedOptions(data,$event,i,'Primary2')">
+                      <label for="BP-PP-PR1-Primary2{{i}}">
+                        <span class="BP-checkBoxSpace">{{data.display_text}}</span>
+                      </label>
+                    </div>
+                  </li>      
+                </ul>
+              </div>
+            </div>
+            <div class="BP-formGroup">
+              <div class="grid-middle">
+                <div class="col-4">
+                  <div class="BP-formLabel">League:</div>
+                </div>
+                <div class="col-8">
+                  <angular2-multiselect [data]="leagueData" [(ngModel)]="selectedLeaguePrimary2"
+                                        [settings]="multiSettings"
+                                        (onSelect)="onItemSelect($event,'leaguePrimary2')"
+                                        (onDeSelect)="OnItemDeSelect($event,'leaguePrimary2')"
+                                        (onSelectAll)="onSelectAll($event,'leaguePrimary2')"
+                                        (onDeSelectAll)="onDeSelectAll($event,'leaguePrimary2')">
+                  <c-search>
+                      <ng-template>
+                        <input type="text" (keyup)="onLeague($event)" placeholder="Search" style="border: none;width: 100%; height: 100%;outline: none;" />
+
+                        <div class="BP-loader" *ngIf="loader">
+                           <app-loader></app-loader>
+
+                          </div>
+
+                      </ng-template>
+                    </c-search>                                        
+                  <c-item>
+                    <ng-template let-item="item">
+                      <label style="color: #333;width: 150px;">{{item.name}}</label>
+
+                    </ng-template>
+                  </c-item>
+                  </angular2-multiselect>
+                </div>
+              </div>
+            </div>
+            <div class="BP-formGroup">
+              <div class="grid-middle">
+                <div class="col-4">
+                  <div class="BP-formLabel">Market:</div>
+                </div>
+                <div class="col-8">
+                  <angular2-multiselect [data]="marketsData" [(ngModel)]="selectedMarketsPrimary2" [settings]="multiSettings" (onSelect)="onItemSelect($event,'marketPrimary2')"
+                                        (onDeSelect)="OnItemDeSelect($event,'marketPrimary2')" (onSelectAll)="onSelectAll($event,'marketPrimary2')" (onDeSelectAll)="onDeSelectAll($event,'marketPrimary2')">
+                    <c-search>
+                      <ng-template>
+                        <input type="text" (keyup)="onSearch($event)" placeholder="Search" style="border: none;width: 100%; height: 100%;outline: none;" />
+
+                        <div class="BP-loader" *ngIf="loader">
+                           <app-loader></app-loader>
+
+                          </div>
+
+                      </ng-template>
+                    </c-search>
+                    <c-item>
+                      <ng-template let-item="item">
+                        <label style="color: #333;width: 150px;">{{item.name}}</label>
+
+                      </ng-template>
+                    </c-item>
+                  </angular2-multiselect>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6_lg-6_md-12_sm-12" *ngIf="displaySecondary">
+    <div class="BP-filterBox">
+      <div class="BP-filterBox__header">
+        <div class="BP-filterBox__header-title BP-skew-right-top">Secondary</div>
+      </div>
+      <div class="BP-filterBox__content">
+        <div class="grid-top">
+          <div class="col-8 pr-15">
+            <div class="BP-formGroup">
+              <div class="grid-middle">
+                <div class="col-4">
+                  <div class="BP-formLabel">Sport:</div>
+                </div>
+                <div class="col-8">
+                  <angular2-multiselect [data]="sportData" [(ngModel)]="selectedSportSecondary"
+                                        [settings]="dropdownSettings"
+                                        (onSelect)="onItemSelect($event,'sportSecondary')"
+                                        (onDeSelect)="OnItemDeSelect($event,'sportSecondary')"
+                                        (onSelectAll)="onSelectAll($event,'sportSecondary')"
+                                        (onDeSelectAll)="onDeSelectAll($event,'sportSecondary')"></angular2-multiselect>
+                </div>
+              </div>
+            </div>
+            <div class="grid-top">
+              <div class="col-4">
+                <div class="BP-formLabel">PM/IP:</div>
+              </div>
+              <div class="col-8">
+                <ul class="BP-checkBoxGroup__default BP-twoInRow">
+                  <li *ngFor="let data of betStatusSecondary; let i= index">
+                    <div class="BP-checkBox">
+                      <input id="BP-PP-PR1-Secondary{{i}}" name="data.display_text+'sec'" value="data.display_text" [checked]="data.checked" type="checkbox" (change)="updateCheckedOptions(data,$event,i,'Secondary')"/>
+                      <label for="BP-PP-PR1-Secondary{{i}}">
+                        <span class="BP-checkBoxSpace">{{data.display_text}}</span>
+                      </label>
+                    </div>
+                  </li>      
+                </ul>
+              </div>
+            </div>
+            <div class="BP-formGroup">
+              <div class="grid-middle">
+                <div class="col-4">
+                  <div class="BP-formLabel">League:</div>
+                </div>
+                <div class="col-8">
+                  <angular2-multiselect [data]="leagueData" [(ngModel)]="selectedLeagueSecondary"
+                                        [settings]="multiSettings"
+                                        (onSelect)="onItemSelect($event,'leagueSecondary')"
+                                        (onDeSelect)="OnItemDeSelect($event,'leagueSecondary')"
+                                        (onSelectAll)="onSelectAll($event,'leagueSecondary')"
+                                        (onDeSelectAll)="onDeSelectAll($event,'leagueSecondary')">
+                     <c-search>
+                      <ng-template>
+                        <input type="text" (keyup)="onLeague($event)" placeholder="Search" style="border: none;width: 100%; height: 100%;outline: none;" />
+
+                        <div class="BP-loader" *ngIf="loader">
+                           <app-loader></app-loader>
+
+                          </div>
+
+                      </ng-template>
+                    </c-search>        
+                    <c-item>
+                      <ng-template let-item="item">
+                        <label style="color: #333;width: 150px;">{{item.name}}</label>
+
+                      </ng-template>
+                    </c-item>
+                  </angular2-multiselect>
+                </div>
+              </div>
+            </div>
+            <div class="BP-formGroup">
+              <div class="grid-middle">
+                <div class="col-4">
+                  <div class="BP-formLabel">Market:</div>
+                </div>
+                <div class="col-8">
+                  <angular2-multiselect [data]="marketsData" [(ngModel)]="selectedMarketsSecondary" [settings]="multiSettings" (onSelect)="onItemSelect($event,'marketSecondary')"
+                                        (onDeSelect)="OnItemDeSelect($event,'marketSecondary')" (onSelectAll)="onSelectAll($event,'marketSecondary')" (onDeSelectAll)="onDeSelectAll($event,'marketSecondary')">
+                    <c-search>
+                      <ng-template>
+                        <input type="text" (keyup)="onSearch($event)" placeholder="Search" style="border: none;width: 100%; height: 100%;outline: none;" />
+
+                        <div class="BP-loader" *ngIf="loader">
+                         <app-loader></app-loader>
+                        </div>
+
+                      </ng-template>
+                    </c-search>
+                    <c-item>
+                      <ng-template let-item="item">
+                        <label style="color: #333;width: 150px;">{{item.name}}</label>
+
+                      </ng-template>
+                    </c-item>
+                  </angular2-multiselect>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

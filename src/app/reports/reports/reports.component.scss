@@ -1,0 +1,18 @@
+@import "../../../assets/css/variables.scss";
+@import "../../../assets/css/pages/report.scss";
+@import "../../../assets/css/pages/common.scss";
+
+
+
+.BP-popUp-small{
+    .ui-widget{
+        min-width: 800px !important;
+        // min-height: 600px !important;
+        max-width: 900px;
+        height: 660px;
+        .ui-dialog-content{
+            padding: 5px;
+            overflow: initial;
+        }
+    }
+}

@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800');
+html{
+	height: 100%;
+}
+body{
+	// font-family: "HelveticaNeueLTStd";
+	font-family: 'Montserrat', sans-serif;
+	color: $BP-black;
+	font-size: 14px;
+	font-weight: 400;
+	letter-spacing: 0.5px;
+	line-height: 1.5;
+	margin: 0;
+	position: relative;
+	min-height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.text-right{
+	text-align: right !important;
+}
+.text-left{
+	text-align: left !important;
+}
+.text-center{
+	text-align: center !important;
+}
+.d-none{
+	display: none !important;
+}
+.v-hidden{
+	visibility: hidden !important;
+}
+.d-inline {
+  display: inline !important;
+}
+.d-inline-block {
+  display: inline-block !important;
+}
+.d-block {
+  display: block !important;
+}
+.d-table {
+  display: table !important;
+}
+.cursor-pointer{
+	cursor: pointer;
+}
+.truncate{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.table-cell-center{
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+.space-5{
+    margin: 5px auto;
+    padding: 2px 0;
+}
+.space-10{
+	margin: 10px auto;
+    padding: 5px 0;
+}
+.w-100{
+	width: 100% !important;
+}
+.m-0{
+	margin: 0 !important
+}
+.m-auto {
+	margin: auto !important;
+}
+.p-0{
+	padding:0 !important;
+}
+.pl-3{
+	padding-left: 3px !important;
+}
+.pl-5{
+	padding-left: 5px !important;
+}
+.pl-10{
+	padding-left: 10px !important;
+}
+.pl-15{
+	padding-left: 15px !important;
+}
+.pr-3{
+	padding-right: 3px !important;
+}
+.pr-5{
+	padding-right: 5px !important;
+}
+.pr-10{
+	padding-right: 10px !important;
+}
+.pr-15{
+	padding-right: 15px !important;
+}
+.pb-3{
+	padding-bottom: 3px !important;
+}
+.pb-5{
+	padding-bottom: 5px !important;
+}
+.pb-10{
+	padding-bottom: 10px !important;
+}
+.pb-15{
+	padding-bottom: 15px !important;
+}
+.m-0{
+	margin: 0 !important;
+}
+.mb-0{
+	margin-bottom: 0 !important;
+}
+.mb-10{
+	margin-bottom: 10px !important;
+}
+.mb-20{
+	margin-bottom: 20px !important;
+}
+.align-top {
+	vertical-align: top !important;
+}  
+.align-middle {
+	vertical-align: middle !important;
+}  
+.align-bottom {
+	vertical-align: bottom !important;
+}
+
+ul{
+	padding: 0;
+	margin: 0;
+	li{
+		list-style: none;
+	}
+}
+a{
+	text-decoration: none;
+}
+.font-bold{
+  font-weight: bold;
+}

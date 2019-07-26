@@ -1,0 +1,59 @@
+<div class="BP-modalBox BP-messageBox BP-errorBox">
+	<div class="BP-messageBox__close-btn">
+		<span class="BP-close" (click)="popUpClose()"><i class="bp-icon-close"></i></span>
+	</div>
+	<div class="BP-messageBox__header text-center" *ngIf="fromPage == 'dashboard'">
+		<div class="BP-messageBox__messageIcon">
+			<i class="bp-icon-close"></i>
+		</div>
+		<div class="BP-messageBox__header-title">DELETE</div>
+		<div class="BP-messageBox__messageTxt BP-messageStatusText">
+			Do you want to delete
+			<div class="BP-removeReportName">{{reportName}}?</div>
+		</div>
+	</div>
+	<div class="BP-messageBox__header text-center" *ngIf="fromPage == 'widgets'">
+		<div class="BP-messageBox__messageIcon">
+			<i class="bp-icon-close"></i>
+		</div>
+		<div class="BP-messageBox__header-title">Remove Widget</div>
+		<div class="BP-messageBox__messageTxt BP-messageStatusText">
+			Are you sure you want to remove this widget from your dashboard?
+		</div>
+	</div>
+	<div class="BP-messageBox__header text-center" *ngIf="fromPage == 'reports'">
+		<div class="BP-messageBox__messageIcon">
+			<i class="bp-icon-close"></i>
+		</div>
+		<div class="BP-messageBox__header-title">Remove Report</div>
+		<div class="BP-messageBox__messageTxt BP-messageStatusText">
+			Are you sure you want to remove this report from your list?
+			<div class="BP-removeReportName">NOTE: Report will be removed from dashboards as well</div>
+		</div>
+	</div>
+	<div class="BP-messageBox__header text-center" *ngIf="fromPage == 'profile'">
+		<div class="BP-messageBox__messageIcon">
+			<i class="bp-icon-close"></i>
+		</div>
+		<div class="BP-messageBox__header-title">Remove Profile</div>
+		<div class="BP-messageBox__messageTxt BP-messageStatusText">
+			Are you sure you want to remove this profile from your list?
+		</div>
+	</div>
+	<div class="BP-messageBox__content">
+	</div>
+	<div class="BP-messageBox__footer text-center">
+		<div class="grid-center">
+			<div class="col-6_sm-6_md-6_lg-6">
+				<div class="BP-exportResultsbtn">
+					<button class="BP-btn BP-btnOrange BP-btnLarge" (click)="proceedToDelete()">YES</button>
+				</div>
+			</div>
+			<div class="col-6_sm-6_md-6_lg-6">
+				<div class="BP-exportResultsbtn">
+					<button class="BP-btn BP-btnOrange BP-btnLarge" (click)="popUpClose()">NO</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

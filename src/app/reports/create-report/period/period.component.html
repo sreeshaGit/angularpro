@@ -1,0 +1,27 @@
+
+    <div class="BP-CR-filter">
+        <div class="BP-CR-filter__label">Time Period:
+            <i class="bp-icon-info"></i>
+        </div>
+        <div class="BP-formGroup">
+            <div class="BP-icon-calendar">
+                <input class="BP-formInput" placeholder="Date Time Range:" [(ngModel)]="dateTimeRange" [selectMode]="'range'" [owlDateTimeTrigger]="dtRange1"
+                    [owlDateTime]="dtRange1" (dateTimeChange)="getDate($event)">
+                <owl-date-time #dtRange1></owl-date-time>
+            </div>
+        </div>
+        <!-- <div class="space-5"></div> -->
+        <div class="BP-formGroup mb-0">
+            <ul class="BP-checkBoxGroup__default BP-threeInRow">
+                <li *ngFor="let periodRangeData of periodRange; let i = index">
+                    <div class="BP-radioBox">
+                        <input id="BP-CB-period{{i}}" value="periodRangeData.display_text" name="periodRange" [checked]="periodRangeData.checked"
+                            type="radio" (input)="updateCheckedOptions(periodRangeData,$event,i)">
+                        <label for="BP-CB-period{{i}}">
+                            <span class="BP-checkBoxSpace">{{periodRangeData.display_text}}</span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>

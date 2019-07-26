@@ -1,0 +1,226 @@
+
+      <div class="BP-uploadSteps">
+        <div class="grid-center-noGutter">
+          <div class="col-6_sm-12_md-6_lg-6">
+            <div class="BP-stepSection compeletedStepClickable" data-step-counter="true" data-step-image="false">
+              <ul class="BP-multistepProgressbar">
+                <li class="BP-step BP-completeStep">
+                  <span class="BP-stepTitle">Upload Customer Details</span>
+                </li>
+                <li class="BP-step BP-currentStep">
+                  <span class="BP-stepTitle">Upload Betslip P&L</span>
+                </li>
+                <li class="BP-step">
+                  <span class="BP-stepTitle">Upload Betslip Details</span>
+                </li>
+                <li class="BP-step">
+                  <span class="BP-stepTitle">Verify and Import</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="BP-importData">
+        <div class="BP-importData__uploadCustomerDetails">
+          <div class="BP-importData__title">
+            Upload Customer Details
+          </div>
+          <div class="BP-importData__text">
+            You need to upload the ‘Bets.csv’ file here. Make sure you have these columns included in your file:
+          </div>
+          <div class="grid-middle-noGutter">
+            <div class="col-6_sm-11_md-8_lg-6">
+              <div class="BP-uploadColumnsTable">
+                <table>
+                  <tr>
+                    <td>Player_ID</td>
+                    <td>Country</td>
+                    <td>Gender</td>
+                    <td>RegistrationDateGMT</td>
+                    <td>Age</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="grid-middle-noGutter">
+            <div class="col-6_lg-6_md-6_sm-12">
+              <div class="space-5"></div>
+              <div class="BP-uploadLabel">Upload 'Players.csv':</div>
+              <div class="BP-uploadBox grid-middle-noGutter">
+                <input type="file" name="file-7[]" id="file-7" class="inputfile inputfile-6" data-multiple-caption="{count} files selected" multiple />
+                <label for="file-7">
+                  <strong><img src="/assets/img/icon-upload.svg" /> Choose a file</strong>
+                  <span></span>
+                </label>
+                <button class="BP-btn BP-btnUpload BP-btnRed active">Verify & Upload</button>
+                <span id="MyBtn" class="BP-showError"><i class="bp-icon-error"></i><u>show errors</u></span>
+              </div>
+              <div class="BP-downloadLabel">Download to sample csv file</div>
+            </div>
+          </div>
+          <div class="space-10"></div><div class="space-10"></div>
+          <div class="grid-center">
+            <div class="col-2_sm-5_md-3_lg-2">
+              <button type="button" class="BP-btn BP-btnRed active">Next</button>
+            </div>
+          </div>
+        </div>
+        <div class="BP-importData__uploadBetslipPL">
+          <div class="BP-importData__title">
+            Upload Betslip P & L
+          </div>
+          <div class="BP-importData__text">
+            You need to upload the ‘Bets.csv’ file here. Make sure you have these columns included in your file:
+          </div>
+          <div class="grid-middle-noGutter">
+            <div class="col-6_sm-11_md-8_lg-6">
+              <div class="BP-uploadColumnsTable">
+                <table>
+                  <tr>
+                    <td>Slip_ID</td>
+                    <td>IsFreebet</td>
+                    <td>SlipPlaced Date </td>
+                    <td>SlipSetteledOdds</td>
+                  </tr>
+                  <tr>
+                    <td>Player_ID</td>
+                    <td>IsCombobet</td>
+                    <td>SlipPlaceOdd</td>
+                    <td>SlipStatus</td>
+                  </tr>
+                  <tr>
+                    <td>IsLiveBet</td>
+                    <td>Befold</td>
+                    <td>SlipSettledDate</td>
+                    <td>Stake and Winnings</td>
+                  </tr>
+                </table>
+
+              </div>
+            </div>
+          </div>
+          <div class="grid-middle-noGutter">
+            <div class="col-6_lg-6_md-6_sm-12">
+              <div class="space-5"></div>
+              <div class="BP-uploadLabel">Upload 'Slips.csv':</div>
+              <div class="BP-uploadBox grid-middle-noGutter">
+                <input type="file" name="file-7[]" id="file-7" class="inputfile inputfile-6" data-multiple-caption="{count} files selected" multiple />
+                <label for="file-7">
+                  <strong><img src="/assets/img/icon-upload.svg" /> Choose a file</strong>
+                  <span></span>
+                </label>
+                <button class="BP-btn BP-btnUpload BP-btnRed active">Upload</button>
+              </div>
+              <div class="BP-downloadLabel">Download to sample csv file</div>
+            </div>
+          </div>
+          <div class="space-10"></div><div class="space-10"></div>
+          <div class="grid-center">
+            <div class="col-2_sm-5_md-3_lg-2 text-right">
+              <button type="button" class="BP-btn BP-btnRed ">Back</button>
+            </div>
+            <div class="col-2_sm-5_md-3_lg-2">
+              <button type="button" class="BP-btn BP-btnRed active">Next</button>
+            </div>
+          </div>
+        </div>
+        <div class="BP-importData__uploadBetslipPL">
+          <div class="BP-importData__title">
+            Upload Betslip Details
+          </div>
+          <div class="BP-importData__text">
+            You need to upload the ‘Bets.csv’ file here. Make sure you have these columns included in your file:
+          </div>
+          <div class="grid-middle-noGutter">
+            <div class="col-6_sm-11_md-8_lg-6">
+              <div class="BP-uploadColumnsTable">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Slip_ID</td>
+                      <td>Sports Name</td>
+                      <td>EventID</td>
+                      <td>MarketName</td>
+                    </tr>
+                    <tr>
+                      <td>Player_ID</td>
+                      <td>LeagueID</td>
+                      <td>EventName</td>
+                      <td>SelectionID</td>
+                    </tr>
+                    <tr>
+                      <td>SportsID</td>
+                      <td>LeagueName</td>
+                      <td>EventStartDate</td>
+                      <td>SelectionName</td>
+                    </tr>
+                    <tr>
+                      <td>BetOdds</td>
+                      <td>ResultStatus</td>
+                      <td>AppointedStake</td>
+                      <td>AppointedWinnings</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+          <div class="grid-middle-noGutter">
+            <div class="col-6_lg-6_md-6_sm-12">
+              <div class="space-5"></div>
+              <div class="BP-uploadLabel">Upload 'Slips.csv':</div>
+              <div class="BP-uploadBox grid-middle-noGutter">
+                <input type="file" name="file-7[]" id="file-7" class="inputfile inputfile-6" data-multiple-caption="{count} files selected" multiple />
+                <label for="file-7">
+                  <strong><img src="/assets/img/icon-upload.svg" /> Choose a file</strong>
+                  <span></span>
+                </label>
+                <button class="BP-btn BP-btnUpload BP-btnRed active">Upload</button>
+              </div>
+              <div class="BP-downloadLabel">Download to sample csv file</div>
+            </div>
+          </div>
+          <div class="space-10"></div><div class="space-10"></div>
+          <div class="grid-center">
+            <div class="col-2_sm-5_md-3_lg-2 text-right">
+              <button type="button" class="BP-btn BP-btnRed ">Back</button>
+            </div>
+            <div class="col-2_sm-5_md-3_lg-2">
+              <button type="button" class="BP-btn BP-btnRed active">Next</button>
+            </div>
+          </div>
+        </div>
+        <div class="BP-importData__uploadBetslipPL">
+          <div class="BP-importData__title">
+            Verify and Import
+          </div>
+          <div class="BP-importData__text">
+            Verify and Import the data re-entered.
+          </div>
+          <div class="grid-middle-noGutter text-center">
+            <div class="col-2_sm-2_md-2_lg-2 BP-importIcons">
+              <i id="MyBtn" class="bp-icon-import"></i>
+            </div>
+          </div>
+          <div class="space-10"></div><div class="space-10"></div>
+          <div class="grid-center">
+            <div class="col-2_sm-5_md-3_lg-2">
+              <button type="button" class="BP-btn BP-btnRed active" (click)="onError()">Finish</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+<app-dialog [(visible)]="openSuccess" (visibleChange)="modalPopupClosedCallback1($event)">
+  <app-success-pop-up></app-success-pop-up>
+</app-dialog>
+
+<app-dialog [(visible)]="openError" (visibleChange)="modalPopupClosedCallback($event)">
+  <app-error-pop-up></app-error-pop-up>
+</app-dialog>
+
+

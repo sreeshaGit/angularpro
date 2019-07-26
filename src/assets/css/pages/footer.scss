@@ -1,0 +1,166 @@
+.BP-footer{
+	background-color: $BP-black;
+	color: $greyDarken1;
+	// position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+.BP-footerLinks{
+	list-style: none;
+	color: $greyLighten;
+	margin: 50px 0 22px 0;
+	text-align: center;
+	padding: 0;
+	width: 100%;
+
+	li{
+		padding: 0 50px;
+		display: inline-block;
+		font-size: 16px;
+		color: #666;
+		cursor: pointer;
+		&:hover{
+			color: #F2F2F2;
+		}
+		a{
+			color: #666;
+			&:hover{
+				color: #F2F2F2;
+				text-decoration: none;
+			}
+		}
+	
+  }
+}
+.BP-footerContent {
+ 	text-align: center;
+ 	padding: 10px 0;
+ 	clear: both;
+}
+.BP-footerCopyright {
+	padding: 20px 0 20px 0;
+
+	.BP-copyrightLeft{
+	    text-align: left;
+	}
+	.BP-poweredbyRight{
+		text-align: right;
+
+		.BP-footerPoweredby {
+			vertical-align: middle;	 
+		}
+		.BP-footerLogo {
+			vertical-align: middle;
+			margin-left: 10px;
+		}
+
+	}
+}
+
+
+.BP-footerLinks-content{
+	.BP-footerLinks-title{
+		font-size: 28px;
+		margin: 15px 0 20px;
+		color: $red;
+	}
+	p{
+		margin: 0 0 20px;
+		text-align: justify;
+		font-size: 16px;
+	}
+}
+
+
+.BP-testimonial{
+	margin-bottom: 15px;
+	.BP-testimonial__item{
+		margin-bottom: 20px;
+		.BP-testimonial__quote{
+			font-size: 22px;
+			color: #666;
+			font-style: italic;
+			font-weight: 300;
+			padding: 10px 10px 10px 45px;
+			background-color: #F2F2F2;
+			border-radius: 6px;
+			position: relative;
+			&:before{
+				content: '“';
+				font-size: 62px;
+				position: absolute;
+				left: 6px;
+				top: 8px;
+				line-height: 1;
+				color: #CFCFCF;
+			}
+
+		}
+		.BP-testimonial_attribution{
+			margin-bottom: 10px;
+			.BP-testimonial-logo{
+				border-radius: 100%;
+				padding: 4px;
+				border: 2px solid $red;
+				margin-right: 10px;
+				width: 80px;
+				
+			}
+			.BP-testimonial__attribution-details{
+				display: inline-block;
+				vertical-align: middle;
+				.BP-testimonial__name{
+					color: $red;
+					font-weight: 600;
+					font-size: 18px;
+				}
+				.BP-testimonial__company{
+					color: #999;
+				}
+			}
+		}
+	}
+}
+
+
+.BP-contactUs{
+
+	.BP-contactUS-infoList{
+		margin: 120px auto 0;
+		display: inline-block;
+		li{
+			border: 1px solid #999;
+			border-radius: 6px;
+			margin: 0 10px 10px;
+			padding: 10px 0;
+			font-size: 14px;
+			width: 300px;
+			float: left;
+			text-align: center;
+			&:hover{
+				background-color: #F2F2F2;
+			}
+			.BP-contactUS-infoList__title{
+				color: $red;
+				text-transform: uppercase;
+				font-size: 16px;
+				margin-bottom: 5px;
+				font-weight: 300;
+			}
+			a{
+				color: #999;
+				&:hover{
+					color: $red;
+				}
+			}
+			.BP-contactUS-infoList__name{
+				span{
+					font-style: italic;
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}

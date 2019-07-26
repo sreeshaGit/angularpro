@@ -1,0 +1,271 @@
+@import "../../../../assets/css/variables";
+@import "../../../../assets/css/form-elements";
+
+
+.plr-2{
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+}
+.clearfix{
+    clear: both !important;
+}
+.BP-greyLighten-3{
+    background-color: #F9F9F9 !important;
+}
+.BP-greyLighten-2{
+    background-color: #eef1f3 !important;
+}
+.BP-greyLighten-1{
+    background-color: #eef1f3 !important;
+}
+.BP-formLabel{
+    font-size: 13px;
+    font-weight:500;
+    color: #999999;
+    margin-bottom:3px;
+    i{
+        margin-left: 3px;
+    }
+}
+.BP-popupBox{
+    .BP-popupHeader{
+        .BP-closeIcon{
+            text-align: right;
+            i{
+                color: #979797;
+                font-size: 16px;
+                font-weight:300;
+            }
+        }
+        .BP-playerTextTitle{
+            color: #7e7c7f;
+            font-size: 11px;
+            font-style: italic;
+        }
+    }
+    .BP-popupContent{
+        margin: 10px 0;
+        border: 1px solid #bebbbb;
+        border-radius: 3px;
+        background-color: #ffffff;
+    }
+}
+.BP-playerContent-Heading{
+    font-size: 14px;
+    font-weight: 500;
+    color: #11BAD5;
+    padding: 9px 0;
+    text-align: center;
+}
+.BP-popupPlayerContent{
+    padding: 8px 4px 8px 8px;
+    .BP-searchField{
+        input{
+            height: 30px;
+            border: 1px solid #cacaca;
+            border-radius: 3px;
+        }
+    }
+    .BP-playerContentBox{
+        border:1px solid #c1c1c1;
+        padding: 6px 4px;
+        border-radius: 3px;
+        height: 320px;
+        overflow: auto;
+        .BP-playerContent-title{
+            color: #5a575a;
+            font-size: 10px;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+        .BP-formContent{
+            margin-bottom: 32px;
+             .BP-formLabelTitleBox{
+                 float: left;
+                 width:100%;
+                 margin: 0 0 5px 0;
+                 .BP-labelText{
+                    float: left;
+                 }
+             }
+             .BP-labelBoxAlign{
+                max-height:100px;
+                overflow-y: auto;
+             }
+             .BP-labelTitle{
+                color: #fff;
+                background-color: #797979;
+                border-radius: 3px;
+                padding: 4px 6px;
+                // width: 84px;
+                text-align: center;
+                margin: 2px;
+               
+            } 
+            
+            
+        }
+    }
+    .BP-playerContentInfo{
+        .BP-formLabelText{
+            color: #545154;
+        }
+        .BP-formInfo{
+            margin-bottom: 12px;
+        }
+    }
+}
+.BP-profilePopup
+    .ui-dialog-titlebar {
+        .ui-dialog-titlebar-close{
+            span{
+
+            }
+            ::before{
+                font-family: 'bp-icons';
+                content: "\e911";
+                color: #989898;
+                font-size: 16px;
+            }
+            &:focus{
+                outline: none;
+                outline-offset: 0;
+            }  
+        }
+        &:hover{
+             border:0; 
+        }
+
+    }
+    .BP-popupFooterBox{
+        .BP-btnProfile{
+            background-color: #ffffff;
+            border: 2px solid #4a90e2;
+            border-radius: 3px;
+            color: #4a90e2;
+            outline: none;
+            font-weight: 700;
+        }
+    }
+
+/*----------- Checkboxes ---------*/
+
+.BP-searchBox .BP-checkBoxCircle input[type="checkbox"]:checked + label::before {
+    font-family: 'bp-icons';
+    content: "\25CF";
+    font-size: 20px;
+    color: #797979;
+    text-align: center;
+    line-height: 12px;
+    border: 1px solid #b7bbc0;
+}
+.BP-checkBoxCircle label{
+    pointer-events: none;
+}
+.BP-searchBox .BP-checkBox input[type="checkbox"]:checked + label span{
+    color: #5e5d5d;
+}
+.BP-searchBox .BP-checkBox .BP-checkBoxSpace{
+    color: #626161;
+}
+.BP-searchBox .BP-checkBox label::before{
+    border: 1px solid #b7bbc0;
+}
+
+/*-------- Search Field --------*/
+.BP-searchBox{
+    .ui-listbox{
+        width: 100%;
+        border: 0;
+        color: #4a4a4a;
+        .ui-widget-header{
+            background: none !important;
+            border: none;
+            padding: 0;
+            .ui-chkbox{
+                display: none;
+            }
+            .ui-inputtext{
+                padding: 8px 4px 8px 26px !important;
+                outline: none;
+            } 
+            &:focus{
+                outline: none;
+            }
+        }
+        .ui-listbox-filter-container{
+            width: 100%;
+            .fa-search{
+               
+            }
+            ::before{
+                position: relative;
+                top: 5px;
+                left: 4px;
+                font-size: 15px;
+                
+            }  
+        }
+        .ui-listbox-list{
+            max-height: 320px;
+            .ui-listbox-item{
+                padding: 10px 4px;
+                border: 1px solid #bebbbb;
+                background: #ffffff;
+                border-bottom: 0;
+                margin:0;
+                &:last-child{
+                    border-bottom: 1px solid #bebbbb;
+                }
+                .ui-chkbox{
+                    .ui-chkbox-box {
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 3px;
+                        background-color: #ffffff;
+                        border: 1px solid #b7bbc0;
+                        margin: 4px 6px;
+                        span{
+                            color: #4a4a4a;
+                            height: 100%;
+                        }
+                    }
+                }
+                &:last-child{
+                    border-bottom: 1px solid #bebbbb;
+                }
+            }
+        }
+
+    }
+}
+.BP-align{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.BP-searchBox .pi-check:before{
+    content: URL("assets/img/dot.png") !important;
+    position: relative;
+    top: -1px;
+    left: -1px;
+}
+.BP-searchBox .ui-listbox:not(.ui-state-disabled) .ui-listbox-item:not(.ui-state-highlight):hover {
+    border-color: 0;
+    background: none;
+    color: #4a4a4a;
+}
+.BP-searchBox .ui-state-highlight {
+    color: #25b7d3;
+    background-color: #d6d6d6 !important;
+}
+.BP-searchBox .ui-inputtext.ui-state-focus, .ui-inputtext:focus{
+    box-shadow: none;
+}
+.BP-profilePopup .ui-dialog .ui-dialog-titlebar-icon:hover{
+    border:none;
+}
+.BP-profilePopup .ui-dialog .ui-dialog-titlebar-icon{
+    border: none;
+}

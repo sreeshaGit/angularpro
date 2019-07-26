@@ -1,0 +1,56 @@
+<div class="BP-modalBox BP-signupBox BP-formBox">
+  <div class="BP-formBoxHeader">
+    <div class="BP-formTitle">Create Account</div>
+  </div>
+  <form (submit)="onSubmit(signUpForm)" [formGroup]="signUpForm">   
+      <div class="BP-formBoxContent">
+        <div class="BP-formGroup ">
+          <div class="BP-formLabel">Email*</div>
+          <input formControlName="fullname" type="text" class="BP-formInput" name="username" placeholder="Eg.john@gmail.com">
+          <div class="BP-form-errorMessage">
+            <span [hidden]="signUpForm.controls.fullname.untouched || signUpForm.controls.fullname.valid">A valid email address is required</span>
+          </div>
+        </div>        
+        <div class="BP-formGroup">
+          <div class="BP-formLabel">Username*</div>
+          <input formControlName="username" type="text" class="BP-formInput" name="Firstname" placeholder="Eg.John">
+          <div class="BP-form-errorMessage">
+            <span [hidden]="signUpForm.controls.username.untouched || signUpForm.controls.username.valid">A valid user name is required</span>
+          </div>
+        </div>        
+        <div class="BP-formGroup">
+          <div class="BP-formLabel">Password*</div>
+          <input formControlName="password" type="password" class="BP-formInput" name="Password" placeholder="••••••••••">
+          <div class="BP-form-errorMessage">
+              <span [hidden]="signUpForm.controls.password.untouched || signUpForm.controls.password.valid">Password is required (6 or more characters with at least one number)</span>
+          </div>
+        </div>
+        
+        <div class="BP-formGroup">
+          <div class="BP-formLabel">Confirm Password*</div>
+          <input formControlName="confirmPassword" type="password" class="BP-formInput" name="Password" placeholder="••••••••••">
+          <div class="BP-form-errorMessage">
+              <span [hidden]="signUpForm.controls.confirmPassword.untouched || signUpForm.controls.confirmPassword.valid">Passwords didn't match. Try again</span>
+              <span *ngIf="isConfirmPassword">Passwords didn't match. Try again </span>
+          </div>
+        </div>        
+        <div class="BP-formGroup">
+          <div class="BP-checkBox BP-iAgree">
+            <input id="BP-check1" formControlName="confirm" name="Lastweek" value="confirm" type="checkbox">
+            <label for="BP-check1"></label>
+            <span class="BP-agreeText">I agree to the
+              <a>Terms of Use</a> and
+              <a>Privacy Policy</a>
+            </span>
+          </div>
+        </div>
+        <div class="BP-form-errorMessage" >
+          <span [hidden]="signUpForm.controls.confirm.untouched
+                || signUpForm.controls.confirm.valid">Please confirm Terms & conditions.</span>
+          <!--<span *ngIf="confirmTC">Please confirm Terms & conditions.</span>-->
+          <span>{{displayError}}</span>
+        </div>
+        <button class="BP-btn BP-btnLarge BP-btnRed mb-20">SIGN UP</button>
+      </div>    
+  </form>
+</div>

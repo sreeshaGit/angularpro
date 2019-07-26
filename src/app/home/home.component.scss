@@ -1,0 +1,25 @@
+@import "../../assets/css/variables.scss";
+@import "../../assets/css/pages/home.scss";
+@import "../../assets/css/pages/common.scss";
+
+.BP-topContent{
+    padding-top: 40px;
+    .BP-topContentHeading{
+        font-size: 28px;
+        font-weight: 700;
+    }
+    span{
+        font-weight: 300 ;
+    }
+    .BP-topContentSubHeading{
+        font-size: 28px;
+    }
+    .BP-contentInfo{
+        padding-top: 14px;
+        p{
+            margin: 0;
+            color: #666666;
+            font-size: 14px;
+        }
+    }
+}

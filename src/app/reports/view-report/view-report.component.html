@@ -1,0 +1,328 @@
+<div class="BP-createQuery__header">
+    <div class="grid-middle-noGutter">
+        <div class="col-5_lg-5_md-5_sm-5_xs-12 grid-middle-noGutter">
+            <div class="col-3_lg-3_md-5_sm-8 text-right">
+                <button class="BP-btn BP-btnRed BP-btnLarge BP-editReport" (click)="back(typeOfReport)" *ngIf="typeOfReport !== 'Report Comparison'" >{{showUpdate? 'Edit Report' : 'go back to edit'}}</button>
+            </div>
+        </div>
+        <div class="col-7_lg-7_md-7_sm-7_xs-12 BP-formGroup text-right">
+            <div class="BP-createQuery__header-right" *ngIf="!reportId">
+                <span>Report Name:</span>
+                <input class="BP-formInput" placeholder="Enter Query Name" type="text" [(ngModel)]=reportName (input)="reportValid($event)">
+                <button class="BP-btn BP-btnLarge active BP-editReport" (click)="saveReport()" (keyup.enter)="saveReport()" [disabled]="disableButton" [ngClass]="{'BP-btnRed': !disableButton}">Save Report</button>
+            </div>
+            <div class="BP-createQuery__header-right" *ngIf="reportId">
+                <div class="BP-editBox" [attr.contenteditable]="!showUpdate" [textContent]="reportName" (input)="reportName=$event.target.textContent">{{reportName}}</div>
+            </div>
+
+            <button class="BP-btn BP-btnLarge active BP-editReport" [ngClass]="{'BP-btnRed': !disableButton}" *ngIf="reportId && !showUpdate" (click)="updateReport()"
+                [disabled]="disableButton">Update Report</button>
+
+            <div class="BP-form-errorMessage text-right" *ngIf="error">
+                <span>Please give report name.</span>
+            </div>
+        </div>
+    </div>
+    <div class="grid-middle">
+        <div class="space-5"></div>
+    </div>
+    <div class="grid-middle-noGutter" *ngIf="hideDropdown && typeOfReport !== 'Report Comparison'">
+
+        <div class="col-6">        
+            <div class="BP-formGroup" *ngIf ="outputColumn.length > 0 && reportCol.length > 0">
+                <span class="BP-formLabel">Select output columns:</span>
+                <angular2-multiselect [data]="outputColumn" [(ngModel)]="selectedOutputColumn" [settings]="outputColumnDropdownSettings"
+                    (onSelect)="onItemSelect($event,'outputCol')" (onDeSelect)="OnItemDeSelect($event,'outputCol')" (onSelectAll)="onSelectAll($event,'outputCol')"
+                    (onDeSelectAll)="onDeSelectAll($event,'outputCol')">
+                </angular2-multiselect>
+
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="BP-formGroup" *ngIf ="outputBy.length > 0">
+                <span class="BP-formLabel">Select by:</span>
+                <angular2-multiselect [data]="outputBy" [(ngModel)]="selectedOutputBy" [settings]="dropdownSettings" (onSelect)="onItemSelect($event,'outputBy')"
+                    (onDeSelect)="OnItemDeSelect($event,'outputBy')" (onSelectAll)="onSelectAll($event,'outputBy')" (onDeSelectAll)="onDeSelectAll($event,'outputBy')"></angular2-multiselect>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="BP-form-errorMessage BP-errorText text-center" *ngIf="columns && !rows.length && typeOfReport && !loader">
+    There is no data matching your query.
+</div>
+<div class="text-center BP-errorText " *ngIf="typeOfReport">
+    {{displayMessage}}
+</div>
+
+<div class="BP-form-errorMessage BP-errorText text-center" *ngIf="tableDataEmpty && !loader">
+    There is no data matching your query.
+</div>
+<div class="text-center BP-errorText " *ngIf="!typeOfReport">
+    {{displayMessage}}
+</div>
+
+<div class="BP-reportSummaryTable BP-table BP-tableStripped" *ngIf="!loader && summaryRowHeader?.length > 0">
+  <div class="BP-reportSummaryTable__header">
+    Summary
+  </div>
+  <table>
+    <thead>
+      <!-- <tr>
+        <th></th>
+        <th>Overall <i class="bp-icon-info-outline"></i></th>
+        <th>€0 - €100 <i class="bp-icon-info-outline"></i></th>
+        <th>€101 - €500 <i class="bp-icon-info-outline"></i></th>
+        <th>€501 - €2000 <i class="bp-icon-info-outline"></i></th>
+        <th>€2001 - €10000 <i class="bp-icon-info-outline"></i></th>
+        <th>€10001+ <i class="bp-icon-info-outline"></i></th>
+       
+      </tr> -->
+      <tr>                   
+            <th ></th> 
+            <th *ngFor ="let  valData of summaryRowHeader[0]">{{valData['from'] == 'overall'? 'Overall' : valData['from']  + ' - ' + valData['to'] }} <i class="bp-icon-info-outline"></i></th>                    
+      </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor ="let data of summaryRowHeader">                   
+                    <td >{{data.displayText}}</td> 
+                    <td *ngFor ="let  valData of data">€{{valData.value}} <span [ngClass]="(valData.percentage > 0 ? 'BP-increased' : 'BP-decreased')" *ngIf="valData?.percentage">{{valData.percentage}}%</span></td>                    
+            </tr>
+      <!-- <tr>
+        <td> Turnover</td>
+        <td *ngFor ="let data of summaryRowHeader">{{data}}</td>
+        <td>€1,26,30,385.84 <span class="BP-increased">36.67%</span></td>
+        <td>€3,02,754.00 <span class="BP-decreased">36.67%</span></td>
+        <td>€8,41,588.00 <span class="BP-increased">36.67%</span></td>
+        <td>€13,81,581.00 <span class="BP-decreased">36.67%</span></td>
+        <td>€23,11,543.00 <span class="BP-increased">36.67%</span></td>
+        <td>€77,90,919.00 <span class="BP-increased">36.67%</span></td>
+      </tr>
+      <tr>
+        <td> No. Players</td>
+        <td>€781.00  <span class="BP-increased">36.67%</span></td>
+        <td>€781.00 <span class="BP-decreased">36.67%</span></td>
+        <td>€28.71<span class="BP-increased">36.67%</span></td>
+        <td>€235.04 <span class="BP-decreased">36.67%</span></td>
+        <td>€1,031.03 <span class="BP-increased">36.67%</span></td>
+        <td>€19.21.00 <span class="BP-increased">36.67%</span></td>
+      </tr>
+      <tr>
+        <td> Avg. Turnover</td>
+        <td>€1,26,30,385.84 <span class="BP-increased">36.67%</span></td>
+        <td>€3,02,754.00 <span class="BP-decreased">36.67%</span></td>
+        <td>€8,41,588.00 <span class="BP-increased">36.67%</span></td>
+        <td>€13,81,581.00 <span class="BP-decreased">36.67%</span></td>
+        <td>€23,11,543.00 <span class="BP-increased">36.67%</span></td>
+        <td>€77,90,919.00 <span class="BP-increased">36.67%</span></td>
+      </tr>
+      <tr>
+        <td> P/L</td>
+        <td>€781.00  <span class="BP-increased">36.67%</span></td>
+        <td>€781.00 <span class="BP-decreased">36.67%</span></td>
+        <td>€28.71<span class="BP-increased">36.67%</span></td>
+        <td>€235.04 <span class="BP-decreased">36.67%</span></td>
+        <td>€1,031.03 <span class="BP-increased">36.67%</span></td>
+        <td>€19.21.00 <span class="BP-increased">36.67%</span></td>
+      </tr>
+      <tr>
+        <td> ROI</td>
+        <td>€1,26,30,385.84 <span class="BP-increased">36.67%</span></td>
+        <td>€3,02,754.00 <span class="BP-decreased">36.67%</span></td>
+        <td>€8,41,588.00 <span class="BP-increased">36.67%</span></td>
+        <td>€13,81,581.00 <span class="BP-decreased">36.67%</span></td>
+        <td>€23,11,543.00 <span class="BP-increased">36.67%</span></td>
+        <td>€77,90,919.00 <span class="BP-increased">36.67%</span></td>
+      </tr>
+      <tr>
+        <td> No.of Bets</td>
+        <td>€781.00  <span class="BP-increased">36.67%</span></td>
+        <td>€781.00 <span class="BP-decreased">36.67%</span></td>
+        <td>€28.71<span class="BP-increased">36.67%</span></td>
+        <td>€235.04 <span class="BP-decreased">36.67%</span></td>
+        <td>€1,031.03 <span class="BP-increased">36.67%</span></td>
+        <td>€19.21.00 <span class="BP-increased">36.67%</span></td>
+      </tr>
+      <tr>
+        <td> Avg. Stake/Bet</td>
+        <td>€1,26,30,385.84 <span class="BP-increased">36.67%</span></td>
+        <td>€3,02,754.00 <span class="BP-decreased">36.67%</span></td>
+        <td>€8,41,588.00 <span class="BP-increased">36.67%</span></td>
+        <td>€13,81,581.00 <span class="BP-decreased">36.67%</span></td>
+        <td>€23,11,543.00 <span class="BP-increased">36.67%</span></td>
+        <td>€77,90,919.00 <span class="BP-increased">36.67%</span></td>
+      </tr>
+       -->
+    </tbody>
+  </table>
+</div>
+
+<div class="grid-middle">
+  <div class="space-5"></div>
+</div>
+
+<div class="BP-table BP-tableStripped BP-report__resultTable" *ngIf="!loader">
+    <p-table #dt class="" [columns]="selectedColumns" [value]="rowsData" [rows]=limit [autoLayout]="true" [responsive]="true"
+        [style]=width1 [scrollable]="true" scrollHeight="500px" scrollWidth="1800px" *ngIf="columns && rows.length" sortMode="multiple"
+        (onFilter)="onColumnChange($event)" [reorderableColumns]="true" [exportFilename]="reportName +'-'+ displayReportTime"
+        [resizableColumns]="true">
+        <ng-template pTemplate="caption">
+            <div class="table-heading">
+                <div class="grid-middle">
+                    <!--<div class="col-3 text-left">
+                        <div class="tablehead_SelectBox">
+                            <p-multiSelect class="BP-ui-multiselect" [options]="cols" [(ngModel)]="selectedColumns" optionLabel="header" selectedItemsLabel="{0} columns selected"
+                                [style]="{minWidth: '200px'}" defaultLabel="Choose Columns" (onChange)="onDropdown($event)"></p-multiSelect>
+                        </div>
+                    </div>-->
+                    <div class="col-12 text-right">
+                        <div class="tablehead_search BP-formGroup">
+                            <input type="text" class="BP-formInput" pInputText size="50" placeholder="Search Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                                (onChange)="onColumnChange($event)">
+                            <!--<i class="fa fa-search"></i>-->
+                        </div>
+                        <!--<button class="BP-btn BP-btnRed BP-report-result-btnExport" (click)="exportData(dt)">
+                            <i class="bp-icon-import" id="MyBtn"></i>&nbsp;Export</button>-->
+                        <div class="BP-formGroup BP-reportActionsDropDown">                            
+                            <div class="BP-formSelect">
+                                <select [(ngModel)] = "selectedActions"(change)="exportData(dt,selectedActions)">
+                                    <option  value="Actions" selected  hidden>Actions</option>
+                                    <option *ngFor="let act of actions" [value]="act.value" >{{act.value}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th class="BP-ui-sortable-column" *ngFor="let col of columns" [pSortableColumn]="col.field" pReorderableColumn (click)="customSort(col)">
+                    {{col.header}}
+                    <p-sortIcon [field]="col.field"></p-sortIcon>
+                </th>
+            </tr>
+            <tr>
+                <th *ngFor="let col of columns" [ngSwitch]="col.field" class="BP-formGroup mb-0">
+                    <input class="BP-columnSearchInput BP-formInput" placeholder="Search Column" *ngSwitchCase="col.field" pInputText type="text"
+                        (input)="dt.filter($event.target.value, col.field, 'contains')">
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr>
+                <td class="BP-ui-sortable-column" *ngFor="let col of columns">
+                    <span *ngIf="col.field == 'player'">
+                        <a (click)="gotoUserSummary(rowData[col.field])">{{rowData[col.field] }}</a>
+                    </span>
+                    <span *ngIf=" col.field != 'player'">{{rowData[col.field] | formatNumber : col.field}}</span>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="footer" let-columns>
+            <tr>
+                <td *ngFor="let col of columns" style="color:#1b1d1f;font-weight:700;">
+                        {{  col.field == "player"? (total.toLocaleString()) : singleTabTotal | tableColTotals : col.field }}
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <p-paginator  [style]=width1 [rows]="limit" [totalRecords]="total" (onPageChange)="paginate($event)"  [first] ="selectedPage" [alwaysShow] = false *ngIf="columns?.length > 0  && rows?.length > 0"></p-paginator>
+</div>
+
+<div class="grid-middle">
+  <div class="col-6" *ngFor="let table of tableData; let i =index">
+    <div class="BP-table BP-tableStripped BP-report__resultTable">
+      <p-table #dt class="" [columns]="table.selectedColumns" [value]="table.rowsData" [rows]=limit [autoLayout]="true" [responsive]="true" [scrollable]="true"
+               scrollHeight="500px" scrollWidth="1800px" *ngIf="table.columns && table.rows.length"
+               sortMode="multiple" (onFilter)="onColumnChange($event)" [reorderableColumns]="true"
+               [exportFilename]="reportName +'-'+ displayReportTime"
+                [style]= table.width [loading] = "table.loader">
+
+        <ng-template pTemplate="caption">
+          <div class="table-heading">
+
+
+            <div class="grid-middle">
+              <div class="col-5_lg-5_md-5_sm-5 text-left">
+                <div class="tablehead_SelectBox">
+                  <p-multiSelect class="BP-ui-multiselect" [options]="table.cols" [(ngModel)]="table.selectedColumns" optionLabel="header"
+                                 selectedItemsLabel="{0} columns selected" [style]="{minWidth: '200px'}" defaultLabel="Choose Columns" (onChange)="onDropdown($event,i)"></p-multiSelect>
+                </div>
+              </div>
+              <div class="col-6_lg-6_md-5_sm-5 text-right">
+                <div class="tablehead_search">
+                  <input type="text" class="" pInputText size="50" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')" (onChange)="onColumnChange($event)">
+                  <i class="fa fa-search"></i>
+                </div>
+              </div>
+              <!--<div class="col-1_lg-1_md-2_sm-2 text-right" *ngIf="reportId">
+
+                <button class="BP-btn BP-btnRed" (click)="dt.exportCSV()"><i class="bp-icon-import" id="MyBtn"></i>&nbsp;Export</button>
+              </div>-->
+            </div>
+          </div>
+        </ng-template>
+
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <td [attr.colspan]="table.count" class="BP-tdSubheader">{{table.reportName}}</td>
+          </tr>
+          <tr>
+            <th class="BP-ui-sortable-column" *ngFor="let col of columns" [pSortableColumn]="col.field" pReorderableColumn (click)="customSortForCompare(col,i)">
+              {{col.header}}
+              <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+          </tr>
+          <tr>
+            <th *ngFor="let col of columns" [ngSwitch]="col.field">
+              <input class="tableInput" *ngSwitchCase="col.field" pInputText type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <tr>
+            <td class="BP-ui-sortable-column" *ngFor="let col of columns">
+              <span *ngIf="col.field == 'player'">
+                <a (click)="gotoUserSummary(rowData[col.field])">{{rowData[col.field] }}</a>
+              </span>
+              <span *ngIf=" col.field != 'player'">{{rowData[col.field] | formatNumber : col.field}}</span>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="footer" let-columns>
+          <tr>
+
+            <td *ngFor="let col of columns" style="color:#1b1d1f;font-weight:700;">
+          
+            {{col.field == "player"? table.totalRecords.toLocaleString() : table.totals | tableColTotals : col.field }}
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+      <p-paginator [style]=table.width [rows]=table.limit [totalRecords]=table.totalRecords (onPageChange)="paginateRepCom($event,table,i)" [first]=table.selectedPage [alwaysShow] = false>
+      </p-paginator>
+    </div>
+  </div>
+</div>
+
+
+<div class="grid-noGutter">
+    <div class="space-10"></div>
+</div>
+<div class="BP-loader" *ngIf="loader">
+  <app-loader></app-loader>
+</div>
+
+<p-dialog class="BP-dialog BP-removePopup" [(visible)]="openAlert" [modal]="true" [showHeader]="false">
+  <app-success-pop-up (closeSuccess)="closePopup($event)" [displayText] = "displayPopUpText" *ngIf="openAlert"></app-success-pop-up>
+</p-dialog>
+
+<p-dialog class="BP-dialog BP-popUp-sendMsg" [(visible)]="openMsgAlert" [modal]="true" [showHeader]="false">
+  <app-message-email (closeSuccess)="closeMessagePopup($event)"  (dispalySuccess)= "dispalySuccessPopUp($event)" (isEmailChecked) ="isEmailCheck($event)"
+                     [displayType] = "msgType" [displayText] = "displayPopUpText" *ngIf="openMsgAlert"></app-message-email>
+</p-dialog>

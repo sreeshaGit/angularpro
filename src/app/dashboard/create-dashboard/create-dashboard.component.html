@@ -1,0 +1,113 @@
+<div class="BP-createDashboard">
+    <div class="BP-createQuery__header">
+        <div class="grid-middle-noGutter">
+            <div class="col-5_lg-5_md-5_sm-5_xs-12 grid-middle-noGutter">
+                <div class="col-3_lg-3_md-3_sm-2_xs-12" *ngIf="displayUpdate">
+                    <button class="BP-btn BP-btnRed BP-btnLarge BP-editReport" (click)="edit()">Edit Dashboard</button>
+                </div>
+            </div>
+            <div class="col-7_lg-7_md-7_sm-7_xs-12 BP-formGroup text-right mb-0">
+                <div class="BP-createQuery__header-right" *ngIf="!editView">
+                    <span>Dashboard Name:</span>
+                    <input class="BP-formInput" placeholder="Enter Dashboard Name" type="text" [(ngModel)]=reportName (input)="reportValid($event)">
+                    
+                    <button class="BP-btn BP-btnRed BP-btnLarge active BP-editReport" [disabled]="disableButton" (click)="saveDashboard()">Save Dashboard</button>                  
+                </div>
+               
+                <div class="BP-createQuery__header-right" *ngIf="editView">
+                    <div class="BP-editBox" [attr.contenteditable]="editView && !displayUpdate" [textContent]="reportName" (input)="reportName=$event.target.textContent">{{reportName}}</div>
+                    <button class="BP-btn BP-btnRed BP-btnLarge active BP-editReport" *ngIf="!displayUpdate" (click)="updateDashboard()">
+                        Update Dashboard
+                    </button>                   
+                </div>
+              <div class="BP-form-errorMessage text-right" *ngIf="error">
+                <span>Please give dashboard name.</span>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center BP-successText" *ngIf="displaySuccessMsg">
+        {{displayMsg}}
+    </div>
+
+    <div class="BP-dashBoardGrid">
+        <ul class="BP-dashBoardGridList" dragula="charts" [(dragulaModel)]="chartsData">
+            <li class = "BP-dashBoardGridItem BP-chart-width-double"  [ngClass]="(charts?.display_columns == 4) ? 'BP-chart-height-double': ''"
+                *ngFor="let charts of chartsData;let ind = index;">
+                <div class="BP-DB-chartBox"  *ngIf="!charts?.hideWidget"
+                  mwlResizable        
+                  [enableGhostResize]="true"
+                  
+                  (resizeEnd)="onResizeEnd($event, ind)"
+                  [resizeEdges]="{ top: true,left: true,right: true,bottom: true }">
+                    <div class="BP-DB-chartBox__header grid-middle-noGutter">
+                        <div class="BP-DB-chartBox__header-content">
+                            {{charts?.name}}
+                        </div>
+                        <span class="BP-DB-chartBox__more-icon" (click)="editReport(ind)" *ngIf="selIndex != ind || !showOptions">
+                            <i class="bp-icon-more"></i>
+                        </span>
+                        <div class="BP-DB-charBox__header-moreOptions grid-middle-noGutter text-right" *ngIf="selIndex == ind && showOptions">
+                            <ul>
+                                <li>
+                                    <i class="bp-icon-edit" (click)="editChart(ind,charts)"></i>
+                                </li>
+                                <li>
+                                    <i class="bp-icon-expand"></i>
+                                </li>
+                                <li>
+                                    <i class="bp-icon-delete" (click)="deleteDashboard(ind,charts?.id)"></i>
+                                </li>
+                                <li>
+                                    <i class="bp-icon-close" (click)="closeOptions(ind,charts?.id)"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="BP-DB-chartBox__content" *ngIf="charts?.display_type == 'table' ">
+                        <div class="BP-dashboardTable BP-addTable" *ngIf="reportCol?.length > 0">
+                            <app-table [id] ="charts?.id"  [reportCol] = "reportCol" [stakeBandRange] ="stakeBandRange" [oddBandRange]="oddBandRange"></app-table>
+                        </div>
+                    </div>
+                    <div class="BP-DB-chartBox__content" *ngIf="charts?.display_type != 'table'  ">
+                        <div class="" *ngIf="charts?.tableRowData">
+                            <app-line-chart [name]="charts?.name_column" [values]="charts?.value_columns" [rowData]="charts?.tableRowData" [fromPage]="'create'"
+                                [reportType]="charts?.display_type" [colData]="reportCol"></app-line-chart>
+                        </div>
+                      <div class="BP-loader" *ngIf="!charts?.tableRowData">
+                        <app-loader></app-loader>
+                      </div>
+                     
+                    </div>
+                  <div class="BP-zoomBtn">
+                  <div class="BP-zoomIcon" (click)="zoomIn(ind)" [ngClass]="(charts?.display_columns == 4) ? 'BP-disabledBtn' :''"><i class="pi pi-plus-circle"></i></div>
+                  <div class="BP-zoomIcon" (click)="zoomOut(ind)" [ngClass]="(charts?.display_columns == 2) ? 'BP-disabledBtn' :''"><i class="pi pi-minus-circle"></i></div>
+                  </div>
+                  <div class="resize-handle-top" mwlResizeHandle [resizeEdges]="{ top: true }"></div>
+                  <!--<div class="resize-handle-left" mwlResizeHandle [resizeEdges]="{ left: true }"></div>
+                  <div class="resize-handle-right" mwlResizeHandle [resizeEdges]="{ right: true }"></div>-->
+                  <div class="resize-handle-bottom" mwlResizeHandle [resizeEdges]="{ bottom: true }"></div>
+                </div>
+            </li>
+            <li class="" id="addbutton">
+                <div class="BP-DB-chartBox BP-DB-addReport" *ngIf="!displayUpdate">
+                    <div class="BP-addReport">
+                        <div class="BP-addReportBox" (click)="addReport()">
+                            <i class="bp-icon-add"></i>
+                        </div>
+                        <div class="BP-addReport-title">Add Report</div>
+                    </div>
+                </div>
+            </li>
+        </ul>      
+    </div>
+</div>
+<p-dialog class="BP-dialog BP-DB-reportLibrary-popup" [(visible)]="isReportLib" [modal]="true" [blockScroll]="true">
+    <app-reports-library (closeReport)="close($event)" [reportCol]="reportCol" *ngIf="isReportLib" [editReportDetails]="editReportDetails"
+        (editReportData)="removePreviousData($event)"></app-reports-library>
+</p-dialog>
+
+<p-dialog class="BP-dialog BP-dialog-small BP-DB-remove-popup" [(visible)]="deleteConfirmation" [modal]="true" [showHeader]="false" [blockScroll]="true">
+  <app-remove-pop-up (closeDeletePopup)="closeDeletePopup($event)" (deleteOpt)="deleteOpt($event)" [fromPage] ="'widgets'"></app-remove-pop-up>
+</p-dialog>
+

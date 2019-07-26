@@ -1,0 +1,15 @@
+
+    <div class="BP-CR-filter">
+        <div class="BP-CR-filter__label">Frequency <i class="bp-icon-info"></i></div>
+        <ul class="BP-checkBoxGroup__default BP-twoInRow">
+            <li *ngFor="let freq of frequency; let i = index">
+                <div class="BP-radioBox">
+                    <input id="BP-CB-Freq-all{{i}}" value="freq.display_text" name="frequency" type="radio" [checked]="freq.checked" (change)="updateCheckedOptions(freq,$event,i)"
+                    />
+                    <label for="BP-CB-Freq-all{{i}}">
+                        <span class="BP-checkBoxSpace">{{freq.display_text}}</span>
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>

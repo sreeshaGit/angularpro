@@ -1,0 +1,26 @@
+/* ==========================================================================
+    GRIDLEX
+    Just a Flexbox Grid System - v. 2.6.1
+========================================================================== */
+@import "third-party/gridlex-vars";
+@import "third-party/gridlex-mixins";
+@import "third-party/gridlex-classes";
+
+
+/*----- Report----- */
+@media only screen and (max-width: 1540px) {
+
+    .BP-tableAction{
+        min-width: 180px;
+    }
+    .BP-reportUpdate{
+        min-width: 180px;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .BP-footerHeader{
+        .BP-footerHeaderText{
+            padding-right: 50px !important;
+        }
+    } 
+}

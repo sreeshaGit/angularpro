@@ -1,0 +1,222 @@
+
+/*============================================================
+  Import data - Right Content 
+  ============================================================ */
+.BP-importData{
+    font-size: 14px;
+
+    .BP-importData__title {
+        font-size: 21px;
+        font-weight: 500;
+        border-bottom: 3px solid $red;
+        display: inline-block;
+    }
+    
+    .BP-importData__text {
+        font-size: 15px;
+        padding: 20px 0;
+    }
+}
+
+.BP-uploadColumnsTable table{
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    
+    td{
+        border: 1px solid $greyDark;
+        text-align: left;
+        padding: 4px 6px;
+        min-width: 180px;
+    }
+}
+
+.BP-uploadLabel{
+    margin-bottom: 5px;
+}
+.BP-downloadLabel{
+    margin-top: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.BP-uploadBox{    
+    .BP-btnUpload{
+        width: 160px;
+        height: 42px;
+        margin-left: 10px;
+    }
+}
+.BP-importIcons {
+    margin: 20px 0;
+    i {
+        color: $red;
+        font-size: 140px;
+        cursor: pointer;
+    }
+}
+.BP-showError {
+    color: $yellow;
+    font-size: 18px;
+    display: inline-block;
+    padding-left: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    & i {
+        font-size: 21px;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+}
+
+
+
+// ============================================================
+// Uploading Process Steps
+// ============================================================
+
+.BP-multistepProgressbar li.BP-step:not(.BP-currentStep):not(.BP-completeStep) {
+    opacity: 0.7;
+}
+
+.BP-multistepProgressbar li.BP-step .BP-completeStep {
+    position: relative !important;
+}
+
+.BP-multistepProgressbar li.BP-step .BP-completeStep:before {
+    font-family: 'bp-icons' !important;
+    content: "\e903" !important;
+    font-size: 20px;
+    color: $green;
+    position: absolute;
+    pointer-events: none;
+    top: 3px;
+    right: 10px;
+}
+
+.BP-uploadSteps {
+    .BP-multistepProgressbar{
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.BP-stepSection:after .BP-stepSection:before {
+    content: " ";
+    clear: both;
+    display: block;
+}
+
+.BP-stepSection[data-step-counter=true] {
+    .BP-multistepProgressbar {
+        counter-reset: step;
+    }
+}
+
+.BP-multistepProgressbar {
+    li.BP-step {
+        list-style-type: none;
+        float: left;
+        width: 25%;
+        position: relative;
+        text-align: center;
+        height: 115px;
+        z-index: 10;
+    }
+    li.BP-step:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: $greyDark;
+        top: 31px;
+        left: 0;
+        z-index: -1;
+        border-top: 1px solid $greyLighten2;
+        border-bottom: 1px solid $greyLighten2;
+    }
+    li.BP-step:first-child:after {
+        width: 50%;
+        left: 50%;
+    }
+    li.BP-step:last-child::after {
+        width: 50%;
+        right: 50%;
+    }
+    li.BP-step.BP-stepTitle:first-child {
+        color: $red;
+    }
+    li.BP-step:before {
+        content: " ";
+        width: 60px;
+        height: 60px;
+        line-height: 40px;
+        border: 2px solid $greyLighten2;
+        display: block;
+        font-size: 19px;
+        font-weight: 500;
+        text-align: center;
+        margin: 0 auto 10px;
+        border-radius: 50%;
+        background: $white;
+        color: $greyLighten2;
+        cursor: pointer;
+    }
+    li.BP-step.BP-currentStep:before {
+        border-color: $red;
+        color: $red;
+    }
+    li.BP-step.BP-completeStep:before {
+        border-color: $green;
+        color: $green;
+    }
+    li.BP-step.BP-completeStep::after {
+        background-color: $green;
+        border-color: $green;
+    }
+    li.BP-currentStep .BP-stepTitle {
+        color: $red;
+    }
+}
+
+.BP-stepSection[data-step-counter=true] {
+    .BP-multistepProgressbar li.BP-step:before {
+        content: counter(step) !important;
+        counter-increment: step;
+        line-height: 55px;
+    }
+}
+
+.BP-multistepProgressbar .BP-stepSection[data-step-image=false] {
+    .BP-multistepProgressbar li .BP-stepIcon {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.BP-multistepProgressbar {
+    li .BP-stepIcon {
+        z-index: 1024;
+        position: absolute;
+        top: 0;
+        margin-top: 8px;
+        font-size: 18px;
+        color: #a9a9a9;
+        margin-left: -7px;
+    }
+}
+
+.BP-multistepProgressbar {
+    li.BP-step .BP-stepTitle {
+        display: block;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: center;
+    }
+}
+
+.BP-multistepProgressbar {
+    li.BP-step.BP-currentStep:after {
+        background-color: $red;
+        border-color: $red;
+    }
+}

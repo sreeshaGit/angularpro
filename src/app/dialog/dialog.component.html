@@ -1,0 +1,8 @@
+<div [@dialog] *ngIf="visible" class="app-modal">
+  <div class="dialog animated fadeIn">
+    <ng-content></ng-content>
+    <div *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn"></div>
+  </div>
+  <div *ngIf="visible" class="empty-overlay" (click)="close()"></div>
+</div>
+<div *ngIf="visible" class="overlay animated fadeIn"></div>

@@ -1,0 +1,107 @@
+@import "../../../assets/css/variables.scss";
+@import "../../../assets/css/pages/report.scss";
+@import "../../../assets/css/pages/common.scss";
+
+
+.BP-accordian{  
+    .ui-accordion {
+        margin-bottom: 15px;
+        .ui-accordion-header {
+            background: #035d6c !important;
+            border-top: 1px solid #035d6c;
+            font-size: 18px;
+            font-weight: 700;
+            a{
+                padding: 15px 10px;
+                color: #FFF;
+                &:hover{
+                    text-decoration: none;
+                    color: #FFF;
+                }
+                &:focus{
+                    text-decoration: none;
+                    color: #FFF;
+                }
+            }
+        }
+        .ui-accordion-content{
+            border: 1px solid #035d6c;
+        }
+    }
+}
+    
+.ui-accordion .ui-accordion-header:not(.ui-state-active):not(.ui-state-disabled):hover a {
+    color: #FFF;
+}
+.search-loader{
+    svg{
+        position: absolute;
+        right: 16%;
+        top: 42px;
+    }
+}
+
+
+
+/*-------- New UI CSS --------------*/
+.BP-createReport{
+    border: 1px solid #B5B4B4;
+    border-radius: 4px;
+    // overflow: hidden;
+}
+.BP-createReport-filterBox{
+    border: 1px solid #B5B4B4;
+    color: #5D5D5D;
+    font-size: 13px;
+    min-height: 326px;
+    &.BP-CR-view{
+        background-color: #eaf7f8;
+    }
+    &.BP-CR-player{
+        background-color: #eaf7f8;
+    }
+    &.BP-CR-criteria{
+        background-color: #eaf7f8;    
+    }
+    .BP-filterBox-content{
+        padding: 8px 8px 0;
+    }
+    .BP-bb-1{
+        border-bottom: 1px solid #B5B4B4;
+    }
+    .BP-br-1{
+        border-right: 1px solid #B5B4B4;
+    }
+    .BP-createReport-filterBox__title{
+        font-size: 13px;
+        color: #545454;
+        margin-bottom: 8px;
+        // font-style: italic;
+        font-weight: 600;
+        span{
+            font-weight: 600;
+            font-style: normal;
+        }
+    }
+    .BP-CR-filter{
+        .BP-CR-filter__label{
+            margin-bottom: 3px;
+            color: #999999;
+            font-weight: 500;
+        }
+    }
+    .BP-CR-sameEventMarket{
+        border-bottom: 1px solid #B5B4B4;
+        border-top: 1px solid #B5B4B4;
+        .BP-CR-sameEvent{
+           // background-color: #FFF;
+            padding: 5px 8px 0;
+        }
+        .BP-CR-sameMarket{
+            //background-color: #EEE;
+            padding: 5px 8px 0;
+        }
+    }
+}
+
+

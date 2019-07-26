@@ -1,0 +1,22 @@
+<div class="BP-CR-filter">  
+    <div class="BP-formGroup">    
+        <div class="BP-CR-filter__label">Profiles:</div>
+        <div class="BP-formGroup">
+            <div class="">                           
+              <p-multiSelect [options]="profile" class="BP-multiselectProfile" [(ngModel)]="selectedProfile" optionLabel="name" [style]="{'width':'100%'}" (onChange)="selectProfile()" placeholder="Select profile." [filter]="true" filterBy="name" selectedItemsLabel="{0} profiles selected">                
+                <p-footer >
+                  <button (click)="onProfileClick()">Select Profiles.</button>
+                </p-footer>
+              </p-multiSelect>
+
+            </div>
+            <div>
+            
+            </div>
+        </div>        
+    </div>
+
+  <p-dialog class="BP-profilePopup" [(visible)]="showProfilePopUp" [modal]="true">
+    <app-profile-pop-up (profilesSelect)="close($event)" [ProfilesArray]="listOfProfileReports"></app-profile-pop-up>
+  </p-dialog>
+</div>

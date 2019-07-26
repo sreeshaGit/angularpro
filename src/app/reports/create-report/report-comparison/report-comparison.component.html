@@ -1,0 +1,72 @@
+<div class="BP-filteBox">
+  <!--<div class="BP-filterBox__header">
+    <div class="BP-filterBox__header-title BP-skew-right-top">Report Comparison</div>
+  </div>-->
+  <div class="BP-filterBox__content">
+    <div class="grid-top">
+      <div class="col-6 pr-15">
+        <div class="BP-formGroup">
+          <div class="grid-middle">
+            <div class="col-2_lg-2_md-3">
+              <div class="BP-formLabel">Select report:</div>
+            </div>
+            <div class="col-8_lg-10_md-9">
+              <div class="">
+                <angular2-multiselect  [data]="reportsData" [(ngModel)]="selectedReportData"
+                                      [settings]="dropdownSettings"
+                                      (onSelect)="onItemSelect($event,'selectReport')"
+                                      (onDeSelect)="OnItemDeSelect($event,'selectReport')"
+                                      (onSelectAll)="onSelectAll($event,'selectReport')"
+                                      (onDeSelectAll)="onDeSelectAll($event,'selectReport')">
+
+                  <c-item>
+                    <ng-template let-item="item">
+                      <label style="color: #333;min-width: 150px;" [ngClass]="{'BP-multiSelect':!item.disabled}"> {{item.name}} </label>
+                     
+                    </ng-template>
+                  </c-item>
+
+                </angular2-multiselect>
+
+              
+
+              </div>
+            </div>
+          </div>
+          <!--<div class="text-center BP-errorText " *ngIf="errorMsg">Please select atleast two reports</div>-->
+        </div>
+      </div>
+      <div class="col-6 pr-15">
+        <div class="BP-formGroup">
+          <div class="grid-middle">
+            <div class="col-2_lg-2_md-3">
+              <div class="BP-formLabel">Select reports to compare:</div>
+            </div>
+            <div class="col-8_lg-10_md-9">
+              <div class="">
+                <angular2-multiselect [data]="compatableReports" [(ngModel)]="selectCompatableReports"
+                                      [settings]="dropdownSettingsForCompare"
+                                      (onSelect)="onItemSelect($event,'compare')"
+                                      (onDeSelect)="OnItemDeSelect($event,'compare')"
+                                      (onSelectAll)="onSelectAll($event,'compare')"
+                                      (onDeSelectAll)="onDeSelectAll($event,'compare')">
+
+                  <c-item>
+                    <ng-template let-item="item">
+                      <label style="color: #333;min-width: 150px;" [ngClass]="{'BP-multiSelect':!item.disabled}"> {{item.name}} </label>
+
+                    </ng-template>
+                  </c-item>
+
+                </angular2-multiselect>
+              
+
+              </div>
+            </div>
+          </div>
+          <div class="text-center BP-errorText " *ngIf="errorMsg">Please select atleast two reports</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

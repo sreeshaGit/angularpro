@@ -1,0 +1,80 @@
+<!--<p-accordion>
+  <p-accordionTab [selected]="true">
+    <p-header>
+      Result view
+    </p-header>-->
+    <div class="">
+      <div class="grid-middle">
+        <div class="col-3_lg-6_md-6_sm-6">
+          <div class="BP-formGroup">
+            <div class="grid-middle">
+              <div class="col-4">
+                <div class="BP-formLabel">Output Data:</div>
+              </div>
+              <div class="col-8">
+                <angular2-multiselect [data]="outputData" [(ngModel)]="selectedOutputData"
+                                      [settings]="dropdownSettings"
+                                      (onSelect)="onItemSelect($event,'outputData')"
+                                      (onDeSelect)="OnItemDeSelect($event,'outputData')"
+                                      (onSelectAll)="onSelectAll($event,'outputData')"
+                                      (onDeSelectAll)="onDeSelectAll($event,'outputData')"></angular2-multiselect>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3_lg-6_md-6_sm-6">
+          <div class="BP-formGroup">
+            <div class="grid-middle">
+              <div class="col-4">
+                <div class="BP-formLabel text-center">By:</div>
+              </div>
+              <div class="col-8">
+                <angular2-multiselect [data]="outputBy" [(ngModel)]="selectedOutputBy"
+                                      [settings]="dropdownSettings"
+                                      (onSelect)="onItemSelect($event,'outputBy')"
+                                      (onDeSelect)="OnItemDeSelect($event,'outputBy')"
+                                      (onSelectAll)="onSelectAll($event,'outputBy')"
+                                      (onDeSelectAll)="onDeSelectAll($event,'outputBy')"                                     
+                                      ></angular2-multiselect>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3_lg-6_md-6_sm-6">
+          <div class="BP-formGroup">
+            <div class="grid-middle">
+              <div class="col-4">
+                <div class="BP-formLabel">Number of Records:</div>
+              </div>
+              <div class="col-8">
+                <div class="col-8">
+                  <input class="BP-formInput" type="text"  [(ngModel)]="noOfRecords"  maxlength="4" placeholder="keep empty to return all results." (input)=noOfRecordChange($event.target.value)>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3_lg-6_md-6_sm-8">
+          <div class="BP-formGroup">
+            <div class="grid-middle">
+              <div class="col-4">
+                <div class="BP-formLabel">Output Columns:</div>
+              </div>
+              <div class="col-8">
+                <div class="col-8">
+                  <angular2-multiselect [data]="outputColumn" [(ngModel)]="selectedOutputColumn"
+                                        [settings]="outputColumnDropdownSettings"
+                                        (onSelect)="onItemSelect($event,'outputColumn')"
+                                        (onDeSelect)="OnItemDeSelect($event,'outputColumn')"
+                                        (onSelectAll)="onSelectAll($event,'outputColumn')"
+                                        (onDeSelectAll)="onDeSelectAll($event,'outputColumn')"></angular2-multiselect>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!--</p-accordionTab>
+</p-accordion>-->
+

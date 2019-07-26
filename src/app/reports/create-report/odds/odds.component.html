@@ -1,0 +1,20 @@
+<div class="BP-CR-filter">
+    <div class="BP-formGroup BP-CR-filter__label">Odds
+        <i class="bp-icon-info"></i>
+    </div>
+    <div class="BP-formGroup">
+        <ul class="BP-checkBoxGroup__default BP-twoInRow">
+            <li *ngFor="let data of oddsRange;let ind =index; ">
+                <div class="BP-checkBox">
+                    <input id="BP-CB-odds1{{ind}}" name="Lastweek" value="data.display_text" type="checkbox" [checked]="data.checked" (change)="updateCheckedOptions(data,$event,ind,'oddsRange')">
+                    <label for="BP-CB-odds1{{ind}}">
+                        <span class="BP-checkBoxSpace">
+                            {{data.display_text}}
+                        </span>
+                    </label>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>

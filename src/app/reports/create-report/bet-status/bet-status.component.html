@@ -1,0 +1,72 @@
+<div class="BP-filterBox-content">
+    <div class="BP-CR-filter">
+        <div class="BP-CR-filter__label">Bet Status
+            <i class="bp-icon-info"></i>
+        </div>
+        <div class="BP-formGroup">
+            <ul class="BP-checkBoxGroup__default BP-twoInRow">
+                <li *ngFor="let data of betStatus; let ind=index;">
+                    <div class="BP-checkBox">
+                        <input id="BP-CB-betStatus{{ind}}" name="Lastweek" value="data.display_text" type="checkbox" (change)="updateCheckedOptions(data,$event,ind)"
+                            [checked]="data.checked">
+                        <label for="BP-CB-betStatus{{ind}}">
+                            <span class="BP-checkBoxSpace">{{data.display_text}}</span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="BP-CR-sameEventMarket">
+    <div class="grid-middle-noGutter">
+        <div class="col-6">
+            <div class="BP-CR-filter BP-CR-sameEvent BP-br-1">
+                <div class="BP-CR-filter__label">Same Event:</div>
+                <ul class="BP-checkBoxGroup__default BP-twoInRow">
+                    <li *ngFor="let event of sameEvent; let i = index">
+                        <div class="BP-checkBox">
+                            <input id="BP-CB-Freq-daily{{i}}" value="event.dispalyName" name="event" [checked]="event.checked" 
+                              type="checkbox" (input)="updateSameEvent(event,$event,i)">
+                            <label for="BP-CB-Freq-daily{{i}}">
+                                <span class="BP-checkBoxSpace">{{event.dispalyName}}</span>
+                            </label>
+                        </div>
+                    </li>
+                    <!--<li>
+                        <div class="BP-checkBox">
+                            <input id="BP-CB-Freq-daily" name="Lastweek" value="BP-check1" type="checkbox" disabled>
+                            <label for="BP-CB-Freq-daily">
+                                <span class="BP-checkBoxSpace">No</span>
+                            </label>
+                        </div>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="BP-CR-filter BP-CR-sameMarket">
+                <div class="BP-CR-filter__label">Same Market:</div>
+                <ul class="BP-checkBoxGroup__default BP-twoInRow">
+                    <li *ngFor="let market of sameMarket; let i = index">
+                        <div class="BP-checkBox">
+                            <input id="BP-CB-OB-avg{{i}}" value="market.dispalyName" name="market" [checked]="market.checked" 
+                              type="checkbox" (input)="updateSameMarket(market,$event,i)">
+                            <label for="BP-CB-OB-avg{{i}}">
+                                <span class="BP-checkBoxSpace">{{market.dispalyName}}</span>
+                            </label>
+                        </div>
+                    </li>
+                    <!--<li>
+                        <div class="BP-checkBox">
+                            <input id="BP-CB-OB-total" name="Lastweek" value="BP-check1" type="checkbox" disabled>
+                            <label for="BP-CB-OB-total">
+                                <span class="BP-checkBoxSpace">No</span>
+                            </label>
+                        </div>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

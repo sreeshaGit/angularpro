@@ -1,0 +1,202 @@
+.BP-btn {
+    border: 0;
+    font-size: 16px;
+    color: #FFF;
+    font-weight: 500;
+    height: $BP-btn-height;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    transition: .1s ease-out;
+    &:focus{
+        outline: none;
+    }
+    &[disabled]{
+        opacity: 0.5;
+    }
+}
+
+.BP-btn-black {
+    background-color: $BP-black;
+}
+
+.BP-btn-red {
+    background-color: $red;
+}
+
+.BP-btn-createAccount {
+    width: 165px;
+}
+
+.BP-btnLarge {
+    height: $BP-btnLarge-height;
+    font-size: 18px !important;
+}
+
+.BP-btnRed {
+    border: 1px solid $red;
+    color: $red;
+    background-color: $white;
+    &.active {
+        background-color: $red;
+        color: $white;
+    }
+}
+
+.BP-btnOrange {
+    border: 1px solid $orange;
+    color: $orange;
+    background-color: $white;
+    &.active {
+        background-color: $orange;
+        color: $white;
+    }
+}
+
+.BP-btnGreen {
+    border: 1px solid $green;
+    color: $green;
+    background-color: $white;
+    &.active {
+        background-color: $green;
+        color: $white;
+    }
+}
+
+.BP-btnBlue {
+    border: 1px solid $blue;
+    color: $blue;
+    background-color: $white;
+    &.active {
+        background-color: $blue;
+        color: $white;
+    }
+}
+
+.BP-btnBreadCrumb {
+    background-color: $white;
+    min-width: 160px;
+    color: $red;
+    display: inline-block;
+    width: auto;
+    i {
+        font-size: 20px !important;
+        margin-right: 8px;
+    }
+}
+
+.BP-btnLogout {
+    background-color: $red;
+    width: 100px;
+    height: 35px;
+}
+
+.BP-formBox {
+    .BP-btn-red {
+        &[disabled] {
+            border: 1px solid $red;
+            background-color: $white;
+            color: $red;
+        }
+    }
+}
+
+.BP-editReport {
+    width: 175px;
+}
+
+.BP-btnDisable {
+    background-color: #444444;
+    opacity: 0.6;
+}
+
+// ============================================================
+// DropDown CSS
+// ============================================================
+.BP-dropdown {
+    position: relative;
+    display: inline-block; 
+}
+
+.BP-dropdown-menu {
+    position: absolute;
+    display: block;
+    align-self: center;
+    min-width: 200px;
+    display: none; // margin: -.25rem 0 0 10%; 
+    padding: 12px;
+    list-style-type: none;
+    background-color: #fff;
+    border-radius: 6px;
+    transition: .2s all ease-in; // box-shadow: 0 0px 2px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    &.right {
+        right: 0;
+    }
+    li {
+        padding: 6px 8px;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-bottom: 5px;
+        &:hover {
+            background-color: $red;
+            color: #FFF;
+        }
+        &.active {
+            background-color: $red;
+            color: #FFF;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .BP-logout {
+        margin: 0 auto;
+        width: 50%;
+        text-align: center;
+    }
+}
+
+.BP-dropdown.open .BP-dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.BP-arrow {
+    background: #FFF;
+    border: 1px solid #DDDDDD;
+    margin-top: 8px !important;
+    &.right {
+        &::after {
+            right: 20px;
+        }
+        &::before {
+            right: 19px;
+        }
+    }
+}
+
+.BP-arrow:after,
+.BP-arrow:before {
+    bottom: 100%; //   left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.BP-arrow:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #FFF;
+    border-width: 8px;
+    margin-left: -8px;
+}
+
+.BP-arrow:before {
+    border-color: rgba(221, 221, 221, 0);
+    border-bottom-color: #DDDDDD;
+    border-width: 9px;
+    margin-left: -9px;
+}

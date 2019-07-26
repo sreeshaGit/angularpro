@@ -1,0 +1,70 @@
+<div class="grid-middle">
+  <div class="col-3_lg-6_md-6_sm-8">
+    <div class="BP-formGroup">
+      <div class="grid-middle">
+        <div class="col-4">
+          <div class="BP-formLabel">Period:</div>
+        </div>
+        <div class="col-8">
+         
+            <!--<input type="text" name="period" />-->
+            <angular2-multiselect [data]="periodData" [(ngModel)]="selectedPeriod"
+                                  [settings]="dropdownSettings"
+                                  (onSelect)="onItemSelect($event,'period')"
+                                  (onDeSelect)="OnItemDeSelect($event,'period')"
+                                  (onSelectAll)="onSelectAll($event,'period')"
+                                  (onDeSelectAll)="onDeSelectAll($event,'period')"></angular2-multiselect>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="grid-middle">
+  <div class="col-3_lg-6_md-6_sm-8">
+  <div class="BP-formGroup">
+    <div class="grid-middle">
+      <div class="col-4">
+        <div class="BP-formLabel">Frequency:</div>
+      </div>
+      <div class="col-8">
+        
+          <!--<input type="text" name="frequency" />-->
+          <angular2-multiselect [data]="freqData" [(ngModel)]="selectedFreq"
+                                [settings]="dropdownSettings"
+                                (onSelect)="onItemSelect($event,'freq')"
+                                (onDeSelect)="OnItemDeSelect($event,'freq')"
+                                (onSelectAll)="onSelectAll($event,'freq')"
+                                (onDeSelectAll)="onDeSelectAll($event,'freq')"></angular2-multiselect>
+
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div class="grid-middle">
+    <div class="col-3_lg-6_md-6_sm-8">
+    <div class="BP-formGroup">
+      <div class="grid-middle">
+        <div class="col-4">
+          <div class="BP-formLabel">Type:</div>
+        </div>
+        <div class="col-8">
+          
+            <angular2-multiselect [data]="playerType" [(ngModel)]="selectedType"
+                                  [settings]="dropdownSettings"
+                                  (onSelect)="onItemSelect($event,'typeSel')"
+                                  (onDeSelect)="OnItemDeSelect($event,'typeSel')"
+                                  (onSelectAll)="onSelectAll($event,'typeSel')"
+                                  (onDeSelectAll)="onDeSelectAll($event,'typeSel')"></angular2-multiselect>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <app-profile-type></app-profile-type>
+
+  

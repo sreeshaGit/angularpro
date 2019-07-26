@@ -1,0 +1,59 @@
+<div class="BP-container">
+  <div class="grid-middle-noGutter">
+    <div class="col-6_sm-12_md-6_lg-6 text-center grid-center-noGutter">
+      <div class="col-12 BP-homeContent">
+        <div class="BP-logo BP-logo__big">
+          Bet
+          <span class="BP-colorText">Propensity</span>
+        </div>
+        <p>
+          Our software will analyse the betting history of customers to create profile groups based on what customers like to bet on; when they like to bet and what may trigger them to place a bet. Thus information presented to the profile group 		can be of specific interest to these bettors.
+        </p>
+        <div class="BP-notRegister"  *ngIf ="showRegister">Not Registered?</div>
+      </div>
+      <div class="col-8_xl-8_lg-8_md-8_sm-12" *ngIf ="showRegister || showAdmin">
+        <button class="BP-btn BP-btnLarge BP-btn-black" (click)="goToSignUp()">SIGN UP</button>
+      </div>
+    </div>
+    <div class="col-6_sm-12_md-6_lg-6 grid-right-noGutter">
+      <div class="col-9_lg-9_md-9_sm-12">
+        <form (ngSubmit)="onLogin(loginForm)" [formGroup]="loginForm" >
+         
+            <div class="BP-formBox BP-loginBox">
+              <div class="BP-formBoxHeader">
+                <div class="BP-formTitle">Login</div>
+              </div>
+              <div class="BP-formBoxContent">
+                <div class="BP-formGroup">
+                  <div class="BP-formLabel">Username / Email</div>
+                  <input formControlName="username" id="username" type="text" class="BP-formInput" name="username" placeholder="Eg.john@gmail.com" />                  
+                  <div class="BP-form-errorMessage" >
+                      <span [hidden]="loginForm.controls.username.untouched || loginForm.controls.username.valid">A valid email address is required</span>
+                  </div>            
+                </div>
+                <div class="BP-formGroup">
+                  <div class="BP-formLabel">Password</div>
+                  <input formControlName="password" id="password" type="password" class="BP-formInput" name="password" placeholder="••••••••••" />                  
+                  <div class="BP-form-errorMessage" >
+                      <span [hidden]="loginForm.controls.password.untouched || loginForm.controls.password.valid">Password is required (6 or more characters with at least one number)</span>
+                  </div>
+                </div>
+                <button class="BP-btn BP-btnLarge BP-btn-red mb-20" [disabled]="!loginForm.valid">LOGIN</button>
+                <div class="BP-form-errorMessage" *ngIf="unAuth">
+                  Please enter valid details.
+                </div>
+                <div class="BP-form-errorMessage">
+                 {{errorMessage}}
+                </div>
+                <div class="BP-forgotPassword"><u>Forgot Password?</u></div>
+              </div>
+            </div>
+         
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-dialog [(visible)]="openSignUp" (visibleChange)="modalPopupClosedCallback($event)">
+  <app-sign-up></app-sign-up>
+</app-dialog>

@@ -1,0 +1,202 @@
+<div class="BP-popupBox">
+    <div class="BP-popupHeader">
+        <div class="BP-formLabel">Select from My Player
+            <i class="bp-icon-info"></i>
+        </div>
+        <div class="BP-playerTextTitle">Select from Player Report...</div>
+    </div>
+    <div class="BP-popupContent">
+        <div class="BP-popupPlayerContent">
+            <div class="grid-noGutter">
+                <div class="col-5">
+                    <p-listbox  class="BP-searchBox" [options]="listOfProfileReports" [(ngModel)]="selectListOfProfile" filter="filter" checkbox="checkbox"  multiple="multiple" (onChange)="profileSelect($event)"></p-listbox>
+                </div>
+              <div class="col">
+                  <div class="BP-align">
+                    <div class="text-center BP-errorText " *ngIf="!showProfileData">
+                        Please select profile to view details.
+                    </div>
+                </div>
+              </div>
+                <div class="col-7" *ngIf = "showProfileData">
+                        <div class="BP-playerContent-Heading">{{latestProfileData?.name}}</div>
+                    <div class="grid-noGutter">
+                        <div class="col-4 plr-2">
+                            <div class="BP-popupContentInfo">
+                                <div class="BP-playerContentBox BP-greyLighten-3">
+                                    <div class="BP-playerContent-title">Player Type & Bet Frequency</div>
+                                    <div class="BP-formContent">
+                                        <div class="BP-formLabel">Frequency<i class="bp-icon-info"></i></div> 
+                                        <div class="BP-labelTitle">{{latestProfileData?.frequency}}</div>    
+                                    </div>   
+                                    <div class="BP-formContent">
+                                        <div class="BP-formLabel">Period<i class="bp-icon-info"></i></div> 
+                                        <div class="BP-labelTitle">{{latestProfileData?.periodrange}}</div>    
+                                    </div>
+                                    <div class="BP-formContent">
+                                        <div class="BP-formLabel">Type<i class="bp-icon-info"></i></div> 
+                                        <div class="BP-labelTitle" ><span *ngFor="let plyType of playerType;">{{plyType.value == latestProfileData?.type ? plyType.display_text :'' }}</span></div>    
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 plr-2" *ngIf="!isEmpty(latestProfileData?.primary1)">
+                            <div class="BP-popupContentInfo">
+                                <div class="BP-playerContentBox BP-greyLighten-2 BP-playerContentInfo">
+                                    <div class="BP-formLabel BP-formLabelText">PRIMARY 1: <i class="bp-icon-info"></i></div> 
+                                    <div class="BP-formContent BP-formInfo">
+                                        <div class="BP-formLabel">Sport</div> 
+                                            <div class="BP-labelTitle">{{latestProfileData?.primary1?.sport?.name}}</div>    
+                                    </div>   
+                                    <!-- <div class="BP-formContent BP-formInfo">
+                                        <div class="BP-formLabel">Frequency<i class="bp-icon-info"></i></div> 
+                                        <div class="BP-labelTitle">Frequency</div>    
+                                    </div> -->
+                                    <div class="BP-formCheckbox">
+                                    <div class="BP-formLabel">PM/IP:<i class="bp-icon-info"></i></div>
+                                        <ul class="BP-checkBoxGroup__default BP-twoInRow">               
+                                            <li>
+                                                <div  class="BP-checkBox BP-checkBoxCircle">
+                                                    <input name="" type="checkbox" value="data.display_text1" [checked]="latestProfileData?.primary1?.pmip == 0" id="BP-CB-betStatus2" readonly>
+                                                    <label  for="BP-CB-betStatus2">
+                                                        <span class="BP-checkBoxSpace">Pre-match</span>
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li class="text-right">
+                                                <div class="BP-checkBox BP-checkBoxCircle">
+                                                    <input name="" type="checkbox" [checked]="latestProfileData?.primary1?.pmip == 1" value="data.display_text1" id="BP-CB-betStatus3" readonly>
+                                                    <label for="BP-CB-betStatus3">
+                                                        <span class="BP-checkBoxSpace">In-play</span>
+                                                    </label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="BP-formContent BP-formInfo">
+                                        <div class="BP-formLabel">League<i class="bp-icon-info"></i></div> 
+                                        <div class="BP-formLabelTitleBox">
+                                            <div class="BP-labelTitle BP-labelText" *ngFor="let data of latestProfileData?.primary1.leagues;">{{data.name}}</div>    
+                                        </div>
+                                    </div> 
+                                    <div class="BP-formContent BP-formInfo">
+                                        <div class="BP-formLabel">Market<i class="bp-icon-info"></i></div> 
+                                        <div class="BP-formLabelTitleBox">
+                                            <div class="BP-labelTitle BP-labelText" *ngFor="let data of latestProfileData?.primary1.markets;">{{data.name}}</div>   
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 plr-2" *ngIf="!isEmpty(latestProfileData?.primary2)">
+                            <div class="BP-popupContentInfo">
+                                <div class="BP-playerContentBox BP-greyLighten-2 BP-playerContentInfo">
+                                    <div class="BP-formLabel BP-formLabelText">PRIMARY 2: <i class="bp-icon-info"></i></div> 
+                                    <div class="BP-formContent BP-formInfo">
+                                        <div class="BP-formLabel">Sport</div> 
+                                            <div class="BP-labelTitle">{{latestProfileData?.primary2?.sport?.name}}</div>       
+                                        </div>   
+                                    <!-- <div class="BP-formContent BP-formInfo">
+                                        <div class="BP-formLabel">Frequency<i class="bp-icon-info"></i></div> 
+                                        <div class="BP-labelTitle">Frequency</div>    
+                                    </div> -->
+                                    <div class="BP-formCheckbox">
+                                            <div class="BP-formLabel">PM/IP:<i class="bp-icon-info"></i></div>
+                                        <ul class="BP-checkBoxGroup__default BP-twoInRow">               
+                                            <li>
+                                                <div  class="BP-checkBox BP-checkBoxCircle">
+                                                    <input name="" type="checkbox" value="" [checked]="latestProfileData?.primary2?.pmip == 0"  id="BP-CB-betStatus4">
+                                                    <label  for="BP-CB-betStatus4">
+                                                        <span class="BP-checkBoxSpace">Pre-match</span>
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li class="text-right">
+                                                <div class="BP-checkBox BP-checkBoxCircle">
+                                                    <input name="" type="checkbox" value="" [checked]="latestProfileData?.primary2?.pmip == 1"  id="BP-CB-betStatus5">
+                                                    <label for="BP-CB-betStatus5">
+                                                        <span class="BP-checkBoxSpace">In-play</span>
+                                                    </label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="BP-formContent BP-formInfo">
+                                        <div class="BP-formLabel">League<i class="bp-icon-info"></i></div> 
+                                        <div class="BP-formLabelTitleBox">
+                                            <div class="BP-labelTitle BP-labelText" *ngFor="let data of latestProfileData?.primary2.leagues;">{{data.name}}</div>  
+                                        </div>  
+                                    </div> 
+                                    <div class="BP-formContent BP-formInfo">
+                                        <div class="BP-formLabel">Market<i class="bp-icon-info"></i></div> 
+                                        <div class="BP-formLabelTitleBox">
+                                            <div class="BP-labelTitle BP-labelText" *ngFor="let data of latestProfileData?.primary2.markets;">{{data.name}}</div>    
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 plr-2" *ngIf="!isEmpty(latestProfileData?.secondary)">
+                                <div class="BP-popupContentInfo">
+                                    <div class="BP-playerContentBox BP-greyLighten-2 BP-playerContentInfo">
+                                        <div class="BP-formLabel BP-formLabelText">Secondary: <i class="bp-icon-info"></i></div> 
+                                        <div class="BP-formContent BP-formInfo">
+                                            <div class="BP-formLabel">Sport</div> 
+                                                <div class="BP-labelTitle">{{latestProfileData?.secondary?.sport?.name}}</div>    
+                                        </div>   
+                                        <!-- <div class="BP-formContent BP-formInfo">
+                                            <div class="BP-formLabel">Frequency<i class="bp-icon-info"></i></div> 
+                                            <div class="BP-labelTitle">Frequency</div>    
+                                        </div> -->
+                                        <div class="BP-formCheckbox">
+                                        <div class="BP-formLabel">PM/IP:<i class="bp-icon-info"></i></div> 
+                                            <ul class="BP-checkBoxGroup__default BP-twoInRow">               
+                                                <li>
+                                                    <div  class="BP-checkBox BP-checkBoxCircle">
+                                                        <input name="" type="checkbox" value="" [checked]="latestProfileData?.secondary?.pmip == 1"  id="BP-CB-betStatus4">
+                                                        <label  for="BP-CB-secondary1">
+                                                            <span class="BP-checkBoxSpace">Pre-match</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="text-right">
+                                                    <div class="BP-checkBox BP-checkBoxCircle">
+                                                        <input name="" type="checkbox" value="" [checked]="latestProfileData?.secondary?.pmip == 1" id="BP-CB-betStatus5">
+                                                        <label for="BP-CB-secondary2">
+                                                            <span class="BP-checkBoxSpace">In-play</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="BP-formContent BP-formInfo">
+                                            <div class="BP-formLabel">League<i class="bp-icon-info"></i></div> 
+                                            <div class="BP-formLabelTitleBox">
+                                                <div class="BP-labelTitle BP-labelText" *ngFor="let data of latestProfileData?.secondary.leagues;">{{data.name}}</div>
+                                            </div>    
+                                        </div> 
+                                        <div class="BP-formContent BP-formInfo">
+                                            <div class="BP-formLabel">Market<i class="bp-icon-info"></i></div> 
+                                            <div class="BP-formLabelTitleBox BP-labelBoxAlign">
+                                                <div class="BP-labelTitle BP-labelText" *ngFor="let data of latestProfileData?.secondary.markets;">{{data.name}}</div>   
+                                            </div>    
+                                        </div> 
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="BP-popupFooter">
+        <div class="grid-center-noGutter">
+            <div class="col-3_lg-3_md-4_sm-5">
+                <div class="BP-popupFooterBox">
+                    <button class="BP-btn BP-btnProfile" (click)="closePopUp()">SELECT PROFILES</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    

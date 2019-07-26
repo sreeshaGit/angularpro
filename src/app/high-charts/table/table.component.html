@@ -1,0 +1,47 @@
+
+<p-table #dt class="BP-dashboard-chart-table" [columns]="tableColData" [value]="tableRowData" [rows]  [autoLayout]="true" [responsive]="true"
+         [style]=tableWidth [scrollable]="true"  scrollWidth="1800px"  sortMode="multiple"
+          [reorderableColumns]="true" 
+         [resizableColumns]="true" *ngIf="!hideTable">
+  <ng-template pTemplate="caption">
+    <div class="table-heading">
+      <div class="grid-middle">
+        <div class="col-4 text-left">
+          <div class="tablehead_SelectBox">
+          </div>
+        </div>
+        <div class="col-8 text-right">
+          <div class="tablehead_search BP-formGroup">
+            <input type="text" class="BP-formInput" pInputText size="50" placeholder="Search Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                   (onChange)="onColumnChange($event)">
+          </div>          
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th class="BP-ui-sortable-column" *ngFor="let col of columns" [pSortableColumn]="col.field" pReorderableColumn>
+        {{col.header}}
+        <p-sortIcon [field]="col.field"></p-sortIcon>
+      </th>
+    </tr>
+    <!--<tr>
+      <th *ngFor="let col of columns" [ngSwitch]="col.field" class="BP-formGroup mb-0">
+        <input class="BP-columnSearchInput BP-formInput" placeholder="Search Column" *ngSwitchCase="col.field" pInputText type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">
+      </th>
+    </tr>-->
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <tr>
+      <td class="BP-ui-sortable-column" *ngFor="let col of columns">
+        <span *ngIf="col.field == 'player'"><a (click)="gotoUserSummary(rowData[col.field])">{{rowData[col.field]  }}</a></span>
+        <span *ngIf=" col.field != 'player'">{{rowData[col.field]  | formatNumber : col.field}}</span>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+<p-paginator [style]= tableWidth [rows]="limit" [totalRecords]="totalRecords" (onPageChange)="paginate($event)" [first]="selectedPage" [alwaysShow]=false *ngIf="tableColData?.length > 0  && tableRowData?.length > 0"></p-paginator>
+<div class="BP-loader" *ngIf="hideTable">
+  <app-loader></app-loader>
+</div>

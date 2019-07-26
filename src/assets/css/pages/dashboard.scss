@@ -1,0 +1,523 @@
+@import "../../../assets/css/variables.scss";
+@import "../../../assets/css/pages/report.scss";
+@import "../../../assets/css/pages/common.scss";
+
+
+.BP-DB-chartBox {
+  background-color: $white;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  margin-bottom: 15px;
+  position: relative;
+
+  .BP-DB-chartBox__header {
+    height: 45px;
+    border-bottom: 1px solid $yellow;
+    position: relative;
+
+    &:hover {
+      cursor: move;
+    }
+
+    .BP-DB-chartBox__header-content {
+      padding: 0 30px 0 10px;
+      width: 100%;
+    }
+
+    .BP-DB-chartBox__more-icon {
+      color: $yellow;
+      position: absolute;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    .BP-DB-charBox__header-moreOptions {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.75);
+
+      ul {
+
+        li {
+          float: left;
+          width: 40px;
+          color: $yellow;
+          text-align: center;
+          cursor: pointer;
+
+          &:last-child {
+            border-left: 1px solid $greyLighten3;
+            color: $white;
+          }
+
+          i {
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+
+  .BP-DB-chartBox__content {
+    padding: 10px;
+    /*height: 320px;*/
+    // min-height: 320px;
+    // margin: 0 10px;
+    // display:flex;
+    // align-items: center;
+    // justify-content: center;
+	display: block;
+    .highcharts-container {
+      
+    }
+    .BP-DB-chartBox-title {
+      text-align: center;
+
+      .BP-DB-chartBox-title__count {
+        color: #FFB400;
+        font-size: 32px;
+        font-weight: 700;
+      }
+
+      .BP-DB-chartBox-title__txt {
+        text-transform: uppercase;
+      }
+    }
+
+    table {
+      th {
+        font-size: 12px;
+        padding: 4px 4px 4px 10px;
+      }
+    }
+
+    .BP-dashboardTable {
+      width: 100%;
+      overflow-x: auto;
+	    height: 300px;
+      p-table {
+        overflow-x: auto;
+        float: none;
+
+        .ui-table {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .BP-loader {
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  // .BP-table{
+  // 	overflow-x: auto;
+  // 	p-table{
+  // 		float: none;
+  // 	}
+  // }
+  &.BP-DB-onDrag {
+    border: 1px solid #ED212B;
+  }
+}
+.BP-DB-chartBox_Info{
+	position: relative;
+	.BP-overlayBox{
+		padding: 30px 20px;
+		display: none;
+		.BP-overlayContent{
+			min-height: 210px;
+			.BP-formLabel{
+				color: #FFB400;
+				font-weight: 500;
+				padding-bottom: 10px;
+			}
+		}
+	}
+	.BP-overlayBG{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		top: 0;
+		background-color: rgba(0, 0, 0, 0.75);
+	}
+}
+.BP-betsRangeDateText{
+	font-size: 16px;
+	font-weight: 700;
+	padding-bottom: 12px;
+}
+.BP-compareReportCharts{
+	padding: 100px 0;
+
+	.BP-compareReportContent{
+		padding-bottom: 100px;
+	}
+	.BP-compareBtn{
+		background-color:#ED212B;
+		height: 60px;
+		color: #fff;
+	}
+}
+
+.BP-tableSmall {
+	min-height:320px;
+	width: 100%;
+	overflow-x: auto;
+	
+	table {
+		tr th {
+		border: 0;
+		}
+	}
+}
+
+.BP-createReport__footer {
+	margin-top: 24px;
+}
+
+.BP-btnAdd{
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	margin-bottom: 20px;
+}
+
+/**** Dash Board ****/
+.BP-createDashboard{
+	.BP-createQuery__header{
+		padding-bottom: 20px;
+	}
+}
+.BP-dbBox {
+	height: 100%;
+	background-color: $white;
+	margin-right:20px;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow:    0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+	box-shadow:         0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+.BP-dbHeader {
+	padding: 10px 10px; 
+	border-bottom: 1px solid $yellow;
+	vertical-align: middle;
+
+	.BP-dbHeaderText {
+		text-align: left;
+		display: inline-block;
+		width: 100%;
+	}
+	.BP-moreIcon {
+		text-align: right;
+	 i {
+		float: right;
+		color: $yellow;
+		font-size: 20px;
+		vertical-align: middle;
+		cursor: pointer;
+		
+	}
+  }
+}
+.overlayHeader {
+	display: none;
+}
+.BP-chartTitle{
+	text-align: center;
+
+	.BP-betCount{
+		color: $yellow;
+		font-size: 32px;
+		font-weight: 700;
+	}
+}
+.BP-padding {
+	padding: 0 14px;
+}
+.BP-dbRow {
+	margin-top: 20px;
+	width: 100%;
+}
+.BP-tableSmall {
+	table tr th{
+		font-size: 13px;
+	}
+	 tr td{
+		font-size: 12px;
+	}
+}
+.BP-dbHeaderBg {
+	background-color: $black;
+	border: 0;
+	height: 40px;
+	color: $yellow;
+}
+.BP-iconsAdd {
+	width: 50%;
+	float:right;
+	line-height: 38px;
+
+	.BP-icons {
+		float:right;
+
+		& li  {
+			padding: 0 10px;
+			list-style-type: none;
+			display: inline-block;
+			vertical-align: middle;
+			cursor: pointer;
+
+		& i {
+			font-size: 16px;
+		}
+		}
+	}
+}
+.BP-icons li:last-child {
+	color: $white;
+	border-left: 1px solid $white;
+	cursor: default;
+}
+
+.BP-dbContent {
+	position: relative;
+}
+.BP-messageStatusText {
+	font-size: 16px !important;
+}
+.BP-DB-btnWidth{
+	width: 80px !important;
+}
+.BP-overlayBtn{
+	height: 24px;
+	font-size: 14px;
+	color: #333333;
+}
+.BP-btnYellow{
+	background-color: #FFB400;
+	color: #333333;
+	font-weight: 700;
+	outline: none;
+}
+
+/* ---- Report Library Popup ---- */
+
+.BP-rlbreadCrumb {
+	width:100%;
+	height:80px ;
+	text-align: left;
+	//padding: 0 20px;
+	vertical-align: middle;
+	padding: 16px;
+	.BP-rlbreadCrumb__title{
+		width: 100%;
+		padding: 0;
+		.BP-rlbreadCrumb__titleText{
+			padding-left: 0;
+		}
+	}
+	.BP-close{
+		i{
+			cursor: pointer;
+		}
+	}
+}
+.BP-reportLibraryPopup {
+	margin: 0 70px;
+	-webkit-box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.44);
+	-moz-box-shadow:    0px 1px 18px 0px rgba(0, 0, 0, 0.44);
+	box-shadow:         0px 1px 18px 0px rgba(0, 0, 0, 0.44);
+}
+.BP-reportLibrary {
+	background-color: $red !important;
+	border: 1px solid $red;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.BP-reportLibraryCharts {
+	background-color: $white;
+	border: 1px solid $white;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	clear: both;
+	height: 600px;
+	.BP-rlLeftContent{
+		width: 300px;
+	}
+	.BP-rlRightContent{
+		width: calc(100% - 300px);
+		margin-left: 300px;
+		height: 100%;
+	}
+}
+.BP-headerLeft {
+	color: $white;
+	text-align: left;
+	font-size: 30px;
+	font-weight: 700;
+}
+.BP-closeMark{
+	i {
+		font-size: 30px;
+		color: $white;
+		cursor: pointer;
+	}
+}
+/* ---- Popup Left Menu content ----*/
+
+.BP-rlLeftContent{
+	float: left;
+	background-color: $leftMenubg;
+	height: 100%;
+	.BP-rlleftMenu{
+		height: 600px;
+		overflow-y: auto;
+	}
+}
+.BP-rlListContent {
+	ul{
+		
+		li{
+			list-style-type: none;
+			display: inline-block;
+			padding: 14px 20px;
+			font-size: 16px;
+			font-weight: 500;
+			width: 100%;
+			border-bottom: 1px solid $white;	
+			cursor: pointer;
+			&.active{
+				background-color: #333;
+				color: #fff;
+				border-right: 4px solid #FFB400
+			}
+		}
+		
+	}
+
+}
+.BP-selectText{
+	height: 100%;
+}
+.BP-rlChartSelect {
+	margin: 0;
+}
+.BP-chartSelect {
+	font-size: 16px;
+}
+.BP-DB-chartBoxSpace {
+	margin: 20px 10px;
+	// display: flex;
+	// align-items: center;
+	// justify-content: center;
+	     
+}
+
+ 
+  
+.BP-charts {
+	height: 250px; 
+	max-width: 600px; 
+	margin: 0 auto;
+}
+.BP-rlchartContent{
+	height: 600px;
+	overflow-y: auto;
+	padding: 20px;
+	.BP-DB-chartBox{
+		overflow: auto;
+	}
+	 
+}
+
+/*--------Report Library Popup-------*/
+
+.BP-DB-reportLibrary-popup{
+	.ui-dialog{
+	  width: 1400px;
+	  padding: 0;
+	  .ui-dialog-titlebar{
+		padding:0;
+	  }
+	  .ui-dialog-content{
+		padding: 0;
+		overflow: inherit;
+	  }
+	}
+}
+.BP-DB-reportLibrary-popup .ui-helper-clearfix::before, .ui-helper-clearfix::after{
+	display: initial;
+}
+  
+@media screen and (min-width: 1200px) and (max-width: 1400px) { 
+	.BP-DB-reportLibrary-popup{
+		.ui-dialog{
+			width: 1200px !important;
+		}
+	}
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px) { 
+	.BP-DB-reportLibrary-popup{
+		.ui-dialog{
+			width: 1000px !important;
+		}
+	}
+}
+
+@media screen and (min-width: 760px) and (max-width: 1000px) { 
+	.BP-DB-reportLibrary-popup{
+		.ui-dialog{
+			width: 750px !important;
+		}
+	}
+}
+
+.BP-selectReport{
+	.ui-dropdown{
+		.ui-dropdown-items{
+			.ui-state-highlight{
+				background-color: #11BAD5;
+			}
+		}
+			
+	}
+}
+
+
+/*------ highcharts-chart CSS ----------*/
+app-line-chart{
+	// display: block;
+}
+highcharts-chart{
+	display: block;
+	.highcharts-credits{
+		display: none;
+	}
+}
+
+.BP-dashBoardGrid{	
+
+		.BP-dashBoardGridItem-table{
+			.BP-DB-chartBox{
+				.BP-DB-chartBox__content{
+					height: 320px;
+					overflow: auto;
+				}
+			}
+		}
+}
+
+.BP-dashboard{
+	.ui-table{
+		.ui-table-scrollable-body{
+			
+		}
+	}
+}

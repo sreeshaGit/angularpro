@@ -1,0 +1,86 @@
+<div class="BP-CR-filter">
+    <div class="BP-CR-filter__label">Stake
+        <i class="bp-icon-info"></i>
+    </div>
+    <div class="BP-formGroup">
+        <div class="grid-middle">
+            <div class="col-6">
+                    <div class="BP-CR-filter__label">From:</div>
+                    <input class="BP-formInput" type="number" [(ngModel)]="stakeFrom" (keypress)="onlyNumber($event)" (blur)="getValue('stakeFrom')">
+            </div>
+            <div class="col-6">
+                    <div class="BP-CR-filter__label">To:</div>
+                    <input class="BP-formInput" type="number" [(ngModel)]="stakeTo" (keypress)="onlyNumber($event)" (blur)="getValue('stakeTo')">
+            </div>
+        </div>
+    </div>
+    <div class="BP-formGroup">
+        <ul class="BP-checkBoxGroup__default BP-twoInRow">
+            <li *ngFor="let data of stakeRange; let i= index">
+                <div class="BP-checkBox">
+                    <input id="BP-CB-odds{{i}}" name="Lastweek" value="data.display_text" [checked]="data.checked" type="checkbox" (change)="updateCheckedOptions(data,$event,i)">
+                    <label for="BP-CB-odds{{i}}">
+                        <span class="BP-checkBoxSpace">{{data.display_text}}</span>
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+<!-- 
+
+<div class="BP-filterBox">
+    <div class="BP-filterBox__header">
+        <div class="BP-filterBox__header-title BP-skew-right-top">Stake</div>
+    </div>
+    <div class="BP-filterBox__content">
+        <div class="BP-formSubTitle">Stake Bands:</div>
+        <div class="grid-top">
+            <div class="col-6 pr-15">
+                <div class="BP-formGroup">
+                    <div class="grid-middle">
+                        <div class="col-4">
+                            <div class="BP-formLabel">From:</div>
+                        </div>
+                        <div class="col-8">
+                            <div class="col-8">
+                                <input class="BP-formInput" type="number" [(ngModel)]="stakeFrom" (keypress)="onlyNumber($event)" (blur)="getValue('stakeFrom')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 pr-15">
+                <div class="BP-formGroup">
+                    <div class="grid-middle">
+                        <div class="col-4">
+                            <div class="BP-formLabel">To:</div>
+                        </div>
+                        <div class="col-8">
+                            <div class="col-8">
+                                <input class="BP-formInput" type="number" [(ngModel)]="stakeTo" (keypress)="onlyNumber($event)" (blur)="getValue('stakeTo')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-middle">
+            <div class="col-12">
+                <ul class="BP-checkBoxGroup__default">
+                    <li *ngFor="let data of stakeRange; let i= index">
+                        <div class="BP-checkBox">
+                            <input id="BP-CB-odds{{i}}" name="Lastweek" value="data.display_text" [checked]="data.checked" type="checkbox" (change)="updateCheckedOptions(data,$event,i)">
+                            <label for="BP-CB-odds{{i}}">
+                                <span class="BP-checkBoxSpace">{{data.display_text}}</span>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> -->

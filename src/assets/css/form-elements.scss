@@ -1,0 +1,417 @@
+
+.BP-formGroup {
+	margin-bottom: 8px;
+
+	.BP-formLabel{
+		
+	}
+	.BP-formInput{
+		width: 100%;
+		height: $BP-formInput-height;
+		border: 1px solid $BP-formInput-border-color;
+		border-radius: $BP-formInput-border-radius;
+		padding: 0 8px;
+		font-size: 13px;
+		background-color: $BP-formInput-bg-color;
+		&:focus{
+			outline: none;
+		}
+	}
+	.BP-textarea{
+		border: 1px solid $BP-formInput-border-color;
+		border-radius: $BP-formInput-border-radius;
+		padding: 8px;
+		font-size: 13px;
+		background-color: $BP-formInput-bg-color;
+		&:focus{
+			outline: none;
+		}
+	}
+	.BP-formSelect{
+		width: 100%;
+		position: relative;
+		background-color: #FFF;
+		select{
+			height: $BP-formInput-height;
+			border: 1px solid $BP-formInput-border-color;
+			border-radius: $BP-formInput-border-radius;
+			font-size: 13px;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			-ms-appearance: none;
+			-o-appearance: none;
+			appearance: none;
+			width: 100%;			
+			padding: 0 24px 0 9px;
+			background-color: transparent;
+			font-weight: 400;
+			option{
+				padding: 0;
+			}
+		}
+		&:after{
+			font-family: 'bp-icons';
+			content: "\e901";
+			font-size: 12px;
+			color: #B0B0B0;
+			position: absolute;
+			pointer-events: none;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 1px;
+			background-color: #F1F1F2;
+			width: 32px;
+			height: 32px;
+			text-align: center;
+			line-height: 32px;
+			border-radius: 0 4px 4px 0;
+			border-left: 1px solid $BP-formInput-border-color;
+		}
+	}
+	.BP-icon-calendar{
+		
+		position: relative;
+		input{
+			padding-right: 34px;
+		}
+		
+		&:after{
+			font-family: 'bp-icons';
+			content: "\e913";
+			font-size: 20px;
+			color: #B0B0B0;
+			position: absolute;
+			pointer-events: none;
+			top: 50%;
+			transform: translate(0, -50%);
+			right: 8px;
+			z-index: 999;
+		}
+	}
+}
+
+.BP-filterBox{
+	.BP-formGroup{
+		margin-bottom: 25px;
+	}
+}
+.BP-formSubTitle{
+	color: $blue;
+	margin-bottom: 10px;
+	font-weight: 700;
+}
+
+.BP-tags{
+	display: inline-block;
+	widows: 100%;
+	margin-bottom: 20px;
+	li{
+		float: left;
+		padding: 6px 16px;
+		border: 1px solid $blue;
+		border-radius: 100px;
+		text-align: center;
+		font-size: 14px;
+		margin: 0 10px 10px 0;
+		cursor: pointer;
+		&:hover{
+			background-color: $blue;
+			color: $white;
+		}
+		&.active{
+			background-color: $blue;
+			color: $white;
+		}
+	}
+	
+}
+
+.BP-formDisabledBox{
+	width: 100%;
+	height: $BP-formInput-height;
+	background-color: $BP-formInput-disabled-color;
+	border: 1px solid $BP-formInput-border-color;
+	border-radius: $BP-formInput-border-radius;
+	padding: 6px 12px;
+	font-size: 16px;
+}
+.BP-formAddonGroup{
+	.BP-formAddon{
+		input{
+			width: calc(100% - 50px) !important;
+			display: inline-block;
+			vertical-align: middle;
+			border-radius: 4px 0 0 4px;
+		}
+		.BP-addon{
+			width: 50px;
+			display: inline-block;
+			background-color: $red;
+			height: 40px;
+			vertical-align: middle;
+			border-radius: 0 4px 4px 0;
+			color: $white;
+			text-align: center;
+			padding: 9px 0;
+			cursor: pointer;
+		}
+	}
+}
+
+
+
+// ============================================================
+// Browse Button CSS
+// ============================================================
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    width: 60%;
+    font-size: 14px;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+   
+}
+
+.inputfile + label img {
+    width: 1.5em;   
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    margin-right: 0.25em;
+}
+.inputfile-6 + label {
+    color: #333;
+}
+.inputfile-6 + label {
+    border: 1px solid #707070;
+    background-color: #FFF;
+    padding: 0;
+    border-radius: 4px;
+}
+.inputfile-6 + label span,
+.inputfile-6 + label strong {
+    padding: 10px 8px;
+    height: 40px;
+}
+.inputfile-6 + label span {
+    max-width: 100%;
+    min-height: 2em;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: top;
+    font-weight: 300;
+}
+
+.inputfile-6 + label strong {
+    color: #333;
+    background-color: #d7d7d7;
+    display: inline-block;
+}
+.inputfile-6:focus + label strong,
+.inputfile-6.has-focus + label strong,
+.inputfile-6 + label:hover strong {
+    outline: none;
+}
+
+
+
+// ============================================================
+// Modal Popup CSS
+// ============================================================
+.BP-modalBox{
+	background-color:$white;
+	border-radius: 10px;
+	padding: 24px 40px
+}
+
+
+// ============================================================
+// Check Boxes
+// ============================================================
+
+.BP-checkBox input[type="checkbox"]:checked + label::before {
+		font-family: 'bp-icons';
+		content: "\e910";
+		font-size: 10px;
+		color: $greyDarken2;
+		text-align: center;
+		line-height: 18px;
+}
+.BP-checkBox label::before {
+		content: "";
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		background-color: $white;
+		border: 1px solid $BP-formInput-border-color;
+		border-radius: 3px;
+		vertical-align: middle;		
+		cursor: pointer;
+		margin-left: -30px;
+}
+.m-0{
+		margin:0 !important;
+}
+.BP-checkBox {
+		label{
+			position: relative;
+			font-weight: normal;
+			margin-bottom: 0;
+			margin-left: 30px;
+		}
+		.BP-checkBoxSpace {
+			
+			vertical-align: bottom;
+			font-weight: 300;
+			// display: inline-block;
+		}
+}
+.BP-checkBox  input[type="checkbox"]:checked + label::before {
+		color: $blue;
+		border: 1px solid $blue;
+}
+.BP-checkBox  input[type="checkbox"]:checked + label span {
+		color: $blue;
+}
+.BP-checkBox input[type="checkbox"], .BP-radioBox input[type="radio"] {
+		display: none;
+}
+
+.BP-radioBox [type="radio"]:checked,
+.BP-radioBox [type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+.BP-radioBox [type="radio"]:checked + label,
+.BP-radioBox [type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 23px;
+    cursor: pointer;    
+	display: inline-block;
+	font-weight: 300;
+	margin-bottom: 0;
+   
+}
+.BP-radioBox [type="radio"]:checked + label:before,
+.BP-radioBox [type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $BP-formInput-border-color;
+    border-radius: 100%;
+    background: $white;
+}
+.BP-radioBox [type="radio"]:checked + label:after,
+.BP-radioBox [type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: $blue;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.BP-radioBox [type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+.BP-radioBox [type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.BP-radioBox  input[type="radio"]:checked + label::before {
+	color: $blue;
+	border: 1px solid $blue;
+}
+.BP-radioBox  input[type="radio"]:checked + label span {
+	color: $blue;
+}
+
+
+
+// ============================================================
+// Form Error Messages
+// ============================================================
+.BP-form-errorMessage{
+    height: 30px;
+    color: $red;
+    font-size: 12px;
+	text-align: left;
+	padding-top: 4px;
+}
+.BP-form-successMessage {
+    height: 30px;
+    color: $green;
+    font-size: 12px;
+    text-align: left;
+    padding-top: 4px;
+}
+
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	opacity: 0.2;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+	opacity: 0.2;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+	opacity: 0.2;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+	opacity: 0.2;
+  }
+
+// ============================================================
+// Date picker CSS
+// ============================================================
+
+.owl-dt-popup-container{
+  width: 250px;
+}
+.owl-dt-calendar-table .owl-dt-calendar-cell-content{
+  font-size: 12px;
+}
+.owl-dt-control-button{
+  font-size: 14px;
+}
+.owl-dt-calendar-table .owl-dt-calendar-header .owl-dt-weekdays th{
+  font-size: 12px;
+}
+.owl-dt-inline-container .owl-dt-calendar, .owl-dt-popup-container .owl-dt-calendar{
+  height: auto;
+}
+.owl-dt-container-info .owl-dt-container-range{
+  font-size: 12px;
+}
+.owl-dt-control-button{
+  height: 35px;
+}
+.owl-dt-container-buttons{
+  height: auto;
+}

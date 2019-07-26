@@ -1,0 +1,38 @@
+<div class="BP-leftMenu">
+    <div class="BP-menu">
+        <ul class="">        
+            <li class="BP-menuItem" [ngClass]="{'BP-active':activeClass=='Dashboards' || activeClass == 'Create Dashboard'}" (click)="navigate('dashboard-list')">
+                <i class="bp-icon-dashboard"></i>
+                <span>Dashboards</span>
+            </li>
+            <li class="BP-menuItem" [ngClass]="{'BP-active':activeClass=='Report' || activeClass == 'Create Report' || activeClass == 'View Report'}"
+                (click)="navigate('reports')">
+                <i class="bp-icon-view-report"></i>
+                <span>Reports</span>
+            </li>
+            <!-- <li class="BP-menuItem" [ngClass]="{'BP-active':activeClass=='import'}" (click)="navigate('import')">
+                <i class="bp-icon-import"></i>
+                <span>Import Data</span>
+            </li>
+            <li class="BP-menuItem" [ngClass]="{'BP-active':activeClass=='queries' || activeClass=='create-queries' || activeClass == 'query-result'}"
+                (click)="navigate('queries')">
+                <i class="bp-icon-data-analysis"></i>
+                <span> Data Analysis</span>
+            </li> -->
+          
+            <li class="BP-menuItem" [ngClass]="{'BP-active':activeClass =='Player Profile Report' || activeClass == 'Create profile' || activeClass == 'Profile Result'}"
+                (click)="navigate('profile-list')">
+                <i class="bp-icon-profile"></i>
+                <span>User Profiles</span>
+            </li>
+            <li class="BP-menuItem" [ngClass]="{'BP-active':activeClass =='Player Summary'}" (click)="navigate('profile-details')">
+                <i class="bp-icon-profile"></i>
+                <span>Player Summary</span>
+            </li>
+            <li class="BP-menuItem" [ngClass]="{'BP-active':activeClass=='help'}" (click) ="gotoHelp()">             
+              <i class="bp-icon-help"></i>
+              <span> Help</span>
+            </li>
+        </ul>
+    </div>
+</div>

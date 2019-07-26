@@ -1,0 +1,76 @@
+<div class="BP-mainHeader">
+    <div class="BP-pageHeader">
+        <div class="" [ngClass]="(localPath == '/home' || localPath == '/login' || localPath == '' || localPath == '/aboutus' ||  localPath == '/help' ||  localPath == '/contact' || localPath == '/login_admin') ? 'BP-container' : 'BP-header-container-fluid'">
+            <div class="grid-middle-noGutter">
+                <div class="col-6_sm-6_md-6_lg-6">
+                    <div class="BP-logo" (click)="goToHome()">
+                        Bet
+                        <span class="BP-colorText">Propensity</span>
+                    </div>
+                </div>
+                <div class="col-6_sm-6_md-6_lg-6 text-right">
+                    <button id="MyBtn" class="BP-btn BP-btn-black BP-btn-createAccount" *ngIf="!isUserLoggedIn && showRegister" (click)="goToSignUp()">Create Account</button>
+                    <!-- <div class="BP-profilePic" *ngIf="isUserLoggedIn" (click)="profileClick()">
+            <button class="BP-btn BP-btnLogout">Logout</button>
+          </div> -->
+                    <div class="BP-dropdown" dropdown *ngIf="isUserLoggedIn">
+                        <span class="BP-dropdown-toggle" dropdownToggle>
+                            <img class="BP-header__profilePic" src="assets/img/profile-pic.svg" />
+                        </span>
+                        <ul class="BP-dropdown-menu right BP-arrow" dropdownMenu>
+                            <li class="">My Account</li>
+                            <li>Settings</li>
+                            <li>Help</li>
+                            <li>Support</li>
+                            <div class="BP-logout" (click)="profileClick()">Logout</div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="BP-breadCrumb grid-middle-noGutter" *ngIf="!isUserLoggedIn">
+    </div>
+    <div class="BP-breadCrumb grid-middle-noGutter" *ngIf="isUserLoggedIn">
+        <div class="BP-closeMenu" *ngIf="router.url!='/home' &&  router.url !== '/aboutus' &&  router.url !== '/help'   &&  router.url !== '/contact'  && router.url!=='/login_admin' && router.url!=='/login'" (click)="toggleSideBar()" [ngClass]="{'collapsed':!toggle}">
+            <img src="assets/img/left-arrow.svg">
+            <span class="align-middle">{{toggle? 'Close menu': 'Open menu'}}</span>
+        </div>    
+        <div class="" [ngClass] ="( router.url == '/aboutus' ||  router.url == '/contact') ? 'BP-container BP-breadCrumb__title':'BP-breadCrumb__title'">
+            <div class="grid-middle-noGutter">
+              <div class="col" *ngIf="headerQueryString && router.url!='/home'">
+                  <i  [ngClass]="(headerQueryString == 'Report' || headerQueryString == 'View Report' || headerQueryString == 'Create Report')?'bp-icon-report':
+                     (headerQueryString == 'Player Profile Report' || headerQueryString == 'Profile Result' || headerQueryString == 'Create profile')?'bp-icon-profile': (headerQueryString == 'Dashboards'  || headerQueryString == 'View Dashboard' || headerQueryString == 'Create Dashboard')?'bp-icon-dashboard':''"></i>
+                  <span class="BP-breadCrumb__titleText">{{headerQueryString}}</span>
+              </div>
+              <div class="col text-right" *ngIf="headerQueryString == 'Report' || headerQueryString == 'View Report' ">
+                  <button class="BP-btn BP-btnBreadCrumb" (click)="createQuery(headerQueryString)">
+                      <i class="bp-icon-report"></i>Create Report
+                  </button>
+              </div>
+
+              <div class="col text-right" *ngIf="headerQueryString == 'Query Result' || headerQueryString == 'Query List'">
+                <button class="BP-btn BP-btnBreadCrumb" (click)="createQuery(headerQueryString)">
+                  <i class="bp-icon-add"></i>Create Query
+                </button>
+              </div>
+
+              <div class="col text-right" *ngIf="headerQueryString == 'Player Profile Report' || headerQueryString == 'Profile Result'">
+                <button class="BP-btn BP-btnBreadCrumb" (click)="createQuery(headerQueryString)">
+                  <i class="bp-icon-profile"></i>Create profile
+                </button>
+              </div>
+
+              <div class="col text-right" *ngIf="headerQueryString == 'Dashboards'  || headerQueryString == 'View Dashboard'">
+                <button class="BP-btn BP-btnBreadCrumb" (click)="createQuery(headerQueryString)">
+                  <i class="bp-icon-dashboard"></i>Create Dashboard
+                </button>
+              </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<app-dialog [(visible)]="openSignUp" (visibleChange)="modalPopupClosedCallback($event)">
+    <app-sign-up></app-sign-up>
+</app-dialog>
