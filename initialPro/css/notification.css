@@ -1,0 +1,130 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*-------- Notification Css End -------*/
+.text-underline{
+	text-decoration: underline;
+	text-align: center;
+	display: inline-block;
+    cursor: pointer;
+}	
+
+.notification-pref .checkbox{
+	margin: 0px;
+	padding-bottom: 20px;
+}
+.notification-option{
+	font-family: SourceSansPro-Light;
+    font-size: 20px;
+    color: #0D406B;
+	padding-left: 5px;
+	padding-bottom: 10px;
+	line-height: 23px;
+}
+
+.notification{
+	font-family: SourceSansPro-Semibold;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+.notification .notification-time{
+	font-family: SourceSansPro-Light;
+    font-size: 16px;
+    color: #0D406B;
+	
+}
+.unread .notification-time{
+	font-family: SourceSansPro-Semibold;
+    font-size: 14px;
+	
+}
+.notification i{
+	font-size: 16px;
+}
+.notification .notification-info{
+	background-color: #E9EDF1;
+    border-radius: 16px;
+	padding: 10px;
+	display: inline-block;
+	cursor: pointer;
+    
+}
+.unread .notification-info{
+	background-color: #d1d8e1;
+    border-radius: 16px;
+	padding: 10px;
+	display: inline-block;
+   
+}
+.notification-game-icon{
+    /*background-color: #e9edf1;
+    border-radius: 100px;*/
+    display: inline-block;
+    padding: 4px 8px 8px 8px;	
+}
+.notification .capsle-game {
+    background-color: #fff;
+    border-radius: 35px;
+    display: inline-block;
+    line-height: 28px;
+    margin-top: 0px;
+    padding-right: 10px;
+}
+.notification .capsle-game .game-text {
+    color: #193b5a;
+    display: inline;
+    font-family: SourceSansPro-Semibold;
+    font-size: 16px;
+    line-height: 27px;
+    padding-left: 10px;
+    text-align: center;
+}
+.notifi-player-position {
+    background-color: #193b5a;
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    font-family: Montserrat-Bold;
+    font-size: 20px;
+    margin-right: 2px;
+    text-align: center;
+    width: 30px;
+	 height: 30px;
+}
+/*.unread::after{
+	background-color: #d1d8e1;
+    border-radius: 50%;
+    content: "";
+    height: 20px;
+    margin-left: 10px;
+    margin-top: 20px;
+    position: absolute;
+    width: 20px;
+}*/
+.notif-unread{
+	width: 10px;
+	height: 10px;
+	background-color: #9CAAB6;
+	border-radius: 50%;
+	display: inline-block;
+	margin-left: 10px;
+    margin-top: 6px;
+    position: absolute;
+	cursor: pointer;
+}
+.notification-info .accept{
+	display: inline-block;
+	padding-right: 5px;	
+	font-size: 14px;
+	font-weight: bold;
+}
+.notification-info .accept img{
+	margin-right: 3px;	
+	vertical-align: middle;
+	width: 15px;
+}
+.light-blue-light{
+	color: #9EACB8 !important;
+}
+/*  Notification Css End */

@@ -1,0 +1,413 @@
+@charset "utf-8";
+
+/*--------- Dashboard CSS Start ---------*/
+
+#livegames .game-qns, #upcoming_games .game-qns, #past_games .game-qns, #watch_list .game-qns{
+    padding: 10px;
+}
+#livegames .panel-heading .accordion-toggle, #upcoming_games .panel-heading .accordion-toggle, #past_games .panel-heading .accordion-toggle, #watch_list .panel-heading .accordion-toggle{
+    padding-left: 30px;
+}
+.bg-gray{
+	background-color: #F7F7FA !important;
+}
+.capsle-game {
+	background-color: #fff;
+	border-radius: 35px;	
+	display: block;
+    padding-right: 5px;
+	line-height: 30px;
+}
+.capsle-game img{
+	float: left;	
+}
+.capsle-game .game-text{
+	text-align: center;
+	font-family: SourceSansPro-Semibold;
+	font-size: 16px;
+	color: #0D406B;
+	padding-left: 10px;
+}
+.capsle-vs{
+	background-color: #fff;
+	border-radius: 35px;
+	display: block;	
+	margin-top: 10px;
+	padding-right: 10px;
+}
+.capsle-vs .game-time{
+	font-family: SourceSansPro-Light;
+    font-size: 18px;
+    color: #fff;
+	border-radius: 35px;
+	display: inline;
+	padding: 3px 10px;
+	float: left;
+    line-height: 27px;
+}
+.capsle-vs .vs-text{
+	font-family: SourceSansPro-Semibold;
+    font-size: 14px;
+    color: #0D406B;
+	padding-left: 10px;
+	display: block;
+	line-height: 32px;
+	text-align: center;
+}
+.capsle-people {
+ 	background-color: #fff;
+	border-radius: 12px;	
+	display: inline-block;
+	margin-top: 20px;
+	margin-right: 8px;
+	min-width: 90px;
+	vertical-align: middle;
+    text-align: center;
+}
+.capsle-people img{
+	float: left;	
+}
+.pot-capsle{
+	/*position: absolute;	*/
+}
+.capsle-people .people-text{
+    font-family: SourceSansPro-Bold;
+    font-size: 18px;
+	color: #0D406B;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30px;
+	padding-left: 3px;
+	padding-right: 7px;
+}
+.zoola-btn-viewgame{
+	border-radius: 26px;
+	background-color: #F8EC1C;
+	padding: 10px 0;
+	cursor: pointer;
+	font-family: SourceSansPro-Bold;
+	color: #0D406B;
+	font-size: 16px;
+	display: inline-block;
+	margin-top: 15px;
+	vertical-align: middle;
+	width: 110px;
+}
+.player-position{
+	border-radius: 30px;
+    display: inline-block;
+    position: relative;
+	margin-right: 5px;
+	margin-top: 15px;
+	float: left;
+}
+.player-number{
+	background-color: #0D406B;
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    font-family: Montserrat-Bold;
+    font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 4px;
+    text-align: center;
+    width: 40px;
+}
+.game-results{
+	display: inline-block;
+    line-height: 19px;
+    padding-right: 12px;
+    position: relative;
+    text-align: center;
+	vertical-align: bottom;
+}
+.position{
+	display: block;
+	font-family: SourceSansPro-Regular;
+    font-size: 18px;
+}
+.pot-value{
+	font-family: SourceSansPro-Semibold;
+    font-size: 18px;	
+}
+.pot-value i{
+	font-size: 15px;
+}
+.upcoming-game-numbers{
+	margin-top: 15px;
+	float: left;	
+}
+.add-btn{
+	display: inline-block;;
+	vertical-align: bottom;	
+}
+.btn-gray{
+	background-color: #B6B6B6;	
+    color: #fff;
+}
+.zoola-btn-remove{
+	border: 2px solid #193b5a;
+    border-radius: 26px;
+    color: #193b5a;
+    cursor: pointer;
+    display: inline-block;
+    font-family: SourceSansPro-Bold;
+    font-size: 16px;
+    margin-top: 16px;
+    padding: 7px 0;
+    text-align: center;
+    vertical-align: middle;
+    width: 110px;
+}
+.zoola-btn-invite{
+	margin-left: -20px;
+	margin-right: 20px;	
+}
+.player-crowed{
+	background: url(../images/3-players-cheer-crowd.jpg) center ;
+	width: 100%;
+	background-size: cover;
+}
+.player-crowed-banner{
+	position: relative;	
+}
+.player-crowed-banner img{
+	width: 100%;
+	height: 300px;	
+}
+.player-crowed-banner .banner-text{
+	position: absolute;
+    bottom: 50px;
+    overflow: auto;
+}
+.banner-text{
+	color: #fff;
+    font-family: SourceSansPro-Regular;
+    margin: 10px auto;
+    min-height: 300px;
+}
+.find-some{
+	font-size: 38px;
+	  padding-top: 90px;
+}
+.banner-text .btn-team-room{
+	border: 2px solid #fff;
+	border-radius: 	5px;
+	font-weight: bold;
+	display: inline-block;
+	padding: 3px 18px;
+	margin-top: 20px;
+	cursor: pointer;
+	font-size: 26px;
+}
+.panel-default  .stats-header {
+    border-radius: 12px 12px 0px 0px;
+	padding: 15px;
+	color: #fff;
+}
+.stats-header h2{
+	padding-top: 15px;	
+}
+.panel-default  .stats-footer {
+    border-radius: 0px 0px 12px 12px;
+	padding: 15px;
+	color: #fff;
+}
+.powered-by{
+	font-family: SourceSansPro-Light;
+    font-size: 26px;
+}
+.zoola-bt-edit{
+	 border: 1px solid #fff;
+    border-radius: 12px;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 5px;
+    width: 120px;
+	cursor: pointer;
+	margin-bottom: 7px;
+}
+.player-name{
+	font-family: SourceSansPro-Regular;
+    font-size: 35px;	
+	color: #fff;
+}
+.points-bold{
+	font-family: SourceSansPro-Bold;
+	
+}
+.points-bold i{
+	font-size: 32px !important;
+	font-weight: bold;
+}
+.points-rank{
+	background-color: #e9edf1;
+	padding: 16px 2px;
+	margin-bottom: 10px;
+}
+.bg-offwhite{
+	background-color: #e9edf1;	
+}
+.border-radius-30{
+	border-radius: 30px;
+}
+.border-radius-16{
+	border-radius: 16px !important;
+}
+.border-bottom-radius-16{
+	 border-radius: 0 0 16px 16px !important;
+}
+.global-cup{
+		font-family: Montserrat-Regular;
+		color: #193b5a;
+		font-size: 16px;
+		text-transform: uppercase;
+		border: 2px solid #193b5a;
+		padding: 8px 5px;
+}
+.player-rank{
+		font-family: SourceSansPro-Regular;
+		 font-size: 16px;
+		 color: #193b5a;
+		 margin-bottom: 8px;
+		 text-align: left;
+}
+.capsle-value{
+	border-radius: 35px;
+    color: #193b5a;
+    display: inline;
+    font-family: SourceSansPro-Regular;
+    font-size: 16px;
+    padding: 0px 5px;
+	background-color: #fff;
+	font-weight: bold;
+}
+.capsle-value i{
+	font-size: 14px;
+}
+.friends-list{
+    margin-top: 20px;
+}
+.friend img{
+ margin-bottom: 5px;
+ margin-right: 5px;
+}
+.frnd-name{
+font-family: SourceSansPro-Semibold;
+    font-size: 14px;	
+}
+.friend{
+	float: left;
+	margin-left: 10px;	
+}
+/*--------- Dashboard CSS End ---------*/
+
+@media screen and (min-width: 320px) and (max-width: 776px){
+h1{
+	letter-spacing: 1px;
+}
+.capsle-people {
+    margin-bottom: 8px;
+    margin-top: 0;
+	display: block;
+}
+.zoola-btn-viewgame{
+    margin-top: 14px;
+	margin-left: -36px;
+}
+.go-to{
+	padding-left: 40px;	
+}
+#livegames .capsle-people , #upcoming_games .capsle-people , #past_games .capsle-people , #watch_list .capsle-people {
+   /* width: 90px;*/
+}
+#livegames .panel-heading .accordion-toggle, #upcoming_games .panel-heading .accordion-toggle, #past_games .panel-heading .accordion-toggle, #watch_list .panel-heading .accordion-toggle{
+    padding-left: 0px;
+}
+.panel-default > .panel-heading{
+	padding: 15px;	
+}
+.panel-title{
+	font-size: 22px !important;
+}
+.banner-text {
+    min-height: 100px;
+    text-align: right;
+}
+.find-some {
+    font-size: 20px;
+    padding-top: 10px;
+}
+.banner-text .btn-team-room {
+    font-size: 15px;
+    line-height: 20px;
+    margin-top: 5px;
+}
+
+}
+
+/*------ Tablet Css -------*/
+@media (min-width: 768px) and (max-width: 991px) {
+	
+.banner-text {
+    min-height: 160px;
+    text-align: right;
+}
+.find-some {
+    font-size: 28px;
+    padding-top: 20px;
+}
+.banner-text .btn-team-room {
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 10px;
+}
+h1{
+	letter-spacing: 1px;
+}
+.capsle-people {
+    margin-bottom: 8px;
+    margin-top: 20px;
+	display: inline-block;
+}
+.zoola-btn-viewgame {
+    margin-left: -25px;
+    margin-top: 15px;
+}
+.go-to{
+	padding-left: 10px;	
+}
+.panel-default > .panel-heading{
+	padding: 20px;	
+}
+.player-position:first-child{
+	margin-left:15px;	
+}
+.upcoming-game-numbers:first-child{
+	margin-left: 15px;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

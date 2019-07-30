@@ -1,0 +1,91 @@
+<div class="">
+    <div class="BL-products grey lighten-3">
+        <div class="header green white-text">
+            <div class="row valign-wrapper">
+                <div class="col s1 m2 l2 xl2"><div class="valign-wrapper"></div></div>
+                <div class="col s8 m8 l8 xl8 ">
+                    <div class="center-align title">{{staticWordsData?.staticWords?.Football}}
+                        <span class="bet-assist">{{staticWordsData?.staticWords?.Bet_Assists}}</span>
+                    </div>
+                </div>
+                <div class="col s2 m2 l2 xl2 "><div class="right-align"></div></div>
+            </div>
+        </div>
+        <div class="mrg-content">
+            <div class="row no-margin">
+                <div class="space-5"></div>
+            </div>
+            <div class="row no-margin valign-wrapper">
+                <div class="col s6 m6 l6 xl6 no-padding-left">
+                    <div class="mrg-inputfield mrg-select">
+                        <label>{{staticWordsData?.staticWords?.Select_League}}</label>
+                        <select class="browser-default" #league (change)="selectLeague(league.value)">
+                            <option *ngFor="let item of leagueFilterData" value={{item.LeagueId}}>{{item.LeagueName}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col s6 m6 l6 xl6 no-padding">
+                    <div class="mrg-inputfield mrg-select">
+                        <label>{{staticWordsData?.staticWords?.Select_Market}}</label>
+                        <select class="browser-default truncate" #market (change)="selectMarket(market.value)">
+                            <option *ngFor="let item of marketFilterData" value={{item.MarketId}}>{{item.MarketName}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m6 l6 xl6" *ngFor="let item of bestBetsData">
+                    <div class="mrg-bet-box">
+                        <div class="box-header valign-wrapper">
+                            <div class="row no-margin grey-text lighten-1 w100 valign-wrapper">
+                                <div class="col s8 m8 l8 xl8 no-padding truncate">                                   
+                                    {{item | titleFormation}}
+                                </div>
+                                <div class="col s4 m4 l4 xl4 right-align no-padding">
+                                    {{item.KickOffTime | dateFormat :'DT' | async}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <div class="fixture truncate">{{item.Match}}</div>
+                            <div class="rtb">
+                                {{item.Text}}
+                            </div>
+                            <div class="row no-margin valign-wrapper">
+                                <div class="col s12 m12 l12 xl12 no-padding">
+                                    <button pam-Button class="btn waves-effect waves-light btn-odds" (click)="addToBetslip(item.SelectionId)">
+                                        <span class="market">{{item.MarketName}} - {{item.OutcomeName}}</span>
+                                        <span class="odds">
+                                            {{item | oddsFormat : kambiService.oddsFormat}}
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="" *ngIf="hideData">
+                <div class="row no-margin"><div class="space-5"></div></div>
+                <div class="row">
+                    <div class="col s12 m12 l12 xl12 center-align info-text">
+                        {{staticWordsData?.staticWords?.No_Bet_Assists_avaliable}}
+                    </div>
+                </div>
+                <div class="row no-margin"><div class="space-5"></div></div>
+            </div>
+            <div class="row no-margin"><div class="space-5"></div></div>
+            <div class="sticker-footer multibet-footer">
+                <div class="mrg-content2">
+                    <div class="row valign-wrapper" *ngIf="bestBetsData?.length > 1">
+                        <div class="col s12 m6 l6 xl6 col-centered">
+                            <button pam-Button class="btn waves-effect waves-light btn-odds add-betslip margin-top-15 margin-bottom-15" (click)="addAllToBetslip()">
+                                 {{staticWordsData?.staticWords?.Add_all_to_Betslip}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>

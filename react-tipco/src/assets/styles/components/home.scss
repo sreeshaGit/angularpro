@@ -1,0 +1,286 @@
+body {
+    background-image: url('../assets/images/tipico-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.BLRetail-inFocus-content {
+    padding: 20px 20px 0px;
+}
+
+// ==================================================
+// Match Box CSS
+// ==================================================
+.BLRetail-matchBoxGroup {
+    .BLRetail-matchBoxGroup__item {
+        padding: 25px !important
+    }
+}
+
+.BLRetail-matchBox {
+    background-color: $BLRetail-matchBox-bg;
+    border-radius: 2px;
+    .BLRetail-matchBox-header {
+        color: $BLRetail-matchBox-header-txtColor;
+        font-size: 22px;
+        padding: 10px 20px;
+        border-radius: 2px 2px 0 0;
+        font-weight: 400; 
+        .BLRetail-matchBox-upcomingTxt {
+            vertical-align: middle;
+        }
+        .BLRetail-sportLogo {
+            margin-right: 10px;
+        }        
+    }
+    &.BLRetail-matchBox-preMatch {
+        .BLRetail-football{
+            background: $BLRetail-matchBox-pre-header-bg1;
+            // background: -moz-linear-gradient(left, $BLRetail-matchBox-pre-header-bg1 0%, $BLRetail-matchBox-pre-header-bg2 100%);
+            // background: -webkit-gradient(left top, right top, color-stop(0%, $BLRetail-matchBox-pre-header-bg1), color-stop(100%, $BLRetail-matchBox-pre-header-bg2));
+            // background: -webkit-linear-gradient(left, $BLRetail-matchBox-pre-header-bg1 0%, $BLRetail-matchBox-pre-header-bg2 100%);
+            // background: -o-linear-gradient(left, $BLRetail-matchBox-pre-header-bg1 0%, $BLRetail-matchBox-pre-header-bg2 100%);
+            // background: -ms-linear-gradient(left, $BLRetail-matchBox-pre-header-bg1 0%, $BLRetail-matchBox-pre-header-bg2 100%);
+            // background: linear-gradient(to right, $BLRetail-matchBox-pre-header-bg1 0%, $BLRetail-matchBox-pre-header-bg2 100%);
+            // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$BLRetail-matchBox-pre-header-bg1, endColorstr=$BLRetail-matchBox-pre-header-bg2, GradientType=1);
+        }
+        .BLRetail-tennis{
+            background: $BLRetail-matchBox-tennis-pre-header-bg1;
+            // background: -moz-linear-gradient(left, $BLRetail-matchBox-tennis-pre-header-bg1 0%, $BLRetail-matchBox-tennis-pre-header-bg2 100%);
+            // background: -webkit-gradient(left top, right top, color-stop(0%, $BLRetail-matchBox-tennis-pre-header-bg1), color-stop(100%, $BLRetail-matchBox-tennis-pre-header-bg2));
+            // background: -webkit-linear-gradient(left, $BLRetail-matchBox-tennis-pre-header-bg1 0%, $BLRetail-matchBox-tennis-pre-header-bg2 100%);
+            // background: -o-linear-gradient(left, $BLRetail-matchBox-tennis-pre-header-bg1 0%, $BLRetail-matchBox-tennis-pre-header-bg2 100%);
+            // background: -ms-linear-gradient(left, $BLRetail-matchBox-tennis-pre-header-bg1 0%, $BLRetail-matchBox-tennis-pre-header-bg2 100%);
+            // background: linear-gradient(to right, $BLRetail-matchBox-tennis-pre-header-bg1 0%, $BLRetail-matchBox-tennis-pre-header-bg2 100%);
+            // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$BLRetail-matchBox-tennis-pre-header-bg1, endColorstr=$BLRetail-matchBox-tennis-pre-header-bg2, GradientType=1);
+        }        
+    }
+    &.BLRetail-matchBox-liveMatch{
+        .BLRetail-football{
+            position: relative;
+            background: $BLRetail-matchBox-live-header-bg1;
+            // background: -moz-linear-gradient(left, $BLRetail-matchBox-live-header-bg1 0%, $BLRetail-matchBox-live-header-bg2 50%, $BLRetail-matchBox-live-header-bg3 100%);
+            // background: -webkit-gradient(left top, right top, color-stop(0%, $BLRetail-matchBox-live-header-bg1), color-stop(50%, $BLRetail-matchBox-live-header-bg2), color-stop(100%, $BLRetail-matchBox-live-header-bg3));
+            // background: -webkit-linear-gradient(left, $BLRetail-matchBox-live-header-bg1 0%, $BLRetail-matchBox-live-header-bg2 50%, $BLRetail-matchBox-live-header-bg3 100%);
+            // background: -o-linear-gradient(left, $BLRetail-matchBox-live-header-bg1 0%, $BLRetail-matchBox-live-header-bg2 50%, $BLRetail-matchBox-live-header-bg3 100%);
+            // background: -ms-linear-gradient(left, $BLRetail-matchBox-live-header-bg1 0%, $BLRetail-matchBox-live-header-bg2 50%, $BLRetail-matchBox-live-header-bg3 100%);
+            // background: linear-gradient(to right, $BLRetail-matchBox-live-header-bg1 0%, $BLRetail-matchBox-live-header-bg2 50%, $BLRetail-matchBox-live-header-bg3 100%);
+            // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$BLRetail-matchBox-live-header-bg1, endColorstr=$BLRetail-matchBox-live-header-bg3, GradientType=1);
+            
+            // &::after{
+            //     background-image: url('../assets/images/tipico-bg.jpg');
+            //     background-repeat: no-repeat;
+            //     background-size: cover;
+            //     background-position: center;
+            //     content: "";
+            //     position: absolute;
+            //     top: 0;
+            //     right: 0;
+            //     left: 0;
+            //     bottom: 0;
+            //     opacity: 0.5;
+            //     z-index: 1;
+            // }
+        }
+        .BLRetail-tennis{
+            background: $BLRetail-matchBox-tennis-live-header-bg1;
+            // background: -moz-linear-gradient(left, $BLRetail-matchBox-tennis-live-header-bg1 0%, $BLRetail-matchBox-tennis-live-header-bg2 100%);
+            // background: -webkit-gradient(left top, right top, color-stop(0%, $BLRetail-matchBox-tennis-live-header-bg1), color-stop(100%, $BLRetail-matchBox-tennis-live-header-bg2));
+            // background: -webkit-linear-gradient(left, $BLRetail-matchBox-tennis-live-header-bg1 0%, $BLRetail-matchBox-tennis-live-header-bg2 100%);
+            // background: -o-linear-gradient(left, $BLRetail-matchBox-tennis-live-header-bg1 0%, $BLRetail-matchBox-tennis-live-header-bg2 100%);
+            // background: -ms-linear-gradient(left, $BLRetail-matchBox-tennis-live-header-bg1 0%, $BLRetail-matchBox-tennis-live-header-bg2 100%);
+            // background: linear-gradient(to right, $BLRetail-matchBox-tennis-live-header-bg1 0%, $BLRetail-matchBox-tennis-live-header-bg2 100%);
+            // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$BLRetail-matchBox-tennis-live-header-bg1, endColorstr=$BLRetail-matchBox-tennis-live-header-bg2, GradientType=1);
+        }
+        .BLRetail-sportLogo{
+            margin-left: 12px;
+            margin-bottom: 5px;
+        }
+    }
+    .BLRetail-matchBox-headerInner{
+        height: 80px;
+        z-index: 2;
+        position: relative;
+    }
+    .BLRetail-matchBox-fixtureDetails {
+        padding: 12px 20px;
+        border: 1px solid $BLRetail-matchBox-fixtureDetails-borderColor;
+        min-height: 135px;
+    }
+    .BLRetail-matchBox__matchMinute {
+        color: $BLRetail-matchBox__matchMinute-txtColor;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 30px;
+    }
+    .BLRetail-matchBox-kickOff {
+        color: $BLRetail-matchBox-kickOff-txtColor;
+    }
+    .BLRetail-matchBox__FB-score {
+        .BLRetail-matchBox__FB-scoreBox {
+            background-color: $BLRetail-matchBox__FB-scoreBox-bg;
+            border: 1px solid $BLRetail-matchBox__FB-scoreBox-borderColor;
+            border-radius: 5px;
+            min-width: 32px;
+            height: 36px;
+            font-size: 30px;
+            text-align: center;
+            color: $BLRetail-matchBox__FB-scoreBox-txtColor;
+            font-weight: 600;
+            line-height: 34px;
+            display: inline-block;
+            margin: 0 10px;
+            &.active {
+                color: #f8e71c;
+            }
+        }
+    }
+
+    .BLRetail-matchBox-tennisLiveScoreContent{
+        text-align: center;
+    }
+    .BLRetail-matchBox_setsTxt{
+        font-size: 13px;
+        text-align: left;
+    }
+    .BLRetail-matchBox-tennisLiveScore {
+        
+        .BLRetail-matchBox_setScore {
+            width: 30px;
+            display: inline-block;
+            font-size: 28px;
+            text-align: left;
+            &.set-points {
+                width: 40px;
+                color: $BLRetail-matchBox__setPoints-txtColor;
+            }
+            &.BLRetail-red{
+                color: #B52532;
+                font-weight: bold;
+                width: 40px;
+            }
+        }
+        .BLRetail-matchBox__FB-scoreBox{
+            margin: 0;
+            position: relative;
+            &.BLRetail-servingAfter{
+                &:after {
+                    position: absolute;
+                    content: "";
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    background-color: #00D7FF;
+                    border-radius: 50%;
+                    right: -20px;
+                    top: 12px;
+                }
+            }
+        }
+    }
+    .BLRetail-matchBox_player {
+        padding-left: 12px;
+        position: relative;
+        display: inline-block;
+        &.BLRetail-serving {
+            &:before {
+                position: absolute;
+                content: "";
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                background-color: $BLRetail-serving-bg;
+                border-radius: 50%;
+                left: -3px;
+                top: 15px;
+            }
+        }
+    }
+    .BLRetail-matchBox-content {
+        padding: 8px 20px 30px;
+    }
+    .BLRetail-matchBox__league {
+        font-size: 18px;
+        color: $BLRetail-matchBox__league-txtColor;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+    .BLRetail-matchBox__fixture {
+        font-size: 30px;
+        color: $BLRetail-matchBox__fixture-txtColor;
+        font-weight: 400;
+        line-height: 37px;
+    }
+    .BLRetail-matchBox__market {
+        font-size: 20px;
+        color: $BLRetail-matchBox__RTB-txtColor;
+    }
+    .BLRetail-matchBox__factAt {
+        color: $BLRetail-matchBox__factAt-txtColor;
+        font-size: 20px;
+        vertical-align: middle;
+    }
+    .BLRetail-matchBox__factImage {
+        margin-top: 20px;
+        width: 80px;
+    }
+    .BLRetail-matchBox__RTB {
+        font-size: 30px;
+        color: $BLRetail-matchBox__RTB-txtColor;
+        line-height: 42px;
+        padding: 15px 0 0 0;
+        font-weight: 400;
+        min-height: 300px;
+    }
+    .BLRetail-matchBox-RTBCarousel {
+        padding-bottom: 15px;
+        .carousel-cell {
+            width: 100%;
+        }
+        .flickity-page-dots {
+            bottom: -3px;
+            .dot {
+                margin: 0 4px
+            }
+            .is-selected {
+                background-color: $flickity-page-dots-activeBG;
+            }
+        }
+    }
+}
+
+.BLRetail-matchBoxGroup-carousel {
+    .carousel-cell {
+        width: 100%;
+    }
+}
+
+.BLRetail-matchBox__liveScoreBox {
+    width: 100%;
+    position: relative;
+    top: 140px;
+    .BLRetail-matchBox__liveScore {
+        color: #4A4A4A;
+        font-size: 40px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .BLRetail-matchBox__liveStatus {
+        min-height: 120px;
+    }
+}
+
+@-moz-document url-prefix() {
+    .BLRetail-matchBox {
+        .BLRetail-matchBox__fixture {
+            font-weight: 500;
+        }
+        .BLRetail-matchBox__RTB {
+            font-weight: 400;
+        }
+    }
+}

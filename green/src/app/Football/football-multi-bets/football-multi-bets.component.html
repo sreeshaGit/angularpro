@@ -1,0 +1,77 @@
+<div class="BL-products grey lighten-3">
+    <div class="header green white-text">
+        <div class="row valign-wrapper">
+            <div class="col s1 m2 l2 xl2"><div class="valign-wrapper"></div></div>
+            <div class="col s8 m8 l8 xl8 ">
+                <div class="center-align title">
+                    {{staticWordsData?.staticWords?.Multibet}}
+                </div>
+            </div>
+            <div class="col s2 m2 l2 xl2 "><div class="right-align"></div></div>
+        </div>
+    </div>
+    <div class="mrg-content">
+        <div class="row no-margin"><div class="space-5"></div></div>
+        <div class="row no-margin valign-wrapper">
+            <div class="col s4 m5 l5 xl5 no-padding-left">
+                <div class="mrg-inputfield">
+                    <label>{{staticWordsData?.staticWords?.Bet}}</label>
+                    <input type="text" class="validate" name="stake" value=10 [(ngModel)]=betAmount
+                           (keypress)="validateAmount($event)"
+                           (blur)="onBlurGetBetValue()" (keyup.enter)="submitAmount()" required />
+                </div>
+            </div>
+            <div class="col s4 m5 l5 xl5 no-padding">
+                <div class="mrg-inputfield">
+                    <label>{{staticWordsData?.staticWords?.To_Win}}</label>
+                    <input type="text" class="validate" name="Win amount" [(ngModel)]=winAmount
+                           (keypress)="validateAmount($event)"
+                           (blur)="onBlurWinValue()" (keyup.enter)="submitAmount()" required />
+                </div>
+            </div>
+            <div class="col s4 m2 l2 xl2 no-padding-right">
+                <button class="btn waves-effect waves-light btn-odds btn-reload green"
+                        (click)="submitAmount()"><i class="material-icons">replay</i></button>
+            </div>
+        </div>
+        <div class="row no-margin hide-on-small-and-down red-text">
+            <div class="col s5 m5 l5 xl5 no-padding-left ">
+                <div *ngIf="betAmountTextHide">{{staticWordsData?.staticWords?.Please_enter_bet_amount}}</div>
+                <div *ngIf="invalidBet">{{staticWordsData?.staticWords?.Enter_value_between_1_to_100}}</div>
+            </div>
+            <div class="col s4 m5 l5 xl5">
+                <div *ngIf="winAmountTextHide">{{staticWordsData?.staticWords?.Please_enter_win_amount}}</div>
+                <div *ngIf="invalidWin">{{staticWordsData?.staticWords?.Enter_value_between_1_to_5000}}</div>
+            </div>
+        </div>
+        <div class="row no-margin hide-on-med-and-up red-text">
+            <div class="col s12 m12 l12 xl12 no-padding-left ">
+                <div *ngIf="betAmountTextHide">{{staticWordsData?.staticWords?.Please_enter_bet_amount}}</div>
+                <div *ngIf="invalidBet">{{staticWordsData?.staticWords?.Enter_value_between_1_to_100}}</div>
+
+                <div *ngIf="winAmountTextHide">{{staticWordsData?.staticWords?.Please_enter_win_amount}}</div>
+                <div *ngIf="invalidWin">{{staticWordsData?.staticWords?.Enter_value_between_1_to_5000}}</div>
+            </div>
+        </div>
+        <div class="row" *ngFor="let items of subArrayOfMultiBets;  let row = index;">
+            <div class="col s12 m6 l6 xl6" *ngFor="let item of items; let col = index;">               
+                <app-bet-cards [replaceEventId]="replaceEventId" [item]="item" [row]="row" [col]="col"></app-bet-cards>                
+            </div>
+        </div>
+        <div class="row no-margin"><div class="space-5"></div></div>
+    </div>
+    <app-multibet-footer [subArrayOfMultiBets]="subArrayOfMultiBets" [totalOdds]="totalOdds"
+                         [totalOddsText]="staticWordsData?.staticWords?.Total_Odds"
+                         [addAllToBetslipText]="staticWordsData?.staticWords?.Add_all_to_Betslip">
+    </app-multibet-footer>   
+    <div *ngIf="hideData">
+        <div class="row no-margin"><div class="space-5"></div></div>
+        <div class="row no-margin">
+            <div class="col s12 m12 l12 xl12 center-align  info-text accent-2">
+                {{staticWordsData?.staticWords?.Sorry_we_couldnt_return_any_events_Please_try_again_later}}
+            </div>
+        </div>
+        <div class="row no-margin"><div class="space-5"></div></div>
+    </div>
+    <app-loader *ngIf="isServiceLoader"></app-loader>
+</div>

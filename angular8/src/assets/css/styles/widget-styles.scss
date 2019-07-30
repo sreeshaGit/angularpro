@@ -1,0 +1,260 @@
+.BL-widget {
+    font-family: $BL-font-family;
+    background-color: $BL-widget-bg;
+    margin: 0px auto;	 
+    color: $BL-widget-color;
+    font-size: $BL-widget-fontSize;
+    .BL-widgetHeader {
+        height: $BL-widgetHeader-height;
+        padding: 0 10px;
+        display: flex;
+        background-color: $BL-widgetHeader-color;
+        align-items: center;
+        font-weight: bold;
+        .BL-widgetTitle{
+            color: $BL-widgetHeader-title-TxtColor;
+            display: inline-block;
+            font-size: $BL-widgetHeader-title-fontSize;
+            position: relative;
+        }
+    }
+    .BL-widgetSubHeader{
+        height: $BL-widgetSubHeader-height;
+        background-color: $BL-widgetSubHeader-bg;
+        display: flex;
+        align-items: center;
+        font-size: $BL-widgetSubHeader-fontSize;
+        padding: 0 2px;
+        ul{
+            li{
+                display: inline-block;
+                padding: 0 6px;
+                a{
+                    color: $BL-widgetSubHeader-menuItem-color;
+                    text-decoration: none;
+                    cursor: pointer;
+                    &.active{
+                        color: $BL-widgetSubHeader-menuItem-activeColor;
+                        border-bottom: 2px solid $BL-widgetSubHeader-menuItem-activeColor;
+                        padding-bottom: 9px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+    .BL-contentBox {
+        background-color: $BL-widget-contentBox-bg;
+        position: relative;	
+        width: 100%;
+        overflow: hidden;
+        padding: 4px 0;
+    }
+}
+
+.BL-bestBets-filters{
+    padding: 12px 9px;
+    ul{
+        display: inline-block;
+        width: 100%;
+        li{
+            width: 50%;
+            float: left;
+            padding: 0 3px;
+            /*&:last-child{
+                width: 100%;
+                margin-top: 12px;
+                .BL-select{
+                    select{
+                      height: 35px;
+                    }
+                    &:after{
+                        top:12px;
+                    }
+                    
+                }
+            }*/
+        }
+    }
+}
+
+.BL-accaAttack-filters{
+    padding: 16px 4px;
+    ul{
+        display: table;
+        width: 100%;
+
+        li{
+            display: table-cell;
+            padding: 0 4px;
+            vertical-align: bottom;
+            width: 35%;
+
+            &:last-child{
+                width: 20%;
+            }
+        }
+    }
+    .BL-inputLabel{
+        font-size: $BL-formControl-label-fontSize;
+        color: $BL-formControl-label-txtColor;
+        margin-bottom: 3px;
+    }
+    .BL-btnGo{
+        height: $BL-formControl-height;
+        background-color: $BL-btnGo-bg;
+        color: $BL-btnGo-txtColor;
+        text-align: center;
+        border-radius: $BL-btnGo-borderRadius;
+        cursor: pointer;
+        img{
+            width: 18px;
+            vertical-align: middle;
+        }
+    }
+    
+}
+
+
+.BL-matchBoxGroup {
+    overflow: hidden;
+}
+
+.BL-matchBox {
+    color: $BL-matchBox-txtColor;
+    font-size: 13px;
+    background-color: $BL-matchBox-bg;
+    margin-bottom: 8px;
+
+    .BL-matchBox-header {
+        height: $BL-matchBox-header-height;
+        background-color: $BL-matchBox-header-bg;            
+        padding: 0 10px;
+        border-radius: $BL-matchBox-header-border-radius;
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .BL-leagueName {
+        flex: 1 1 0;
+    }
+    .BL-matchBox-kickOff {
+        color: $BL-matchBox-kickOff-txtColor;
+        width: 100px;
+        text-align: right;
+    }
+    .BL-matchBox-matchMinute {
+        color: $BL-matchBox-matchMinute-txtColor;
+        width: 100px;
+        text-align: right;
+    }
+    .BL-matchBox-content{
+        padding: 10px;
+        border: 1px solid $BL-matchBox-content-borderColor;
+        background-color: $BL-matchBox-content-bg;
+    }
+    
+    .BL-matchBox-fixture {
+        font-size: $BL-matchBox-fixture-fontSize;
+        color: $BL-matchBox-fixture-txtColor;
+        margin-bottom: 5px;
+        font-weight: $BL-matchBox-fixture-fontWeight;
+        // cursor: pointer;
+        .BL-FB-liveScore{
+            color: $BL-matchBox-FB-liveScore-txtColor;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .BL-fixture__liveScore{
+            .BL-score{
+                display: inline-block;
+                width: 18px;
+                text-align: left;
+                font-weight: $BL-matchBox-score-fontWeight;
+            }
+            span{
+                &:nth-last-child(2){
+                    color: $BL-matchBox-FB-liveScore-txtColor;
+                }
+            }
+            .BL-servingAfter{
+                position: relative;
+                &::after{
+                    content: "";
+                    width: 5px;
+                    height: 5px;
+                    background-color: $BL-teamServing-color;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 8px;
+                    right: -8px;
+                }
+            }
+        }
+        // .BL-teamName{
+        //     //font-weight: 600;
+        // }
+    }
+    .BL-closeIcon {
+        position: relative;
+        float: right;
+        cursor: pointer;
+    }
+    .BL-closeIcon img {
+        position: relative;
+        float: right;
+        cursor: pointer;
+        width: 12px;
+        // display: none;
+        top: 3px;
+    }
+    .BL-matchBox-fixture:hover .BL-closeIcon img  {
+        display: block;
+    }
+    .BL-matchBox-RTB {
+        margin-bottom: 14px;
+        color: $BL-matchBox-RTB-color;
+    }
+    .BL-matchBox-marketName{
+        font-size: $BL-matchBox-marketName-fontSize;
+        padding-bottom: 6px;
+        color: $BL-matchBox-marketName-color;
+        font-weight: 600;
+    }
+}
+
+.BL-widget-footer{
+    border-top: 1px solid $BL-widget-footer-borderTop-color;
+    padding: 16px 12px;
+    color: $BL-widget-footer-stake-txtColor;
+    font-size: $BL-widget-footer-stake-fontSize;
+    background-color: $BL-widget-footer-bg;
+    .BL-stake{
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        .BL-stake__value{
+            color: $BL-widget-footer-stake_value-txtColor;
+            font-weight: $BL-widget-footer-stake_value-fontWeight;
+        }
+    }
+    .BL-returns{
+        font-size: $BL-widget-footer-returns-fontSize;
+        display: flex;
+        justify-content: space-between;
+        .BL-returns__txt{
+            color: $BL-widget-footer-returns-txtColor;
+        }
+        .BL-returns__value{            
+            color: $BL-widget-footer-returns_value-txtColor;
+            font-size: $BL-widget-footer-returns_value-fontSize;
+            font-weight: $BL-widget-footer-returns_value-fontWeight;
+        }
+    }
+}
+
+/*======================================================
+
+======================================================*/

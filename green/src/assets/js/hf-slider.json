@@ -1,0 +1,58 @@
+[
+  
+  {
+    "Decimal": "1.01",
+    "Fractional": "0",
+    "American": "0"
+  },
+  {
+    "Decimal": "2.00",
+    "Fractional": "Evens",
+    "American": "100"
+  },
+  {
+    "Decimal": "2.50",
+    "Fractional": "6/4",
+    "American": "150"
+  },
+  {
+    "Decimal": "3.00",
+    "Fractional": "2/1",
+    "American": "200"
+  },
+  {
+    "Decimal": "6.00",
+    "Fractional": "5/1",
+    "American": "500"
+  },
+  {
+    "Decimal": "11.00",
+    "Fractional": "10/1",
+    "American": "1000"
+  },
+  {
+    "Decimal": "17.00",
+    "Fractional": "16/1",
+    "American": "1600"
+  },
+  {
+    "Decimal": "26.00",
+    "Fractional": "25/1",
+    "American": "2500"
+  },
+  {
+    "Decimal": "34.00",
+    "Fractional": "33/1",
+    "American": "3300"
+  },
+  {
+    "Decimal": "51.00",
+    "Fractional": "50/1",
+    "American": "5000"
+  },
+  {
+    "Decimal": "101.00",
+    "Fractional": "100/1",
+    "American": "10000"
+  }
+]

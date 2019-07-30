@@ -1,0 +1,224 @@
+.mrg-banner-slider {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    min-height: 240px !important;
+}
+
+    .mrg-banner-slider .mrg-slide {
+        display: flex;
+        min-height: 240px;
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: cover;
+    }
+
+        .mrg-banner-slider .mrg-slide.football {
+            background-image: url(/assets/img/FootballMatch.jpg);
+        }
+
+        .mrg-banner-slider .mrg-slide.tennis {
+            background-image: url(/assets/img/tennis-banner-bg.jpg);
+            background-position: center bottom;
+        }
+
+        .mrg-banner-slider .mrg-slide .btn-odds {
+            width: 60%;
+        }
+
+        .mrg-banner-slider .mrg-slide .multiple-outcome {
+            padding: 0 8px 0 0;
+        }
+
+            .mrg-banner-slider .mrg-slide .multiple-outcome .btn-odds {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+    .mrg-banner-slider .slide-zoom {
+        text-align: left;
+    }
+
+    .mrg-banner-slider .banner-content {
+        color: #FFF;
+        font-size: 12px;
+        height: 100%;
+        min-height: 240px;
+        overflow: hidden;
+        padding-left: 48px;
+        padding-top: 32px;
+        position: relative;
+        width: 100%;
+    }
+
+    .mrg-banner-slider .mrg-slide .mrg-skew::after {
+        background: rgba(23, 105, 55, 0.75);
+        content: " ";
+        display: block;
+        height: 100%;
+        left: -30px;
+        margin-left: -45px;
+        position: absolute;
+        top: 0;
+        transform: skew(30deg);
+        -ms-transform: skew(30deg);
+        /* IE 9 */
+        -webkit-transform: skew(30deg);
+        /* Chrome, Safari, Opera */
+        width: 65%;
+    }
+
+    .mrg-banner-slider .mrg-slide.tennis .mrg-skew::after {
+        background: rgba(20,85,190, 0.6);
+    }
+
+    .mrg-banner-slider .banner-inner {
+        padding-bottom: 20px;
+        position: relative;
+        width: 35%;
+        z-index: 99;
+    }
+
+    .mrg-banner-slider .banner-content .b-fixture {
+        display: block;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 24px;
+        margin-top: 8px;
+    }
+
+    .mrg-banner-slider .banner-content.with-event-link .b-fixture {
+        cursor: pointer;
+    }
+
+    .mrg-banner-slider .banner-content .b-kickoff {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .mrg-banner-slider .banner-content .b-league {
+        font-size: 14px;
+        font-weight: 400;
+        margin-top: 5px;
+    }
+
+    .mrg-banner-slider .banner-content .b-rtb {
+        color: #FFF;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 26px;
+        margin: 6px 0 10px;
+        opacity: 0.8;
+    }
+
+    .mrg-banner-slider .tennis-live-score .set-score {
+        display: inline-block;
+        text-align: left;
+        width: 30px;
+    }
+
+.set-score:empty {
+    display: none !important;
+}
+
+.mrg-banner-slider .tennis-live-score .player {
+    padding-left: 12px;
+    position: relative;
+}
+
+.mrg-banner-slider .football-live-score .score {
+    width: 30px;
+}
+/*--------Other Sports-------------*/
+.mrg-banner-slider .marketOtherSport {
+    font-weight: 500 !important;
+}
+
+.mrg-banner-slider .mrg-slide.otherSport {
+    background-image: url(/assets/img/FootballMatch.jpg);
+}
+
+    .mrg-banner-slider .mrg-slide.otherSport .btn-odds .market {
+        width: 70%;
+    }
+
+    .mrg-banner-slider .mrg-slide.otherSport .btn-odds .odds {
+        width: 30%;
+    }
+/*---------------------------------*/
+
+@media screen and (min-width: 320px) and (max-width: 776px) {
+    .mrg-banner-slider .banner-content {
+        padding-left: 24px;
+        padding-top: 24px;
+    }
+
+    .mrg-banner-slider .mrg-slide .mrg-skew::after {
+        width: 95%;
+    }
+
+    .mrg-banner-slider .banner-inner {
+        width: 60%;
+    }
+
+    .mrg-banner-slider .banner-content .b-fixture {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .mrg-banner-slider .banner-content .b-rtb {
+        font-size: 14px;
+        line-height: 20px;
+        margin: 4px 0 8px;
+    }
+
+    .mrg-banner-slider .mrg-slide .btn-odds {
+        width: 100%;
+    }
+
+        .mrg-banner-slider .mrg-slide .btn-odds.static-btn-text {
+            width: 60%;
+        }
+
+    .mrg-banner-slider .football-live-score .score {
+        width: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .mrg-banner-slider .mrg-slide .btn-odds {
+        width: 80%;
+    }
+
+    .mrg-banner-slider .mrg-slide .mrg-skew::after {
+        width: 75%;
+    }
+
+    .mrg-banner-slider .banner-content {
+        padding-left: 24px;
+        padding-top: 24px;
+    }
+
+    .mrg-banner-slider .banner-inner {
+        width: 55%;
+    }
+
+    .mrg-banner-slider .football-live-score .score {
+        width: 20px;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .mrg-banner-slider .banner-inner {
+        width: 45%;
+    }
+
+    .mrg-banner-slider .tennis-live-score .scores {
+        width: 130px
+    }
+
+    .mrg-banner-slider .tennis-live-score .player-info {
+        width: 250px;
+    }
+}

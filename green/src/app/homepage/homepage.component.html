@@ -1,0 +1,57 @@
+<div class="white">
+    <div class="row no-margin">
+        <app-dynamic-banner></app-dynamic-banner>
+    </div>
+    <div class="">
+        <app-product-carousel [staticWord]=staticWordsData?.staticWords?.Live></app-product-carousel>
+    </div>
+    <!--BL Product Carousel-->
+    <div class="mrg-content">
+        <div class="row mrg-widget">
+            <div class="col s12 m12 l12 xl8">
+                <!--Right Now Start-->
+                <app-right-now
+                    [staticWords]=staticWordsData?.staticWords
+                    [bannerEventId]=bannerEventId
+                    (setUpcomingDisplay)="setUpcomingDisplay($event)"
+                    (setRightNow)="setRightNow($event)"></app-right-now>
+                <!--Right Now end-->
+
+                <!--upcoming-->
+                <div class="divider margin-bottom-15"></div>
+                <app-upcoming-match
+                    [matchUpcoming]="matchUpcoming"
+                    [staticWord]=staticWordsData?.staticWords
+                    [isUpcomingLoader]="isUpcomingLoader"
+                    [showUpcoming]="showUpcoming"></app-upcoming-match>
+                <!--upcoming end-->
+
+                <!--Match of the day-->
+                <app-match-of-the-day
+                    [staticWords]=staticWordsData?.staticWords
+                    [upcomingEventId]=upcomingEventId
+                    [bannerEventId]=bannerEventId
+                    (setMODEventId)="setMODEventId($event)"></app-match-of-the-day>
+                <!--Match of the day End-->
+            </div>
+            <div class="col s12 m12 l12 xl4">
+                <div class="space-5 show-on-extra-large"></div>
+                <iframe class="mrg-promo-banner" *ngIf="promoLink && !isInApp" [src]="promoLink"></iframe>
+            </div>
+        </div>
+        <!--High lights to day-->
+        <div class="divider margin-bottom-15 margin-top-20"></div>
+        <app-highlights-today
+            [staticWord]=staticWordsData?.staticWords></app-highlights-today>
+    </div>
+    <div class="row no-margin">
+        <div class="space-5"></div>
+    </div>
+    <app-todays-assist [staticWord]=staticWordsData?.staticWords
+                       [upcomingEventId]=upcomingEventId
+                       [modEventId]=modEventId
+                       [bannerEventId]=bannerEventId
+                       [todaysAssist]=todaysAssist
+                       [rightNowEventId]="rightNowEventId"
+                     ></app-todays-assist>
+</div>

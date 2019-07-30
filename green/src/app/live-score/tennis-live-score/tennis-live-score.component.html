@@ -1,0 +1,43 @@
+<div *ngIf="scorePosition=='todaysAssist'">
+    <div class="todaysAssistTennisLiveScore fixture truncate">
+        <span *ngFor="let item of homeScore let i=index;" class="setScore"
+              [ngClass]="{'green-text':i == currentSetNumber-1}">
+            {{item}}
+        </span>
+        <span class="setPoints green-text">{{gameScore?.score?.home}}</span>
+        <span class="player">{{home}}</span>
+        <span [ngClass]="{'player':true,'servingAfter':gameScore?.statistics?.sets?.homeServe == true}"></span>
+    </div>
+    <div class="todaysAssistTennisLiveScore fixture truncate">
+        <span *ngFor="let item of awayScore let i=index;" class="setScore"
+              [ngClass]="{'green-text':i == currentSetNumber-1}">
+            {{item}}
+        </span>
+        <span class="setPoints green-text">{{gameScore?.score?.away}}</span>
+        <span class="player">{{away}}</span>
+        <span [ngClass]="{'player':true,'servingAfter':gameScore?.statistics?.sets?.homeServe == false}"></span>
+    </div>
+</div>
+<!-- right now -->
+<div *ngIf="scorePosition=='rightnow'">
+    <span *ngFor="let item of rightNowScore let i=index;" class="set-score"
+          [ngClass]="{'current-set':i == currentSetNumber-1}">
+        {{item}}
+    </span>
+</div>
+<div class="set-points" *ngIf="pointScore=='playerScore'">{{playerPointScore}}</div>
+<span [ngClass]="{'team':true,'serving':rightNowHomeServe}" *ngIf="playerPosition=='homePosition'"></span>
+<span [ngClass]="{'team':true,'serving':!rightNowHomeServe}" *ngIf="playerPosition=='awayPosition'"></span>
+<!-- banner -->
+
+<span class="set-score" *ngIf="isBannerHome">{{homeSetWinner}}</span>
+<span class="set-score" *ngIf="isBannerHome">{{bannerHomeScore}}</span>
+<span class="set-score set-points" *ngIf="isBannerHome">{{bannerScoreData?.score?.home}}</span>
+<span [ngClass]="{'player':true,'serving':bannerStatsData?.homeServe == true}" *ngIf="isBannerHome"></span>
+
+
+<span class="set-score" *ngIf="isBannerAway">{{awaySetWinner}}</span>
+<span class="set-score" *ngIf="isBannerAway">{{bannerAwayScore}}</span>
+<span class="set-score set-points" *ngIf="isBannerAway">{{bannerScoreData?.score?.away}}</span>
+<span [ngClass]="{'player':true,'serving':bannerStatsData?.homeServe == false}" *ngIf="isBannerAway"></span>
+

@@ -1,0 +1,82 @@
+<div class="divider margin-bottom-15 margin-top-20"></div>
+<div class="row no-margin valign-wrapper">
+    <div class="col s12 m12 l12 xl12 no-padding" *ngIf="showMatchOfTheDay">
+        <span class="widget-title">{{staticWords?.Match_Of_The_Day}}</span>
+    </div>
+</div>
+<div class="test" *ngIf="isMatchOfDayLoader==false">
+    <div class="row" [hidden]="hideMatchOfDay">
+        <div class="col s12 m6 l6 xl6" (click)="goToEventPage(showMatchOfTheDay?.eventId,'matchoftheday')">
+            <div class="widget-score-board right-now bg-gradient white-text" [ngClass]="{'bg-football':showMatchOfTheDay?.sportName=='Football', 'bg-tennis':showMatchOfTheDay?.sportName=='Tennis'}" >
+                <div class="bg-gradient-inner center-align">
+                    <div class="league-name" [ngClass]="{'football':showMatchOfTheDay?.sportName=='Football', 'tennis':showMatchOfTheDay?.sportName=='Tennis'}">
+                    <span *ngIf="showMatchOfTheDay?.country != null && showMatchOfTheDay?.country != ''">{{showMatchOfTheDay?.country}} /</span> {{showMatchOfTheDay?.league}}</div>
+                    <div class="space-5"></div>
+                    <div class="row no-margin center-align valign-wrapper">
+                        <div class="col s4 m4 l4 xl4">
+                            <img class="football-jersey"  *ngIf="showMatchOfTheDay?.sportName=='Football' && isMODImage" [src]="'assets/img/football-jerseys/' + showMatchOfTheDay?.homeId + '.png'"
+                                 (error)="imageError()"/>
+                            <app-display-tennis-image *ngIf="showMatchOfTheDay?.sportName=='Tennis'" [eventId]="showMatchOfTheDay?.eventId" [flagPosition]="'home'"></app-display-tennis-image>
+                            <div class="team truncate">{{showMatchOfTheDay?.home}}</div>
+                        </div>
+                        <div class="col s4 m4 l4 xl4 no-padding">
+                            <div>{{showMatchOfTheDay?.kickOfftime | dateFormat :'D' | async}}</div>
+                            <div class="fixture-time">{{showMatchOfTheDay?.kickOfftime | dateFormat :'T' | async}}</div>
+                        </div>
+                        <div class="col s4 m4 l4 xl4">
+                            <img class="football-jersey" *ngIf="showMatchOfTheDay?.sportName=='Football' && isMODImage" [src]="'assets/img/football-jerseys/' + showMatchOfTheDay?.awayId + '.png'"
+                                 (error)="imageError()" />
+                            <app-display-tennis-image *ngIf="showMatchOfTheDay?.sportName=='Tennis'" [eventId]="showMatchOfTheDay?.eventId" [flagPosition]="'away'"></app-display-tennis-image>
+                            <div class="team truncate">{{showMatchOfTheDay?.away}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+        </div>
+        <div class="col s12 m6 l6 xl6" *ngIf="showMatchOfTheDay">                     
+            <div class="mrg-carousel-item">
+                <div class="space-5"></div>
+                <span class="bet-assist ">{{staticWords?.Bet_Assist}}</span>
+                <div class="rtb">
+                    {{showMatchOfTheDay?.text}}
+                </div>
+                <button class="btn waves-effect waves-light btn-odds"  (click)="addToBetslip(showMatchOfTheDay?.outcomeId,'matchoftheday')">
+                    <span class="market">{{showMatchOfTheDay?.marketName}} - {{showMatchOfTheDay?.outcomeName}} {{showMatchOfTheDay?.subMarketname}} </span>
+                    <span class="odds">{{showMatchOfTheDay | oddsFormat : kambiService.oddsFormat}}</span>
+                </button>                      
+            </div>                        
+        </div>
+    </div>
+</div>
+<div class="upcoming-right-match-Loader" *ngIf="isMatchOfDayLoader">
+    <div class="divider margin-bottom-15 margin-top-20"></div>
+    <div class="row no-margin">
+        <div class="col s6 m3 l3 xl3 grey lighten-4 height-25 margin-top-5">
+            <span class="widget-title ">&nbsp;</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m6 l6 xl6">
+            <div class="widget-score-board grey lighten-4">
+
+            </div>
+        </div>
+        <div class="col s12 m6 l6 xl6">
+            <div class="row no-margin">
+                <div class="space-5"></div>
+                <div class="row no-margin">
+                    <div class="bet-assist grey lighten-4 col s2 m3 l2 xl2 margin-top-5">&nbsp;</div>
+                </div>
+                <div class="rtb">
+                    <div class="row no-margin">
+                        <div class="grey lighten-4 col s12 m12 l12 xl12 height-15 margin-bottom-5">&nbsp;</div>
+                    </div>
+                    <div class="row no-margin">
+                        <div class="grey lighten-4 col s6 m6 l6 xl4 height-15 margin-bottom-5">&nbsp;</div>
+                    </div>
+                </div>
+                <button class="btn grey lighten-4 btn-odds" pam-button="">&nbsp;</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+.mrg-inputfield select{
+	background-color: transparent;
+	border: none;
+	-webkit-appearance: none;
+       -moz-appearance: none;
+	appearance: none;
+	padding: 0 12px 0 0;
+	height: 28px;
+	font-size: 16px;
+	font-weight: 500;
+	margin-left: -4px;
+}
+select::-ms-expand {
+    display: none;
+}
+.mrg-inputfield select option{
+	padding: 0
+}
+.mrg-inputfield select:focus{
+	border: none;
+	outline: none;
+}
+.mrg-inputfield.mrg-select::after{
+	content: "\E5C5";
+	float: right;
+	font-family: "Material Icons";
+	font-size: 28px;
+	pointer-events: none;
+	position: absolute;
+	right: 6px;
+	top: 8px;
+}

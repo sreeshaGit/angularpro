@@ -1,0 +1,281 @@
+$BL-font-family: 'Open Sans', sans-serif !important;
+$fonts-path: "../fonts";
+
+$BL-primaryColor:#ee3536;
+$BL-secundaryColor:#2d2e2c;
+
+$white: #FFF;
+$black: #000;
+
+
+
+$BL-widget-bg: #22242a;
+$BL-widget-color: $black;
+$BL-widget-fontSize: 13px;
+
+/*--- Widget Header Variables ---------*/
+
+$BL-widgetHeader-height: 46px;
+$BL-widgetHeader-color: $BL-primaryColor;
+
+$BL-widgetHeader-titleStrip-bg: $BL-primaryColor;
+$BL-widgetHeader-title-TxtColor: $white;
+$BL-widgetHeader-title-fontSize: 18px;
+
+/*--- Widget Sub-Header Variables ---------*/
+
+$BL-widgetSubHeader-height: 40px;
+$BL-widgetSubHeader-bg: $black;
+$BL-widgetSubHeader-fontSize: $BL-widget-fontSize;
+
+$BL-widgetSubHeader-menuItem-color:#c6c6c6;
+$BL-widgetSubHeader-menuItem-activeColor:$BL-primaryColor;
+
+// $BL-widgetHeader-carousel-title-TxtColor: $white;
+// $BL-widgetHeader-carousel-title-fontSize: 14px;
+
+$BL-widget-contentBox-bg: $white;
+
+
+/*--- Match Box Variables ---------*/
+$BL-matchBox-bg: #F9F9F9;
+$BL-matchBox-txtColor: #666;
+$BL-matchBox-header-bg: $BL-secundaryColor;
+$BL-matchBox-header-height: 30px;
+$BL-matchBox-header-border-radius: 0;
+$BL-matchBox-content-bg: #f2f2f2;
+$BL-matchBox-content-borderColor: #b7b7b7;
+
+$BL-matchBox-kickOff-txtColor:#ffea00;
+$BL-matchBox-matchMinute-txtColor:#ffea00;
+$BL-matchBox-fixture-txtColor: #000;
+$BL-matchBox-fixture-fontSize: 14px;
+$BL-matchBox-fixture-fontWeight: 600;
+$BL-matchBox-score-fontWeight: 700;
+$BL-matchBox-FB-liveScore-txtColor: $BL-primaryColor;
+
+$BL-matchBox-RTB-color: #444444;
+
+$BL-matchBox-marketName-color: #666;
+$BL-matchBox-marketName-fontSize: $BL-widget-fontSize;
+
+
+
+/*--- Button Odds Variables ---------*/
+$BL-btn-borderRadius: 6px;
+
+$BL-btn-marketOdds-bg: $white;
+$BL-btn-marketOdds-height: 36px;
+$BL-btn-marketOdds-txtColor: #000;
+$BL-btn-marketOdds-fontSize: 12px;
+$BL-btn-marketOdds-borderColor: $white;
+$BL-btn-marketOdds-odds-txtColor: $BL-primaryColor;
+
+$BL-btn-marketOdds-hover-bg: $white;
+$BL-btn-marketOdds-hover-txtColor: #000;
+$BL-btn-marketOdds-hover-borderColor:$BL-primaryColor; 
+
+$BL-btn-marketOdds-active-bg: $BL-primaryColor;
+$BL-btn-marketOdds-active-txtColor: $white;
+$BL-btn-marketOdds-active-oddsColor: $white;
+$BL-btn-marketOdds-active-hover-bg: $BL-primaryColor;
+$BL-btn-marketOdds-active-hover-txtColor: $white;
+$BL-btn-marketOdds-active-borderColor: $BL-primaryColor;
+
+
+
+
+/*--- Form Elements Variables ---------*/
+$BL-formControl-height: 40px;
+$BL-formControl-txtColor: #666;
+$BL-formControl-borderRadius: 3px;
+$BL-formControl-label-fontSize: 12px;
+$BL-formControl-label-txtColor: #666;
+
+$BL-select-bg: #EBEBEB;
+$BL-select-fontSize: 12px;
+
+$BL-input-fontSize: 14px;
+$BL-input-bg: #f9f9f9;
+$BL-input-borderColor: #CCC;
+
+$BL-btnGo-bg: $BL-primaryColor;
+$BL-btnGo-txtColor: $white;
+$BL-btnGo-borderRadius: $BL-formControl-borderRadius;
+
+
+
+/*--- Error Message Variables ---------*/
+$BL-errorMsg-fontSize: 13px;
+$BL-errorMsg-txtColor: $BL-primaryColor;
+$BL-errorMsgBox-borderColor: $BL-primaryColor;
+$BL-errorMsgBox-borderRadius: 6px;
+
+
+
+/*--- Footer Variables ---------*/
+$BL-widget-footer-bg: $white;
+$BL-widget-footer-borderTop-color: #EBEBEB;
+$BL-widget-footer-stake-fontSize: 13px;
+$BL-widget-footer-stake-txtColor: #8c8c8c;
+$BL-widget-footer-stake_value-txtColor: $black;
+$BL-widget-footer-stake_value-fontWeight: 600;
+
+$BL-widget-footer-returns-fontSize: 13px;
+$BL-widget-footer-returns-txtColor: #8c8c8c;
+$BL-widget-footer-returns_value-txtColor: $BL-primaryColor;
+$BL-widget-footer-returns_value-fontSize: 15px;
+$BL-widget-footer-returns_value-fontWeight: 600;
+
+$BL-btn-addAllToBetslip-height: 40px;
+$BL-btn-addAllToBetslip-bg: $BL-primaryColor;
+$BL-btn-addAllToBetslip-txtColor: $white;
+$BL-btn-addAllToBetslip-fontSize: 16px;
+$BL-HF-btnDisabled-bg: #CCC;
+$BL-HF-btnDisabled-txtColor: #000;
+
+
+
+
+/*-------- Event View Variables --------*/
+$BL-eventView-matchBox-borderTop-color: #E5E5E5;
+
+$BL-eventView-matchInfoBanner-height: 100px;
+$BL-eventView-matchInfoBanner__content-bg: rgba(88,8,8,.85);
+$BL-eventView-matchInfoBanner-fontSize: 12px;
+$BL-eventView-matchInfoBanner-txtColor: $white;
+$BL-eventView-matchInfoBanner__eventScore-txtColor: $white;
+
+$BL-eventView-marquee-bg: $BL-primaryColor;
+$BL-eventView-marquee-txtColor: $white;
+
+$BL-eventView-headTohead-teams-bg: #F2F2F2;
+
+$BL-accordion-header-bg: #272a31;
+$BL-accordion-header-txtColor: $white;
+
+$BL-lastGamesBox-bg: $white;
+$BL-lastGamesBox-txtColor: #222;
+$BL-lastGamesBox-fontSize: 12px;
+$BL-lastGamesBox-title-fontSize: 14px;
+
+$BL-last3Games-title-txtColor: $BL-primaryColor;
+$BL-last3Games-title-borderColor: $BL-primaryColor;
+$BL-last3GamesBox-bg: #f2f2f2;
+$BL-last3GamesBox-borderColor: #f2f2f2;
+$BL-last3GamesBox-score-txtColor: $white;
+$BL-last3GamesBox-score-bg: $BL-primaryColor;
+$BL-last3GamesBox-date-txtColor: #9b9b9b;
+
+$BL-last10Games-matchStatusList-box-height: 20px;
+$BL-last10Games-matchStatusList-box-matchWin-bg: #45942e;
+$BL-last10Games-matchStatusList-box-matchDraw-bg: #7e7e7e;
+$BL-last10Games-matchStatusList-box-matchLoss-bg: #ff0000;
+
+$BL-last10Games-WDL-matchInfoBanner-height: 75px;
+$BL-last10Games-WDL-matchInfoBanner-txtColor: $white;
+$BL-last10Games-WDL-matchInfoBanner-fontSize: 12px;
+$BL-last10Games-WDL-matchInfoBanner__fixture-fontSize: 14px;
+$BL-last10Games-WDL-matchInfoBanner__eventScore-txtColor: $BL-primaryColor;
+
+
+
+/*-------- Horse Finder Variables --------*/
+
+$BL-HF-logo-txtColor: $white;
+$BL-HF-logo-subPart-txtColor: $BL-primaryColor;
+
+$BL-mainMenu-item-bg: #464b58;
+$BL-mainMenu-item-txtColor: #9598A2;
+$BL-mainMenu-item-fontSize: 13px;
+$BL-mainMenu-item-active-borderBottomColor: $BL-primaryColor;
+$BL-mainMenu-item-active-txtColor: $white;
+
+
+$BL-widget-mainContent-bg: $white;
+
+
+$BL-horsesArcSlider-txtColor: $white;
+$BL-horsesArcSlider-racesCount-fontSize: 40px;
+$BL-horsesArcSlider-horses-txtColor: 17px;
+
+$BL-btnShowHorses-bg: $BL-primaryColor;
+$BL-btnShowHorses-txtColor: $white;
+
+$BL-timeForm-toggle-bg: #4D4D4D;
+$BL-timeForm-toggle-txtColor: $white;
+$BL-timeForm-toggle-fontSize: 10px;
+$BL-timeForm-toggle-content: "TIME FORM";
+$BL-timeform-toggle-thumb-border-color: #4D4D4D;
+
+$BL-timeForm-toggle-active-bg: $BL-primaryColor;
+$BL-timeForm-toggle-active-txtColor: $white;
+
+$BL-timeForm-rating-starColor: #999;
+$BL-timeForm-rating-starSize: 24px;
+$BL-timeForm-rating-starActiveColor: #FFCA22;
+
+$BL-infoMessage-txtColor:  $BL-primaryColor;
+
+
+$BL-raceCourseFilter-bg: $white;
+$BL-raceCourseFilter-fontSize: 12px;
+$BL-raceCourseFilter-txtColor: #000;
+$BL-raceCourseFilter-borderColor: #dbdbdb;
+$BL-raceCourseFilter-multiSelect-bg: #EBEBEB;
+$BL-raceCourseFilter-multiSelect-txtColor: #000;
+$BL-raceCourseFilter-multiSelect-dropDownMenu-bg: $white;
+$BL-raceCourseFilter-multiSelect-dropDownMenu-borderColor: #dbdbdb;
+
+$BL-HF-filters-bg: #ebebeb;
+$BL-HF-filters-borderColor: #dbdbdb;
+$BL-HF-filters-txtColor: #000;
+$BL-HF-filters-active-bg: $BL-primaryColor;
+$BL-HF-filters-active-txtColor: $white;
+
+$BL-HF-filters-star-color: $BL-primaryColor;
+$BL-HF-filters-star-active-color: $white;
+
+$BL-note-txtColor: #000;
+$BL-note-fontSize: 11px;
+$BL-note-star-color: $BL-primaryColor;
+$BL-note-star-fontSize: 10px;
+
+
+$BL-quickSearchResults-header-bg: #e5e5e5;
+$BL-quickSearchResults-header-borderColor: #999;
+
+$BL-HF-matchBox-bg: $white;
+$BL-HF-matchBox-borderBottomColor: #ebebeb;
+$BL-HF-matchBox-txtColor: #333;
+
+$BL-btnHFodds-bg: #ebebeb;
+$BL-btnHFodds-fontSize: 12px;
+$BL-btnHFodds-txtColor: #333;
+$BL-btnHFodds-height: 30px;
+$BL-btnHFodds-active-bg: $BL-primaryColor;
+$BL-btnHFodds-active-txtColor: $white;
+
+$BL-horseRating-txtColor: #999;
+$BL-horseRating-active-txtColor: #FFCA22;
+
+$BL-HF-accordionBody-bg: #ebebeb;
+$BL-HF-rtb-txtColor: #000;
+$BL-trainer-jockey__title-txtColor: $BL-primaryColor;
+$BL-trainer-jockey__txtColor: #000;
+
+$BL-HF-quickSearch-bestBacked__header-bg: #555;
+$BL-HF-quickSearch-bestBacked__header-txtColor: $white;
+
+$BL-dropped-txtColor: $BL-secundaryColor;
+
+$BL-AtoZ-searchBox-txtColor: #333;
+$BL-AtoZ-searchBox-addonColor: #999;
+
+$BL-serachByLetter-bg: #555;
+$BL-serachByLetter-txtColor: $white;
+$BL-serachByLetter-fontSize: 13px;
+$BL-serachByLetter-active-bg: $BL-primaryColor;
+
+/*-------- Tennis live --------*/
+$BL-teamServing-color: $BL-primaryColor;

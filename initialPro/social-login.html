@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playzoola - Change password</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/playzoola_sportsIT.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+
+<link rel="icon" href="images/favicon.png">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<style>
+.pay-out .payout-top25{
+	line-height: 20px;	
+}
+.pay-out ul{
+	list-style: none;	
+	margin: 10px 0px 5px;
+	padding-left: 0px;
+}
+.pay-out ul li{
+	display: inline-block;
+	padding: 0 10px;
+	vertical-align: middle;
+	margin-bottom: 5px;
+}
+.score-box {
+	background-color: #fff;
+    border-radius: 40px;
+    display: inline-block;
+    line-height: 36px;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 180px;
+}
+.score-timer {
+	color: #0d406b;
+    font-family: SourceSansPro-Semibold;
+    font-size: 18px;
+    line-height: 20px;
+    padding-bottom: 5px;
+}
+.leaderboard-team {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+.leaderboard-team img{
+	width: 125px;	
+}
+.lb-team-name {
+    background: #e9edf1 none repeat scroll 0 0;
+    border-radius: 12px;
+    bottom: 35px;
+    color: #0d406b;
+    display: block;
+    font-family: SourceSansPro-Semibold;
+    font-size: 18px;
+    padding: 0 15px;
+    position: relative;
+}
+/*------ mini dashboard mobile  -----------*/
+.minidashboard-team{
+	display: inline-block;
+	margin-top: -60px;
+	margin-right: 30px;
+}
+.minidashboard-team img{
+	background-color: #e9edf1;
+    border-radius: 100%;
+    height: 120px;
+    padding: 15px;
+    width: 125px;	
+}
+.minidashboard-team .team-name {
+    background-color: #fff;
+    border-radius: 16px;
+    bottom: 50px;
+    display: block;
+    line-height: 20px;
+    margin: 0 15px;
+    padding: 0 8px;
+    position: relative;
+}
+
+/*------ / mini dashboard mobile  -----------*/
+
+	
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default menur no-margin-bottom">
+<div class="container-fluid"> 
+    <div class="row">
+    	<div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 padding-top-15">
+              <img src="images/playzoola-logo.svg" />
+           <!-- <div class="menu-text info-notification">
+        		<img src="images/menu-wallet.svg" />
+            	<span class="wallet-amount"><i class="fa fa-gbp"></i>16</span>
+            </div>
+            <div class="menu-text info-notification">
+        		<img src="images/menu-notification.svg" />
+            	<span class="badge badge-red">16</span>
+            </div>
+            <div class="menu-text info-notification">
+        		<img src="images/menu-message.svg" />
+            	<span class="badge badge-red">16</span>
+            </div>-->
+         </div>
+        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-12 padding-top-15 text-right">
+        	<div class="menu-text">
+        		<a href="game-selection.html"><img src="images/menu-popup-gameselection.svg" /><br>
+            	<span>games</span></a>
+            </div>
+            <div class="menu-text">
+        		<a href="fixtures.html"><img src="images/menu-popup-fixtures.svg" /><br>
+            	<span>fixtures</span></a>
+            </div>
+        	
+                <div class="signup-button" data-toggle="modal" data-target="#signup-with-social">
+                    Sign up
+                </div>
+           
+            <div class="menu-text" data-toggle="modal" data-target="#login-with-email">
+        		<img src="images/menu-popup-login.svg" /><br>
+            	<span>Login</span>
+            </div>
+            <div class="pull-right padding-left-20" id="bs-example-navbar-collapse-1">
+                 <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#MenuModal" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-align-justify font-40 blue"></span></a>
+            </div>
+        </div>
+    </div>
+</div><!-- /.container-fluid --> 
+
+<!-- Menu Modal -->
+        <div class="modal fade right" id="MenuModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+          <div class="menu-dialog" role="document">
+          	<img class="close-icon" data-dismiss="modal" src="images/close-blue.svg" alt="">
+            <div class="modal-content">
+              
+              	<ul class="menu-list">
+                	<li><img src="images/menu-popup-search.svg" class="pointer-hand" alt=""><span><input type="text" placeholder="Search"></span></li>
+                    <li><img src="images/menu-popup-signup.svg" alt=""><a href="" ><span>Sign up now</span></a></li>
+                	<li><img src="images/menu-popup-dashboard.svg" alt=""><a href="" ><span>Dashboard</span></a></li>
+                    <li><img src="images/menu-popup-create.svg" alt=""><a href="" ><span>Create game</span></a></li>
+                    <li><img src="images/menu-popup-fixtures.svg" alt=""><a href="" ><span>Fixtures</span></a></li>
+                    <li><img src="images/menu-popup-gameselection.svg" alt=""><a href="" ><span>Game Selection</span></a></li>
+                    <li><img src="images/menu-popup-wallet.svg" alt=""><a href="" ><span>Wallet</span></a></li>
+                    <li><img src="images/menu-popup-stats.svg" alt=""><a href="" ><span>Stats Room</span></a></li>
+                    <li><img src="images/menu-popup-help.svg" alt=""><a href="" ><span>Help & Support</span></a></li>
+                    <li><img src="images/profile-2.png" alt="" width="30"><a href="" ><span>My profile</span></a></li>
+                    <li><img src="images/menu-popup-login.svg" alt=""><a href="" ><span>Login</span></a></li>
+                    <li><img src="images/menu-popup-logout.svg" alt=""><a href="" ><span>Logout</span></a></li>
+                </ul>
+              
+             
+            </div>
+          </div>
+        </div>
+<!-- Menu Modal End -->
+</nav>
+<div class="container-fluid header">
+      <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+                   <h3> Change Password</h3>
+                </div>
+            </div>
+      </div>
+</div>
+<div class="container-fluid payoutheader">
+      <div class="container no-padding">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding pay-out text-center">
+                  <ul>
+                  	<li>
+                    	<div class="payout-top25">
+                        	<div class="pos-txt line-height-15">PAYOUT</div>
+                            <div class="mon-txt line-height-15">TOP 25%</div>
+                        </div>
+                    </li>
+                    <li>
+                    	<span class="pos-txt">1st: </span><span class="pyo-txt">&pound;813</span>
+                    </li>
+                    <li>
+                    	<span class="pos-txt">2nd: </span><span class="pyo-txt">&pound;270</span>
+                    </li>
+                    <li>
+                    	<span class="pos-txt">3rd: </span><span class="pyo-txt">&pound;135</span>
+                    </li>
+                    <li>
+                    	<span class="pos-txt">4-5: </span><span class="pyo-txt">&pound;54</span>
+                    </li>
+                    <li>
+                    	<span class="pos-txt">6-20: </span><span class="pyo-txt">&pound;27</span>
+                    </li>
+                    <li>
+                    	<span class="pos-txt">21-45: </span><span class="pyo-txt">&pound;13</span>
+                    </li>
+                    <li>
+                    	<span class="pos-txt">46-141: </span><span class="pyo-txt">&pound;7</span>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+      </div>
+</div>
+    
+<div class="space-5"></div>
+    
+<div class="container"><!-- container start -->
+			<div class="row"><!-- Row start -->
+			<div class="col-lg-12 col-md-12 col-sm-11 col-xs-12 player-img text-center"><img src="images/beard1.png" class="pointer-hand"  width="50" data-toggle="modal" data-target="#minidashboard-mobile" /></div>
+            </div><!-- Row End -->
+			<div class="space-10"></div>
+			<div class="row"><!-- Row start -->
+            	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                	<div class="score-box bg-light-blue">
+                    	<div class="score-timer">34:54</div>
+                        <div class="sco-txt">1 - 0</div>
+                    </div>
+                </div>           
+            </div><!-- Row End -->
+         	<div class="row"><!-- Row start -->
+            	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+                	<div class="leaderboard-team">
+                    	<img src="images/west_ham.svg" />
+                        <span class="lb-team-name mon-txt">West Ham</span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                	<div class="leaderboard-team">
+                    	<img src="images/west_ham.svg" />
+                        <span class="lb-team-name mon-txt">Crystal Palace</span>
+                    </div>
+                </div>           
+            </div><!-- Row End -->
+          
+         
+         
+         <div class="row"><!-- Row start -->
+         	<div class="col-lg-5 col-md-7 col-sm-7 col-xs-12 col-centered">
+            	<div class="zoola-box col-centered">
+                    <div class="padding-30">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="tit-txt">
+                                    Current Password
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="tit-txt">
+                                    New Password:
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="tit-txt">
+                                    Repeat New Password:
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-5"></div>
+                <button class="btn zoola-btn"><div class="btn-txt">Change password</div></button>
+            </div>
+         </div><!-- Row End -->
+
+         <div class="space-10"></div>
+         <div class="space-10"></div>
+
+         <div class="row"><!-- Row start -->
+            <div class="col-lg-12">
+            	<p class="text-center">Go back to <span class="underline">my profile</span></p>
+            </div>
+         </div>
+
+    	 <div class="space-10"></div>
+         <div class="space-10"></div>
+
+</div><!-- container End -->
+
+<!-- Mini dashboard mobile -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="login-with-social" id="minidashboard-mobile" data-backdrop="static">
+    <div class="modal-dialog modal-sm">
+       
+        <div class="modal-content zoola-box bg-blue">
+        	<div class="social-header">
+            	<img src="images/close-icon-white.svg" width="20" class="pull-right pointer-hand" data-dismiss="modal" >
+                
+            </div>
+        	<div class="social-body">
+            	<div class="space-5"></div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                       <img src="images/animals-Modified/7.svg" width="200"> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
+                        <div class="minidashboard-team">
+							<img src="images/football-shirts/numbers/43.svg" alt="">
+                            <div class="team-name tm-txt">Crystal Palace</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+						<div class="mol-lg">BearHunter</div>
+                    </div>
+                </div>
+				<div class="space-5"></div>
+                <div class="row">
+                	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+						<img src="images/add-friendplus.svg" alt="">
+                    </div>
+                </div>
+                <div class="space-5"></div>
+                <div class="row">
+                    <div class="col-lg-10 col-sm-10 col-centered">
+                        <button type="submit" class="btn zoola-btn"><h5 class="">Add mate</h5></button>
+                    </div>
+                </div>
+                <div class="space-5"></div>
+                
+            </div>
+        </div><!-- / Modal content -->  
+    </div>
+</div>
+<!-- / Mini dashboard mobile --> 
+
+<!-- Login with Social -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="login-with-social" id="login-with-email" data-backdrop="static">
+    <div class="modal-dialog modal-sm">
+       
+        <div class="modal-content zoola-box">
+        	<div class="social-header">
+            	<img src="images/close-icon.svg" width="20" class="pull-right pointer-hand" data-dismiss="modal" >
+                <div class="row text-center">
+                	<img src="images/playzoola-logo.svg" width="165" class="margin-left-20" />
+                </div>
+            </div>
+        	<div class="social-body">
+            	<div class="space-5"></div>
+            	<div class="row text-center">
+                	<div class="col-lg-12">
+                    	<button class="btn zoola-btn bg-fb-blue btn-fb">
+                        	<img src="images/social-fb-icon.svg" alt="social-fb-icon" class=""/>
+                            <div class="fb-txt">Continue with Facebook</div>
+                        </button>
+                    </div>                    
+                </div>
+               
+                <div class="row text-center">
+                	<div class="col-lg-12 padding-15">
+                        <div class="bg-line">
+                            <span>or</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="tit-txt">
+                            Username/Email:
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="form-control" placeholder=""/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="tit-txt">
+                                Password:
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder=""/>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                            <div class="sm-txt text-right" >
+                                    <a href="/build/views/Football/passwordrecovery/passwordrecovery.html">Password forgotten?</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                       
+                        <div class="forgotten">
+                            <div class="checkbox margin-bottom-15">
+                                <input id="checkbox1"  type="checkbox" />
+                                <label>
+                                    I confirm I am 18 or over
+                                </label>
+                            </div>
+                            <div class="checkbox margin-bottom-15">
+                                <input id="checkbox2"  type="checkbox" />
+                                <label>
+                                    I confirm I have read and accept the &nbsp;<a href="" className="underline">Terms and Conditions and Privacy Policy</a>.
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <input id="checkbox3"  type="checkbox" />
+                                <label>
+                                    I would like to receive information about offers, promotions and bonuses.
+                                </label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="space-10"></div>
+                <div class="row">
+                        <div class="col-lg-10 col-sm-10 col-centered">
+                            <button type="submit" class="btn zoola-btn"><h5 class="">Login</h5></button>
+                        </div>
+                </div>
+                <div class="space-10"></div>
+                <div class="row">
+                	<h6 class="text-center"><a class="underline" data-toggle="modal" data-target="#signup-with-social" data-dismiss="modal">Sign up</a> if you don’t have an account.</h6>
+                </div>
+            </div>
+        </div><!-- / Modal content -->  
+    </div>
+</div>
+<!-- / Login with Social --> 
+
+
+<!-- Signup with Social -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="signup-with-social" id="signup-with-social" data-backdrop="static">
+    <div class="modal-dialog modal-sm">
+       
+        <div class="modal-content zoola-box">
+        	<div class="social-header">
+            	<img src="images/close-icon.svg" width="20" class="pull-right pointer-hand" data-dismiss="modal" >
+                <div class="row text-center">
+                	<img src="images/playzoola-logo.svg" width="165" class="margin-left-20" />
+                </div>
+            </div>
+        	<div class="social-body">
+            	<div class="space-5"></div>
+                <div class="row text-center">
+                	<div class="col-lg-3">
+                        <img src="images/pz-icon.svg" class="margin-top-10">
+                    </div>
+                    <div class="col-lg-9">
+                        <p class="text-center">Have fun, compete and play against other players, not the bookies.</p>
+                    </div>
+                </div>
+                <div class="space-5"></div>
+            	<div class="row text-center">
+                	<div class="col-lg-12">
+                    	<button class="btn zoola-btn bg-fb-blue btn-fb">
+                        	<img src="images/social-fb-icon.svg" alt="social-fb-icon" class=""/>
+                            <div class="fb-txt">Continue with Facebook</div>
+                        </button>
+                    </div>                    
+                </div>
+               
+                <div class="row text-center">
+                	<div class="col-lg-12 padding-15">
+                        <div class="bg-line">
+                            <span>or</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-10"></div>
+                <div class="row">
+                        <div class="col-lg-10 col-sm-10 col-centered">
+                            <button type="submit" class="btn btn-signup" data-toggle="modal" data-target="#signup-with-email" data-dismiss="modal"><h5 class="">Sign up with email</h5></button>
+                        </div>
+                </div>
+                <div class="space-10"></div>
+                <div class="row">
+                	<h6 class="text-center"><a class="underline" data-dismiss="modal" data-toggle="modal" data-target="#login-with-email">Login</a> if you already have an account.</h6>
+                </div>
+            </div>
+        </div><!-- / Modal content -->  
+    </div>
+</div>
+<!-- / Signup with Social -->  
+
+<!-- Signup with Email -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="login-with-social" id="signup-with-email" data-backdrop="static">
+    <div class="modal-dialog modal-sm">
+       
+        <div class="modal-content zoola-box">
+        	<div class="social-header">
+            	<img src="images/close-icon.svg" width="20" class="pull-right pointer-hand" data-dismiss="modal" >
+                <div class="row text-center">
+                	<img src="images/playzoola-logo.svg" width="165" class="margin-left-20" />
+                </div>
+            </div>
+        	<div class="social-body">
+            	<div class="space-5"></div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="tit-txt">
+                            Email:
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="form-control" placeholder=""/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="tit-txt">
+                                Create Password:
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder=""/>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-10"></div>
+                <div class="row">
+                        <div class="col-lg-10 col-sm-10 col-centered">
+                            <button type="submit" class="btn zoola-btn"><h5 class="">Sign up</h5></button>
+                        </div>
+                </div>
+                <div class="space-10"></div>
+                <div class="row">
+                	<h6 class="text-center"><a class="underline" data-dismiss="modal" data-toggle="modal" data-target="#login-with-email">Login</a> if you already have an account.</h6>
+                </div>
+            </div>
+        </div><!-- / Modal content -->  
+    </div>
+</div>
+<!-- / Signup with Email -->  
+
+
+
+
+<div class="container-fluid header"> <!-- Footer Start -->
+      <div class="container zoola-footer">
+      	    <div class="space-10"></div>
+            <div class="space-10"></div>
+            <div class="space-10"></div>
+            <div class="space-10"></div>
+            <div class="space-10"></div>
+            <div class="space-10"></div>
+            <div class="space-10"></div>
+            <div class="space-10"></div>
+      </div>
+</div> <!-- Footer End -->
+    
+  
+  
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.2.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+
+</body>
+</html>

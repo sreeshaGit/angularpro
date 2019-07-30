@@ -1,0 +1,133 @@
+<div class="row no-margin valign-wrapper" *ngIf="showRightNow">
+    <div class="col s12 m12 l12 xl12 no-padding">
+        <span class="bet-assist live">{{staticWords?.Live}}</span>
+        <span class="widget-title">{{staticWords?.Right_Now}}</span>
+    </div>
+</div>
+<div class="">
+    <div class="row" *ngIf="isFootball">
+        <div class="col s12 m6 l6 xl6">
+            <div class="widget-score-board right-now bg-gradient bg-football white-text">
+                <div class="bg-gradient-inner center-align" (click)="goToEventPage(rightNowDataFB.EventId,'rightnow')">
+                    <div class="league-name">
+                        <span *ngIf="rightNowDataFB?.CountryName != null && rightNowDataFB?.CountryName != ''">{{rightNowDataFB?.CountryName}} / </span>
+                        {{rightNowDataFB?.LeagueName}}
+                    </div>
+                    <div class="space-5"></div>
+                    <div class="row no-margin center-align valign-wrapper">
+                        <div class="col s4 m4 l4 xl4">
+                            <img class="football-jersey" *ngIf="isRightNowImage" [src]="'assets/img/football-jerseys/'+ rightNowDataFB?.HomeTeamId + '.png'"
+                                 (error)="imageError()"/>
+                            <div class="team truncate">{{rightNowDataFB?.HomeTeamName}}</div>
+                        </div>
+                        <div class="col s4 m4 l4 xl4 no-padding">
+                            <div class="minutes">{{rightNowDataFB?.MatchMinute}}'</div>
+                            <div class="set-points"> {{rightNowDataFB?.Score}} </div>
+                        </div>
+
+                        <div class="col s4 m4 l4 xl4">
+                            <img class="football-jersey" *ngIf="isRightNowImage" [src]="'assets/img/football-jerseys/'+ rightNowDataFB?.AwayTeamId + '.png'"
+                                 (error)="imageError()"/>
+                            <div class="team truncate">{{rightNowDataFB?.AwayTeamName}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l6 xl6">
+            <div class="space-5"></div>
+            <span class="bet-assist ">{{staticWords?.Bet_Assist}}</span><span class="bet-assist live">{{staticWords?.Live}}</span>
+            <div class="rtb">
+                {{rightNowDataFB?.Text}}
+            </div>
+            <button class="btn waves-effect waves-light btn-odds" pam-button="" (click)="addToBetslip(rightNowDataFB?.SelectionId,'rightnow')">
+                <span class="market">{{rightNowDataFB?.MarketName}} - {{rightNowDataFB?.OutcomeName}}</span>
+                <span class="odds"><app-live-odds [eventId]="rightNowDataFB?.EventId" [marketId]="rightNowDataFB?.MarketId" [outcomeId]="rightNowDataFB?.SelectionId"></app-live-odds></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="isTennies">
+        <div class="col s12 m6 l6 xl6">
+            <div class="widget-score-board right-now bg-gradient bg-tennis white-text">
+                <div class="bg-gradient-inner center-align" (click)="goToEventPage(rightNowDataTennis?.EventID,'rightnow')">
+                    <div class="league-name tennis"><span *ngIf="rightNowDataTennis?.Provider != null && rightNowDataTennis?.Provider != ''"> {{rightNowDataTennis?.Provider}} / </span>{{rightNowDataTennis?.TournamentName}}</div>
+                    <div class="row no-margin">
+                        <div class="col s12 m12 l12 xl12">
+                            <div class="score">
+                                <app-home-tennis-live-score [eventId]="rightNowDataTennis?.EventID" [scorePosition]="'rightnow'"></app-home-tennis-live-score>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-margin center-align valign-wrapper">
+                        <div class="col s4 m4 l4 xl4 no-padding">
+                            <app-display-tennis-image [eventId]="rightNowDataTennis?.EventID" [flagPosition]="'home'" [isLive]="true"></app-display-tennis-image>
+                            <div class="truncate">
+                                <app-home-tennis-live-score [eventId]="rightNowDataTennis?.EventID" [playerPosition]="'homePosition'">
+                                </app-home-tennis-live-score><span>
+                                    {{rightNowDataTennis?.Player1Lastname}}
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="col s4 m4 l4 xl4 no-padding">
+                            <app-home-tennis-live-score [eventId]="rightNowDataTennis?.EventID" [pointScore]="'playerScore'"></app-home-tennis-live-score>
+                        </div>
+                        <div class="col s4 m4 l4 xl4 no-padding">
+                            <app-display-tennis-image [eventId]="rightNowDataTennis?.EventID" [flagPosition]="'away'" [isLive]="true"></app-display-tennis-image>
+                            <div class="truncate">
+                                <app-home-tennis-live-score [eventId]="rightNowDataTennis?.EventID" [playerPosition]="'awayPosition'"></app-home-tennis-live-score>
+                                <span>{{rightNowDataTennis?.Player2Lastname}}</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l6 xl6">
+            <div class="space-5"></div>
+            <span class="bet-assist ">{{staticWords?.Bet_Assist}}</span><span class="bet-assist live">{{staticWords?.Live}}</span>
+            <div class="rtb">
+                {{rightNowDataTennis?.Text}}
+            </div>
+            <button class="btn waves-effect waves-light btn-odds" pam-button="" (click)="addToBetslip(rightNowDataTennis?.SelectionId,'rightnow')">
+                <span class="market">{{rightNowDataTennis?.Market}} - {{rightNowDataTennis?.Outcome}} {{rightNowDataTennis?.SubMarket}} </span>
+                <span class="odds">
+                <app-live-odds [eventId]="rightNowDataTennis?.EventID" [marketId]="rightNowDataTennis?.MarketId" [outcomeId]="rightNowDataTennis?.SelectionId">
+                     </app-live-odds>
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="upcoming-right-match-Loader" *ngIf="isRightLoader">
+        <div class="row no-margin">
+            <div class="col s6 m3 l3 xl3 grey lighten-4 height-25 margin-top-5">
+                <span class="widget-title ">&nbsp;</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m6 l6 xl6">
+                <div class="widget-score-board grey lighten-4">
+                </div>
+            </div>
+            <div class="col s12 m6 l6 xl6">
+                <div class="row no-margin">
+                    <div class="space-5"></div>
+                    <div class="row no-margin">
+                        <div class="bet-assist grey lighten-4 col s2 m3 l2 xl2 margin-top-5">&nbsp;</div>
+                    </div>
+                    <div class="rtb">
+                        <div class="row no-margin">
+                            <div class="grey lighten-4 col s12 m12 l12 xl12 height-15 margin-bottom-5">&nbsp;</div>
+                        </div>
+                        <div class="row no-margin">
+                            <div class="grey lighten-4 col s6 m6 l6 xl4 height-15 margin-bottom-5">&nbsp;</div>
+                        </div>
+                    </div>
+                    <button class="btn grey lighten-4 btn-odds" pam-button="">&nbsp;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,161 @@
+<div class="BL-BOL-soccer" *ngIf="data?.matchInfo">
+    <div class="BL-widget eventView-soccer">
+        <div class="BL-widgetHeader">
+            <div class="BL-widgetTitle">LIVE SOCCER</div>
+        </div>
+
+        <div class="BL-contentBox BL-FB-eventView">
+            <div class="BL-eventView-matchInfoBanner">
+                <div class="BL-eventView-matchInfoBanner__content">
+                    <div class="BL-eventView-matchInfoBanner__innerContent">
+                        <div class="BL-eventView-matchInfoBanner__leagueName">{{data?.matchInfo?.leagueName}}</div>
+                        <div class="BL-eventView-matchInfoBanner__fixtureInfo">
+                            <div class="BL-eventView-matchInfoBanner__teamName">{{data?.matchInfo?.homeTeamName}}</div>
+                            <div class="BL-eventView-matchInfoBanner__eventScore">
+                                <span>{{data?.matchInfo?.homeTeamScore}}</span>
+                                <span> : </span>
+                                <span>{{data?.matchInfo?.awayTeamScore}}</span>
+                            </div>
+                            <div class="BL-eventView-matchInfoBanner__teamName">{{data?.matchInfo?.awayTeamName}}</div>
+                        </div>
+                        <div class="BL-eventView-matchInfoBanner__kickoff"></div>
+                        <div class="BL-eventView-matchInfoBanner__matchMinute">
+                            <div>{{data?.matchInfo?.matchMinute ? data?.matchInfo?.matchMinute + '`' :''}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="BL-matchBoxGroup">
+                <div class="BL-matchBox" *ngIf="data?.home">
+                    <div class="BL-matchBox-content">
+                        <div class="BL-matchBox-RTB">{{data?.home?.text}}</div>
+                        <button type="button" class="BL-btn BL-btn-marketOdds" [ngClass]="addBetHome? 'active' : ''"
+                            (click)="addToBetslip('home',data?.home)" *ngIf="data?.home?.oddsAmerican && data?.home?.oddsAmerican != null && data?.home?.oddsAmerican != ''">
+                            <span class="BL-marketOutcome truncate" title="{{data?.home?.marketName}}{{data?.home?.outcomeName ? '&nbsp;-&nbsp;' : '' }}{{data?.home?.outcomeName}} {{data?.home?.subMarketName != 0 ? data?.home?.subMarketName : ''}}">
+                                <span class="BL-market">{{data?.home?.marketName}}
+                                    {{data?.home?.outcomeName ? '-&nbsp;' + data?.home?.outcomeName :'' }} <span *ngIf="data?.home?.subMarketName != 0">{{data?.home?.subMarketName}}</span>
+                                </span>
+                            </span>
+                            <span class="BL-odds">{{data?.home?.oddsAmerican }}</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="BL-matchBox" *ngIf="data?.away">
+                    <div class="BL-matchBox-content">
+                        <div class="BL-matchBox-RTB">{{data?.away?.text}}</div>
+                        <button type="button" class="BL-btn BL-btn-marketOdds" [ngClass]="addBetAway? 'active' : ''"
+                            (click)="addToBetslip('away',data?.away)" *ngIf="data?.away?.oddsAmerican && data?.away?.oddsAmerican != null && data?.away?.oddsAmerican != ''">
+                            <span class="BL-marketOutcome truncate" title="{{data?.away?.marketName}}{{data?.away?.outcomeName ? '&nbsp;-&nbsp;' : '' }}{{data?.away?.outcomeName}} {{data?.away?.subMarketName != 0 ? data?.away?.subMarketName : ''}}">
+                                <span class="BL-market truncate">{{data?.away?.marketName}}
+                                    {{data?.away?.outcomeName ? '-&nbsp;'+ data?.away?.outcomeName : ''}} <span *ngIf="data?.away?.subMarketName != 0">{{data?.away?.subMarketName}}</span>
+                                </span>
+                            </span>
+                            <span class="BL-odds">{{data?.away?.oddsAmerican}}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="BL-eventView-headTohead-teams" *ngIf="h2hData?.head2Head">
+                <div class="BL-accordion">
+                    <div class="BL-accordion-header BL-arrowAfter" [ngClass]="isCollapse ? '' : 'collapse'" (click)="isCollapse= !isCollapse">
+                        Head to Head
+                    </div>
+                    <div class="BL-accordion-content" [ngClass]="{'collapsed': !isCollapse}">
+                        <div class="BL-event-headTohead">
+                            <div class="BL-lastGamesBox">
+                                <div class="BL-lastGamesBox-title">{{h2hData?.homeTeamName}} vs
+                                    {{h2hData?.awayTeamName}}
+                                    <span class="BL-last3Games-title">{{h2hData?.h2HTitle}} </span></div>
+                                <div class="BL-last3Games">
+                                    <div class="BL-last3GamesBox" *ngFor="let h2h of h2hData?.head2Head">
+                                        <span>{{h2h?.homeTeam}}</span>
+                                        <span class="BL-score">{{h2h?.homeScore}}{{'&nbsp;-&nbsp;' + h2h?.awayScore}}</span>
+                                        <span> {{h2h?.awayTeam}} </span>
+                                        <span class="BL-date"> {{h2h?.eventDate ? '@' + h2h?.eventDate : '' }}</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="BL-lastGamesBox">
+                                <div class="BL-lastGamesBox-title">{{h2hData?.homeTeamName}}
+                                    <span class="BL-last10Games-title">{{h2hData?.homeTitle}}</span></div>
+                                <div class="BL-last10Games">
+                                    <div class="BL-last10Games-matchStatusList">
+                                        <ul>
+                                            <li *ngFor="let homeData of h2hData?.home">
+                                                <div class="" [ngClass]="homeData?.matchResult=='L'?'BL-match-loss' : homeData?.matchResult=='W'? 'BL-match-win' : homeData?.matchResult=='D'?'BL-match-draw' :''"
+                                                    (click)="selectedMatchDetails(homeData?.matchId,'home')">
+                                                    {{homeData?.matchResult}}</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <ng-container *ngFor="let home of h2hData?.home">
+                                    <div class="BL-eventView-matchInfoBanner BL-recentMatchesBanner" *ngIf="homeId == home?.matchId ">
+                                        <div class="BL-eventView-matchInfoBanner__content">
+                                            <div class="BL-eventView-matchInfoBanner__innerContent">
+                                                <div class="BL-eventView-matchInfoBanner__leagueName">
+                                                    {{home?.leagueName}}</div>
+
+                                                <div class="BL-eventView-matchInfoBanner__fixtureInfo">
+                                                    <span class="BL-eventView-matchInfoBanner__teamName">{{home?.homeTeam}}</span>
+                                                    <div class="BL-eventView-matchInfoBanner__eventScore">
+                                                        <span>{{home?.homeScore}}</span>
+                                                        <span> : </span>
+                                                        <span>{{home?.awayScore}}</span>
+                                                    </div>
+                                                    <span class="BL-eventView-matchInfoBanner__teamName">{{home?.awayTeam}}</span>
+                                                </div>
+
+                                                <div class="BL-eventView-matchInfoBanner__matchMinute">
+                                                    {{home?.eventDate}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </div>
+                            <div class="BL-lastGamesBox">
+                                <div class="BL-lastGamesBox-title">{{h2hData?.awayTeamName}} <span class="BL-last10Games-title">{{h2hData?.awayTitle}}</span></div>
+                                <div class="BL-last10Games">
+
+                                    <div class="BL-last10Games-matchStatusList">
+                                        <ul class="col-lg-12">
+                                            <li *ngFor="let awayData of h2hData?.away">
+                                                <div [ngClass]="awayData?.matchResult=='L'?'BL-match-loss' : awayData?.matchResult=='W'? 'BL-match-win' : awayData?.matchResult=='D'?'BL-match-draw' :''"
+                                                    (click)="selectedMatchDetails(awayData?.matchId,'away')">
+                                                    {{awayData?.matchResult}}</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <ng-container *ngFor="let away of h2hData?.away">
+                                    <div class="BL-eventView-matchInfoBanner BL-recentMatchesBanner" *ngIf="awayId == away?.matchId ">
+                                        <div class="BL-eventView-matchInfoBanner__content">
+                                            <div class="BL-eventView-matchInfoBanner__innerContent">
+                                                <div class="BL-eventView-matchInfoBanner__leagueName">
+                                                    {{away?.leagueName}}</div>
+
+                                                <div class="BL-eventView-matchInfoBanner__fixtureInfo">
+                                                    <span class="BL-eventView-matchInfoBanner__teamName">{{away?.homeTeam}}</span>
+                                                    <div class="BL-eventView-matchInfoBanner__eventScore">
+                                                        <span>{{away?.homeScore}}</span>
+                                                        <span> : </span>
+                                                        <span>{{away?.awayScore}}</span>
+                                                    </div>
+                                                    <span class="BL-eventView-matchInfoBanner__teamName">{{away?.awayTeam}}</span>
+                                                </div>
+                                                <div class="BL-eventView-matchInfoBanner__matchMinute">
+                                                    {{away?.eventDate}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

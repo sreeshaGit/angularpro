@@ -1,0 +1,4 @@
+npm install react-bootstrap-toggle
+npm start
+npm install react-input-range
+npm install react-native-simple-gauge

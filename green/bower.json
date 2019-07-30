@@ -1,0 +1,26 @@
+{
+  "name": "sportsbook-landing-page-widget",
+  "main": "index.ts",
+  "authors": [
+  	"Anton Netterwall <anton.netterwall@mrgreen.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    ".eslintrc",
+    ".gitignore",
+    "package.json",
+    "karma.conf.js",
+    "protractor.conf.js",
+    "TODO.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.mrgreen.zone:7999/bl/landing-page-widget.git"
+  },
+  "dependencies": {}
+}

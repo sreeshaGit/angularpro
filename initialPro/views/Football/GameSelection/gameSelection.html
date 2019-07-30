@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game selection</title>
+    <script src="/js/jquery-2.2.1.js"></script>
+    <script src="/build/common/config.js"></script>
+    <script src="/build/common/globalFunctions.js"></script>
+    
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/animate.css" />
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/react.js"></script>
+    
+    <script src="/js/react-dom.js"></script>
+    <script src="/js/moment.js"></script>
+    <link rel="stylesheet" href="/css/datepicker.css" />
+    <link href="/css/playzoola_sportsIT.css" rel="stylesheet">
+    <link href="/css/gameSelection.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/datepicker3.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="/css/R2G.css" rel="stylesheet">
+    <script src="/js/browser.min.js"></script>
+    <link rel="icon" href="/images/favicon.png">
+    
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-67809532-5', 'auto');
+      ga('send', 'pageview');
+    </script>
+    
+</head>
+<body>
+    <nav class="navbar navbar-default menur no-margin-bottom">
+        <div class="container-fluid" id="supheader">
+        </div>
+    </nav>
+
+    <!--<div class="container-fluid header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" id="header">
+
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <div id="subheader">
+
+    </div>
+
+    <div class="container">
+        <div class="space-5"></div>
+        <div class="row gamebox-container" id="games">
+
+
+        </div>
+    </div>
+    <div class="space-10"></div>
+    <div class="container-fluid header" id="footer"></div>
+    <script type="text/javascript" src="/build/common/header.js"></script>
+
+
+    <script src="/build/common/footer.js"></script>
+    <script src="/js/jquery.mobile.custom.js"></script>
+
+
+    <script type="text/javascript" src="/build/views/Football/GameSelection/gameSelection.js">
+    </script>
+
+    <!-- Binding components to view-->
+    <script type="text/babel">
+        ReactDOM.render(
+        <SupHeader isLog={is_loggedIn} />,
+        document.getElementById('supheader')
+        );
+
+
+
+        ReactDOM.render(
+        <Subheader />,
+        document.getElementById('subheader')
+        );
+
+        ReactDOM.render(
+        <GBoxs />,
+        document.getElementById('games')
+        );
+        ReactDOM.render(
+        <Footer isLog={is_loggedIn} />,
+        document.getElementById('footer')
+        );
+
+
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".myCarousel").swiperight(function () {
+                $(this).carousel('prev');
+            });
+            $(".myCarousel").swipeleft(function () {
+                $(this).carousel('next');
+            });
+        });
+    </script>
+    <script src="/build/common/Chatservice.js"></script>
+
+</body>
+</html>
+<!--var demo = React.createElement(demo);
+React.render(demo,document.body);-->

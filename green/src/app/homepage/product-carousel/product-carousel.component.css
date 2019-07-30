@@ -1,0 +1,118 @@
+.BlLoader{
+	min-height: 100px;
+	position: relative;	
+}
+.bl-products-hscroll{
+	height: 100px;
+	margin: 24px 0 !important;	
+	overflow: hidden;
+}
+.bl-products-hscroll:focus{
+	outline: none;
+}
+.bl-products-hscroll li a{
+	background-color: transparent !important;
+	padding: 0;
+}
+.bl-products-hscroll .bl-product-item{
+	cursor: pointer;
+	float: left;
+	margin: 0 24px 0 0;	
+	min-height: 100%;	
+	position: relative;	
+}
+.bl-products-hscroll .gallery-cell:first-child .bl-product-item{
+	margin-left: 48px;
+}
+.bl-products-hscroll .bl-product-item img{
+	border-radius: 4px;	
+	vertical-align: middle;
+	width: 246px;
+}
+.bl-products-hscroll .bl-product-item .menu-txt{
+	bottom: 12px;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 700;
+	left: 12px;
+	line-height: 22px;
+	position: absolute;
+	text-align: left;
+	text-transform: uppercase;
+	width: 140px;
+}
+.bl-products-hscroll .bl-product-item .menu-txt .live-txt {
+	font-size: 14px;
+	 font-style: italic;
+	line-height: 16px;
+}
+.bl-products-hscroll .bl-product-item .menu-txt .live-txt.bl-green{
+	color: #33d07f;
+}
+.bl-products-hscroll .bl-product-item .menu-txt .live-txt.bl-blue{
+	color: #3aa5eb;
+}
+.bl-products-hscroll .flickity-viewport{
+	height: 100%;
+}
+.product-carousel-loader .bl-product-item{
+	width: 246px;
+	height: 100px;
+	border-radius: 3px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 776px){
+.bl-products-hscroll{
+	height: 61px;
+}
+.bl-products-hscroll .bl-product-item{
+	margin: 0 12px 0 0;
+}
+.bl-products-hscroll .tab:first-child{
+	
+}
+.bl-products-hscroll .bl-product-item img{
+	width: 150px;
+}
+.bl-products-hscroll .bl-product-item .menu-txt{
+	bottom: 6px;    
+    font-size: 12px;
+    font-weight: 700;
+    left: 12px;
+    line-height: 16px;    
+    width: 90px;
+}
+.bl-products-hscroll .gallery-cell:first-child .bl-product-item{
+	margin-left: 24px;
+}
+.bl-products-hscroll .bl-product-item .menu-txt .live-txt {
+	font-size: 10px;
+	line-height: 12px;
+}
+.product-carousel-loader .bl-product-item{
+	width: 150px;
+	height: 61px;
+}
+	
+}
+
+@media (min-width: 360px) and (max-width: 640px){
+
+	
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+.bl-products-hscroll .gallery-cell:first-child .bl-product-item {
+    margin-left: 24px;
+}
+.bl-products-hscroll .bl-product-item .menu-txt .live-txt {
+	font-size: 10px;
+	line-height: 12px;
+}
+.product-carousel-loader .bl-product-item{
+	width: 150px;
+	height: 61px;
+}	
+
+
+}

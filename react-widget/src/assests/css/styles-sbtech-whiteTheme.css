@@ -1,0 +1,1349 @@
+@font-face {
+  font-family: 'BLSBT-icons';
+  src: url("../fonts/BLSBT-icons.eot?rbp8oc");
+  src: url("../fonts/BLSBT-icons.eot?rbp8oc#iefix") format("embedded-opentype"), url("../fonts/BLSBT-icons.ttf?rbp8oc") format("truetype"), url("../fonts/BLSBT-icons.woff?rbp8oc") format("woff"), url("../fonts/BLSBT-icons.svg?rbp8oc#BLSBT-icons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'BLSBT-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.blsbt-icon_close:before {
+  content: "\e900"; }
+
+.blsbt-icon_arrow-down:before {
+  content: "\e901"; }
+
+.blsbt-icon_arrow-left:before {
+  content: "\e902"; }
+
+.blsbt-icon_arrow-right:before {
+  content: "\e903"; }
+
+.blsbt-icon_arrow-top:before {
+  content: "\e904"; }
+
+.blsbt-icon_back:before {
+  content: "\e905"; }
+
+.blsbt-icon_arrow-go:before {
+  content: "\e906"; }
+
+.blsbt-icon_close:before {
+  content: "\e907"; }
+
+.blsbt-icon_refresh:before {
+  content: "\e908"; }
+
+.blsbt-icon_search:before {
+  content: "\e909"; }
+
+.blsbt-icon_select-arrow:before {
+  content: "\e90a"; }
+
+.blsbt-icon_star:before {
+  content: "\e90b"; }
+
+/*--- Match Box Variables ---------*/
+/*--- Button Odds Variables ---------*/
+/*--- Form Elements Variables ---------*/
+/*--- Error Message Variables ---------*/
+/*--- Footer Variables ---------*/
+/*-------- Event View Variables --------*/
+/*-------- Horse Finder Variables --------*/
+.BLSBT-widget *,
+.BLSBT-widget ::before,
+.BLSBT-widget ::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+.BLSBT-widget ul {
+  margin: 0;
+  padding: 0; }
+  .BLSBT-widget ul li {
+    list-style: none; }
+.BLSBT-widget .text-left {
+  text-align: left; }
+.BLSBT-widget .text-center {
+  text-align: center; }
+.BLSBT-widget .text-right {
+  text-align: right; }
+.BLSBT-widget .space-5 {
+  margin: 5px auto;
+  padding: 2px 0px; }
+.BLSBT-widget .space-10 {
+  margin: 10px auto;
+  padding: 5px 0px; }
+.BLSBT-widget .truncate {
+  display: block;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+.BLSBT-widget .pb-0 {
+  padding-bottom: 0 !important; }
+.BLSBT-widget .mb-10 {
+  margin-bottom: 10px !important; }
+
+/*----------Bootstrap Grid System------*/
+.BLSBT-widget .row {
+  margin: 0;
+  background: transparent !important;
+  display: -ms-flexbox;
+  display: -o-flexbox;
+  display: -webkit-box;
+  display: flex; }
+
+.BLSBT-widget .col-1,
+.BLSBT-widget .col-2,
+.BLSBT-widget .col-3,
+.BLSBT-widget .col-4,
+.BLSBT-widget .col-5,
+.BLSBT-widget .col-6,
+.BLSBT-widget .col-7,
+.BLSBT-widget .col-8,
+.BLSBT-widget .col-9,
+.BLSBT-widget .col-10,
+.BLSBT-widget .col-11,
+.BLSBT-widget .col-12,
+.BLSBT-widget .col {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding: 0; }
+
+.BLSBT-widget .col {
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%; }
+
+.BLSBT-widget .col-auto {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto; }
+
+.BLSBT-widget .col-1 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 8.333333%;
+  -ms-flex: 0 0 8.333333%;
+  flex: 0 0 8.333333%;
+  max-width: 8.333333%; }
+
+.BLSBT-widget .col-2 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 16.666667%;
+  -ms-flex: 0 0 16.666667%;
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%; }
+
+.BLSBT-widget .col-3 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 25%;
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 25%; }
+
+.BLSBT-widget .col-4 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 33.333333%;
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%; }
+
+.BLSBT-widget .col-5 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 41.666667%;
+  -ms-flex: 0 0 41.666667%;
+  flex: 0 0 41.666667%;
+  max-width: 41.666667%; }
+
+.BLSBT-widget .col-6 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 50%;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%; }
+
+.BLSBT-widget .col-7 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 58.333333%;
+  -ms-flex: 0 0 58.333333%;
+  flex: 0 0 58.333333%;
+  max-width: 58.333333%; }
+
+.BLSBT-widget .col-8 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 66.666667%;
+  -ms-flex: 0 0 66.666667%;
+  flex: 0 0 66.666667%;
+  max-width: 66.666667%; }
+
+.BLSBT-widget .col-9 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 75%;
+  -ms-flex: 0 0 75%;
+  flex: 0 0 75%;
+  max-width: 75%; }
+
+.BLSBT-widget .col-10 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 83.333333%;
+  -ms-flex: 0 0 83.333333%;
+  flex: 0 0 83.333333%;
+  max-width: 83.333333%; }
+
+.BLSBT-widget .col-11 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 91.666667%;
+  -ms-flex: 0 0 91.666667%;
+  flex: 0 0 91.666667%;
+  max-width: 91.666667%; }
+
+.BLSBT-widget .col-12 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%; }
+
+/*---------- Third Party - React Toggle ------------*/
+.BLSBT-widget .react-toggle {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent; }
+.BLSBT-widget .react-toggle-screenreader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+.BLSBT-widget .react-toggle--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s; }
+.BLSBT-widget .react-toggle-track {
+  width: 50px;
+  height: 24px;
+  padding: 0;
+  border-radius: 30px;
+  background-color: #4D4D4D;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+.BLSBT-widget .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: #000000; }
+.BLSBT-widget .react-toggle--checked .react-toggle-track {
+  background-color: #19AB27; }
+.BLSBT-widget .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: #128D15; }
+.BLSBT-widget .react-toggle-track-check {
+  position: absolute;
+  width: 14px;
+  height: 10px;
+  top: 0px;
+  bottom: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+  line-height: 0;
+  left: 8px;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease; }
+.BLSBT-widget .react-toggle--checked .react-toggle-track-check {
+  opacity: 1;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease; }
+.BLSBT-widget .react-toggle-track-x {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 0px;
+  bottom: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+  line-height: 0;
+  right: 10px;
+  opacity: 1;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease; }
+.BLSBT-widget .react-toggle--checked .react-toggle-track-x {
+  opacity: 0; }
+.BLSBT-widget .react-toggle-thumb {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #4D4D4D;
+  border-radius: 50%;
+  background-color: #FAFAFA;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease; }
+.BLSBT-widget .react-toggle--checked .react-toggle-thumb {
+  left: 27px;
+  border-color: #19AB27; }
+.BLSBT-widget .react-toggle--focus .react-toggle-thumb {
+  -webkit-box-shadow: 0px 0px 3px 2px #0099E0;
+  -moz-box-shadow: 0px 0px 3px 2px #0099E0;
+  box-shadow: 0px 0px 2px 3px #0099E0; }
+.BLSBT-widget .react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
+  -webkit-box-shadow: 0px 0px 5px 5px #0099E0;
+  -moz-box-shadow: 0px 0px 5px 5px #0099E0;
+  box-shadow: 0px 0px 5px 5px #0099E0; }
+
+/*------- Third Party - React accordian ------*/
+.BLSBT-widget .accordion__body {
+  display: block;
+  animation: fadein .35s ease-in; }
+.BLSBT-widget .accordion__body--hidden {
+  display: none;
+  opacity: 0;
+  animation: fadein .35s ease-in; }
+@keyframes fadein {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes fadein {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+/*------ Third Party CSS - Animate.css -------*/
+.BLSBT-widget .animated {
+  animation-duration: 1s;
+  animation-fill-mode: both; }
+.BLSBT-widget .slideOutLeft {
+  animation-name: slideOutLeft; }
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0); }
+  to {
+    visibility: hidden;
+    transform: translate3d(-100%, 0, 0); } }
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+.BLSBT-widget .fadeIn {
+  animation-name: fadeIn; }
+
+.BLSBT-btn {
+  cursor: pointer;
+  padding: 0 12px;
+  border: 0;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  border-radius: 4px; }
+
+.BLSBT-btn-marketOdds {
+  height: 36px;
+  background-color: #EBEBEB;
+  color: #000;
+  font-size: 12px;
+  padding: 10px 12px; }
+  .BLSBT-btn-marketOdds .BLSBT-market {
+    float: left;
+    width: 80%;
+    text-align: left;
+    font-weight: normal; }
+  .BLSBT-btn-marketOdds .BLSBT-odds {
+    font-weight: bold;
+    float: right;
+    width: 20%;
+    text-align: right; }
+  .BLSBT-btn-marketOdds.active {
+    background-color: #FF7500;
+    color: #FFF; }
+    .BLSBT-btn-marketOdds.active:hover {
+      background-color: #FF7500;
+      color: #FFF; }
+  .BLSBT-btn-marketOdds:hover {
+    background-color: #dbdbdb;
+    color: #000; }
+  .BLSBT-btn-marketOdds.BLSBT-btnDisabled {
+    pointer-events: none; }
+
+.BLSBT-btn-addAllToBetslip {
+  height: 41px;
+  background-color: #FF7500;
+  text-align: center;
+  color: #FFF;
+  font-size: 14px; }
+  .BLSBT-btn-addAllToBetslip.BLSBT-HF-btnDisabled {
+    background-color: #CCC;
+    color: #000;
+    opacity: 0.7;
+    pointer-events: none; }
+
+/*------------- SBTech Widget-filter -----------*/
+.BLSBT-select {
+  border-radius: 3px;
+  position: relative;
+  background-color: #EBEBEB; }
+  .BLSBT-select select {
+    border: 0;
+    width: 100%;
+    height: 40px;
+    font-size: 12px;
+    color: #666;
+    padding: 0 25px 0 10px;
+    border-radius: 3px;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background: transparent; }
+  .BLSBT-select:after {
+    content: url(../img/select-arrow.svg);
+    float: right;
+    pointer-events: none;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    line-height: 7px; }
+
+.BLSBT-formControl input[type=text] {
+  height: 40px;
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  padding: 0 12px;
+  background-color: #f9f9f9;
+  width: 100%;
+  color: #666;
+  font-size: 14px;
+  font-weight: normal; }
+
+.BLSBT-error {
+  text-align: center;
+  font-size: 12px; }
+  .BLSBT-error .BLSBT-errorMsg {
+    color: #FF7500; }
+
+.BLSBT-accaAttack .BLSBT-error, .BLSBT-bestBets .BLSBT-error, .BLSBT-FBleague .BLSBT-error {
+  position: relative;
+  top: -8px; }
+
+/* React Carousel Css*/
+.BLSBT-carousel .carousel-control {
+  display: none; }
+
+.BLSBT-carousel .carousel-indicators {
+  display: none; }
+
+.BLSBT-headerRight .BLSBT-carousel-control {
+  cursor: pointer;
+  top: 4px;
+  position: absolute; }
+  .BLSBT-headerRight .BLSBT-carousel-control img {
+    width: 12px; }
+
+.BLSBT-headerRight .BLSBT-carousel-control.left {
+  left: 0; }
+
+.BLSBT-headerRight .BLSBT-carousel-control.right {
+  right: 0; }
+
+.BLSBT-headerRight .BLSBT-carousel-control.disabled {
+  opacity: 0.2;
+  cursor: default; }
+
+.BLSBT-widget {
+  font-family: Tahoma, sans-serif !important;
+  background-color: #22242a;
+  margin: 0px auto;
+  padding: 14px;
+  color: #000; }
+  .BLSBT-widget .BLSBT-widgetHeader {
+    padding-bottom: 12px;
+    display: flex;
+    display: -ms-flex;
+    display: -webkit-box; }
+    .BLSBT-widget .BLSBT-widgetHeader .BLSBT-headerLeft {
+      width: 55%; }
+      .BLSBT-widget .BLSBT-widgetHeader .BLSBT-headerLeft .BLSBT-titleStrip {
+        border-radius: 1.5px;
+        width: 3px;
+        height: 20px;
+        background-color: #FF7500;
+        display: inline-block;
+        margin-right: 8px;
+        vertical-align: middle; }
+      .BLSBT-widget .BLSBT-widgetHeader .BLSBT-headerLeft img {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 8px; }
+      .BLSBT-widget .BLSBT-widgetHeader .BLSBT-headerLeft .BLSBT-widgetTitle {
+        color: #FFF;
+        display: inline-block;
+        font-size: 14px;
+        position: relative;
+        top: -1px;
+        vertical-align: middle; }
+    .BLSBT-widget .BLSBT-widgetHeader .BLSBT-headerRight {
+      width: 45%;
+      text-align: center;
+      position: relative; }
+      .BLSBT-widget .BLSBT-widgetHeader .BLSBT-headerRight .BLSBT-carouselText {
+        color: #FFF;
+        font-size: 14px;
+        vertical-align: middle;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        top: 1px; }
+  .BLSBT-widget .BLSBT-contentBox {
+    background-color: #FFF;
+    border-radius: 3px;
+    position: relative;
+    width: 100%;
+    overflow: hidden; }
+
+.BLSBT-bestBets-filters {
+  padding: 12px 9px; }
+  .BLSBT-bestBets-filters ul {
+    display: inline-block;
+    width: 100%; }
+    .BLSBT-bestBets-filters ul li {
+      width: 50%;
+      float: left;
+      padding: 0 3px; }
+
+.BLSBT-accaAttack-filters {
+  padding: 16px 4px; }
+  .BLSBT-accaAttack-filters ul {
+    display: table;
+    width: 100%; }
+    .BLSBT-accaAttack-filters ul li {
+      display: table-cell;
+      padding: 0 4px;
+      vertical-align: bottom;
+      width: 35%; }
+      .BLSBT-accaAttack-filters ul li:last-child {
+        width: 20%; }
+  .BLSBT-accaAttack-filters .BLSBT-inputLabel {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 3px; }
+  .BLSBT-accaAttack-filters .BLSBT-btnGo {
+    height: 40px;
+    background-color: #FF7500;
+    color: #FFF;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer; }
+    .BLSBT-accaAttack-filters .BLSBT-btnGo img {
+      width: 18px;
+      vertical-align: middle; }
+
+.BLSBT-matchBoxGroup {
+  overflow: hidden; }
+
+.BLSBT-matchBox {
+  color: #666;
+  font-size: 12px;
+  background-color: #F9F9F9; }
+  .BLSBT-matchBox .BLSBT-matchBox-header {
+    height: 24px;
+    background-color: #E5E5E5;
+    padding: 0 12px; }
+  .BLSBT-matchBox .BLSBT-leagueName {
+    width: 58%;
+    float: left;
+    text-align: left;
+    padding: 5px 0; }
+  .BLSBT-matchBox .BLSBT-matchBox-kickOff {
+    width: 42%;
+    float: right;
+    text-align: right;
+    padding: 5px 0; }
+  .BLSBT-matchBox .BLSBT-matchBox-content {
+    padding: 16px 12px; }
+  .BLSBT-matchBox .BLSBT-matchBox-fixture {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 5px;
+    cursor: pointer; }
+    .BLSBT-matchBox .BLSBT-matchBox-fixture .BLSBT-FB-liveScore {
+      color: #FF7500;
+      font-weight: bold;
+      display: inline-block;
+      margin-right: 10px; }
+  .BLSBT-matchBox .BLSBT-closeIcon {
+    position: relative;
+    float: right;
+    cursor: pointer; }
+  .BLSBT-matchBox .BLSBT-closeIcon img {
+    position: relative;
+    float: right;
+    cursor: pointer;
+    width: 12px;
+    display: none;
+    top: 3px; }
+  .BLSBT-matchBox .BLSBT-matchBox-fixture:hover .BLSBT-closeIcon img {
+    display: block; }
+  .BLSBT-matchBox .BLSBT-matchBox-RTB {
+    margin-bottom: 16px; }
+
+.BLSBT-widget-footer {
+  border-top: 1px solid #EBEBEB;
+  padding: 16px 12px;
+  color: #666;
+  font-size: 14px;
+  background-color: #F9F9F9; }
+  .BLSBT-widget-footer .BLSBT-stake {
+    margin-bottom: 5px; }
+  .BLSBT-widget-footer .BLSBT-returns {
+    font-size: 18px; }
+    .BLSBT-widget-footer .BLSBT-returns .BLSBT-returns__txt {
+      color: #000; }
+    .BLSBT-widget-footer .BLSBT-returns .BLSBT-returns__value {
+      color: #FF7500; }
+
+/*======================================================
+
+======================================================*/
+.BLSBT-eventView-matchInfoBanner {
+  display: table;
+  width: 100%;
+  height: 75px;
+  background-image: url("../img/match-info-bg.png");
+  background-position: center bottom;
+  color: #FFF;
+  font-size: 12px;
+  text-align: center; }
+  .BLSBT-eventView-matchInfoBanner .BLSBT-eventView-matchInfoBanner__content {
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle; }
+  .BLSBT-eventView-matchInfoBanner .BLSBT-eventView-matchInfoBanner__fixture {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px; }
+  .BLSBT-eventView-matchInfoBanner .BLSBT-eventView-matchInfoBanner__eventDate {
+    margin-bottom: 5px;
+    font-weight: bold; }
+  .BLSBT-eventView-matchInfoBanner .BLSBT-eventView-matchInfoBanner__eventScore {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #FF7500; }
+
+.BLSBT-FB-eventView .BLSBT-matchBoxGroup .BLSBT-matchBox:last-child {
+  border-top: 1px solid #E5E5E5; }
+
+.BLSBT-marquee {
+  background-color: #FF7500;
+  font-size: 12px;
+  color: #FFF;
+  padding: 6px 0;
+  cursor: pointer; }
+
+.BLSBT-eventView-headTohead-teams {
+  background-color: #F2F2F2;
+  padding: 10px 12px; }
+
+.BLSBT-accordion .BLSBT-accordion-header {
+  background-color: #272a31;
+  padding: 12px 12px;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative; }
+  .BLSBT-accordion .BLSBT-accordion-header:after {
+    content: url(../img/select-arrow-white.svg);
+    float: right;
+    pointer-events: none;
+    position: absolute;
+    right: 12px;
+    top: 15px;
+    line-height: 7px; }
+
+.BLSBT-lastGamesBox {
+  background-color: #FFF;
+  padding: 8px 10px;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2);
+  color: #222;
+  font-size: 12px;
+  margin-bottom: 10px; }
+  .BLSBT-lastGamesBox .BLSBT-lastGamesBox-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px; }
+  .BLSBT-lastGamesBox .BLSBT-last3Games .BLSBT-last3Games-title {
+    font-weight: bold;
+    color: #999;
+    margin-bottom: 3px; }
+  .BLSBT-lastGamesBox .BLSBT-last3Games .BLSBT-last3GamesBox {
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    padding: 4px 6px;
+    margin-bottom: 5px;
+    background-color: #FDFDFD; }
+    .BLSBT-lastGamesBox .BLSBT-last3Games .BLSBT-last3GamesBox .BLSBT-score {
+      color: #FF7500;
+      font-weight: bold; }
+    .BLSBT-lastGamesBox .BLSBT-last3Games .BLSBT-last3GamesBox .BLSBT-date {
+      color: #666; }
+  .BLSBT-lastGamesBox .BLSBT-last10Games .BLSBT-last10Games-title {
+    font-weight: bold;
+    color: #999;
+    margin-bottom: 3px; }
+  .BLSBT-lastGamesBox .BLSBT-last10Games .BLSBT-last10Games-matchStatusList ul {
+    display: table;
+    table-layout: fixed;
+    width: 100%; }
+    .BLSBT-lastGamesBox .BLSBT-last10Games .BLSBT-last10Games-matchStatusList ul li {
+      padding-right: 1px;
+      display: table-cell; }
+      .BLSBT-lastGamesBox .BLSBT-last10Games .BLSBT-last10Games-matchStatusList ul li:last-child {
+        padding-right: 0; }
+      .BLSBT-lastGamesBox .BLSBT-last10Games .BLSBT-last10Games-matchStatusList ul li > div {
+        height: 20px;
+        line-height: 18px;
+        font-size: 12px;
+        border-radius: 3px;
+        font-weight: 600;
+        text-align: center;
+        margin-right: 2px;
+        color: #FFF;
+        background-color: #DDD;
+        border: 1px solid transparent;
+        cursor: pointer; }
+        .BLSBT-lastGamesBox .BLSBT-last10Games .BLSBT-last10Games-matchStatusList ul li > div:hover, .BLSBT-lastGamesBox .BLSBT-last10Games .BLSBT-last10Games-matchStatusList ul li > div.active {
+          border: 1px solid #2a2a2a; }
+        .BLSBT-lastGamesBox .BLSBT-last10Games .BLSBT-last10Games-matchStatusList ul li > div.BLSBT-match-win {
+          background-color: #45942e; }
+        .BLSBT-lastGamesBox .BLSBT-last10Games .BLSBT-last10Games-matchStatusList ul li > div.BLSBT-match-draw {
+          background-color: #7e7e7e; }
+        .BLSBT-lastGamesBox .BLSBT-last10Games .BLSBT-last10Games-matchStatusList ul li > div.BLSBT-match-loss {
+          background-color: #ff0000; }
+
+.BLSBT-last10Games-WDL-matchInfoBanner {
+  display: table;
+  width: 100%;
+  height: 75px;
+  background-image: url("../img/match-info-bg.png");
+  background-position: center bottom;
+  color: #FFF;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 5px; }
+  .BLSBT-last10Games-WDL-matchInfoBanner .BLSBT-last10Games-WDL-matchInfoBanner__content {
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle; }
+  .BLSBT-last10Games-WDL-matchInfoBanner .BLSBT-last10Games-WDL-matchInfoBanner__fixture {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px; }
+  .BLSBT-last10Games-WDL-matchInfoBanner .BLSBT-last10Games-WDL-matchInfoBanner__eventScore {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #FF7500; }
+
+.BLSBT-lineUps {
+  display: table;
+  width: 100%;
+  height: 120px;
+  background-image: url("../img/lineups-bg.png");
+  background-position: center;
+  background-size: cover;
+  color: #FFF; }
+  .BLSBT-lineUps .BLSBT-lineUps__content {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle; }
+  .BLSBT-lineUps .BLSBT-teamPosition {
+    padding: 3px; }
+    .BLSBT-lineUps .BLSBT-teamPosition.active {
+      border: 2px solid #FF7500; }
+    .BLSBT-lineUps .BLSBT-teamPosition ul {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 4px;
+      width: 20px; }
+      .BLSBT-lineUps .BLSBT-teamPosition ul li .BLSBT-playerPosition {
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        background-color: #F2F2F2;
+        color: #222;
+        font-size: 11px;
+        cursor: pointer; }
+        .BLSBT-lineUps .BLSBT-teamPosition ul li .BLSBT-playerPosition.active {
+          color: #FFF;
+          background-color: #FF7500; }
+      .BLSBT-lineUps .BLSBT-teamPosition ul.BLSBT-2inRow li {
+        padding: 12px 0; }
+      .BLSBT-lineUps .BLSBT-teamPosition ul.BLSBT-3inRow li {
+        padding: 6px 0; }
+      .BLSBT-lineUps .BLSBT-teamPosition ul.BLSBT-4inRow li {
+        padding: 6px 0; }
+
+.BLSBT-gameLineUpsPrediction {
+  font-size: 13px;
+  background-color: #FFF; }
+  .BLSBT-gameLineUpsPrediction .BLSBT-homeAwayTeams ul {
+    margin: 10px 0;
+    display: inline-block;
+    width: 100%;
+    padding: 0 12px; }
+    .BLSBT-gameLineUpsPrediction .BLSBT-homeAwayTeams ul li {
+      width: 50%;
+      float: left; }
+      .BLSBT-gameLineUpsPrediction .BLSBT-homeAwayTeams ul li > div {
+        text-align: center;
+        background-color: #dbdbdb;
+        border-radius: 4px;
+        padding: 8px 10px;
+        cursor: pointer; }
+        .BLSBT-gameLineUpsPrediction .BLSBT-homeAwayTeams ul li > div.active {
+          background-color: #FF7500;
+          color: #FFF; }
+      .BLSBT-gameLineUpsPrediction .BLSBT-homeAwayTeams ul li:first-child {
+        padding-right: 5px; }
+      .BLSBT-gameLineUpsPrediction .BLSBT-homeAwayTeams ul li:last-child {
+        padding-left: 5px; }
+  .BLSBT-gameLineUpsPrediction .BLSBT-teamLineUpsPrediction__title {
+    padding: 0 12px; }
+    .BLSBT-gameLineUpsPrediction .BLSBT-teamLineUpsPrediction__title .BLSBT-manager {
+      font-weight: 600;
+      margin-bottom: 5px; }
+  .BLSBT-gameLineUpsPrediction .teamLineUpsPrediction-list {
+    padding: 10px 0 20px; }
+    .BLSBT-gameLineUpsPrediction .teamLineUpsPrediction-list li {
+      border-bottom: 1px solid #E5E5E5;
+      padding: 6px 6px 6px 12px; }
+      .BLSBT-gameLineUpsPrediction .teamLineUpsPrediction-list li .BLSBT-position {
+        width: 24px;
+        height: 20px;
+        margin: 0 20px 0 3px;
+        background-color: #FF7500;
+        color: #FFF;
+        font-size: 12px;
+        text-align: center;
+        display: inline-block;
+        border-radius: 3px;
+        line-height: 20px;
+        font-weight: 600; }
+      .BLSBT-gameLineUpsPrediction .teamLineUpsPrediction-list li:first-child {
+        border-top: 1px solid #E5E5E5; }
+      .BLSBT-gameLineUpsPrediction .teamLineUpsPrediction-list li:nth-child(odd) {
+        background-color: #FAFAFA; }
+
+.BLSBT-playerProfile {
+  background-color: #FFF;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2);
+  color: #222;
+  font-size: 12px;
+  margin-bottom: 10px; }
+  .BLSBT-playerProfile .BLSBT-playerProfile-header {
+    background-color: #FAFAFA;
+    border-bottom: 1px solid #E5E5E5;
+    padding: 6px 10px;
+    font-size: 14px; }
+    .BLSBT-playerProfile .BLSBT-playerProfile-header .BLSBT-playerProfile-header__teamName {
+      font-size: 11px;
+      color: #999; }
+    .BLSBT-playerProfile .BLSBT-playerProfile-header .BLSBT-closeIcon {
+      margin-top: 8px;
+      cursor: pointer; }
+  .BLSBT-playerProfile .BLSBT-playerProfile-content {
+    padding: 8px 10px; }
+  .BLSBT-playerProfile .BLSBT-profileStats {
+    border-radius: 3px;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%; }
+    .BLSBT-playerProfile .BLSBT-profileStats li {
+      background-color: #dbdbdb;
+      padding: 6px;
+      text-align: center;
+      color: #222;
+      font-size: 13px;
+      width: 50%;
+      float: left;
+      cursor: pointer; }
+      .BLSBT-playerProfile .BLSBT-profileStats li.active {
+        background-color: #FF7500;
+        color: #FFF;
+        font-weight: 600; }
+  .BLSBT-playerProfile .BLSBT-profile-content ul {
+    display: inline-block;
+    width: 100%;
+    margin-top: 5px; }
+    .BLSBT-playerProfile .BLSBT-profile-content ul li {
+      float: left;
+      width: 50%;
+      padding: 4px 8px; }
+      .BLSBT-playerProfile .BLSBT-profile-content ul li:nth-child(odd) {
+        text-align: right;
+        color: #999; }
+      .BLSBT-playerProfile .BLSBT-profile-content ul li:nth-child(even) {
+        text-align: left; }
+
+.BLSBT-HF-widget {
+  /*----- Quick Serach -------  */
+  /*---------- Quick Search Results ----------*/
+  /*------- Quick Search - Best Backed Horses -----------*/
+  /*----------- A to Z Search -----------------*/ }
+  .BLSBT-HF-widget .BLSBT-HF-widgetHeader {
+    text-align: center;
+    padding: 5px 0 20px; }
+    .BLSBT-HF-widget .BLSBT-HF-widgetHeader .BLSBT-HF-logo {
+      font-size: 26px;
+      color: #FFF;
+      font-weight: 600; }
+      .BLSBT-HF-widget .BLSBT-HF-widgetHeader .BLSBT-HF-logo .BLSBT-HF-logoSubPart {
+        color: #FF7500; }
+  .BLSBT-HF-widget .BLSBT-mainMenu ul {
+    display: table;
+    table-layout: fixed;
+    width: 100%; }
+    .BLSBT-HF-widget .BLSBT-mainMenu ul li {
+      display: table-cell;
+      vertical-align: middle;
+      padding-right: 1px; }
+      .BLSBT-HF-widget .BLSBT-mainMenu ul li .BLSBT-mainMenu-item {
+        background-color: #464b58;
+        border-bottom: 2px solid transparent;
+        color: #9598A2;
+        font-size: 13px;
+        padding: 12px 5px;
+        text-align: center;
+        border-radius: 4px 4px 0 0;
+        cursor: pointer; }
+        .BLSBT-HF-widget .BLSBT-mainMenu ul li .BLSBT-mainMenu-item.active {
+          border-bottom: 2px solid #FF7500;
+          font-weight: 600;
+          color: #FFF; }
+  .BLSBT-HF-widget .BLSBT-widget-mainContent {
+    background-color: #FFF;
+    border-radius: 0 0 4px 4px;
+    overflow: hidden; }
+  .BLSBT-HF-widget .BLSBT-horsesArcSlider {
+    background-image: url(../img/hf-slider-bg.jpg);
+    height: 160px;
+    display: table;
+    width: 100%;
+    background-size: cover; }
+    .BLSBT-HF-widget .BLSBT-horsesArcSlider .BLSBT-horsesArcSlider-content {
+      background-color: rgba(0, 0, 0, 0.55);
+      height: 100%;
+      display: table-cell;
+      vertical-align: middle;
+      position: relative; }
+    .BLSBT-HF-widget .BLSBT-horsesArcSlider .BLSBT-horsesArcSlider-progressBar {
+      height: 100%; }
+    .BLSBT-HF-widget .BLSBT-horsesArcSlider .BLSBT-btnShowHorses {
+      background-color: #FF7500;
+      font-size: 12px;
+      color: #FFF;
+      width: 75px;
+      height: 26px;
+      padding: 0;
+      margin: 0 auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      z-index: 999; }
+    .BLSBT-HF-widget .BLSBT-horsesArcSlider .BLSBT-horsesArcSlider-refreshIcon {
+      display: inline-block;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      cursor: pointer;
+      color: #FFF; }
+    .BLSBT-HF-widget .BLSBT-horsesArcSlider #progressTxt {
+      color: #FFF;
+      display: block;
+      font-size: 40px;
+      line-height: 22px;
+      position: relative;
+      text-align: center;
+      top: 60px; }
+    .BLSBT-HF-widget .BLSBT-horsesArcSlider #progressTxt div {
+      font-size: 17px;
+      line-height: 30px; }
+    .BLSBT-HF-widget .BLSBT-horsesArcSlider .horsetext {
+      font-size: 22px; }
+    .BLSBT-HF-widget .BLSBT-horsesArcSlider canvas {
+      display: block;
+      left: 0;
+      margin: 0 auto;
+      position: absolute;
+      right: 0;
+      top: 15px;
+      transition: width 2s ease, height 2s linear;
+      -moz-transition: width 2s ease, height 2s linear;
+      -webkit-transition: width 2s ease, height 2s linear;
+      z-index: 1; }
+    .BLSBT-HF-widget .BLSBT-horsesArcSlider #graph canvas:last-child {
+      z-index: 0; }
+  .BLSBT-HF-widget .BLSBT-quickSearch-content {
+    padding: 10px; }
+  .BLSBT-HF-widget .BLSBT-timeForm .BLSBT-timeForm-toggle .react-toggle-track {
+    width: 100px !important;
+    height: 30px !important;
+    background-color: #4D4D4D; }
+    .BLSBT-HF-widget .BLSBT-timeForm .BLSBT-timeForm-toggle .react-toggle-track::after {
+      content: "TIME FORM";
+      position: absolute;
+      color: #FFF;
+      font-weight: bold;
+      font-size: 10px;
+      top: 9px;
+      right: 7px; }
+  .BLSBT-HF-widget .BLSBT-timeForm .BLSBT-timeForm-toggle .react-toggle--checked .react-toggle-track {
+    background-color: #FF7500; }
+    .BLSBT-HF-widget .BLSBT-timeForm .BLSBT-timeForm-toggle .react-toggle--checked .react-toggle-track::after {
+      right: auto;
+      left: 7px; }
+  .BLSBT-HF-widget .BLSBT-timeForm .BLSBT-timeForm-toggle .react-toggle--checked .react-toggle-thumb {
+    left: auto;
+    border-color: #FF7500;
+    right: 1px; }
+  .BLSBT-HF-widget .BLSBT-timeForm .BLSBT-timeForm-toggle .react-toggle-thumb {
+    height: 28px !important;
+    width: 28px !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline: none !important; }
+  .BLSBT-HF-widget .BLSBT-timeForm .BLSBT-timeForm-rating ul {
+    display: inline-block;
+    margin-top: 3px; }
+    .BLSBT-HF-widget .BLSBT-timeForm .BLSBT-timeForm-rating ul li {
+      cursor: pointer;
+      float: left;
+      padding: 0 2px;
+      color: #999; }
+      .BLSBT-HF-widget .BLSBT-timeForm .BLSBT-timeForm-rating ul li i {
+        font-size: 24px; }
+      .BLSBT-HF-widget .BLSBT-timeForm .BLSBT-timeForm-rating ul li.active {
+        color: #FFCA22; }
+  .BLSBT-HF-widget .BLSBT-infoMessage {
+    font-size: 11px;
+    text-align: center;
+    color: #FF7500; }
+  .BLSBT-HF-widget .BLSBT-HF-filters .BLSBT-raceCourseFilter ul {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border: 1px solid #dbdbdb;
+    background-color: #FFF;
+    margin-bottom: 7px;
+    border-radius: 3px; }
+    .BLSBT-HF-widget .BLSBT-HF-filters .BLSBT-raceCourseFilter ul li {
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 12px;
+      color: #000;
+      text-align: center; }
+      .BLSBT-HF-widget .BLSBT-HF-filters .BLSBT-raceCourseFilter ul li form {
+        padding: 0; }
+  .BLSBT-HF-widget .BLSBT-HF-filters .BLSBT-raceCourseFilter .BLSBT-multiSelect {
+    position: relative; }
+    .BLSBT-HF-widget .BLSBT-HF-filters .BLSBT-raceCourseFilter .BLSBT-multiSelect .BLSBT-select {
+      background-color: #EBEBEB;
+      border-radius: 0 3px 3px 0;
+      height: 40px;
+      text-align: left;
+      padding: 12px 15px 10px 10px;
+      cursor: pointer; }
+    .BLSBT-HF-widget .BLSBT-HF-filters .BLSBT-raceCourseFilter .BLSBT-multiSelect .BLSBT-multiSelect-dropDownMenu {
+      position: absolute;
+      width: 100%;
+      background-color: #FFF;
+      border: 1px solid #dbdbdb;
+      padding: 4px;
+      text-align: left;
+      display: none; }
+      .BLSBT-HF-widget .BLSBT-HF-filters .BLSBT-raceCourseFilter .BLSBT-multiSelect .BLSBT-multiSelect-dropDownMenu label {
+        width: 100%;
+        display: inline-block;
+        margin: 3px 0;
+        padding-top: 0;
+        text-indent: 0; }
+        .BLSBT-HF-widget .BLSBT-HF-filters .BLSBT-raceCourseFilter .BLSBT-multiSelect .BLSBT-multiSelect-dropDownMenu label span {
+          position: relative; }
+  .BLSBT-HF-widget .BLSBT-HF-filters .BLSBT-filterList ul {
+    display: table;
+    width: 100%; }
+    .BLSBT-HF-widget .BLSBT-HF-filters .BLSBT-filterList ul li {
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 12px;
+      text-align: center;
+      width: 49%;
+      float: left;
+      padding: 6px 2px;
+      border: 1px solid #dbdbdb;
+      background-color: #ebebeb;
+      border-radius: 3px;
+      margin-bottom: 7px;
+      color: #000;
+      cursor: pointer; }
+      .BLSBT-HF-widget .BLSBT-HF-filters .BLSBT-filterList ul li:nth-child(even) {
+        float: right; }
+      .BLSBT-HF-widget .BLSBT-HF-filters .BLSBT-filterList ul li.active {
+        background-color: #FF7500;
+        color: #FFF;
+        font-weight: 600;
+        border: 1px solid #FF7500; }
+        .BLSBT-HF-widget .BLSBT-HF-filters .BLSBT-filterList ul li.active i {
+          color: #FFF; }
+      .BLSBT-HF-widget .BLSBT-HF-filters .BLSBT-filterList ul li i {
+        float: left;
+        font-size: 10px;
+        vertical-align: middle;
+        margin: 2px 0 0 2px;
+        color: #FF7500; }
+  .BLSBT-HF-widget .BLSBT-note {
+    font-size: 11px;
+    color: #000; }
+    .BLSBT-HF-widget .BLSBT-note i {
+      color: #FF7500;
+      font-size: 10px; }
+  .BLSBT-HF-widget .BLSBT-quickSearchResults .BLSBT-quickSearchResults-header {
+    padding: 6px;
+    background-color: #e5e5e5;
+    font-size: 13px;
+    border-bottom: 1px solid #999; }
+    .BLSBT-HF-widget .BLSBT-quickSearchResults .BLSBT-quickSearchResults-header .BLSBT-quickSearchResults-back {
+      font-size: 15px;
+      cursor: pointer; }
+  .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup {
+    max-height: 500px;
+    overflow-y: auto; }
+    .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox {
+      border-bottom: 1px solid #ebebeb;
+      color: #333;
+      background-color: #FFF; }
+      .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .accordion__title {
+        width: calc(100% - 60px);
+        display: inline-block;
+        vertical-align: middle; }
+        .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .accordion__title:focus {
+          outline: none; }
+      .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-HF-odds {
+        width: 60px;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        padding-right: 8px; }
+      .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-btnHFodds {
+        background-color: #ebebeb;
+        font-size: 12px;
+        padding: 0;
+        height: 30px;
+        width: 100%;
+        border: 0;
+        font-weight: 600;
+        color: #333; }
+        .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-btnHFodds.active {
+          background-color: #FF7500;
+          color: #FFF; }
+      .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-HF-matchBox-content {
+        padding: 5px 10px 8px 20px;
+        position: relative;
+        cursor: pointer; }
+        .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-HF-matchBox-content:before {
+          content: "\E901";
+          font-family: 'BLSBT-icons' !important;
+          font-size: 11px;
+          display: inline-block;
+          top: 50%;
+          position: absolute;
+          left: 4px;
+          transform: translateY(-50%); }
+      .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox [aria-selected="true"] .BLSBT-HF-matchBox-content:before {
+        content: "\e903"; }
+      .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-HF-silk {
+        display: inline-block;
+        vertical-align: top;
+        width: 30px;
+        vertical-align: middle; }
+        .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-HF-silk img {
+          width: 25px; }
+      .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-raceDetails {
+        display: inline-block;
+        vertical-align: middle;
+        width: calc(100% - 30px); }
+      .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-horseName-horseRating .BLSBT-horseRating {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 5px; }
+        .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-horseName-horseRating .BLSBT-horseRating li {
+          float: left;
+          font-size: 10px;
+          color: #999;
+          padding: 0 1px; }
+          .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-horseName-horseRating .BLSBT-horseRating li.active {
+            color: #FFCA22; }
+      .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-horseName {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 600; }
+      .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-raceKickOff {
+        font-size: 11px;
+        margin-top: 3px; }
+      .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-HF-accordionBody {
+        background-color: #ebebeb;
+        padding: 6px 10px; }
+      .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-HF-rtb {
+        font-size: 11px;
+        color: #000; }
+        .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-HF-rtb .BLSBT-trainer-jockey {
+          margin-bottom: 3px; }
+        .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-HF-rtb .BLSBT-trainer-jockey__title {
+          color: #FF7500; }
+        .BLSBT-HF-widget .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-HF-rtb .BLSBT-trainer-jockey__txt {
+          color: #000;
+          font-weight: 500; }
+  .BLSBT-HF-widget .BLSBT-HF-quickSearch-bestBacked.BLSBT-HF-bestBacked .BLSBT-raceDetails {
+    padding: 5px 10px 8px;
+    width: 100%; }
+  .BLSBT-HF-widget .BLSBT-HF-quickSearch-bestBacked .BLSBT-HF-quickSearch-bestBacked__header {
+    overflow: auto;
+    background-color: #555;
+    padding: 6px 0;
+    color: #FFF; }
+    .BLSBT-HF-widget .BLSBT-HF-quickSearch-bestBacked .BLSBT-HF-quickSearch-bestBacked__header .BLSBT-HF-oddsDropedPercentage__title {
+      width: 130px;
+      float: right;
+      font-size: 11px; }
+      .BLSBT-HF-widget .BLSBT-HF-quickSearch-bestBacked .BLSBT-HF-quickSearch-bestBacked__header .BLSBT-HF-oddsDropedPercentage__title ul {
+        display: table;
+        table-layout: fixed;
+        width: 100%; }
+        .BLSBT-HF-widget .BLSBT-HF-quickSearch-bestBacked .BLSBT-HF-quickSearch-bestBacked__header .BLSBT-HF-oddsDropedPercentage__title ul li {
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center; }
+          .BLSBT-HF-widget .BLSBT-HF-quickSearch-bestBacked .BLSBT-HF-quickSearch-bestBacked__header .BLSBT-HF-oddsDropedPercentage__title ul li:last-child {
+            padding-right: 5px;
+            width: 55px; }
+  .BLSBT-HF-widget .BLSBT-HF-quickSearch-bestBacked .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .accordion__title {
+    width: calc(100% - 130px); }
+  .BLSBT-HF-widget .BLSBT-HF-quickSearch-bestBacked .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-HF-oddsDropedPercentage {
+    width: 130px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px; }
+    .BLSBT-HF-widget .BLSBT-HF-quickSearch-bestBacked .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-HF-oddsDropedPercentage ul {
+      display: table;
+      table-layout: fixed;
+      width: 100%; }
+      .BLSBT-HF-widget .BLSBT-HF-quickSearch-bestBacked .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-HF-oddsDropedPercentage ul li {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center; }
+        .BLSBT-HF-widget .BLSBT-HF-quickSearch-bestBacked .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-HF-oddsDropedPercentage ul li:last-child {
+          width: 55px;
+          padding-right: 5px; }
+        .BLSBT-HF-widget .BLSBT-HF-quickSearch-bestBacked .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-HF-oddsDropedPercentage ul li .BLSBT-dropped {
+          color: #ff0000; }
+  .BLSBT-HF-widget .BLSBT-HF-quickSearch-bestBacked .BLSBT-HF-matchBoxGroup .BLSBT-HF-matchBox .BLSBT-horseRating {
+    margin-left: 0; }
+  .BLSBT-HF-widget .BLSBT-AtoZ-search .BLSBT-AtoZ-searchBox {
+    padding: 8px; }
+    .BLSBT-HF-widget .BLSBT-AtoZ-search .BLSBT-AtoZ-searchBox input {
+      padding-right: 25px;
+      font-size: 14px;
+      color: #333; }
+    .BLSBT-HF-widget .BLSBT-AtoZ-search .BLSBT-AtoZ-searchBox .BLSBT-inputGroup-addon {
+      position: relative; }
+      .BLSBT-HF-widget .BLSBT-AtoZ-search .BLSBT-AtoZ-searchBox .BLSBT-inputGroup-addon:after {
+        font-family: 'BLSBT-icons' !important;
+        content: "\e909";
+        font-size: 16px;
+        display: inline-block;
+        top: 50%;
+        position: absolute;
+        right: 10px;
+        color: #999;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%); }
+  .BLSBT-HF-widget .BLSBT-AtoZ-search .BLSBT-serachByLetter {
+    background-color: #555;
+    color: #FFF;
+    font-size: 13px;
+    overflow: auto;
+    text-align: center;
+    padding: 8px; }
+    .BLSBT-HF-widget .BLSBT-AtoZ-search .BLSBT-serachByLetter ul li {
+      width: 25px;
+      height: 25px;
+      margin-right: 2px;
+      line-height: 24px;
+      text-transform: uppercase;
+      float: left;
+      cursor: pointer; }
+      .BLSBT-HF-widget .BLSBT-AtoZ-search .BLSBT-serachByLetter ul li.active {
+        background-color: #FF7500;
+        border-radius: 50%;
+        font-weight: 600; }
+
+/*# sourceMappingURL=styles-sbtech-whiteTheme.css.map */

@@ -1,0 +1,19 @@
+
+<div class="BL-widget-footer">
+  <div class="BL-stake">
+      <div>Stake</div>
+      <div class="BL-stake__value">{{stake}}</div>
+  </div>
+  <div class="BL-returns">
+      <div class="">
+          <span class="BL-returns__txt">Potential Win:</span>
+      </div>
+      <div class="text-right">
+          <span class="BL-returns__value">${{(winAmt * stake).toFixed(2) }}</span>
+      </div>
+  </div>
+  <div>
+      <div class="space-5"></div>
+  </div>
+  <button type="button" class="BL-btn BL-btn-addAllToBetslip" (click)="addAllToBetslip(betsData)">Add all to Betslip</button>
+</div>

@@ -1,0 +1,1410 @@
+@charset "utf-8";
+/*------------ Layout CSS -------------*/
+
+body {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-color: #FFF;
+}
+
+.row {
+	margin-left: -0.75rem;
+	margin-right: -0.75rem;
+	margin-bottom: 0;
+}
+
+.w100 {
+	width: 100%;
+}
+
+.col-centered {
+	margin: 0 auto !important;
+	float: none !important;
+}
+
+.no-padding-left {
+	padding-left: 0 !important;
+}
+
+.no-padding-right {
+	padding-right: 0 !important;
+}
+
+.no-margin {
+	margin: 0 !important;
+}
+
+.no-margin-top {
+	margin-top: 0 !important;
+}
+
+.margin-top-5 {
+	margin-top: 5px !important;
+}
+
+.margin-top-10 {
+	margin-top: 10px !important;
+}
+
+.margin-top-15 {
+	margin-top: 15px !important;
+}
+
+.margin-top-20 {
+	margin-top: 20px !important;
+}
+
+.no-margin-bottom {
+	margin-bottom: 0 !important;
+}
+
+.margin-bottom-5 {
+	margin-bottom: 5px !important;
+}
+
+.margin-bottom-10 {
+	margin-bottom: 10px !important;
+}
+
+.margin-bottom-15 {
+	margin-bottom: 15px !important;
+}
+
+.margin-bottom-20 {
+	margin-bottom: 20px !important;
+}
+
+.padding-5 {
+	padding: 5px !important;
+}
+
+.padding-left-4 {
+	padding-left: 4px !important;
+}
+
+.padding-right-4 {
+	padding-right: 4px !important;
+}
+
+.padding-left-15 {
+	padding-left: 15px !important;
+}
+
+.padding-right-15 {
+	padding-right: 15px !important;
+}
+
+.align-s-center {
+	align-self: center;
+}
+
+.valign-m {
+	vertical-align: middle;
+}
+
+.font-bold {
+	font-weight: 700;
+}
+
+.space-5 {
+	margin: 5px auto;
+	padding: 2px 0px;
+}
+
+.space-10 {
+	margin: 10px auto;
+	padding: 5px 0px;
+}
+
+.height-10 {
+	height: 10px !important;
+}
+
+.height-15 {
+	height: 15px !important;
+}
+
+.height-20 {
+	height: 20px !important;
+}
+
+.height-25 {
+	height: 25px !important;
+}
+
+.height-30 {
+	height: 30px !important;
+}
+
+.font-20 {
+	font-size: 20px !important;
+}
+
+.font-16 {
+	font-size: 16px !important;
+}
+
+.font-8 {
+	font-size: 8px !important;
+}
+
+.valign-wrapper {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.display-on-small {
+	display: none;
+}
+
+.pointer-hand {
+	cursor: pointer;
+}
+
+iframe {
+	border: 0;
+}
+
+/*------------ Layout CSS End -------------*/
+
+/*-------------Global CSS ---------------*/
+
+.info-text {
+	color: #222;
+}
+
+.mrg-loader {
+	align-items: center;
+	bottom: 0;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 9999;
+}
+
+.sticker-footer {
+	bottom: 0;
+	left: 0;
+	position: relative;
+	right: 0;
+	z-index: 9999;
+}
+
+.mrg-content {
+	padding: 0 48px;
+}
+
+.bet-assist {
+	background-color: #EBD700;
+	border-radius: 2px;
+	color: #222;
+	display: inline-block;
+	font-size: 10px;
+	font-weight: 700;
+	height: 16px;
+	line-height: 17px;
+	margin-right: 10px;
+	padding: 0 4px;
+	text-transform: uppercase;
+}
+
+.live {
+	background-color: #fe4725 !important;
+	color: #FFF !important;
+}
+
+.mrg-inputfield {
+	background-color: #e3e3e3;
+	border-radius: 4px;
+	border-bottom: 2px solid #9e9e9e;
+	height: 56px;
+	padding: 0 15px;
+	position: relative;
+}
+
+.mrg-inputfield label {
+	color: #000;
+}
+
+.mrg-inputfield input[type="text"] {
+	border: 0;
+	box-shadow: none;
+	font-size: 16px;
+	font-weight: 500;
+	height: 2rem;
+	margin-bottom: 0;
+}
+
+.mrg-inputfield input[type="text"]:focus {
+	border-bottom: 0;
+	box-shadow: none;
+}
+
+.mrg-inputfield.active {
+	border-bottom: 2px solid #249752;
+}
+
+.bg-gradient {
+	position: relative;
+}
+
+.bg-gradient::before {
+	background: rgba(254, 254, 254, 0);
+	/* Old Browsers */
+	background: -moz-linear-gradient(top, rgba(254, 254, 254, 0) 0%, rgba(102, 102, 102, 0) 40%, rgba(0, 0, 0, 1) 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254, 254, 254, 0)), color-stop(40%, rgba(102, 102, 102, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
+	/* Chrome, Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(254, 254, 254, 0) 0%, rgba(102, 102, 102, 0) 40%, rgba(0, 0, 0, 1) 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(254, 254, 254, 0) 0%, rgba(102, 102, 102, 0) 40%, rgba(0, 0, 0, 1) 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(254, 254, 254, 0) 0%, rgba(102, 102, 102, 0) 40%, rgba(0, 0, 0, 1) 100%);
+	/* IE 10+ */
+	background: linear-gradient(to bottom, rgba(254, 254, 254, 0) 0%, rgba(102, 102, 102, 0) 40%, rgba(0, 0, 0, 1) 100%);
+	/* W3C */
+	border-radius: 3px;
+	bottom: 0;
+	content: '';
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#000000', GradientType=0);
+	/* IE6-9 */
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.bg-gradient-inner {
+	height: 100%;
+	position: relative;
+}
+
+.serving::before {
+	bottom: 2px;
+	color: #f4b03b;
+	content: "\E061";
+	font-family: "Material Icons";
+	font-size: 8px;
+	left: -2px;
+	position: absolute;
+}
+.servingAfter{
+    position: relative;
+}
+.servingAfter::after{
+    bottom: 2px;
+    color: #f4b03b;
+    content: "\E061";
+    font-family: "Material Icons";
+    font-size: 8px;
+    right: -15px;
+    position: absolute;
+}
+.slideDown {
+    transition-property: all;
+    -moz-transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -moz-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.slideDown .rtb {}
+
+.slideDown.rtb-hide {
+	-moz-transition-duration: 0.3s;
+	-webkit-transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	-webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	-o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	max-height: 0;
+}
+
+.mrg-bet-box .box-content .slideDown .rtb {
+	margin-top: 0;
+}
+
+/*----------- BL Products Carousel --------------------*/
+
+.BlLoader {
+	min-height: 100px;
+	position: relative;
+}
+
+.bl-products-hscroll {
+	height: 100px;
+	margin: 24px 0 !important;
+	overflow: hidden;
+}
+
+.bl-products-hscroll:focus {
+	outline: none;
+}
+
+.bl-products-hscroll li a {
+	background-color: transparent !important;
+	padding: 0;
+}
+
+.bl-products-hscroll .bl-product-item {
+	cursor: pointer;
+	float: left;
+	margin: 0 24px 0 0;
+	min-height: 100%;
+	position: relative;
+}
+
+.bl-products-hscroll .gallery-cell:first-child .bl-product-item {
+	margin-left: 48px;
+}
+
+.bl-products-hscroll .bl-product-item img {
+	border-radius: 4px;
+	vertical-align: middle;
+	width: 246px;
+}
+
+.bl-products-hscroll .bl-product-item .menu-txt {
+	bottom: 12px;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 700;
+	left: 12px;
+	line-height: 22px;
+	position: absolute;
+	text-align: left;
+	text-transform: uppercase;
+	width: 140px;
+}
+
+.bl-products-hscroll .bl-product-item .menu-txt .live-txt {
+	font-size: 14px;
+	font-style: italic;
+	line-height: 16px;
+}
+
+.bl-products-hscroll .bl-product-item .menu-txt .live-txt.bl-green {
+	color: #33d07f;
+}
+
+.bl-products-hscroll .bl-product-item .menu-txt .live-txt.bl-blue {
+	color: #3aa5eb;
+}
+
+.bl-products-hscroll .flickity-viewport {
+	height: 100%;
+}
+
+.product-carousel-loader .bl-product-item {
+	width: 246px;
+	height: 100px;
+	border-radius: 3px;
+}
+
+/*------------- BL Products Carousel End --------------*/
+
+/*------------- BL Products ----------------------*/
+
+.BL-products .header {
+	/*padding: 8px;*/
+	background-color: #18723c !important;
+	padding: 0 48px;
+}
+
+.BL-products .header .bet-assist {
+	margin-left: 5px;
+	margin-right: 0;
+	position: relative;
+	top: -2px;
+}
+
+.BL-products .header .row {
+	height: 56px;
+}
+
+.BL-products .header .title {
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.BL-products .header i {
+	cursor: pointer;
+}
+
+.BL-products .mrg-content {
+	padding: 0 16px;
+}
+
+.BL-products .footer {
+	background-color: #eeeeee;
+}
+
+.BLProductLoader {
+	height: 200px;
+	position: relative;
+}
+
+.app-modal {
+	bottom: 0;
+	left: 0;
+	overflow-y: auto;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1000;
+}
+
+.modal-open {
+	overflow-y: hidden;
+}
+
+.btn-odds {
+	background-color: #249752;
+	border-radius: 2px;
+	box-shadow: none;
+	font-size: 12px;
+	font-weight: 500;
+	height: 36px;
+	line-height: 18px;
+	min-height: 36px;
+	padding: 0 10px;
+	text-transform: none;
+	width: 100%;
+}
+
+.btn-odds .market {
+	display: block;
+	float: left;
+	font-size: 13px;
+	overflow: hidden;
+	text-align: left;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 80%;
+}
+
+.btn-odds .odds {
+	float: right;
+	font-size: 13px;
+	text-align: right;
+	width: 20%;
+}
+
+.add-betslip {
+	font-size: 16px;
+	height: 48px;
+	padding: 0 4px;
+}
+
+.btn-odds-flat {
+	cursor: default !important;
+}
+
+.btn-odds-flat:hover {
+	background-color: #249752 !important;
+	box-shadow: none !important;
+}
+
+.btn-odds-flat.green.lighten-1:hover {
+	background-color: #18723c !important;
+}
+
+.Highlighted-match .btn-odds .market {
+	width: 55%;
+}
+
+.Highlighted-match .btn-odds .odds {
+	width: 45%;
+}
+
+/*------------Combi Spin ------------*/
+
+.football-spin .odds-slider {
+	background-image: url(/assets/img/FootballStadium.jpg);
+	height: 128px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+.football-spin .odds-slider h5 {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.football-spin .odds-slider .odds-box {
+	background-color: #FFF;
+	border-radius: 2px;
+	color: #000;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 500;
+	font-weight: 600;
+	height: 45px;
+	line-height: 45px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0 12px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+	margin-top: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	margin-top: -17px;
+}
+
+input[type="range"] {
+	border: none;
+	margin: 0;
+}
+
+.odds-slider input[type="range"]+.thumb {
+	display: none;
+}
+
+.combi-spin {
+	/*padding: 8px 4px 0px;*/
+	padding: 12px 12px 0px;
+}
+
+.spin-box {
+	position: relative;
+	background-color: #FFF;
+	border-radius: 3px;
+	margin-bottom: 8px;
+	border: 1px solid transparent;
+}
+
+.spin-box .border-right {
+	border-right: 1px solid #e0e0e0;
+}
+
+.spin-box .border-left {
+	border-left: 1px solid #e0e0e0;
+}
+
+.spin-box .border-bottom {
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.spin-box .suspended {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(15, 87, 43, 0.7);
+	z-index: 999;
+	color: #fff;
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.football-spin .bet-remove i {
+	font-size: 1.2rem;
+}
+
+.football-spin .spin-box .match-minute {
+	text-align: center;
+	font-size: 12px;
+}
+
+.football-spin .spin-box .match-info {
+	padding: 4px 8px;
+}
+
+.football-spin .spin-box .jersey-color {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	display: inline-block;
+	margin-right: 8px;
+}
+
+.football-spin .spin-box .jersey-color.border-gray {
+	border: 1px solid #aaa;
+}
+
+.football-spin .spin-box .fixture {
+	font-weight: 400;
+	font-size: 12px;
+}
+
+.football-spin .spin-box .market {
+	font-weight: 400;
+	font-size: 12px;
+	padding: 6px 8px;
+}
+
+.football-spin .spin-box .spin-odds {
+	font-weight: 500;
+	font-size: 12px;
+}
+
+.spin-locked {
+	border: 1px solid #249752;
+}
+
+.spin-box .locked-icon {
+	height: 81px;
+	cursor: pointer;
+}
+
+.spin-locked .locked-icon {
+	background-color: #249752;
+}
+
+.football-spin .bet-remove {
+	background-color: transparent;
+	border-radius: 50%;
+	cursor: pointer;
+	display: inline-block;
+	height: 24px;
+	line-height: 22px;
+	margin: 0;
+	padding: 0 2px;
+	text-align: center;
+	width: 24px;
+}
+
+.football-spin .bet-remove.disable {
+	opacity: 0.2;
+	cursor: default;
+}
+
+.spin-box .divider {
+	margin: 8px 0;
+}
+
+.spin-button {
+	position: relative;
+}
+
+.btn-spin {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -40px;
+	bottom: 0;
+	margin: 0 auto;
+}
+
+.spin-bar {
+	height: 4px;
+}
+
+.btn-spin i {
+	font-size: 4.2rem;
+	line-height: 80px;
+	transform: scaleX(-1);
+	-moz-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	-ms-transform: scaleX(-1);
+}
+
+.winsUpToTxt {
+	font-size: 16px;
+}
+
+.winAmount {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+/*-------- reel-box start ----------*/
+
+.reel-box {
+	height: 83px;
+	overflow: hidden;
+	margin-bottom: 8px;
+}
+
+.spin-it {
+	position: relative;
+	animation: scroll 0.07s linear infinite;
+	-webkit-animation: scroll 0.07s linear infinite;
+	-moz-animation: scroll 0.07s linear infinite;
+}
+
+@keyframes scroll {
+	0% {
+		bottom: 83px;
+	}
+	100% {
+		bottom: 0;
+	}
+}
+
+/*-------- reel-box end----------*/
+
+.live-match-count {
+	padding: 0 3px 5px 0;
+	font-weight: 500;
+	font-size: 13px;
+}
+
+.flash-txt {
+	-webkit-animation-name: flash-txt;
+	animation-name: flash-txt;
+	-webkit-animation-duration: 0.2s;
+	animation-duration: 0.2s;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	animation-direction: alternate;
+	-webkit-animation-play-state: running;
+	animation-play-state: running;
+}
+
+@-webkit-keyframes flash-txt {
+	from {
+		color: #fe4725;
+	}
+	to {
+		color: #249752;
+	}
+}
+
+@keyframes flash-txt {
+	from {
+		color: #fe4725;
+	}
+	to {
+		color: #249752;
+	}
+}
+
+/*------------ Combi Spin End ---------------*/
+
+/*------------ FB Multi Bet -----------------*/
+
+.mrg-bet-box {
+	background-color: #FFF;
+	border-radius: 4px;
+	margin-top: 20px;
+}
+
+.mrg-bet-box .box-header {
+	border-bottom: 1px solid #EEE;
+	font-weight: 500;
+	font-size: 12px;
+	height: 30px;
+	padding: 5px 16px;
+}
+
+.mrg-bet-box .box-content {
+	padding: 8px 16px 16px;
+}
+
+.mrg-bet-box .box-content .fixture {
+	font-weight: 700;
+	font-size: 15px;
+}
+
+.mrg-bet-box .box-content .rtb {
+	font-weight: 400;
+	font-size: 12px;
+	margin-bottom: 8px;
+}
+
+.mrg-bet-box .box-footer {
+	border-top: 1px solid #EEE;
+	font-size: 12px;
+	height: 30px;
+	padding: 5px 16px;
+}
+
+.mrg-bet-box .box-footer .odds {
+	font-weight: 500;
+}
+
+.multi-bet-box .box-content {
+	padding: 8px 8px 8px 16px;
+	border-right: 1px solid #EEE;
+}
+
+.multi-bet-box i {
+	cursor: pointer;
+}
+
+.btn-reload {
+	height: 56px;
+	line-height: 56px;
+}
+
+.btn-reload i {
+	font-size: 2.5rem;
+	transform: scaleX(-1);
+}
+
+.total-odds .odds {
+	font-weight: 500;
+}
+
+.multibet-footer {
+	background-color: transparent;
+}
+
+.hf-range-slider .mat-slider-track-background {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.hf-range-slider .mat-slider:hover .mat-slider-track-background {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+/*------------- BL Products ---------------------*/
+
+/*------------- Right Now  & Match of the day -----*/
+
+.upcoming-right-match-Loader {
+	height: 148px;
+	position: relative;
+}
+
+.widget-title {
+	font-weight: 700;
+	font-size: 20px;
+	vertical-align: middle;
+}
+
+.see-all {
+	color: #249752;
+	text-align: right;
+	font-weight: 500;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.widget-score-board {
+	width: 100%;
+	height: 128px;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+	margin-top: 18px;
+	font-weight: 500;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.bg-tennis {
+	background-image: url(/assets/img/TennisCourt.jpg);
+}
+
+.bg-football {
+	background-image: url(/assets/img/FootballStadium.jpg);
+}
+
+.league-name {
+	background-color: #0f572b;
+	font-size: 14px;
+	display: inline-block;
+	margin: 0 auto;
+	position: relative;
+	top: -11px;
+	border-radius: 2px;
+	height: 22px;
+	padding: 0 6px;
+	line-height: 22px;
+}
+
+.league-name.tennis {
+	background-color: #4c0101;
+}
+
+.widget-score-board .team {
+	font-size: 16px;
+	/*line-height: 14px;*/
+	position: relative;
+}
+
+.widget-score-board .team.serving {
+	padding-left: 12px;
+}
+
+.widget-score-board .team.serving::before {
+	left: 2px;
+}
+
+.widget-score-board .score {
+	color: #e4e4e4;
+	border-bottom: 2px solid rgba(255, 255, 255, .25);
+	display: inline-block;
+}
+
+.widget-score-board .score .set-score:last-child {
+	margin-right: 0;
+}
+
+.widget-score-board .set-score {
+	font-size: 14px;
+	font-weight: 400;
+	margin-right: 12px;
+}
+
+.widget-score-board .set-score.current-set {
+	text-decoration: underline;
+	font-weight: 500;
+}
+
+.widget-score-board .set-points {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.widget-score-board .fixture-time {
+	font-size: 32px;
+	font-weight: 700;
+}
+
+.widget-score-board .upcoming-badge {
+	background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+	border-radius: 4px;
+	display: inline-block;
+	font-size: 18px;
+	margin-bottom: 10px;
+	padding: 3px 8px;
+	text-transform: uppercase;
+}
+
+.mrg-widget .rtb {
+	font-size: 16px;
+	margin: 6px 0;
+	min-height: 62px;
+	overflow: hidden;
+	line-height: 20px;
+}
+
+.mrg-widget .market {
+	font-weight: 500;
+}
+
+.live-multiple-outcomes {
+	margin-left: -0.5rem;
+	margin-right: -0.5rem;
+}
+
+.live-outcomes ul {
+	display: table;
+	width: 100%;
+}
+
+.tennis-flag {
+	width: 36px;
+}
+
+.football-jersey {
+	width: 50px;
+}
+
+.rightNow-seeall .mrg-bet-box .box-header, .matchOftheDay-seeall .mrg-bet-box .box-header {
+	border-bottom: 1px solid #DDD;
+	height: 47px;
+}
+
+.rightNow-seeall .mrg-bet-box, .matchOftheDay-seeall .mrg-bet-box {
+	border: 1px solid #DDD;
+}
+
+.more-less {
+	font-weight: 700;
+	font-size: 12px;
+}
+
+.semi-colon {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 700;
+	padding-left: 3px;
+	position: relative;
+	text-align: center;
+	top: 7px;
+	width: 25px;
+}
+
+.mrg-promo-banner {
+	width: 100%;
+	height: 400px;
+}
+
+/*----------- Right Now  & Match of the day End-----*/
+
+/*-------------- Highlights Today -----------------*/
+
+.Highlighted-match .fixture {
+	font-weight: 500;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.Highlighted-match .sports-league {
+	margin-bottom: 10px;
+	font-size: 12px;
+}
+
+.Highlighted-match .time {
+	font-size: 12px;
+}
+
+.carousel-MatchOfTheDay1 .gallery-cell {
+	width: 40%;
+	float: left;
+}
+
+.carousel-MatchOfTheDay1 .todays-assist-item {
+	margin-right: 12px;
+}
+
+.carousel-MatchOfTheDay1 .mrg-bet-box {
+	margin-top: 10px;
+}
+
+.carousel-MatchOfTheDay1 .mrg-bet-box .fixture {
+	cursor: pointer;
+}
+
+.carousel-MatchOfTheDay1 .flickity-slider .gallery-cell:first-child .todays-assist-item {
+	margin-left: 48px;
+}
+
+.carousel-MatchOfTheDay1 .mrg-bet-box .box-header {
+	height: auto;
+}
+
+.todayassits {
+	padding-bottom: 0;
+	padding-top: 20px;
+}
+
+.setScoreTxt {
+	display: inline-block;
+}
+
+.tennisScore {
+	display: inline-block;
+	margin-left: 8px;
+}
+
+.todaysAssistTennisLiveScore .setScore{
+    width: 18px;
+    font-weight: 500;
+    display: inline-block;
+}
+.todaysAssistTennisLiveScore .setPoints{
+    width: 25px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+/*-------------- Highlights Today End-----------------*/
+
+/*---------------------------------- Repsonsive CSS ------------------------------------*/
+
+/*@media only screen and (max-width: 600px) {*/
+
+@media screen and (min-width: 320px) and (max-width: 776px) {
+	/*  @media screen and (min-width: 320px) and (max-width: 776px){
+	--------styles for small screens and down---------------*/
+	.display-on-small {
+		display: block;
+	}
+	.BlLoader {
+		position: relative;
+		min-height: 100px;
+	}
+	.mrg-content {
+		padding: 0 24px;
+	}
+	/*----- BL Products Carousel ----------*/
+	.bl-products-hscroll {
+		height: 61px;
+	}
+	.bl-products-hscroll .bl-product-item {
+		margin: 0 12px 0 0;
+	}
+	.bl-products-hscroll .tab:first-child {}
+	.bl-products-hscroll .bl-product-item img {
+		width: 150px;
+	}
+	.bl-products-hscroll .bl-product-item .menu-txt {
+		bottom: 6px;
+		font-size: 12px;
+		font-weight: 700;
+		left: 12px;
+		line-height: 16px;
+		width: 90px;
+	}
+	.bl-products-hscroll .gallery-cell:first-child .bl-product-item {
+		margin-left: 24px;
+	}
+	.bl-products-hscroll .bl-product-item .menu-txt .live-txt {
+		font-size: 10px;
+		line-height: 12px;
+	}
+	.product-carousel-loader .bl-product-item {
+		width: 150px;
+		height: 61px;
+	}
+	/*----- BL Products Carousel ----------*/
+	.BL-products .header {
+		padding: 0 24px;
+	}
+	.mrg-bet-box .box-header {
+		height: auto;
+	}
+	.mrg-bet-box .box-content .rtb {
+		height: 55px;
+	}
+	.silk {
+		width: 35px;
+	}
+	.sticker-footer {
+		position: relative;
+	}
+	.multibet-footer {
+		/*background-color: #FFF;*/
+	}
+	.add-betslip {
+		font-size: 14px;
+	}
+	.winsUpToTxt {
+		font-size: 15px;
+	}
+	.winAmount {
+		font-size: 20px;
+	}
+	/*---------------------------------*/
+	/*----------- Right Now & MOD ------------*/
+	.widget-title {
+		font-weight: 700;
+		font-size: 16px;
+	}
+	.see-all {
+		font-weight: 500;
+		font-size: 14px;
+	}
+	.widget-score-board .team {
+		font-size: 14px;
+		line-height: 14px;
+	}
+	.widget-score-board .set-score {
+		font-size: 11px;
+		font-weight: 500;
+	}
+	.widget-score-board .set-points {
+		font-size: 17px;
+		font-weight: 700;
+	}
+	.widget-score-board .fixture-time {
+		font-size: 24px;
+		font-weight: 700;
+	}
+	.mrg-widget .rtb {
+		font-size: 14px;
+		height: auto;
+	}
+	.carousel-MatchOfTheDay {
+		height: auto;
+		overflow: hidden;
+	}
+	.widget-score-board .upcoming-badge {
+		font-size: 14px;
+		margin-bottom: 10px;
+		padding: 3px 8px;
+	}
+	.mrg-promo-banner {
+		width: 100%;
+		height: 200px;
+	}
+	.matchOftheDay-seeall .mrg-bet-box .box-header {
+		height: auto;
+	}
+	.carousel-MatchOfTheDay1 .gallery-cell {
+		width: 95%;
+		float: left;
+	}
+	.carousel-MatchOfTheDay1 .todays-assist-item {}
+	.carousel-MatchOfTheDay1 .flickity-slider .gallery-cell:first-child .todays-assist-item {
+		margin-left: 24px;
+	}
+	.Highlighted-match .btn-odds {
+		padding: 0 4px;
+	}
+	/*----------- Right Now & MOD ------------*/
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+	.mrg-promo-banner {
+		display: none;
+	}
+}
+
+@media (min-width: 360px) and (max-width: 640px) {
+	.sticker-footer {
+		position: relative;
+	}
+	.display-on-small {
+		display: none;
+	}
+	.multibet-footer {
+		background-color: transparent;
+	}
+	.BL-products .row .col.m6 {
+		left: auto;
+		margin-left: auto;
+		right: auto;
+		width: 100%;
+	}
+	.BL-products .footer .row .col.m6 {
+		width: 50%;
+	}
+	.BL-products .footer .row .col.s7 {
+		width: 58.3333%;
+	}
+	.todays-assist-seeall .row .col.m6 {
+		left: auto;
+		margin-left: auto;
+		right: auto;
+		width: 100%;
+	}
+	.BL-products .mrg-bet-box .box-content .rtb {
+		height: auto;
+	}
+	.mrg-widget .rtb {
+		font-size: 14px;
+		min-height: auto;
+		height: auto;
+	}
+}
+
+@media only screen and (min-width: 601px) {
+	/*---styles for medium screens and larger---*/
+}
+
+/*@media only screen and (max-width: 992px) {*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+	/*-----styles for medium screens and down ----*/
+	.display-on-small {
+		display: none;
+	}
+	.mrg-content {
+		padding: 0 24px;
+	}
+	.bl-products-hscroll .gallery-cell:first-child .bl-product-item {
+		margin-left: 24px;
+	}
+	.bl-products-hscroll .bl-product-item .menu-txt .live-txt {
+		font-size: 10px;
+		line-height: 12px;
+	}
+	.product-carousel-loader .bl-product-item {
+		width: 150px;
+		height: 61px;
+	}
+	.BL-products .header {
+		padding: 0 24px;
+	}
+	.sticker-footer {
+		position: relative;
+	}
+	.multibet-footer {
+		background-color: transparent;
+	}
+	.mrg-bet-box .box-header {
+		/*height: 47px;*/
+	}
+	.winsUpToTxt {
+		font-size: 15px;
+	}
+	.mrg-bet-box .box-content .rtb {
+		min-height: 55px;
+	}
+	.matchOftheDay-seeall .mrg-bet-box .box-header {
+		height: 47px;
+	}
+	.mrg-widget .rtb {
+		min-height: 62px;
+	}
+	.mrg-promo-banner {
+		width: 100%;
+		height: 400px;
+	}
+	.carousel-MatchOfTheDay1 .gallery-cell {
+		width: 50%;
+		float: left;
+	}
+	.carousel-MatchOfTheDay1 .todays-assist-item {}
+	.carousel-MatchOfTheDay1 .flickity-slider .gallery-cell:first-child .todays-assist-item {
+		margin-left: 24px;
+	}
+	.Highlighted-match .btn-odds {
+		padding: 0 10px;
+	}
+}
+
+@media only screen and (min-width: 993px) {
+	/*styles for large screens and up*/
+	.widget-score-board .upcoming-badge {
+		font-size: 18px;
+	}
+	.widget-score-board .team {
+		font-size: 14px;
+	}
+	.mrg-bet-box .box-header {
+		/*height: 47px;*/
+		font-size: 11px;
+	}
+	.mrg-bet-box .box-content .rtb {
+		min-height: 55px;
+	}
+	.widget-score-board .set-score {
+		font-size: 16px;
+		font-weight: 400;
+	}
+}
+
+@media only screen and (min-width: 1201px) {
+	/*styles for extra large screens and up*/
+	.widget-score-board .upcoming-badge {
+		font-size: 20px;
+	}
+	.widget-score-board .team {
+		font-size: 16px;
+	}
+	.mrg-bet-box .box-header {
+		/*height: 47px;	*/
+		font-size: 12px;
+	}
+	.show-on-extra-large {
+		display: initial !important;
+	}
+}

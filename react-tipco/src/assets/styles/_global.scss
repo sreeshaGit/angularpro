@@ -1,0 +1,188 @@
+//@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800');
+
+body{
+	background-color: $BLRetail-body-bg;
+	font-family: "Tipico";
+	font-size: 11px;
+	color: #FFF;
+	font-weight: 300;
+	letter-spacing: 0.3px;
+	line-height: 1.5;
+	margin: 0;
+	width: 100%;
+	text-rendering: optimizeLegibility;
+   -webkit-font-smoothing: subpixel-antialiased;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+img {
+	vertical-align: middle;
+	border-style: none;
+	max-width: 100%;
+}
+ul{
+	margin: 0;
+	padding: 0;
+	li{
+		list-style: none;
+		list-style-image: none;
+		list-style-type: none;
+	}
+} 
+input, textarea{
+	font-family: inherit;
+	outline: none;
+}
+.btn{
+	cursor: pointer;
+	padding: 0 10px;
+	border: none;
+	font-family: "Tipico";
+	// white-space: nowrap;
+	&:focus{
+		outline: none;
+		box-shadow: none;
+	}
+}
+.text-right{
+	text-align: right !important;
+}
+.text-left{
+	text-align: left !important;
+}
+.text-center{
+	text-align: center !important;
+}
+.w-100{
+	width:100% !important;
+}
+.h-auto{
+	height:auto !important;
+}
+.d-none{
+	display: none !important;
+}
+.d-inline {
+  display: inline !important;
+}
+.d-inline-block {
+  display: inline-block !important;
+}
+.d-block {
+  display: block !important;
+}
+.d-table {
+  display: table !important;
+}
+.cursor-pointer{
+	cursor: pointer;
+}
+.truncate{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.space-5{
+    margin: 5px auto;
+    padding: 2px 0;
+}
+.space-10{
+	margin: 10px auto;
+    padding: 5px 0;
+}
+
+.float-left{
+	float: left !important;
+}
+.float-right{
+	float: right !important;
+}
+.align-top {
+	vertical-align: top !important;
+}  
+.align-middle {
+	vertical-align: middle !important;
+}  
+.align-bottom {
+	vertical-align: bottom !important;
+}
+
+.p-0{
+	padding: 0 !important;
+}
+.pt-0{
+	padding-top: 0 !important;
+}
+.pb-0{
+	padding-bottom: 0 !important;
+}
+.p-5{
+	padding: 5px !important;
+}
+
+.pl-15{
+	padding-left: 15px !important;
+}
+.pr-15{
+	padding-right: 15px !important;
+}
+
+.m-0{
+	margin: 0 !important;
+}
+.mr-5{
+	margin-right: 5px !important;
+}
+.mb-5{
+	margin-bottom: 5px !important;
+}
+.ml-5{
+	margin-left: 5px !important;
+}
+.mt-5{
+	margin-top: 5px !important;
+}
+
+.mr-10{
+	margin-right: 10px !important;
+}
+.mb-10{
+	margin-bottom: 10px !important;
+}
+.ml-10{
+	margin-left: 10px !important;
+}
+.mt-10{
+	margin-top: 10px !important;
+}
+
+.table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 1rem;
+	background-color: transparent;
+  }
+.table {
+    border-collapse: collapse !important;
+  }
+.table th, .table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #e9ecef;
+}
+
+
+
+// ========================================================
+// Bootstrap dependencies
+// ========================================================
+
+
+
+

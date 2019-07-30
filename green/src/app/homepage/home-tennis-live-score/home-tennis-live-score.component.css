@@ -1,0 +1,8 @@
+.setScoreTxt {
+    display: inline-block;
+}
+
+.tennisScore {
+    display: inline-block;
+    margin-left: 8px;
+}

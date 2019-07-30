@@ -1,0 +1,178 @@
+/** @jsx React.DOM */
+//**********--- call getCookie function to read cookie---**********
+getCookie()
+
+if (getParameterByName("islog") && getParameterByName("islog") == 'true') {
+    is_loggedIn = true;
+}
+else {
+    is_loggedIn = false;
+}
+var sucessmsg = getParameterByName('status');
+//**********--- Removecard component ---**********
+var Myprofile = React.createClass({
+    getInitialState: function () {
+        return {
+            items: {},
+            sucessmsg: getParameterByName('status')
+        };
+    },
+
+    componentWillMount: function () {      
+        this.serverRequest = $.get(baseurl + "registration/profile/" + userId + "," + sessionId, function (result) {
+            if (typeof result != 'object') {
+                result = JSON.parse(result)
+            }
+            if (result.user[0]['usr_image'] == "" || result.user[0]['usr_image'] == null)
+            {
+                result.user[0]['usr_image'] = 24;
+            }
+            if (result.user[0]['team_id'] == "" || result.user[0]['team_id'] == null) {
+                result.user[0]['team_id'] = undef;
+            }
+            this.setState({ items: result.user[0] });
+        }.bind(this));   
+    },
+    gotoTopup: function () {
+        if (SupHeaderThis.state.items.status == 'P' || SupHeaderThis.state.items.status == 'T'  || SupHeaderThis.state.items.status == 'N') {
+            //window.location = "/quicktopup/?islog=" + is_loggedIn
+            window.location = "/build/views/Football/QuickTopUp/Quick-Top-Up.html?islog=" + is_loggedIn
+        }
+        else {
+            // window.location = "/topup/?islog=" + is_loggedIn
+            window.location = "/build/views/Football/Glory/topUp/topUp.html?islog=" + is_loggedIn
+        }
+    },
+    gotoInvite:function (){
+        // window.location = "/paymentaccepted/?islog=" + is_loggedIn + "&plsid=0"
+        window.location ="/build/views/Football/Glory/payment-accepted/payment-accepted.html?islog=" + is_loggedIn
+    },
+    componentDidMount: function () {
+        //this.timer = setInterval(this.hideSucessMsg, 1000 * 10);
+        setTimeout(this.hideSucessMsg, 1000 * 10);
+    },
+    hideSucessMsg: function () {
+        this.setState({ sucessmsg: false })
+        //  var newUrl = removeURLParameter("myprofile/?islog=true&status=true", "status");
+        var newUrl = removeURLParameter("build/views/Football/myprofile/myprofile.html?islog=true&status=true", "status");
+        window.history.pushState("object or string", "Title", "/" + newUrl);  
+    },
+    render: function () {
+        var self = this;
+        MyprofileThis = this;
+    
+        return ( <div>
+                <div className="container-fluid header">
+                    <div className="container">
+                           <div className="row">
+                               <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+                                      <h3>MY PROFILE </h3>
+                               </div>
+                           </div>
+                    </div>
+                </div>
+              
+                                      {this.state.sucessmsg?<div className="container-fluid bg-success">
+                                                         <div className="space-5"></div>
+                                                         <div className="container">
+                                                             <div className="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
+                                                                 <img src="/images/success.svg" alt="Success" className="" width="30" />
+                                                             </div>
+                                                             <div className="col-lg-8 col-md-8 col-sm-8 col-xs-8 no-padding">
+
+                                                                <span className="sm-txt font-18">You have sucessfully changed your contact details </span>
+                                                             </div>
+                                                             <div className="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
+                                                                 <img src="/images/close-icon.svg" alt="Success" width="20" className="pointer-hand margin-top-5" onClick={this.hideSucessMsg} />
+                                                             </div>
+                                                         </div>
+                                                        <div className="space-5"></div>
+                                        </div>:''}
+               
+                          <div className="container">
+                              <div className="space-10"></div>
+                              <div className="row">
+                                  <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                         <img src={"/images/animals-Modified/" + this.state.items.usr_image + ".svg"} className="margin-bottom-15" width="180"/>
+                                         <div className="myprofile-player-name">{this.state.items.username}</div>
+                                  </div>
+                              </div>
+                              <div className="space-10"></div>
+                              <div className="row">
+                                 <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                     <div className="zoola-box col-centered my-profile">
+                                           <div className="padding-20">
+                               
+                                                 <div className="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center col-centered ">
+                                                     <div className="topup-round-lightblue bg-light-blue pointer-hand  margin-bottom-10"><div className="topup-balance padding-5">&pound;{this.state.items.balance} </div></div>
+                                                     <div className="topup-round-lightblue bg-light-blue pointer-hand  margin-bottom-10"><div className="topup-balance padding-5 five-z"><img src="/images/Z-currency.svg" alt="5z" />{this.state.items.zeds}</div></div>
+                                                 </div>
+                                
+                                                 <div className="row">
+                                                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                         <div className="space-10"></div>
+                                                         <div className="space-10"></div>
+                                          {/*<div className="myprofile-label pointer-hand" onClick={this.gotoTopup}><a>Quick deposit</a> </div>
+									    <div className="myprofile-label"><a href={"/statement/?islog=" + is_loggedIn}>View statement</a> </div>*/}
+                                          {/*<div className="myprofile-label pointer-hand"><span onClick={this.gotoTopup}>Add / Remove saved cards</span> </div>*/}                                      
+                                          {/*<div className="myprofile-label no-padding-bottom"><a href={"/withdraw/?islog=" + is_loggedIn}>Request a withdrawal</a> </div>*/}
+                                          <div className="myprofile-label pointer-hand" onClick={this.gotoTopup}><a>Quick deposit</a> </div>
+                                          <div className="myprofile-label"><a href={"/build/views/Football/Statement/statement.html?islog="+is_loggedIn}>View statement</a> </div>                                                                           
+                                          <div className="myprofile-label no-padding-bottom"><a href={"/build/views/Football/withdraw/withdraw.html?islog=" + is_loggedIn}>Request a withdrawal</a> </div>
+
+                                          </div>
+                                      </div>
+                                </div>
+                          </div>
+                      </div>
+                      <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                          <div className="zoola-box col-centered">
+                                <div className="padding-20">
+                                
+                                      <div className="row">
+                                          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center col-centered ">
+                                              <div className="myprofile-team ">										    
+                                                   <img src={this.state.items.team_id != 0 ? this.state.items.comp_id == 8 ? "/images/jerseys/EPL/" + this.state.items.team_id + ".svg" : this.state.items.comp_id == 10 ? "/images/jerseys/EC/" + this.state.items.team_id + ".svg" : "/images/football-shirts/numbers/" + this.state.items.team_id + ".svg" : "/images/undef.svg" } />
+                                                  {this.state.items.team_id!=0 ? <div className="team-name tm-txt">{this.state.items.team_name}</div>:''}
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div className="row">
+                                          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                              {/*<div className="myprofile-label"><a href={"/changeteam/?islog=" + is_loggedIn}>Change team</a> </div>
+                                              <div className="myprofile-label"><a href={"/changeavatar/?islog=" + is_loggedIn}>Change avatar</a> </div>
+                                              <div className="myprofile-label"><a href={"/contactinfo/?islog=" + is_loggedIn}>My contact info</a> </div>
+                                              <div className="myprofile-label no-padding-bottom"><a href={"/ResponsibleGamble/?islog=" + is_loggedIn}>Responsible gambling</a> </div>*/}
+                                            <div className="myprofile-label"><a href={"/build/views/Football/ChangeTeam/change-team.html?islog=" + is_loggedIn}>Change team</a> </div>
+                                            <div className="myprofile-label"><a href={"/build/views/Football/changeAvatar/changeAvatar.html?islog=" + is_loggedIn}>Change avatar</a> </div>
+                                            <div className="myprofile-label"><a href={"/build/views/Football/contact_info/contact_info.html?islog=" + is_loggedIn}>My contact info</a> </div>
+                                            <div className="myprofile-label no-padding-bottom"><a href={"/build/views/Football/ResponsibleGamble/ResponsibleGamble.html?islog=" + is_loggedIn}>Responsible gambling</a> </div>
+                                          </div>
+                                      </div>
+                                </div>
+                          </div>
+                      </div>
+                   </div>           
+                   </div>
+                <div className="space-10"></div>
+          
+                <div className="container-fluid subheader">
+                      <div className="container">
+                              <div className="row">
+                                  <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+                                        <div className="space-10"></div>
+                                        <div className="col-lg-4 col-md-4 col-sm-5 col-xs-10 col-centered"> 
+                                            {/*  <button type="submit" className="btn zoola-btn bg-white" onClick={this.gotoInvite}><h5 className="">Invite friends</h5></button> */}
+                                        </div>
+                                        <div className="space-10"></div>
+                                  </div>
+                              </div>
+                      </div>
+                </div>
+          </div>
+                              )
+       }
+
+});
+

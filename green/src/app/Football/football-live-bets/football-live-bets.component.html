@@ -1,0 +1,112 @@
+<div class="BL-products grey lighten-3">
+    <div class="header green white-text">
+        <div class="row no-margin valign-wrapper">
+            <div class="col s1 m2 l2 xl2">
+                <div class="valign-wrapper"></div>
+            </div>
+            <div class="col s10 m8 l8 xl8 no-padding">
+                <div class="center-align title">
+                    {{staticWordsData?.staticWords?.Live_Football}} <span class="bet-assist">{{staticWordsData?.staticWords?.Bet_Assist}}</span>
+                </div>
+            </div>
+            <div class="col s1 m2 l2 xl2 no-padding"><div class="right-align"></div></div>
+        </div>
+    </div>
+    <div class="mrg-content">
+        <div class="row">
+            <div class="col s12 m6 l6 xl6" *ngFor="let item of liveFootballData">
+                <div class="mrg-bet-box">
+                    <div class="box-header">
+                        <div class="row no-margin grey-text lighten-1">
+                            <div class="col s12 m12 l12 xl12 no-padding truncate">
+                                {{item.translatedSportName}} / {{item.CountryName}} / {{item.LeagueName}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-content">
+                        <div class="row no-margin valign-wrapper">
+                            <div class="col s10 m10 l10 xl10 no-padding">
+                                <div class="football-live-score fixture">
+                                    <span class="score green-text">{{item.HomeGoal}}</span>
+                                    <span class="player">{{item.HomeTeamName}}</span>
+                                </div>
+                                <div class="football-live-score fixture">
+                                    <span class="score green-text">{{item.AwayGoal}}</span>
+                                    <span class="player">{{item.AwayTeamName}}</span>
+                                </div>
+                            </div>
+                            <div class="col s2 m2 l2 xl2 no-padding right-align">
+                                <span class="minutes">{{item.MatchMinute}}'</span>
+                            </div>
+                        </div>
+                        <div class="rtb">
+                            {{item.Text}}
+                        </div>
+                        <div class="row no-margin valign-wrapper">
+                            <div class="col s12 m12 l12 xl12 no-padding">
+                                <button pam-Button class="btn waves-effect waves-light btn-odds" (click)="addToBetslip(item.SelectionId)">
+                                    <span class="market">{{item.MarketName}} - {{item.OutcomeName}}</span>
+                                    <span class="odds">
+                                        <app-live-odds [eventId]="item.EventId"
+                                                       [marketId]="item.MarketId"
+                                                       [outcomeId]="item.SelectionId">
+                                        </app-live-odds>
+                                    </span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngIf="showError">
+            <div class="row no-margin"><div class="space-5"></div></div>
+            <div class="col s12 m12 l12 xl12 center-align info-text">
+                {{staticWordsData?.staticWords?.Upcoming_Live_Football_Assists}}
+            </div>
+        </div>
+        <div class="row" *ngIf="liveFootballData?.length < 1">
+            <div class="col s12 m6 l6 xl6" *ngFor="let item of bestBetsData | slice:0:2">
+                <div class="mrg-bet-box">
+                    <div class="box-header valign-wrapper">
+                        <div class="row no-margin grey-text lighten-1 w100 valign-wrapper">
+                            <div class="col s8 m8 l8 xl8 no-padding truncate">
+                                {{item | titleFormation}}
+                            </div>
+                            <div class="col s4 m4 l4 xl4 right-align no-padding">
+                                {{item.KickOffTime | dateFormat :'DT' | async}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-content">
+                        <div class="fixture">{{item.Match}}</div>
+                        <div class="rtb">
+                            {{item.Text}}
+                        </div>
+                        <div class="row no-margin valign-wrapper">
+                            <div class="col s12 m12 l12 xl12 no-padding">
+                                <button pam-Button class="btn waves-effect waves-light btn-odds" (click)="addToBetslip(item.SelectionId)">
+                                    <span class="market">{{item.MarketName}} - {{item.OutcomeName}}</span>
+                                    <span class="odds">
+                                        {{item | oddsFormat : kambiService.oddsFormat}}
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row no-margin"><div class="space-5"></div></div>
+
+        <div class="row valign-wrapper sticker-footer" *ngIf="liveFootballData?.length > 1">
+            <div class="col s12 m6 l6 xl6 col-centered">
+                <button pam-Button class="btn waves-effect waves-light btn-odds add-betslip" (click)="addAllToBetslip()">
+                    {{staticWordsData?.staticWords?.Add_all_to_Betslip}}
+                </button>
+            </div>
+        </div>
+        <app-loader *ngIf="isServiceLoader"></app-loader>
+    </div>
+</div>

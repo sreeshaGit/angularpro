@@ -1,0 +1,11 @@
+
+<div class="BL-widgetHeader">
+  <div class="BL-widgetTitle">LIVE {{selectedSport | uppercase}}</div>
+</div>
+ <div class="BL-widgetSubHeader">
+    <ul>
+      <li *ngFor = "let data of sports">
+          <a (click)="sportSelected(data.name)" [ngClass]= "data.name == selectedSport ? 'active' : ''" >{{data.name}}</a>
+      </li>
+  </ul> 
+</div> 

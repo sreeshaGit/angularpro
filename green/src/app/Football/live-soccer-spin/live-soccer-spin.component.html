@@ -1,0 +1,393 @@
+<div class="">
+    <div class="BL-products football-spin grey lighten-3">
+        <div class="header green white-text">
+            <div class="row valign-wrapper">
+                <div class="col s1 m2 l2 xl2"><div class="valign-wrapper"></div></div>
+                <div class="col s10 m8 l8 xl8 no-padding"><div class="center-align title">{{staticWordsData?.staticWords?.Live}} {{staticWordsData?.staticWords?.Football_Combi_Spin}}</div></div>
+                <div class="col s1 m2 l2 xl2 "><div class="right-align"></div></div>
+            </div>
+        </div>
+        <div class="odds-slider mrg-content white-text bg-gradient">
+            <div class="bg-gradient-inner">
+                <div class="row no-margin-bottom valign-wrapper">
+                    <div class="col s9 m9 l9 xl9">
+                        <h5>{{staticWordsData?.staticWords?.Selections_under_odds_of}}</h5>
+                    </div>
+                    <div class="col s3 m3 l3 xl3 right-align">
+                        <div class="odds-box">
+                            {{sliderValues | oddsFormat : kambiService.oddsFormat}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row no-margin">
+                    <div class="col s12 m12 l12 xl12 no-padding">
+                        <md-slider min="1.2" max="6" step="0.2" [(ngModel)]="this.slideValue" [thumb-label]="false" name="oddsSlider" (change)="oddsclick()" (input)="slidevalue($event)"></md-slider>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="combi-spin football-live" *ngIf="!showErrorText">
+            <div class="row no-margin">
+                <div class="col s12 m6 l6 xl6 padding-left-4 padding-right-4 reel-box" *ngFor="let market of marketsDisplay; let i = index;">
+                    <div [ngClass]="{'spin-box spin-locked animated':true,'spin-locked':market.isLock == true,'spin-it':market.isSpin && !market.isLock,'fadeOut':removeInd == i || market.Suspended == 'true'}">
+                        <div class="spin-box-inner">
+                            <div class="row no-margin valign-wrapper">
+                                <div class="col s1 m1 l1 xl1 no-padding locked-icon valign-wrapper center-align" (click)="lock(i)">
+                                    <div class="center-align w100"><i [ngClass]="{'material-icons valign-m pointer-hand':true,'green-text':!market.isLock,'white-text':market.isLock == true}">{{market.isLock?'lock':'lock_open'}}</i></div>
+                                </div>
+                                <div class="col s10 m10 l10 xl10  no-padding border-right border-left">
+                                    <div class="row no-margin valign-wrapper border-bottom">
+                                        <div class="col s2 m2 l2 xl2 no-padding">
+                                            <div class="match-minute">{{market.MinutesPassed}}'</div>
+                                        </div>
+                                        <div class="col s10 m10 l10 xl10 border-left match-info">
+                                            <div class="row no-margin">
+                                                <div class="col s10 m10 l10 xl10 no-padding truncate">
+                                                    <span class="jersey-color" [ngStyle]="{'background-color':market.HomeTeamColor1}"></span><span class="fixture ">{{market.HomeName}} </span>
+                                                </div>
+                                                <div class="col s2 m2 l2 xl2 no-padding right-align">
+                                                    <span class="live-score">{{market.HomeScore}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row no-margin">
+                                                <div class="col s10 m10 l10 xl10 no-padding truncate">
+                                                    <span class="jersey-color" [ngStyle]="{'background-color':market.AwayTeamColor1}"></span><span class="fixture">{{market.Awayname}} </span>
+                                                </div>
+                                                <div class="col s2 m2 l2 xl2 no-padding right-align">
+                                                    <span class="live-score">{{market.AwayScore}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row no-margin market">
+                                        <div class="col s10 m10 l10 xl10 no-padding truncate">
+                                            <div class="truncate"><span class="">{{market.MarketName}}</span> - <span class="">{{market.OutcomeName}}</span></div>
+                                        </div>
+                                        <div class="col s2 m2 l2 xl2 no-padding right-align">
+                                            <div class="spin-odds">{{market | oddsFormat : kambiService.oddsFormat}}</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col s1 m1 l1 xl1 no-padding center-align">
+                                    <div class="bet-remove" [ngClass]="{'disable':disableIcon == true || removeIconDisable == true || market.disabledIcon == true}" (click)="isRemove(i)"><i class="material-icons small valign-m">clear</i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div [ngClass]="{'suspended valign-wrapper row no-margin fadeOut':market.Suspended == 'true'}">
+                            <div class="col s12 m12 l12 xl12 center-align">{{market.Suspended == "true"?'Suspended':''}}</div>
+                        </div>
+                    </div>
+
+                    <div [ngClass]="{'spin-box spin-locked animated':true,'spin-locked':market.isLock == true,'spin-it':market.isSpin && !market.isLock,'fadeOut':removeInd == i || market.Suspended == 'true'}">
+                        <div class="spin-box-inner">
+                            <div class="row no-margin valign-wrapper">
+                                <div class="col s1 m1 l1 xl1 no-padding locked-icon valign-wrapper center-align" (click)="lock(i)">
+                                    <div class="center-align w100"><i [ngClass]="{'material-icons valign-m pointer-hand':true,'green-text':!market.isLock,'white-text':market.isLock == true}">{{market.isLock?'lock':'lock_open'}}</i></div>
+                                </div>
+                                <div class="col s10 m10 l10 xl10  no-padding border-right border-left">
+                                    <div class="row no-margin valign-wrapper border-bottom">
+                                        <div class="col s2 m2 l2 xl2 no-padding">
+                                            <div class="match-minute">{{market.MinutesPassed}}'</div>
+                                        </div>
+                                        <div class="col s10 m10 l10 xl10 border-left match-info">
+                                            <div class="row no-margin">
+                                                <div class="col s10 m10 l10 xl10 no-padding truncate">
+                                                    <span class="jersey-color" [ngStyle]="{'background-color':market.HomeTeamColor1}"></span><span class="fixture ">{{market.HomeName}} </span>
+                                                </div>
+                                                <div class="col s2 m2 l2 xl2 no-padding right-align">
+                                                    <span class="live-score">{{market.HomeScore}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row no-margin">
+                                                <div class="col s10 m10 l10 xl10 no-padding truncate">
+                                                    <span class="jersey-color" [ngStyle]="{'background-color':market.AwayTeamColor1}"></span><span class="fixture">{{market.Awayname}} </span>
+                                                </div>
+                                                <div class="col s2 m2 l2 xl2 no-padding right-align">
+                                                    <span class="live-score">{{market.AwayScore}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row no-margin market">
+                                        <div class="col s10 m10 l10 xl10 no-padding truncate">
+                                            <div class="truncate"><span class="">{{market.MarketName}}</span> - <span class="">{{market.OutcomeName}}</span></div>
+                                        </div>
+                                        <div class="col s2 m2 l2 xl2 no-padding right-align">
+                                            <div class="spin-odds">{{kambiService.oddsFormat=="fractional"?market.Fractional:kambiService.oddsFormat=="american"?market.AmericanOdds:market.Odds}}</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col s1 m1 l1 xl1 no-padding center-align">
+                                    <div class="bet-remove" [ngClass]="{'disable':disableIcon == true}" (click)="isRemove(i)"><i class="material-icons small valign-m">clear</i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div [ngClass]="{'suspended valign-wrapper row no-margin fadeOut':market.Suspended == 'true'}">
+                            <div class="col s12 m12 l12 xl12 center-align">{{market.Suspended == "true"?'Suspended':''}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-margin" *ngIf="showErrorMessage">
+                <div class="col s12 m12 l12 xl12 center-align  info-text accent-2">
+                    <div>{{staticWordsData?.staticWords?.Bets_available_are_currently_being_displayed_Please_try_again_later_for_new_bets}}</div>
+                    <div class="space-5"></div>
+                </div>
+            </div>
+            <div *ngIf="!isGotResponse">
+                <div class="row no-margin"><div class="space-10"></div></div>
+                <div class="row no-margin">
+                    <div class="col s8 m9 l9 xl9 no-padding">
+                    </div>
+                    <div class="col s4 m3 l3 xl3 no-padding center-align">
+                        <div class="live-match-count flash-txt">{{liveMatchCount}} {{staticWordsData?.staticWords?.Live_Matches}}</div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="row no-margin" *ngIf="showErrorText">
+            <div class="col s12 m12 l12 xl12 center-align  info-text accent-2">
+                <div class="space-5"></div>
+                <div>{{staticWordsData?.staticWords?.Not_enough_Matches_to_display}}</div>
+                <div class="space-10"><br></div>
+            </div>
+        </div>
+        <div class="" *ngIf="isGotResponse">
+            <div class="combi-spin football-live" *ngIf="!showErrorText">
+                <div class="row no-margin">
+                    <div class="col s12 m6 l6 xl6 padding-left-4 padding-right-4 reel-box">
+                        <div class="spin-box spin-it">
+                            <div class="spin-box-inner">
+                                <div class="row no-margin valign-wrapper">
+                                    <div class="col s1 m1 l1 xl1 no-padding center-align ">
+                                        <div class="center-align"><i class="material-icons valign-m green-text text-darken-1 pointer-hand">lock_outline</i></div>
+                                    </div>
+                                    <div class="col s10 m10 l10 xl10  no-padding border-right border-left">
+                                        <div class="row no-margin valign-wrapper border-bottom">
+                                            <div class="col s2 m2 l1 xl1 no-padding">
+                                                <div class="match-minute">24'</div>
+                                            </div>
+                                            <div class="col s10 m10 l11 xl11 border-left match-info">
+                                                <div class="row no-margin">
+                                                    <div class="col s10 m10 l10 xl10 no-padding truncate">
+                                                        <span class="jersey-color" style="background-color: #efa506;"></span><span class="fixture ">Arsenal</span>
+                                                    </div>
+                                                    <div class="col s2 m2 l2 xl2 no-padding right-align">
+                                                        <span class="live-score">1</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row no-margin">
+                                                    <div class="col s10 m10 l10 xl10 no-padding truncate">
+                                                        <span class="jersey-color" style="background-color: #00a151;"></span><span class="fixture">Liverpool</span>
+                                                    </div>
+                                                    <div class="col s2 m2 l2 xl2 no-padding right-align">
+                                                        <span class="live-score">2</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin market">
+                                            <div class="col s10 m8 l8 xl8 no-padding truncate">
+                                                <div class=""><span class="">Both Teams To Score</span> - <span class="">yes</span></div>
+                                            </div>
+                                            <div class="col s2 m4 l4 xl4 no-padding right-align">
+                                                <div class="spin-odds">1.75</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col s1 m1 l1 xl1 no-padding center-align">
+                                        <div class="bet-remove"><i class="material-icons small valign-m">clear</i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="spin-box spin-it">
+                            <div class="spin-box-inner">
+                                <div class="row no-margin valign-wrapper">
+                                    <div class="col s1 m1 l1 xl1 no-padding center-align ">
+                                        <div class="center-align"><i class="material-icons valign-m green-text text-darken-1 pointer-hand">lock_outline</i></div>
+                                    </div>
+                                    <div class="col s10 m10 l10 xl10  no-padding border-right border-left">
+                                        <div class="row no-margin valign-wrapper border-bottom">
+                                            <div class="col s2 m2 l1 xl1 no-padding">
+                                                <div class="match-minute">24'</div>
+                                            </div>
+                                            <div class="col s10 m10 l11 xl11 border-left match-info">
+                                                <div class="row no-margin">
+                                                    <div class="col s10 m10 l10 xl10 no-padding truncate">
+                                                        <span class="jersey-color" style="background-color: #efa506;"></span><span class="fixture ">Arsenal</span>
+                                                    </div>
+                                                    <div class="col s2 m2 l2 xl2 no-padding right-align">
+                                                        <span class="live-score">1</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row no-margin">
+                                                    <div class="col s10 m10 l10 xl10 no-padding truncate">
+                                                        <span class="jersey-color" style="background-color: #00a151;"></span><span class="fixture">Liverpool</span>
+                                                    </div>
+                                                    <div class="col s2 m2 l2 xl2 no-padding right-align">
+                                                        <span class="live-score">2</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin market">
+                                            <div class="col s10 m8 l8 xl8 no-padding truncate">
+                                                <div class=""><span class="">Both Teams To Score</span> - <span class="">yes</span></div>
+                                            </div>
+                                            <div class="col s2 m4 l4 xl4 no-padding right-align">
+                                                <div class="spin-odds">1.75</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col s1 m1 l1 xl1 no-padding center-align">
+                                        <div class="bet-remove"><i class="material-icons small valign-m">clear</i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6 xl6 padding-left-4 padding-right-4 reel-box">
+                        <div class="spin-box spin-it">
+                            <div class="spin-box-inner">
+                                <div class="row no-margin valign-wrapper">
+                                    <div class="col s1 m1 l1 xl1 no-padding center-align ">
+                                        <div class="center-align"><i class="material-icons valign-m green-text text-darken-1 pointer-hand">lock_outline</i></div>
+                                    </div>
+                                    <div class="col s10 m10 l10 xl10  no-padding border-right border-left">
+                                        <div class="row no-margin valign-wrapper border-bottom">
+                                            <div class="col s2 m2 l1 xl1 no-padding">
+                                                <div class="match-minute">14'</div>
+                                            </div>
+                                            <div class="col s10 m10 l11 xl11 border-left match-info">
+                                                <div class="row no-margin">
+                                                    <div class="col s10 m10 l10 xl10 no-padding truncate">
+                                                        <span class="jersey-color" style="background-color: #efa506;"></span><span class="fixture ">Watford</span>
+                                                    </div>
+                                                    <div class="col s2 m2 l2 xl2 no-padding right-align">
+                                                        <span class="live-score">0</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row no-margin">
+                                                    <div class="col s10 m10 l10 xl10 no-padding truncate">
+                                                        <span class="jersey-color" style="background-color: #00a151;"></span><span class="fixture">Leicester</span>
+                                                    </div>
+                                                    <div class="col s2 m2 l2 xl2 no-padding right-align">
+                                                        <span class="live-score">1</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin market">
+                                            <div class="col s10 m8 l8 xl8 no-padding truncate">
+                                                <div class=""><span class="">Both Teams To Score</span> - <span class="">yes</span></div>
+                                            </div>
+                                            <div class="col s2 m4 l4 xl4 no-padding right-align">
+                                                <div class="spin-odds">2.15</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col s1 m1 l1 xl1 no-padding center-align">
+                                        <div class="bet-remove"><i class="material-icons small valign-m">clear</i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="spin-box spin-it">
+                            <div class="spin-box-inner">
+                                <div class="row no-margin valign-wrapper">
+                                    <div class="col s1 m1 l1 xl1 no-padding center-align ">
+                                        <div class="center-align"><i class="material-icons valign-m green-text text-darken-1 pointer-hand">lock_outline</i></div>
+                                    </div>
+                                    <div class="col s10 m10 l10 xl10  no-padding border-right border-left">
+                                        <div class="row no-margin valign-wrapper border-bottom">
+                                            <div class="col s2 m2 l1 xl1 no-padding">
+                                                <div class="match-minute">14'</div>
+                                            </div>
+                                            <div class="col s10 m10 l11 xl11 border-left match-info">
+                                                <div class="row no-margin">
+                                                    <div class="col s10 m10 l10 xl10 no-padding truncate">
+                                                        <span class="jersey-color" style="background-color: #efa506;"></span><span class="fixture ">Watford</span>
+                                                    </div>
+                                                    <div class="col s2 m2 l2 xl2 no-padding right-align">
+                                                        <span class="live-score">0</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row no-margin">
+                                                    <div class="col s10 m10 l10 xl10 no-padding truncate">
+                                                        <span class="jersey-color" style="background-color: #00a151;"></span><span class="fixture">Leicester</span>
+                                                    </div>
+                                                    <div class="col s2 m2 l2 xl2 no-padding right-align">
+                                                        <span class="live-score">1</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin market">
+                                            <div class="col s10 m8 l8 xl8 no-padding truncate">
+                                                <div class=""><span class="">Both Teams To Score</span> - <span class="">yes</span></div>
+                                            </div>
+                                            <div class="col s2 m4 l4 xl4 no-padding right-align">
+                                                <div class="spin-odds">2.15</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col s1 m1 l1 xl1 no-padding center-align">
+                                        <div class="bet-remove"><i class="material-icons small valign-m">clear</i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row no-margin"><div class="space-10"><br></div></div>
+        </div>
+
+        <div class="footer sticker-footer white">
+            <div class="spin-button center-align">
+                <div class="spin-bar green"></div>
+                <button [ngClass]="{'btn-floating waves-effect waves-light green btn-spin':true,'disabled':spinDisable == true}" (click)="spin()"><i class="material-icons white-text medium">cached</i></button>
+            </div>
+
+            <div class="mrg-content">
+                <div class="row no-margin"><div class="margin-top-10"></div></div>
+                <div class="row no-margin valign-wrapper" *ngIf="!isGotResponse">
+                    <div class="col s8 m9 l9 xl9 no-padding">
+                        <div class="font-16">{{betType}}</div>
+                    </div>
+                    <div class="col s4 m3 l3 xl3 no-padding">
+                        <button class="btn waves-effect waves-light btn-odds green" [ngClass]="{'disabled':isDisable == true || isSpin == true || showErrorText == true}" (click)="add()">{{staticWordsData?.staticWords?.Add_Match}}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="divider margin-top-10 margin-bottom-10"></div>
+            <div class="mrg-content">
+                <div class="row valign-wrapper">
+                    <div class="col s6 m3 l3 xl3" *ngIf="!isGotResponse">
+                        <div class="winsUpToTxt valign-m"><span [innerHTML]="kambiService.currency | currencyFormat"></span> 10 {{staticWordsData?.staticWords?.Wins_up_to}}:</div>
+                        <div class="winAmount valign-m" *ngIf="!showErrorText"><span [innerHTML]="kambiService.currency | currencyFormat"></span> {{totalOdds}}</div>
+                    </div>
+                    <div class="col s6 m6 l6 xl6 no-padding-left" *ngIf="!isGotResponse">
+                        <button [ngClass]="{'btn waves-effect waves-light btn-odds add-betslip':true,'disabled':showErrorText == true || isSpin == true}" (click)="AddtoBetslip()">{{staticWordsData?.staticWords?.Add_all_to_Betslip}}</button>
+                    </div>
+                    <div class="col s6 m3 l3 xl3 hide-on-small-and-down">
+
+                    </div>
+                </div>
+                <div class="row no-margin"><div class="margin-top-10"></div></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

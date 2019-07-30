@@ -1,0 +1,390 @@
+.BLSBT-widget {
+    *,
+    ::before,
+    ::after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            list-style: none;
+        }
+    }
+    .text-left {
+        text-align: left;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .text-right {
+        text-align: right;
+    }
+    .space-5 {
+        margin: 5px auto;
+        padding: 2px 0px;
+    }
+    .space-10 {
+        margin: 10px auto;
+        padding: 5px 0px;
+    }
+    .truncate {
+        display: block;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .pb-0 {
+        padding-bottom: 0 !important;
+    }
+    .mb-10 {
+        margin-bottom: 10px !important;
+    }
+}
+
+/*----------Bootstrap Grid System------*/
+
+.BLSBT-widget .row {
+    margin: 0;
+    background: transparent !important;
+    display: -ms-flexbox;
+    display: -o-flexbox;
+    display: -webkit-box;
+    display: flex;
+}
+
+.BLSBT-widget .col-1,
+.BLSBT-widget .col-2,
+.BLSBT-widget .col-3,
+.BLSBT-widget .col-4,
+.BLSBT-widget .col-5,
+.BLSBT-widget .col-6,
+.BLSBT-widget .col-7,
+.BLSBT-widget .col-8,
+.BLSBT-widget .col-9,
+.BLSBT-widget .col-10,
+.BLSBT-widget .col-11,
+.BLSBT-widget .col-12,
+.BLSBT-widget .col {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding: 0;
+}
+
+.BLSBT-widget .col {
+    -webkit-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.BLSBT-widget .col-auto {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+}
+
+.BLSBT-widget .col-1 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 8.333333%;
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+}
+
+.BLSBT-widget .col-2 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 16.666667%;
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+}
+
+.BLSBT-widget .col-3 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 25%;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.BLSBT-widget .col-4 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 33.333333%;
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+.BLSBT-widget .col-5 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 41.666667%;
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+}
+
+.BLSBT-widget .col-6 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.BLSBT-widget .col-7 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 58.333333%;
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+}
+
+.BLSBT-widget .col-8 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 66.666667%;
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
+
+.BLSBT-widget .col-9 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 75%;
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.BLSBT-widget .col-10 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 83.333333%;
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+}
+
+.BLSBT-widget .col-11 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 91.666667%;
+    -ms-flex: 0 0 91.666667%;
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%;
+}
+
+.BLSBT-widget .col-12 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/*---------- Third Party - React Toggle ------------*/
+
+.BLSBT-widget {
+    .react-toggle {
+        touch-action: pan-x;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
+    }
+    .react-toggle-screenreader-only {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+    .react-toggle--disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        -webkit-transition: opacity 0.25s;
+        transition: opacity 0.25s;
+    }
+    .react-toggle-track {
+        width: 50px;
+        height: 24px;
+        padding: 0;
+        border-radius: 30px;
+        background-color: #4D4D4D;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+    }
+    .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
+        background-color: #000000;
+    }
+    .react-toggle--checked .react-toggle-track {
+        background-color: #19AB27;
+    }
+    .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+        background-color: #128D15;
+    }
+    .react-toggle-track-check {
+        position: absolute;
+        width: 14px;
+        height: 10px;
+        top: 0px;
+        bottom: 0px;
+        margin-top: auto;
+        margin-bottom: auto;
+        line-height: 0;
+        left: 8px;
+        opacity: 0;
+        -webkit-transition: opacity 0.25s ease;
+        -moz-transition: opacity 0.25s ease;
+        transition: opacity 0.25s ease;
+    }
+    .react-toggle--checked .react-toggle-track-check {
+        opacity: 1;
+        -webkit-transition: opacity 0.25s ease;
+        -moz-transition: opacity 0.25s ease;
+        transition: opacity 0.25s ease;
+    }
+    .react-toggle-track-x {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: 0px;
+        bottom: 0px;
+        margin-top: auto;
+        margin-bottom: auto;
+        line-height: 0;
+        right: 10px;
+        opacity: 1;
+        -webkit-transition: opacity 0.25s ease;
+        -moz-transition: opacity 0.25s ease;
+        transition: opacity 0.25s ease;
+    }
+    .react-toggle--checked .react-toggle-track-x {
+        opacity: 0;
+    }
+    .react-toggle-thumb {
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        width: 22px;
+        height: 22px;
+        border: 1px solid #4D4D4D;
+        border-radius: 50%;
+        background-color: #FAFAFA;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all 0.25s ease;
+        -moz-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+    }
+    .react-toggle--checked .react-toggle-thumb {
+        left: 27px;
+        border-color: #19AB27;
+    }
+    .react-toggle--focus .react-toggle-thumb {
+        -webkit-box-shadow: 0px 0px 3px 2px #0099E0;
+        -moz-box-shadow: 0px 0px 3px 2px #0099E0;
+        box-shadow: 0px 0px 2px 3px #0099E0;
+    }
+    .react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
+        -webkit-box-shadow: 0px 0px 5px 5px #0099E0;
+        -moz-box-shadow: 0px 0px 5px 5px #0099E0;
+        box-shadow: 0px 0px 5px 5px #0099E0;
+    }
+}
+
+/*------- Third Party - React accordian ------*/
+
+.BLSBT-widget {
+    .accordion__body {
+        display: block;
+        animation: fadein .35s ease-in;
+    }
+    .accordion__body--hidden {
+        display: none;
+        opacity: 0;
+        animation: fadein .35s ease-in;
+    }
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-moz-keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+/*------ Third Party CSS - Animate.css -------*/
+
+.BLSBT-widget {
+    .animated {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
+    .slideOutLeft {
+        animation-name: slideOutLeft;
+    }
+    @keyframes slideOutLeft {
+        from {
+            transform: translate3d(0, 0, 0);
+        }
+        to {
+            visibility: hidden;
+            transform: translate3d(-100%, 0, 0);
+        }
+    }
+
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .fadeIn {
+        animation-name: fadeIn;
+    }
+}

@@ -1,0 +1,212 @@
+.BLSBT-widget {
+    font-family: $BLSBT-font-family;
+    background-color: $BLSBT-widget-bg;
+    margin: 0px auto;
+    padding: 14px;	 
+    color: #000;
+    .BLSBT-widgetHeader {
+        padding-bottom: 12px;
+        display: flex;
+        display: -ms-flex;
+        display: -webkit-box;
+        
+        .BLSBT-headerLeft {
+            width: 55%;
+            .BLSBT-titleStrip{
+                border-radius: 1.5px;
+                width: 3px;
+                height: 20px;
+                background-color: $BLSBT-widgetHeader-titleStrip-bg;
+                display: inline-block;
+                margin-right: 8px;
+                vertical-align: middle;                
+            }
+            img{
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 8px;
+            }
+            .BLSBT-widgetTitle{
+                color: $BLSBT-widgetHeader-title-TxtColor;
+                display: inline-block;
+                font-size: $BLSBT-widgetHeader-title-fontSize;
+                position: relative;
+                top: -1px;
+                vertical-align: middle;
+            }
+        }
+        .BLSBT-headerRight {
+            width: 45%;
+            text-align: center;
+            position: relative;
+
+            .BLSBT-carouselText{
+                color: $BLSBT-widgetHeader-carousel-title-TxtColor;
+                font-size: $BLSBT-widgetHeader-carousel-title-fontSize;
+                vertical-align: middle;
+                text-align: center;
+                position: relative;
+                display: inline-block;
+                top: 1px;
+            }
+        }
+    } 
+    .BLSBT-contentBox {
+        background-color: $BLSBT-widget-contentBox-bg;
+        border-radius: 3px;
+        position: relative;	
+        width: 100%;
+        overflow: hidden;
+    }
+
+}
+
+.BLSBT-bestBets-filters{
+    padding: 12px 9px;
+
+    ul{
+        display: inline-block;
+        width: 100%;
+        li{
+            width: 50%;
+            float: left;
+            padding: 0 3px;
+        }
+    }
+}
+
+.BLSBT-accaAttack-filters{
+    padding: 16px 4px;
+    ul{
+        display: table;
+        width: 100%;
+
+        li{
+            display: table-cell;
+            padding: 0 4px;
+            vertical-align: bottom;
+            width: 35%;
+
+            &:last-child{
+                width: 20%;
+            }
+        }
+    }
+    .BLSBT-inputLabel{
+        font-size: $BLSBT-formControl-label-fontSize;
+        color: $BLSBT-formControl-label-txtColor;
+        margin-bottom: 3px;
+    }
+    .BLSBT-btnGo{
+        height: $BLSBT-formControl-height;
+        background-color: $BLSBT-btnGo-bg;
+        color: $BLSBT-btnGo-txtColor;
+        text-align: center;
+        border-radius: $BLSBT-btnGo-borderRadius;
+        cursor: pointer;
+        img{
+            width: 18px;
+            vertical-align: middle;
+        }
+    }
+    
+}
+
+
+
+
+.BLSBT-matchBoxGroup {
+    overflow: hidden;
+}
+
+.BLSBT-matchBox {
+    color: $BLSBT-matchBox-txtColor;
+    font-size: 12px;
+    background-color: $BLSBT-matchBox-bg;
+    .BLSBT-matchBox-header {
+        height: 24px;
+        background-color: $BLSBT-matchBox-header-bg;            
+        padding: 0 12px;
+    }
+    .BLSBT-leagueName {
+        width: 58%;
+        float: left;            
+        text-align: left;
+        padding: 5px 0;
+    }
+    .BLSBT-matchBox-kickOff {
+        width: 42%;
+        float: right;            
+        text-align: right;
+        padding: 5px 0;
+    }
+    .BLSBT-matchBox-content{
+        padding: 16px 12px;
+    }
+    
+    .BLSBT-matchBox-fixture {
+        font-size: 14px;
+        color: $BLSBT-matchBox-fixture-txtColor;
+        margin-bottom: 5px;
+        cursor: pointer;
+        .BLSBT-FB-liveScore{
+            color: $BLSBT-matchBox-FB-liveScore-txtColor;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+    .BLSBT-closeIcon {
+        position: relative;
+        float: right;
+        cursor: pointer;
+    }
+    .BLSBT-closeIcon img {
+        position: relative;
+        float: right;
+        cursor: pointer;
+        width: 12px;
+        display: none;
+        top: 3px;
+    }
+    .BLSBT-matchBox-fixture:hover .BLSBT-closeIcon img  {
+        display: block;
+    }
+    .BLSBT-matchBox-fixture:hover {
+        
+    }
+    .BLSBT-matchBox-RTB {
+        margin-bottom: 16px;
+    }
+    
+}
+
+
+
+.BLSBT-widget-footer{
+    border-top: 1px solid $BLSBT-widget-footer-borderTop-color;
+    padding: 16px 12px;
+    color: $BLSBT-widget-footer-stake-txtColor;
+    font-size: $BLSBT-widget-footer-stake-fontSize;
+    background-color: $BLSBT-widget-footer-bg;
+    .BLSBT-stake{
+        margin-bottom: 5px;
+    }
+    .BLSBT-returns{
+        font-size: $BLSBT-widget-footer-returns-fontSize;
+        .BLSBT-returns__txt{
+            color: $BLSBT-widget-footer-returns-txtColor;
+        }
+        .BLSBT-returns__value{            
+            color: $BLSBT-widget-footer-returns_value-txtColor;
+        }
+    }
+
+    
+}
+
+
+
+/*======================================================
+
+======================================================*/

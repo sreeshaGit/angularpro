@@ -1,0 +1,31 @@
+<div *ngIf="scorePosition=='todaysAssist'">
+    <div class="setScoreTxt">
+        <span>{{staticWordsData?.staticWords?.Set}} - {{currentSetNumber}}</span>
+    </div>
+    <div class="tennisScore">
+        <span class="green-text"> {{currentSetScore}} </span>
+    </div>
+</div>
+<!-- right now -->
+<div *ngIf="scorePosition=='rightnow'">
+    <span *ngFor="let item of rightNowScore let i=index;" class="set-score"
+          [ngClass]="{'current-set':i == currentSetNumber-1}">
+        {{item}}
+    </span>
+</div>
+<div class="set-points" *ngIf="pointScore=='playerScore'">{{playerPointScore}}</div>
+<span [ngClass]="{'team':true,'serving':rightNowPosition == true}" *ngIf="playerPosition=='homePosition'"></span>
+<span [ngClass]="{'team':true,'serving':rightNowPosition == false}" *ngIf="playerPosition=='awayPosition'"></span>
+<!-- banner -->
+
+<span class="set-score" *ngIf="isBannerHome">{{homeSetWinner}}</span>
+<span class="set-score" *ngIf="isBannerHome">{{bannerHomeScore}}</span>
+<span class="set-score set-points" *ngIf="isBannerHome">{{bannerScoreData?.score?.home}}</span>
+<span [ngClass]="{'player':true,'serving':bannerStatsData?.homeServe == true}" *ngIf="isBannerHome"></span>
+
+
+<span class="set-score" *ngIf="isBannerAway">{{awaySetWinner}}</span>
+<span class="set-score" *ngIf="isBannerAway">{{bannerAwayScore}}</span>
+<span class="set-score set-points" *ngIf="isBannerAway">{{bannerScoreData?.score?.away}}</span>
+<span [ngClass]="{'player':true,'serving':bannerStatsData?.homeServe == false}" *ngIf="isBannerAway"></span>
+

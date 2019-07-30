@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'BLSBT-icons';
+    src:  url('../fonts/BLSBT-icons.eot?rbp8oc');
+    src:  url('../fonts/BLSBT-icons.eot?rbp8oc#iefix') format('embedded-opentype'),
+      url('../fonts/BLSBT-icons.ttf?rbp8oc') format('truetype'),
+      url('../fonts/BLSBT-icons.woff?rbp8oc') format('woff'),
+      url('../fonts/BLSBT-icons.svg?rbp8oc#BLSBT-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  i {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'BLSBT-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .blsbt-icon_close:before {
+    content: "\e900";
+  }
+  .blsbt-icon_arrow-down:before {
+    content: "\e901";
+  }
+  .blsbt-icon_arrow-left:before {
+    content: "\e902";
+  }
+  .blsbt-icon_arrow-right:before {
+    content: "\e903";
+  }
+  .blsbt-icon_arrow-top:before {
+    content: "\e904";
+  }
+  .blsbt-icon_back:before {
+    content: "\e905";
+  }
+  .blsbt-icon_arrow-go:before {
+    content: "\e906";
+  }
+  .blsbt-icon_close:before {
+    content: "\e907";
+  }
+  .blsbt-icon_refresh:before {
+    content: "\e908";
+  }
+  .blsbt-icon_search:before {
+    content: "\e909";
+  }
+  .blsbt-icon_select-arrow:before {
+    content: "\e90a";
+  }
+  .blsbt-icon_star:before {
+    content: "\e90b";
+  }
+  

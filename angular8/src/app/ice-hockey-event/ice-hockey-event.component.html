@@ -1,0 +1,62 @@
+<div class="BL-BOL-iceHockey" *ngIf="data?.matchInfo">
+    <div class="BL-widget eventView-tennis">
+        <div class="BL-widgetHeader">
+            <div class="BL-widgetTitle">LIVE ICE HOCKEY</div>
+        </div>
+
+        <div class="BL-contentBox BL-FB-eventView">
+            <div class="BL-eventView-matchInfoBanner">
+                <div class="BL-eventView-matchInfoBanner__content">
+                    <div class="BL-eventView-matchInfoBanner__innerContent">
+                        <div class="BL-eventView-matchInfoBanner__leagueName">{{data?.matchInfo?.leagueName}}</div>
+                        <div class="BL-eventView-matchInfoBanner__fixtureInfo">
+                            <div class="BL-eventView-matchInfoBanner__teamName">{{data?.matchInfo?.awayTeamName}}</div>
+                            <div class="BL-eventView-matchInfoBanner__eventScore">
+                                <span>{{data?.matchInfo?.awayTeamScore}}</span>
+                                <span> : </span>
+                                <span>{{data?.matchInfo?.homeTeamScore}}</span>
+                            </div>
+                            <div class="BL-eventView-matchInfoBanner__teamName">{{data?.matchInfo?.homeTeamName}}</div>
+                        </div>
+                        <div class="BL-eventView-matchInfoBanner__matchMinute">
+                            <div>{{data?.matchInfo?.matchStatus}} {{data?.matchInfo?.matchMinute ? '-' &nbsp; +
+                                data?.matchInfo?.matchMinute + '’' : ''}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="BL-matchBoxGroup">
+                <div class="BL-matchBox">
+                        <div class="BL-matchBox-content" *ngIf="data?.away">
+                            <div class="BL-matchBox-RTB">{{data?.away?.text}}</div>
+                            <button type="button" class="BL-btn BL-btn-marketOdds" [ngClass]="addBetAway? 'active' : ''"
+                                (click)="addToBetslip('away',data?.away)" *ngIf="data?.away?.oddsAmerican && data?.away?.oddsAmerican != null && data?.away?.oddsAmerican != ''">
+                                <span class="BL-marketOutcome truncate" title="{{data?.away?.marketName}}{{data?.away?.outcomeName ? '&nbsp;-&nbsp;' : '' }}{{data?.away?.outcomeName}} {{data?.away?.subMarketName != 0 ? data?.away?.subMarketName : ''}}">
+                                    <span class="BL-market">{{data?.away?.marketName}} {{data?.away?.outcomeName ?
+                                        '-&nbsp;' + data?.away?.outcomeName : ''}}
+                                        <span *ngIf="data?.away?.subMarketName != 0">{{data?.away?.subMarketName}}</span>
+                                    </span>
+                                </span>
+                                <span class="BL-odds">{{data?.away?.oddsAmerican}}</span>
+                            </button>
+                        </div>
+                </div>
+                <div class="BL-matchBox">
+                    <div class="BL-matchBox-content" *ngIf="data?.home">
+                        <div class="BL-matchBox-RTB">{{data?.home?.text}}</div>
+                        <button type="button" class="BL-btn BL-btn-marketOdds" [ngClass]="addBetHome? 'active' : ''"
+                            (click)="addToBetslip('home',data?.home)" *ngIf="data?.home?.oddsAmerican && data?.home?.oddsAmerican != null && data?.home?.oddsAmerican != ''">
+                            <span class="BL-marketOutcome truncate" title="{{data?.home?.marketName}}{{data?.home?.outcomeName ? '&nbsp;-&nbsp;' : '' }}{{data?.home?.outcomeName}} {{data?.home?.subMarketName != 0 ? data?.home?.subMarketName : ''}}">
+                                <span class="BL-market">{{data?.home?.marketName}} {{data?.home?.outcomeName ?
+                                    '-&nbsp;' + data?.home?.outcomeName : ''}}
+                                    <span *ngIf="data?.home?.subMarketName != 0">{{data?.home?.subMarketName}}</span>
+                                </span>
+                            </span>
+                            <span class="BL-odds">{{data?.home?.oddsAmerican}}</span>
+                        </button>
+                    </div>
+                </div>               
+            </div>
+        </div>
+    </div>
+</div>

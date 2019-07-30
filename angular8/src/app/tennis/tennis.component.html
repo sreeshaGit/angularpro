@@ -1,0 +1,42 @@
+<div class="BL-tennis-liveBets">
+  <div class="BL-contentBox">
+      <div class="BL-erroMsgBox" *ngIf = "displayError">
+          Currently there are no live matches.
+      </div>
+      <div class="BL-matchBoxGroup">
+          <div class="BL-matchBox" *ngFor="let data of tennisData | slice:0:betsToDisplay let i=index;">
+              <div class="BL-matchBox-header">
+                  <div class="BL-leagueName truncate">{{data.leagueName}}</div>                 
+              </div>
+              <div class="BL-matchBox-content">
+                  <div class="BL-matchBox-fixture">
+                      <div class="BL-fixture__liveScore truncate">
+                          <span class= "BL-score"   *ngFor="let score of data.homeScore let i=index;">{{score}}</span>                        
+                          <span class="BL-teamName" [ngClass] ="(data.serving == '1') ? 'BL-servingAfter' : ''">{{data.player1}}</span>
+                      </div>
+                      <div class="BL-fixture__liveScore truncate">
+                        <span class="BL-score"  *ngFor="let score of data.awayScore let i=index;">{{score}}</span>
+                          <span class="BL-teamName"  [ngClass] ="(data.serving == '2') ? 'BL-servingAfter' : ''">{{data.player2}}</span>
+                      </div>
+                  </div>
+                  <div class="BL-matchBox-RTB">
+                      {{data.text}}
+                  </div>
+                   <!-- <div class="BL-matchBox-marketName">
+                        {{data.marketName}} {{data.subMarketName ? '-'+ data.subMarketName : ''}}
+                    </div>  -->
+                  <div>
+                      <button type="button" class="BL-btn BL-btn-marketOdds"  *ngIf="data?.oddsAmerican && data?.oddsAmerican != null && data?.oddsAmerican != ''" [ngClass]="selectedBets.indexOf(data.eventId) !== -1 ? 'active' : ''"  (click)="addToBetslip(data)">
+                          <span class="BL-marketOutcome truncate" title="{{data?.marketName}}{{data?.outcomeName ? '&nbsp;-&nbsp;' : '' }}{{data?.outcomeName}} {{data?.subMarketName != 0 ? data?.subMarketName : ''}}">
+                              <span class="BL-market">{{data.marketName}} {{data.outcomeName ? '&nbsp;-&nbsp;' : ''}}</span>
+                              <span class="BL-outcome" *ngIf="data.outcomeName">{{data.outcomeName}} <span *ngIf="data?.subMarketName != 0">{{data?.subMarketName}}</span></span>
+                          </span>                                            
+                          <span class="BL-odds">{{data.oddsAmerican}}</span>
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+</div>

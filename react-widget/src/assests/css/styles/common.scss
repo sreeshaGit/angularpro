@@ -1,0 +1,155 @@
+.BLSBT-btn {
+    cursor: pointer;
+    padding: 0 12px;
+    border: 0;
+	white-space: nowrap;
+	position: relative;
+	width: 100%;
+	border-radius: $BLSBT-btn-borderRadius;
+}
+.BLSBT-btn-marketOdds {
+    height: 36px;    
+    background-color: $BLSBT-btn-marketOdds-bg;
+    color: $BLSBT-btn-marketOdds-txtColor;
+	font-size: $BLSBT-btn-marketOdds-fontSize;
+	padding: 10px 12px;
+	.BLSBT-market{
+		float: left;
+		width: 80%;
+        text-align: left;
+        font-weight: normal;
+	}
+	.BLSBT-odds{
+		font-weight: bold;
+		float: right;
+		width: 20%;
+		text-align: right
+	} 
+	&.active{
+		background-color: $BLSBT-btn-marketOdds-active-bg;
+		color: $BLSBT-btn-marketOdds-active-txtColor;
+		&:hover{
+			background-color: $BLSBT-btn-marketOdds-active-hover-bg;
+			color: $BLSBT-btn-marketOdds-active-hover-txtColor;
+		}
+	}
+	&:hover{
+        background-color: $BLSBT-btn-marketOdds-hover-bg;
+        color: $BLSBT-btn-marketOdds-hover-txtColor;
+	}
+	&.BLSBT-btnDisabled{
+		pointer-events: none;
+		
+	}
+}
+
+.BLSBT-btn-addAllToBetslip{
+		height: 41px;
+		background-color: $BLSBT-btn-addAllToBetslip-bg;
+		text-align: center;
+		color: $BLSBT-btn-addAllToBetslip-txtColor;
+        font-size: 14px;
+        &.BLSBT-HF-btnDisabled{
+            background-color: $BLSBT-HF-btnDisabled-bg;
+            color: $BLSBT-HF-btnDisabled-txtColor;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        
+}
+
+/*------------- SBTech Widget-filter -----------*/
+.BLSBT-select {
+    border-radius: $BLSBT-formControl-borderRadius;
+	position: relative;
+	background-color: $BLSBT-select-bg;
+	select {
+		border: 0;		
+		width: 100%;
+		height: $BLSBT-formControl-height;
+		font-size: $BLSBT-select-fontSize;
+		color: $BLSBT-formControl-txtColor;  
+		padding: 0 25px 0 10px;
+		border-radius: 3px;
+		outline: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-ms-appearance: none;
+		-o-appearance: none;
+		appearance: none;
+		background: transparent;
+	}
+	&:after{
+		content: url(../img/select-arrow.svg);
+		float: right;
+		pointer-events: none;
+		position: absolute;
+		right: 10px;
+		top: 15px;
+        line-height: 7px;
+	}
+}
+
+.BLSBT-formControl{
+    input[type=text]{
+        height: $BLSBT-formControl-height;
+        border: 1px solid $BLSBT-input-borderColor;
+        border-radius: $BLSBT-formControl-borderRadius;
+        padding: 0 12px;
+        background-color: $BLSBT-input-bg;
+        width: 100%;
+        color: $BLSBT-formControl-txtColor;
+        font-size: $BLSBT-input-fontSize;
+        font-weight: normal;
+    }
+}
+
+
+.BLSBT-error{
+	text-align: center;
+	font-size: $BLSBT-errorMsg-fontSize;
+	.BLSBT-errorMsg{		
+		color: $BLSBT-errorMsg-txtColor;
+	}
+}
+.BLSBT-accaAttack, .BLSBT-bestBets, .BLSBT-FBleague{
+    .BLSBT-error{
+        position: relative;
+        top: -8px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* React Carousel Css*/
+.BLSBT-carousel .carousel-control {
+    display: none;
+}
+.BLSBT-carousel .carousel-indicators {
+    display: none;
+}
+.BLSBT-headerRight .BLSBT-carousel-control {
+    cursor: pointer;
+	top: 4px;
+    position: absolute;
+    img{
+        width: 12px;
+    }
+}
+.BLSBT-headerRight .BLSBT-carousel-control.left {    
+    left: 0;    
+}
+.BLSBT-headerRight .BLSBT-carousel-control.right {
+    right: 0;  
+}
+.BLSBT-headerRight .BLSBT-carousel-control.disabled {
+    opacity: 0.2;
+    cursor: default;
+}

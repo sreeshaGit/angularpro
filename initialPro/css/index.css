@@ -1,0 +1,212 @@
+/* Plazoola CSS V0.2 - Priyanka Pammi */
+
+/* ------ */
+/******** Index ********************/
+/* ------ */
+/*header{margin-bottom: -100px;}*/
+
+
+/*.container { 
+	padding: 0px; 
+	position: relative; 
+	z-index: 1;
+	
+}*/
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.hero-copy{
+	font-family: Montserrat-Regular;
+	font-size: 38px;
+	color: #F7F8FA;
+	letter-spacing: 0px;
+	float: right;
+	width: 50%;
+	position: absolute;
+	text-align: center;
+	padding-top: 100px;
+}
+.star-texture{
+	background-color: #F7F8FA;
+   /* padding: 10px 20px 30px 20px; 
+    border-top: 20px solid #132d43;
+	background-image: url('/images/star-texture.png');
+    width: 100%;
+    -webkit-border-top: 20px solid #132d43;
+    -moz-border-top: 20px solid #132d43;  */
+    /*background-image : url('/images/star-texture-curve.png');
+    padding: 100px 20px 30px 20px;
+    background-size: 100% 100%; 
+    vertical-align: top;
+    height: 459px;*/
+}
+.index-box{
+    background: #E9EDF1;
+	display: inline-block;
+    height: 220px;
+    min-width: 310px;
+    max-width: 320px;
+    margin-bottom: 20px;
+   /* box-shadow: 0px 2px 19px 3px #424242;*/
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+	margin-top: 20px;
+	
+ }
+.index-box hr{ 
+	border-color: #8c9ca9; 
+	height:5px; 
+	width:60%; 
+	padding: 0 40px; 
+	margin-top: 10px; 
+	margin-bottom: 0px;
+}
+.index-view-game{
+    background-color: #F8EC1C;
+    cursor: pointer;
+    border: 10px solid #F8EC1C;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    margin: 20px 0;
+}
+.game-box-top .yellow-header { 
+    background: #0D406B;
+    padding: 5px 5px;
+    border-radius: 16px 16px 0px 0px;
+    -webkit-border-radius: 16px 16px 0px 0px;
+    -moz-border-radius: 16px 16px 0px 0px;     
+}
+.game-box-top .yellow-header h3{ 
+	font-size: 1.5em; 
+	margin: 10px 0px;
+	font-family: SourceSansPro-Semibold;
+	font-size: 20px;
+	color: #fff;
+	text-transform: none;
+	letter-spacing: 0px;
+}
+.number {
+	float:left;
+	width: 35px;
+	height: 35px;
+	line-height: 32px;
+}
+.answer{
+	width: 70px;
+	padding: 10px 5px;
+	line-height: 32px;
+}
+.index-selection-fixture{
+    background-color: #e9edf1;
+    border-radius: 12px;
+    position: relative;
+   line-height: 25px;
+    margin: 20px;
+ }
+.zoola-header{ 
+	display: block; 
+	font-size: 30px; 
+	text-align: center; 
+	color: #0D406B;
+}
+.blue-bg {
+    background: #132D43;
+    position: relative;
+    width: 100%;
+}
+.blue-txt{ 
+	color:#0D406B; font-size: 1.6em; 
+}
+.capsle-people{
+	margin-top: 10px !important;
+}
+
+.bird-cool .text{ 
+	float: left; 
+	margin-left: 15%; 
+	margin-top: 2%;
+}
+.game-name { 
+	font-family: Montserrat-Regular; 
+	font-size:1.6em; 
+	line-height: 1.2; 
+	width: 230px; 
+	margin-left: 40px;
+}
+.speech{ 
+    float: left;
+   /* display: inline-block;
+    position: absolute;
+    margin-left: 50px;*/
+    margin-top:20px;
+}
+.speech .people-text{ 
+    font-family: Montserrat-Regular;
+    display: block;
+    margin-top: -50px;
+    width: 130px;
+    margin-left: 21px;
+    font-size: 1.1em;
+}
+.dark-grey-bg{
+	background: #D1D8E1;
+	padding: 15px;
+}
+.light-grey-dark{
+	background: #E9EDF1;
+	padding: 15px;
+}
+.context-para{
+	font-family: SourceSansPro-Regular;
+	font-size: 1.6em;
+	color: #0D406B;
+	letter-spacing: 0px;
+}
+.capsle-people {
+ 	background-color: #fff;
+	border-radius: 6px;	
+	display: inline-block;
+	margin: 15px 4px;
+	min-width: 90px;
+	vertical-align: middle;
+    text-align: center;
+}
+.capsle-people img{
+	float: left;	
+	width: 25px;
+}
+.capsle-people .people-text { 
+	font-size: 1.1em;
+	font-family: SourceSansPro-Semibold;
+	text-transform: uppercase;
+	color: #0D406B;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	padding-left: 3px;
+	padding-right: 7px;
+}
+.capsle-people .people-text .players { 
+	padding-left: 9px;
+}
+
+
+ /* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 776px) {
+ .dark-grey-bg{
+	padding: 15px 0px;
+}
+.light-grey-dark{
+	padding: 15px 0px;
+}
+
+}
+
+
+
+

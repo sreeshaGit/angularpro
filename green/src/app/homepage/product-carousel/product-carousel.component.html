@@ -1,0 +1,59 @@
+<div class="row no-margin" [class.modal-open]="isModalOpen">
+    <div class="col s12 m12 l12 xl12 no-padding BlLoader">
+        <div class="bl-products-hscroll BL-flickity-carousel">
+            <div class="gallery-cell" *ngFor="let item of carouselData" (click)="goToPage(item.productID)">
+                <div class="bl-product-item" *ngIf="item.productID != 1 && item.isActive == 'True'; else elseBlock">
+                    <img [src]="'assets/img/'+ item.sportID + '.jpg'" /><span class="menu-txt">
+                    <div class="live-txt bl-green" *ngIf="item.productID==3">{{staticWord}}</div>{{item.productName}}</span>
+                </div>
+                <ng-template #elseBlock><div class="bl-product-item" *ngIf="fbLiveCount >= 2 && item.isActive == 'True'">
+                    <img [src]="'assets/img/'+ item.sportID + '.jpg'" /><span class="menu-txt">
+                    <div class="live-txt bl-green" *ngIf="item.productID==1">{{staticWord}}</div>{{item.productName}}</span></div>
+                </ng-template>
+            </div>
+        </div>
+        <div class="mrg-loader" *ngIf="isLoading">
+            <div class="row no-margin w100">
+                <div class="col s12 m12 l12 xl12 no-padding BlLoader">
+                    <div class="bl-products-hscroll product-carousel-loader BL-flickity-carousel">
+                        <div class="gallery-cell"><div class="bl-product-item grey lighten-4"></div></div>
+                        <div class="gallery-cell"><div class="bl-product-item grey lighten-4"></div></div>
+                        <div class="gallery-cell"><div class="bl-product-item grey lighten-4"></div></div>
+                        <div class="gallery-cell"><div class="bl-product-item grey lighten-4"></div></div>
+                        <div class="gallery-cell"><div class="bl-product-item grey lighten-4"></div></div>
+                        <div class="gallery-cell"><div class="bl-product-item grey lighten-4"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- Pop Up-->
+<app-dialog [(visible)]="bestBetsPopUp" (visibleChange)="modalPopupClosedCallback($event)">
+    <app-football-best-bets></app-football-best-bets>
+</app-dialog>
+<app-dialog [(visible)]="multiBetPopUp" (visibleChange)="modalPopupClosedCallback($event)">
+    <app-football-multi-bets></app-football-multi-bets>
+</app-dialog>
+<app-dialog [(visible)]="liveSoccerSpinPopUp" (visibleChange)="modalPopupClosedCallback($event)">
+    <app-live-soccer-spin *ngIf="liveSoccerSpinPopUp"></app-live-soccer-spin>
+</app-dialog>
+<app-dialog [(visible)]="preSoccerSpinPopUp" (visibleChange)="modalPopupClosedCallback($event)">
+    <app-pre-soccer-spin *ngIf="preSoccerSpinPopUp"></app-pre-soccer-spin>
+</app-dialog>
+<app-dialog [(visible)]="liveBestBetsPopUp" (visibleChange)="modalPopupClosedCallback($event)">
+    <app-football-live-bets *ngIf="liveBestBetsPopUp"></app-football-live-bets>
+</app-dialog>
+<app-dialog [(visible)]="horseFinderPopUp" (visibleChange)="modalPopupClosedCallback($event)">
+    <app-horse-finder></app-horse-finder>
+</app-dialog>
+<app-dialog [(visible)]="tennisBestBetsPopUp" (visibleChange)="modalPopupClosedCallback($event)">
+    <app-tennis-best-bets></app-tennis-best-bets>
+</app-dialog>
+<app-dialog [(visible)]="liveTennisPopUp" (visibleChange)="modalPopupClosedCallback($event)">
+    <app-tennis-live-bets></app-tennis-live-bets>
+</app-dialog>
+<app-dialog [(visible)]="preIceHockeySpinPopUp" (visibleChange)="modalPopupClosedCallback($event)">
+    <app-ice-hockey-pre-spin *ngIf="preIceHockeySpinPopUp"></app-ice-hockey-pre-spin>
+</app-dialog>
+<!-- Pop Up-->

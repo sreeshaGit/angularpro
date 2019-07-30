@@ -1,0 +1,16 @@
+{
+  "name": "playzoola",
+  "version": "1.0.0",
+  "description": "playzoola is betting site.",
+  "main": "app.js",
+  "author": "bettorLogic",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-react": "^0.12.3",
+    "grunt-ugly-folders": "^0.1.5"
+  }
+}

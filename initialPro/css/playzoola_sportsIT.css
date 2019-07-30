@@ -1,0 +1,3437 @@
+/*
+Theme Name: Playzoola Yellow
+Description: Playzoola default CSS V2.0 
+Author: Sridhar Madatha
+Author URI: http://www.playzoola.com/
+Tags: Football, Gaming, betting, Playzoola, Zoola
+*/
+
+/*--------   Playzoola Fonts  ---------------- */
+@font-face {
+  font-family: 'SourceSansPro-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('SourceSansPro-Regular'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlNzbP97U9sKh0jjxbPbfOKg.ttf) format('truetype');
+  
+}
+@font-face {
+  font-family: 'SourceSansPro-Light';
+  font-style: normal;
+  font-weight: 300;
+  src: local('SourceSansPro-Light'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGMw1o1eFRj7wYC6JbISqOjY.ttf) format('truetype');
+  
+}
+@font-face {
+  font-family: 'SourceSansPro-Semibold';
+  font-style: normal;
+  font-weight: 600;
+  src: local('SourceSansPro-Semibold'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGNNE-IuDiR70wI4zXaKqWCM.ttf) format('truetype');
+  
+}
+@font-face {
+  font-family: 'SourceSansPro-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('SourceSansPro-Bold'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v4/toadOcfmlt9b38dHJxOBGBgDywzySrQSFSEUM6OqW_g.woff) format('woff');
+
+}
+@font-face {
+  font-family: 'Montserrat-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat-Regular'), url(http://fonts.gstatic.com/s/montserrat/v5/zhcz-_WihjSQC0oHJ9TCYAzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2'), url(http://fonts.gstatic.com/s/montserrat/v5/zhcz-_WihjSQC0oHJ9TCYL3hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
+}
+@font-face {
+  font-family: 'Montserrat-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat-Bold'), url(http://fonts.gstatic.com/s/montserrat/v5/IQHow_FEYlDC4Gzy_m8fcmaVI6zN22yiurzcBKxPjFE.woff2) format('woff2'), url(http://fonts.gstatic.com/s/montserrat/v5/IQHow_FEYlDC4Gzy_m8fcnbFhgvWbfSbdVg11QabG8w.woff) format('woff');
+}
+
+		
+/*--------  / Playzoola Fonts  ---------------- */
+
+/*------- General Styles -----------------*/
+body
+{
+    font-family: SourceSansPro-Regular !important;
+	color: #0D406B;
+    background-color: #F7F8FA;
+}
+
+a {
+    color: #0D406B;
+    text-decoration: none;
+}
+
+img{
+	max-width: 100%;	
+}
+
+h1, h2, h3, h4, h5, h6{
+	margin: 10px 0px;	
+
+}
+
+h1 {
+	font-family: Montserrat-Regular;
+	font-size: 32px;
+	color: #fff;
+	letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h2 {
+	font-family: SourceSansPro-Semibold;
+	font-size: 26px;
+	color: #0D406B;
+}
+
+h3 {
+	font-family: Montserrat-Regular;
+	font-size: 24px;
+	color: #D1D8E1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+	margin: 20px 0px;
+	text-align: center;
+}
+
+h4 {
+	font-family: SourceSansPro-Semibold;
+	font-size: 22px;
+	color: #0D406B;
+}
+
+h5 {
+	font-family: Montserrat-Bold;
+	font-size: 20px;
+	color: #0D406B;
+}
+
+h6 {
+	font-family: SourceSansPro-Semibold;
+	font-size: 18px;
+	color: #0D406B;
+}
+
+.mon-txt{
+    font-family: SourceSansPro-Bold;
+    font-size: 18px;
+	color: #0D406B;
+}
+.bal-txt{
+    font-family: Montserrat-Bold;
+    font-size: 30px;
+    color: #0D406B;
+}
+
+.addb-txt{
+    font-family: Montserrat-Regular;
+	font-size: 30px;
+	color: #0D406B;
+}
+p{
+    font-family: SourceSansPro-Light;
+    font-size: 20px;
+    color: #0D406B;
+}
+
+.tit-txt{
+    font-family: SourceSansPro-Light;
+    font-size: 24px;
+    color: #0D406B;
+}
+
+.ntr-txt{
+    font-family: SourceSansPro-Light;
+    font-size: 20px;
+    color: #9B9B9B;
+}
+
+.sm-txt{
+    font-family: SourceSansPro-Light;
+    font-size: 16px;
+    color: #0D406B;
+}
+
+.smt-txt{
+    font-family: SourceSansPro-Semibold;
+    font-size: 12px;
+    color: #0D406B;
+}
+
+.sco-txt{
+    font-family: Montserrat-Bold;
+    font-size: 40px;
+    color: #0D406B;
+}
+
+.gm-txt{
+    font-family: SourceSansPro-Semibold;
+    font-size: 21px !important;
+    color: #fff;
+}
+
+.mwh-txt{
+    font-family: SourceSansPro-Light;
+    font-size: 18px;
+    color: #fff;
+}
+
+.swh-txt{
+    font-family: SourceSansPro-Regular;
+    font-size: 14px;
+    color: #D1D8E1;
+}
+
+.tm-txt{
+    font-family: SourceSansPro-Semibold;
+    font-size: 14px;
+    color: #0D406B;
+}
+
+.mol-lg{
+    font-family: SourceSansPro-Semibold;
+    font-size: 26px;
+    color: #FFFFFF;
+}
+
+.pos-txt{
+    font-family: Montserrat-Bold;
+    font-size: 14px;
+    color: #132D43;
+}
+
+.pyo-txt{
+    font-family: SourceSansPro-Semibold;
+    font-size: 16px;
+    color: #F8EC1C;
+}
+
+.menur{
+	background: #F8EC1C;
+}
+.container-header{
+		
+	margin: 0px auto;
+}
+.header{
+	background: #0D406B;	
+}
+#supheader{
+	padding: 0;	
+}
+.subheader{
+	background: #D1D8E1;   
+}
+
+.payoutheader{
+	background: #9CAAB6;   
+}
+
+.subheader2{
+	background: #EBEEF2;
+}
+
+.upper-case{
+    text-transform: uppercase;
+}
+
+.lower-case{
+    text-transform: none;
+}
+
+.valign-m{
+    vertical-align: middle;
+}
+
+.bg-none{
+	background: none !important;
+}
+
+.bg-white{
+	background: #fff !important;
+}
+
+.bg-blue{
+	background: #0D406B !important;
+}
+
+.bg-light-blue{
+    background: #E9EDF1 !important;
+}
+
+.bg-dark-blue{
+    background: #D1D8E1 !important;
+}
+
+.bg-dark-dark-blue{
+    background: #9caab6 !important;
+}
+
+.bg-yellow{
+	background: #F8EC1C !important;
+}
+
+.bg-zoola-red{
+	background: #BD0000 !important;
+}
+
+.bg-star-qn{
+    background-color: #F7F4CC !important;
+}
+.bg-error{
+	background-color: #F73E47 !important;
+}
+.bg-success{
+	background-color: #D1FAA4 !important;
+}
+.bg-body{
+	background-color: #F7F8FA !important;	
+}
+.white{
+ 	color: #fff !important;	
+}
+
+.blue{
+	color: #0D406B !important;	
+}
+
+.light-blue{
+	 color: #E9EDF1 !important;
+}
+
+.dark-blue{
+	 color: #D1D8E1 !important;
+}
+
+.yellow{
+	color: #F8EC1C !important;	
+}
+
+.purple{
+	color: purple;	
+}
+.green{
+	color: #008000 !important;	
+}
+.btn{
+    padding: 0px;
+}
+
+.zoola-btn{
+    background-color: #F8EC1C;
+    color: #0D406B;
+    border-radius: 6px;
+    display: block;
+    width: 100%;  
+	transition: all 0.3s ease 0s; 
+}
+.green{
+ color: #008000 !important; 
+}
+.default-btn{
+	background-color: #9caab6;
+}
+.default-btn h5{
+	color: #e9edf1;
+}
+
+.zoola-btn h5{
+	margin: 0px !important;
+	padding: 10px 0px;	
+}
+
+.btn-txt{
+    font-family: Montserrat-Bold;
+    font-size: 28px;
+    color: #0D406B;
+	padding: 10px 0px;
+}
+
+.zoola-btn:hover, .zoola-btn:focus, .zoola-btn.focus{
+    color: #0D406B;
+    background-color: #FFF42A;
+}
+.zoola-box{
+	background-color: #d1d8e1;
+    border-radius: 12px;
+    margin-bottom: 20px !important;	
+}
+
+.alet-modal{
+	border: 2px solid #f8ec1c;	
+	
+}
+.zoola-box .form-control {
+    border: medium none;
+    border-radius: 8px;
+    color: #0d406b;
+    font-family: SourceSansPro-Regular;
+    font-size: 20px;
+    height: 50px;
+}
+.zoola-box textarea.form-control {
+    height: auto;
+}
+.form-group {
+    margin-bottom: 0px;
+}
+.no-border-radius{
+	border-radius: 0px !important;
+}
+.alert-message{
+    padding-left:10px;
+    font-family: SourceSansPro-Regular;
+	color: #F95050;
+	font-size: 14px;
+}
+.underline{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.pointer-hand{
+ cursor: pointer;	
+}
+.pointer-default{
+ 	cursor: default !important;
+}
+.space-10{
+	margin: 10px auto;	
+	padding: 5px 0px;
+}
+.space-5{
+	margin: 5px auto;	
+	padding: 2px 0px;
+}
+.col-centered{
+	float: none;
+	margin: 0 auto;
+}
+.d-block-m{
+    display: inline;
+}
+.d-block{
+	 display: block !important;
+}
+.d-none{
+    display: none;
+}
+.modal {
+   overflow-x: hidden;
+    overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+.pl-fields-hide{
+	display: none;
+}
+.pl-fields-show{
+	display: block;
+}
+
+/*---------- General Styles -------------*/
+
+/*-------- Padding | Margin | Font-size | Align --------*/
+
+.height-50{
+	height: 50px;	
+}
+.margin-5{
+	margin: 5px !important;	
+}
+.margin-10{
+	margin: 10px !important;	
+}
+.no-margin{
+	margin: 0px !important;	
+}
+.no-margin-top{
+	margin-top: 0px !important;	
+}
+.no-margin-right{
+	margin-right: 0px !important;	
+}
+.no-margin-bottom{
+	margin-bottom: 0px !important;	
+}
+.no-margin-left{
+	margin-left: 0px !important;	
+}
+.margin-tb-10{
+	margin: 10px 0px !important;	
+}
+.margin-tb-15{
+	margin: 15px 0px !important;	
+}
+.margin-top-5{
+	margin-top: 5px !important;
+}
+.margin-top-10{
+	margin-top: 10px !important;
+}
+.margin-top-15{
+	margin-top: 15px !important;
+}
+.margin-top-20{
+	margin-top: 20px !important;
+}
+.margin-top-30{
+	margin-top: 30px !important;
+}
+
+.margin-left-5{
+	margin-left: 5px !important;
+}
+.margin-left-10{
+	margin-left: 10px !important;
+}
+.margin-left-20{
+	margin-left: 20px !important;
+}
+.margin-left-30{
+	margin-left: 30px !important;
+}
+
+.margin-right-5{
+	margin-right: 5px !important;
+}
+.margin-right-10{
+	margin-right: 10px !important;
+}
+.margin-right-20{
+	margin-right: 20px !important;
+}
+.margin-right-30{
+	margin-right: 30px !important;
+}
+
+
+.margin-bottom-5{
+	margin-bottom: 5px !important;
+}
+.margin-bottom-10{
+	margin-bottom: 10px !important;
+}
+.margin-bottom-15{
+	margin-bottom: 15px !important;
+}
+.margin-bottom-20{
+	margin-bottom: 20px !important;
+}
+.margin-bottom-30{
+	margin-bottom: 30px !important;
+}
+
+.no-padding { 
+    padding: 0px !important;
+}
+.no-padding-left {
+    padding-left: 0px !important;
+}
+.no-padding-right { 
+    padding-right: 0px!important;
+}
+.no-padding-bottom{
+    padding-bottom: 0px !important;
+}
+.no-padding-top{
+    padding-top: 0px !important;
+}
+
+.padding-5{
+	padding: 5px !important;	
+}
+.padding-10{
+	padding: 10px !important;	
+}
+.padding-15{
+	padding: 15px !important;	
+}
+.padding-20{
+	padding: 20px !important;	
+}
+.padding-30{
+	padding: 30px !important;
+}
+
+.padding-top-5{
+	padding-top: 5px;	
+}
+.padding-top-10{
+	padding-top: 10px !important;	
+}
+.padding-top-15{
+	padding-top: 15px;	
+}
+.padding-top-20{
+	padding-top: 20px;	
+}
+.padding-top-30{
+	padding-top: 30px;	
+}
+.padding-top-40{
+	padding-top: 40px;	
+}
+
+.padding-right-5{
+	padding-right: 5px !important;	
+}
+.padding-right-10{
+	padding-right: 10px;	
+}
+.padding-right-20{
+	padding-right: 20px;	
+}
+.padding-right-30{
+	padding-right: 30px;	
+}
+.padding-right-40{
+	padding-right: 40px;	
+}
+
+.padding-bottom-5{
+	padding-bottom: 5px;	
+}
+.padding-bottom-10{
+	padding-bottom: 10px !important;	
+}
+.padding-bottom-15{
+	padding-bottom: 15px;	
+}
+.padding-bottom-20{
+	padding-bottom: 20px;	
+}
+.padding-bottom-30{
+	padding-bottom: 30px;	
+}
+.padding-bottom-40{
+	padding-bottom: 40px;	
+}
+
+.padding-left-5{
+	padding-left: 5px;	
+}
+.padding-left-10{
+	padding-left: 10px;	
+}
+.padding-left-20{
+	padding-left: 20px;	
+}
+.padding-left-30{
+	padding-left: 30px;	
+}
+.padding-left-40{
+	padding-left: 40px;	
+}
+
+.padding-leftright-30{
+	padding: 0px 30px;	
+}
+.line-height-15{
+	line-height: 15px;	
+}
+.line-height-20{
+	line-height: 20px;	
+}
+.line-height-25{
+	line-height: 25px;	
+}
+
+
+.font-40{
+	font-size:40px !important;
+}
+.font-35{
+	font-size:35px !important;
+}
+.font-30{
+	font-size:30px !important;
+}
+.font-25{
+	font-size:25px !important;
+}
+.font-20{
+	font-size: 20px !important;
+}
+.font-18{
+	font-size: 18px !important;
+}
+.font-15{
+	font-size: 15px !important;
+}
+.font-10{
+	font-size: 10px !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+.text-right {
+    text-align: right !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.text-justify {
+    text-align: justify !important;
+}
+/*-------- / Padding | Margin | Font-size | Align --------*/
+
+
+
+/* ---------- Header Styles -----------------*/
+.navbar {
+    border-radius: 0px !important;
+}
+.navbar-default {   
+    border-color: #F8EC1C;
+}
+.main-menu-txt {
+	font-family: SourceSansPro-Regular;
+	font-size: 28px;
+	color: #193B5A;
+}
+
+.menu-text{
+	color: #0D406B;
+    float: left;
+    padding: 5px 10px 0px;
+    text-align: center;
+	cursor: pointer;
+}
+.menu-text a span{
+    font-family: Montserrat-Bold;
+    font-size: 20px;
+     color: #0d406b;
+}
+.signup-button {
+    background-color: transparent;
+    border: 3px solid #0d406b;
+    border-radius: 6px;
+    color: #0d406b;
+     float: left;
+    font-family: Montserrat-Bold;
+    font-size: 20px;
+    padding: 4px 30px;
+    text-align: center;
+	cursor: pointer;
+    margin: 0px 10px;
+	transition: all 0.3s ease 0s; 
+}
+.signup-button:hover{
+	background-color: #0D406B;	
+	color: #fff;
+}
+.login-button{
+	background-color: transparent;
+    border: 3px solid #0d406b;
+    border-radius: 6px;
+    color: #0d406b !important;
+    cursor: pointer;
+    font-family: Montserrat-Bold;
+    font-size: 20px;
+    margin: 10px 0px;
+    padding: 4px 0;
+    text-align: center;
+    width: 150px;	
+	display: inline-block;
+}
+.signup-button a{
+    color: #0d406b;
+}
+.info-notification{
+	position: relative;	
+}
+.info-notification .badge{
+	font-size: 9px;
+    font-weight: normal;
+    line-height: 12px;
+    padding: 2px 2px 2px 3px;
+    position: absolute;
+    right: 5px;
+    top: 3px;
+}
+.info-notification .badge-popup{
+	
+}
+.menu-list .info-notification{
+	position: relative;	
+	float: left;
+}
+.menu-list .info-notification .badge-red{
+	background-color: #e30613;
+	border: 3px solid #e9edf1;
+	border-radius: 50%;
+	width: 22px;
+	height: 22px;
+    color: #fff !important;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+	display: inline-block;
+	
+	font-size: 12px;
+    font-weight: normal;
+    line-height: 12px;
+    padding: 2px 2px 2px 3px;
+    position: absolute;
+    right: 5px;
+    top: -3px;
+}
+.badge-red{
+	background-color: #e30613;
+	border: 3px solid #f8ec1c;
+	border-radius: 50%;
+	width: 22px;
+	height: 22px;
+    color: #fff !important;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+	display: inline-block;
+}
+
+.wallet-amount{
+   padding-right: 5px;
+   vertical-align: middle;
+}
+
+
+/*------- Menu POPUP Modal Styles Start -------*/
+
+.modal-open .modal{
+	padding-right: 0px !important;	
+}
+.menu-dialog{
+	width: 270px;
+	margin: 0px !important;
+	float: right;
+	height: 100%;
+	
+}
+.modal.fade .menu-dialog {
+    transform: translate(0px, 0px);
+    transition: transform 0.3s ease-out 0s;
+}
+
+.menu-dialog .modal-content{
+	border-radius: 0px!important;
+	height: 100%;
+	background-color: #e9edf1;
+}
+.modal.fade:not(.in).right .menu-dialog {
+    -webkit-transform: translate3d(50%, 0, 0);
+    transform: translate3d(50%, 0, 0);
+}
+.menu-dialog .close-icon{
+	float: left;
+    margin-left: -45px;
+    margin-top: 15px;	
+	cursor: pointer;
+}
+.menu-list{
+	padding-left: 0px;	
+	background-color: #e9edf1;
+}
+.menu-list li img{
+	float: left;
+	margin-right: 15px;
+}
+.menu-list li a{
+	
+}
+.menu-list li{
+	list-style: none;
+	padding: 8px 15px;
+	border-bottom: 2px solid #fff;
+	background-color: #e9edf1;
+}
+.menu-list li .active{
+	background-color: #D1D8E1 !important;
+}
+.menu-list li span{
+	color: #0D406B;
+    font-family: SourceSansPro-Light;
+    font-size: 22px;	
+	vertical-align: middle;
+}
+.m-title-dec{
+    font-family: SourceSansPro-Semibold !important;
+	font-size: 16px !important;
+    padding-left: 45px !important;
+	display: block;
+}
+.menu-list li input{
+	background: none;	
+	border: none;
+	border-bottom: 0px solid #bfc2c0;
+	
+	 width: 170px;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #bfc2c0;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #bfc2c0;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #bfc2c0;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #bfc2c0;
+}
+
+/*------- Menu Modal Styles End -------*/
+
+/*------- Login Popup Styles -------*/
+.modal-sm{
+	width: 360px !important;
+	margin-top: 2% !important;
+}
+.social-header{
+	padding: 15px;	
+}
+.social-body{
+	padding: 0px 20px 20px;	
+}
+.bg-fb-blue{
+	background: #3b5998 !important;	
+}
+.btn-fb{
+	padding: 10px;	
+}
+.btn-fb img{
+	float: left;	
+}
+.fb-txt{
+	line-height: 20px;
+	font-family: SourceSansPro-Semibold;
+    font-size: 20px;
+	color: #fff;
+}
+.bg-line {
+	border-bottom:1px solid #0D406B;
+	height:1em;
+	text-align:center;
+}  
+.bg-line span {
+	font-family: SourceSansPro-Regular;
+	font-size: 20px;
+    color: #0D406B;
+    display:inline-block;
+    margin:0 auto;
+    background: #D1D8E1;
+    padding:0 10px;
+	line-height: 22px;
+}
+.btn-signup{
+	background-color: #D1D8E1;
+	border: 3px solid #0D406B;
+	border-radius: 6px;
+    color: #0d406b;
+    display: block;
+    width: 100%;
+	
+}
+.btn-signup:hover, .btn-signup:focus, .btn-signup.focus{
+	background-color: #D1D8E1;
+}
+/*------- / Login Popup -------*/
+
+
+/* ---------- / Header Styles  -----------------*/
+
+
+/*------------- Accordian css -----------------*/
+
+.panel{
+    border: 0px;
+	background-color: transparent;
+	box-shadow: none;
+}
+.panel-group{
+	margin-bottom: 0px;	
+}
+.panel-body{
+	padding: 0px;	
+	border-top: none !important;
+}
+.panel-default {
+    border-color: transparent;
+	box-shadow: none !important;
+    background-color: transparent;
+	margin: 0px 10px;
+}
+.panel-default .panel-heading a{
+    display: block;
+    
+}
+.panel-default .panel-heading a:after {
+  font-family: 'FontAwesome';
+  content: "\f107";
+  float: right;
+  font-size: 45px;
+  line-height: 28px;
+  width: 30px;
+  color: #0d406b;
+}
+.panel-default .panel-heading a.collapsed:after {
+  content: "\f104";
+   
+}
+.panel-title {
+	font-family: Montserrat-Regular;
+    color: #0d406b;
+    font-size: 26px;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+}
+.panel-default > .panel-heading {
+    background-color: #D1D8E1;
+    color: #fff;
+	border-radius: 10px;
+	padding: 15px 20px;	
+	border: 0px;
+}
+
+.panel-default > .playerchat-heading{
+	background-color: #1B998B !important;
+	cursor: pointer;
+	
+}
+.panel-default > .livecomm-heading{
+	background-color: #00B4F7 !important;
+	cursor: pointer;	
+}
+.playerchat-heading .panel-title span, .livecomm-heading .panel-title span{
+	vertical-align: middle;
+}
+/*----------- / Accordian Syles ----------*/
+
+
+/*------- Zoola dropdown Syles ------------*/
+
+.playzoola-dropdown{
+	border: 3px solid #0D406B;	
+	padding: 2px 55px;
+	border-radius: 30px;
+}
+.zoola-select {
+    
+    border-radius: 30px;
+    display: block;
+    height: 45px;  
+    overflow: hidden; 
+    position: relative;
+    
+    width: 100%;
+/*  -webkit-box-shadow: 0px 3px 3px 0px rgba(2,35,61,0.20);
+   	   -moz-box-shadow: 0px 3px 3px 0px rgba(2,35,61,0.20);
+    		box-shadow: 0px 3px 3px 0px rgba(2,35,61,0.20); */
+}
+.select-big{
+    width: 80% !important;
+}
+.starQuestion {
+    float: left;
+}
+select::-ms-expand{
+  display:none !important;
+}
+.zoola-select select{     
+	font-family: Montserrat-Bold;
+    font-size: 18px;
+    color: #0D406B;
+    background-color: transparent;
+    border: 0 none;
+    height: 45px;
+    padding: 5px 40px 5px 20px;
+    width: 100%;
+	float: left;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+    		appearance: none;
+}
+.zoola-select:after { 
+    color: #D1D8E1;
+    content: "\f107";
+    font-family: FontAwesome;
+    font-size: 45px;
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    top: -9px;   
+    z-index: 1;
+}
+.zoola-select select:focus {
+    border: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+:focus{
+    outline: none !important;
+}
+
+.title-dropdown .zoola-select{
+	border-radius: 8px !important;
+	height: 50px;
+}
+
+.title-dropdown select{
+	font-family: SourceSansPro-Regular;
+	height: 50px;
+}
+
+.title-dropdown .zoola-select::after{
+	top: -5px;	
+}
+/*------- / Zoola dropdown css ------*/
+
+
+/*--------- zoola share buttons -------*/
+.share-social{
+	border-radius: 16px;
+	padding: 10px 12px;
+	text-align: center;
+	cursor: pointer;
+	margin-top: 10px;
+}
+.share-social img{
+	float: left;	
+	padding-left: 13px;
+	padding-top: 5px;
+}
+.share-social span{
+	font-family: Montserrat-Bold;
+	font-size: 27px;
+	font-variant: uppercase;
+	color: #0D406B;
+	vertical-align: middle;
+	text-align: center;
+	display: inline;
+	line-height: 30px;
+}
+/*--------- / zoola share buttons -------*/
+
+
+/*--------- Checkbox CSS start ---------*/
+.checkbox {
+  padding-left: 20px;
+  display: inline-block;
+ }
+.checkbox label {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  padding-left: 10px; 
+}
+.checkbox label::before 
+{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 0;
+  margin-left: -20px;
+  margin-top: -2px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  background-color: #fff;
+  -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+ 	   -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+      	  transition: border 0.15s ease-in-out, color 0.15s ease-in-out; 
+}
+.checkbox label::after 
+{
+  display: inline-block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 0;
+  top: 0;
+  margin-left: -20px;
+  padding-left: 5px;
+  padding-top: 1px;
+  font-size: 15px;
+  color: #555555;
+}
+.checkbox input[type="checkbox"]
+{
+    opacity: 0;
+    z-index: 1; 
+    height: 25px;
+    width: 25px;
+    margin-left: -20px;
+    margin-top: 2px;
+    cursor: pointer;
+
+}
+.checkbox input[type="radio"]
+{
+    opacity: 0;
+    z-index: 1; 
+    height: 25px;
+    width: 25px;
+    margin-left: -20px;
+    margin-top: -2px;
+    cursor: pointer;
+	position: absolute;
+	
+
+}
+/*.checkbox input[type="checkbox"]:focus + label::before,
+.checkbox input[type="radio"]:focus + label::before {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px; }*/
+.checkbox input[type="checkbox"]:checked + label::after,
+.checkbox input[type="radio"]:checked + label::after {
+	font-family: "FontAwesome";
+	content: url(/images/check-mark.svg);
+	padding-top: 3px;
+
+}
+.checkbox input[type="checkbox"]:indeterminate + label::after,
+.checkbox input[type="radio"]:indeterminate + label::after {
+	display: block;
+	content: "";
+	width: 10px;
+	height: 3px;
+	background-color: transparent !important;
+	border-radius: 2px;
+	margin-left: -16.5px;
+	margin-top: 7px;
+}
+
+.checkbox-mobile label{
+	display: block;
+	font-weight: normal;
+		
+}
+.checkbox-mobile label div{
+	display: inline-block;
+	padding-left: 20px;	
+}
+
+.checkbox-mobile label input[type="checkbox"]{
+	display: inline-block;
+	position: absolute;
+}
+
+/*--------------- / Checkbox CSS End ----------*/
+
+
+
+/*--------- TOP UP Css Start---------*/
+.topup-balance{
+	font-family: Montserrat-Bold;
+	font-size: 30px;
+	line-height: 50px;
+}
+.topup-round-white{
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 5px 20px;
+	display: block;
+	margin: 20px 25px;
+}
+.topup-bal{
+	font-family: SourceSansPro-Light;
+	font-size: 20px;
+	color: #0D406B;
+    line-height: 25px;
+}
+.topup-round-lightblue{
+	
+	background-color: #d1d8e1;
+	border-radius: 32px;
+	display: block;
+}
+.selected-topup{
+    background-color: #f8ec1c;
+}
+.topup-value{
+	font-family: Montserrat-Regular;
+	font-size: 36px;
+	text-align: center;
+	padding: 5px 0px;
+	margin: 0px 20px;
+}
+.my-profile .five-z{
+	/*color: #8AA2B7;*/
+	vertical-align: middle;
+}
+.my-profile .five-z span{
+	vertical-align: middle;
+}
+
+.topup-value input{
+	border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #0D406B;
+    width: 90px;	
+	 line-height: 34px;
+}
+.sellticket-price input{
+	line-height: 25px;
+	border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #0D406B;
+    width: 50px;	
+}
+.capsle-top-score{
+	display: inline-block;	
+	text-align: right;
+	min-width: 85px;
+	font-family: Montserrat-Bold;	
+	background-color: #d1d8e1;
+	border-radius: 35px;
+	position: relative;
+	vertical-align: middle;
+	line-height: 36px;
+}
+.capsle-top-score span{
+	padding-right: 5px;	
+	padding-left: 10px;	
+	vertical-align: middle;
+	font-size: 20px;
+}
+.capsle-top-score2{
+	display: inline-block;	
+	text-align: left;
+	width: 85px;
+	font-family: Montserrat-Bold;
+	font-size: 24px;
+	background-color: #d1d8e1;
+	border-radius: 35px;
+	position: relative;
+	vertical-align: middle;
+	line-height: 36px;
+}
+.capsle-top-score2 span{
+	padding-left: 5px;	
+	vertical-align: middle;
+}
+
+.capsle-top-score-right {
+    background-color: #fff;
+    border-radius: 35px;
+    display: inline-block;
+    height: 25px;
+    margin-left: -15px;
+    vertical-align: middle;
+    width: 150px;
+}
+
+.capsle-top-score-left {
+    background-color: #fff;
+    border-radius: 35px;
+    display: inline-block;
+    height: 25px;
+    margin-right: -15px;
+    vertical-align: middle;
+    width: 150px;
+}
+.top-score-text{
+	padding-top: 3px;
+		
+}
+.panel-footer{
+    border: none;
+}
+.quick-topup-box{
+    background-color: #e9edf1;
+    border-radius: 0px 0px 16px 16px;
+}
+
+.add-card-box{
+	background-color: #d1d8e1;
+	border-radius: 16px;	
+	margin-bottom: 20px;
+}
+.add-card-box-empty{
+	background-color: #E9EDF1;
+	border-radius: 16px;
+   
+}
+.add-card-box-empty .saved-cards{
+	font-family: SourceSansPro-Semibold;
+	color: #0d406b;
+	font-size: 26px;
+	padding-top: 5px;
+	text-align: center;
+}
+.close-btn{
+	background-color: #fff;
+    border: 1px solid #0d406b;
+    border-radius: 16px;
+    bottom: 8px;
+    display: inline-block;
+    float: right;
+    padding: 5px;
+    position: relative;
+    right: -8px;
+}
+/*--------- / TOP UP & Add card Css End ---------*/
+
+
+/*------- Statements css start --------*/
+.statement{
+	border-radius: 16px;
+	padding: 10px;
+	margin-top: 15px;
+}
+.statement-navigation{
+	margin-top: 20px;
+}
+.statement-navigation ul{
+	padding-left: 0px;
+}
+.statement-navigation li{
+	display: inline-block;
+	border-radius: 16px;
+	background-color: #F8EC1C;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	line-height: 58px;
+	font-family: SourceSansPro-Semibold;
+	font-size: 24px;
+	margin-left: 5px;
+	cursor: pointer;
+}
+.statement-navigation li.last{
+	
+	margin-left: 40px;
+}
+.statement-navigation li.active{
+	width: 50px;
+	height: 50px;
+	line-height: 48px;
+	color: #fff;
+	background-color: #0D406B;
+}
+/*-------- / Statement end  ---------*/
+
+
+/*----------- Zoola Tabs - change team - Favourite team ------*/
+.zoola-tabs{
+	text-align: center;	
+	border-bottom: 0px;
+}
+.zoola-tabs li{
+	float:none;
+    display:inline-block;
+}
+.zoola-tabs > li:last-child > a {
+    margin-left: -10px;
+    z-index: 0;
+}
+.zoola-tabs > li.active > a, .zoola-tabs > li.active > a:hover, .zoola-tabs > li.active > a:focus{
+	background-color: #d1d8e1;
+	cursor: pointer;
+	color: #0d406b;
+}
+.zoola-tabs > li > a{
+	background-color: #9caab6;
+	color: #fff;
+	font-size: 16px;
+	font-family: SourceSansPro-Bold;
+    padding: 10px;
+	border-radius: 16px 16px 0px 0px;
+	line-height: 18px;
+    z-index: 1;
+    text-transform: uppercase;
+}
+.zoola-tabs > li .active a{
+	background-color: #d1d8e1;
+}
+.zoola-tabs > li > a:hover{
+	background-color: #d1d8e1;
+	color: #0d406b;
+	cursor: pointer;
+}
+.zoola-tabs > li .active a:hover{
+	background-color: #d1d8e1;
+}
+.zoola-tab-content .tab-pane{
+	background-color: #d1d8e1;
+	border-radius: 16px;
+	padding: 20px;	
+}
+.fteam-footer{
+	background-color: #F8EC1C;
+	text-align: center;
+	border-radius: 0px 0px 44px 44px;
+}
+.fteam-header{
+	border-radius: 44px 44px 0px 0px !important;
+}
+
+.premier-team img{
+	position:relative;
+	width: 87px;
+}
+.premier-team{
+	display: inline-block;
+    margin: 5px 18px;
+    position: relative;
+    text-align: center;
+    width: 115px;
+}
+.premier-team .team-name{
+	background-color: #fff;
+    border-radius: 16px;
+    bottom: 35px;
+    display: block;
+    position: relative;
+	padding: 0px 5px;
+	line-height: 20px;
+	cursor: pointer;
+    
+}
+.premier-team .selected-team{
+	background-color: #0D406B;
+	color: #fff;
+	font-weight: bold;
+}
+/*----------- / Zoola Tabs - change team  ------*/
+
+/*-------Deposit limit ---------------*/
+.self-exclusion {
+    padding: 30px;
+}
+.self-exclusion .checkbox label{
+	 line-height: 15px;
+	 padding-left: 12px;
+}
+
+.self-exclusion{
+	padding: 30px;
+}
+
+.self-exclusion .topup-round-lightblue{
+	font-size: 26px;	
+	text-align: center;
+	font-family: Montserrat-Regular;
+	margin: 35px 20px 0px 20px;
+	padding: 5px 0px;
+}
+.self-exclusion .topup-round-lightblue input{
+    width: 70px;
+}
+/*------- / Deposit limit ---------------*/
+
+/*------- Complete sign up --------------*/
+.comp-signup-left .row{
+	margin-right: 10px;
+}
+.comp-signup-right .row{
+	margin-left: 10px;
+}
+/*------- Complete sign up --------------*/
+
+
+/*-------------- Leader Board css  -----------------------*/
+
+.players-banner img{
+	display: inline-block;
+	width: 80px;
+	margin: 0 15px;
+}
+.players-banner .more-players{
+	display: inline-block;
+	font-family: SourceSansPro-Semibold;
+	color: #0D406B;
+    font-size: 28px;
+	border-radius: 40px;
+	text-align: center;
+	padding: 15px 15px;
+	cursor: pointer;
+}
+
+/*-------------- / Game Qns css  -----------*/
+.game-title{
+    text-align: center;
+}
+.game-title span {
+  	vertical-align: middle;
+}
+.capsle{
+	background-color: #fff;
+	border-radius: 9px;	
+	padding-right: 8px;
+	text-align: center;
+	display: inline-block;
+	font-family: SourceSansPro-Semibold;
+	color: #0D406B;
+    font-size: 19px;
+    line-height: 26px;
+	min-width: 100px;
+	margin: 20px 0px;
+}
+.capsle .capsle-text{
+   vertical-align: middle;
+   
+}
+.capsle img{
+    margin-right: 5px;
+    width: 30px;
+	float: left;
+}
+.pay-out .payout-top25{
+	line-height: 20px;	
+}
+.pay-out ul{
+	list-style: none;	
+	margin: 10px 0px 5px;
+	padding-left: 0px;
+}
+.pay-out ul li{
+	display: inline-block;
+	padding: 0 10px;
+	vertical-align: middle;
+	margin-bottom: 5px;
+}
+.score-box {
+	background-color: #fff;
+    border-radius: 40px;
+    display: inline-block;
+    line-height: 36px;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 180px;
+}
+.score-timer {
+	color: #0d406b;
+    font-family: SourceSansPro-Semibold;
+    font-size: 18px;
+    line-height: 20px;
+    padding-bottom: 5px;
+}
+.kickoff{
+    color: #acb9c3;
+    font-family: SourceSansPro-Semibold;
+    font-size: 20px;
+	text-transform: uppercase;
+}
+.leaderboard-team {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+.leaderboard-team img{
+	width: 125px;	
+}
+.lb-team-name {
+    background: #e9edf1 none repeat scroll 0 0;
+    border-radius: 12px;
+    bottom: 35px;
+    color: #0d406b;
+    display: block;
+    font-family: SourceSansPro-Semibold;
+    font-size: 18px;
+    padding: 0 15px;
+    position: relative;
+}
+.lb-home-team{
+	margin-right: -35px;
+}
+.lb-away-team{
+	margin-left: -35px;
+}
+.pre-lb-home-team{
+	margin-right: 15px;
+}
+.pre-lb-away-team{
+	margin-left: 15px;
+}
+.game-qns-box{   
+    background-color: #fff;
+	padding: 15px;
+	border-radius: 12px !important;    
+    margin: 10px 0px;    
+}
+.game-question{
+	color: #0d406b;
+    display: inline-block;
+    font-family: SourceSansPro-Semibold;
+    font-size: 20px;
+    line-height: 22px;
+    padding-top: 12px;
+}
+.number{
+	border: 2px solid #0D406B;
+    border-radius: 50%;
+    display: inline-block;
+    font-family: Montserrat-bold !important;    
+    text-align: center;
+    vertical-align: middle;    
+	margin-top: 3px;
+	cursor: pointer;
+	
+	font-size: 18px;
+    line-height: 37px;
+	width: 40px;
+	height: 40px;
+}
+.z-star{
+	border: 2px solid #f2e721 !important;
+}
+.z-star .yellow{
+	color: #f2e721 !important;	
+}
+.z-star-icon{
+    font-size: 20px !important;
+    line-height: 40px;
+    padding-left: 3px;
+}
+.number-img{
+	margin-left: 0px;	
+}
+.number-small{
+	border: 2px solid #0D406B;
+    border-radius: 50%;
+    display: inline-block;
+    font-family: Montserrat-bold;
+    font-size: 22px;
+    height: 40px;
+    line-height: 37px;
+    text-align: center;
+    vertical-align: middle;
+    width: 40px;
+}
+.viewstats{
+	background-color: #f8ec1c;
+	border-radius: 12px 12px 0 0;
+	text-align: center;
+	color: #0d406b;
+    font-family: SourceSansPro-Semibold;
+    font-size: 20px;
+	cursor: pointer;
+}
+.zoola-btn-viewstats{
+	border-radius: 30px;
+	background-color: #F8EC1C;
+	padding: 10px 13px;
+	cursor: pointer;
+	font-family: SourceSansPro-Semibold;
+	color: #0D406B;
+	font-size: 18px;
+	display: inline-block;
+	margin-bottom: 15px;
+	vertical-align: middle;
+}
+.watchlist{
+	color: #0d406b;
+	font-family: SourceSansPro-Semibold;
+	font-size: 20px;
+    cursor: pointer; 
+	display: inline-block;
+	border: 2px solid #0d406b;
+	border-radius: 8px;
+	padding: 2px 12px 4px;
+	background-color: #d1d8e1;
+	
+}
+.wl-disable{
+    color: #9CAAB6;
+    cursor: default;
+	text-decoration: none;
+	border: 2px solid #9CAAB6;
+	background-color: #e9edf1 !important;
+}
+.wl-disable h5{
+	color: #9CAAB6;
+}
+.selected-star-qn{
+	border: 2px solid #f8ec1c;
+}
+.selected-star-qn-h2h {
+ /*border: 2px solid #f8ec1c;
+ border-radius: 50%;
+ -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 4px rgba(3, 64, 107, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 4px rgba(13, 64, 107, .6);
+     
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;*/
+
+ border: 2px solid #f8ec1c;
+ border-radius: 8px;
+ padding: 5px;
+
+}
+
+/* BuyTicketModal Modal Start */
+.BuyTicketModal{
+	border-radius: 25px;
+	border: 3px solid #0D406B;	
+	background-color: #F7F8FA;
+}
+.modal-header{
+	border:0px;
+	min-height: auto;
+	padding: 10px;	
+}
+.modal-footer{
+    border: 0px;
+}
+.answer{
+	border-radius: 30px;
+    display: inline-block;
+    font-size: 23px;
+    line-height: 25px;
+    padding: 10px 8px;
+    text-align: center;
+    width: 150px;
+	font-family: SourceSansPro-Semibold;
+	word-wrap: break-word;
+}
+.question{
+	color: #0D406B;
+    font-family: SourceSansPro-Semibold;
+    font-size: 23px;
+    vertical-align: middle;
+	
+}
+.modal-dialog {
+    margin: 30px auto;
+    width: 750px;
+}
+.doble-points{
+	font-family: SourceSansPro-Regular;
+	 font-size: 10px;
+	 line-height: 10px;	
+	 display: inline-block;
+	 vertical-align: middle;
+}
+.ticket-title{
+    display: inline-block;
+}
+.modal-body .game-qns{
+	padding: 10px;	
+}
+.sellticket-points{
+	font-size: 20px;
+	vertical-align: middle;	
+}
+.sellticket-price {
+    font-family: SourceSansPro-Semibold;
+    font-size: 25px;
+    padding: 5px 0;
+    text-align: center;
+}
+.sellticket-round-lightblue {
+    background-color: #d1d8e1;
+    border-radius: 32px;
+    width: 110px;
+	display:inline-block;
+}
+/* / BuyTicketModal Modal End */
+
+/*-------------- / Game Qns css  -----------*/
+.well-lg{
+    background-color: #F7F8FA;
+    border-radius: 12px;
+	border: 0px;
+	padding: 15px;
+}
+.leaderboard-number{
+  	color: #fff;
+    font-family: Montserrat-Regular;
+    font-size: 26px;
+    left: 5px;
+    position: relative;
+    top: 6px;
+}
+.capsle-number img{
+	float: right;
+    position: relative;
+    right: -2px;
+    width: 50px;
+}
+.capsle-number {
+    background-color: #0d406b;
+    border-radius: 35px;
+    width: 110px;
+	text-align: center;
+	/*display: inline-block;*/
+    float: left;
+}
+.LB-playername{
+    color: #0d406b;
+    font-family: SourceSansPro-Semibold;
+    font-size: 24px;
+    padding-left: 10px;
+    vertical-align: middle;
+    margin-top: 5px;
+    float: left;
+}
+.point-box1 {
+	background-color: #E9EDF1;
+	border: 2px solid #D1D8E1;
+	border-radius: 21px;
+	overflow: hidden;
+	min-width: 130px;
+	display: inline-block;
+    
+}
+.point-box1 .progress-bar{
+	border-radius: 19px 0px 0px 19px;
+	background-color: #D1D8E1;
+	line-height: 33px;
+	text-align: center;
+	box-shadow: none;
+	font-family: SourceSansPro-Semibold;
+	font-size: 22px;
+	color: #0D406B;
+	
+}
+.point-box1 .points {
+    display: inline-block;
+    padding: 3px 5px 5px 5px;
+    text-align: center;
+    width: 130px;
+}
+
+.player-pot-value{
+	background-color: #0d406b;
+    border-radius: 35px;
+    display: block;
+    padding: 6px 10px;   
+    text-align: center;   
+	font-family: Montserrat-Regular;
+	font-size: 26px;
+	color: #fff; 
+}
+.sell-ticket .topup-round-lightblue {
+    font-family: Montserrat-Regular;
+    font-size: 26px;
+    margin: 0px 30px;
+    padding: 5px 0;
+    text-align: center;
+}
+.sell-ticket  .topup-value input {
+	width: 70px;	
+}
+.sell-ticket .point-box1 .points{
+	width: 250px;	
+}
+.player-search input{
+	background: none;	
+	border: none;
+	border-bottom: 0px solid #bfc2c0;
+	font-size: 22px;
+	vertical-align: middle;
+}
+/*---------- ticket -------------*/
+.bg-gray{
+	background-color: #F7F7FA !important;
+}
+.lb-ticket{
+	border-radius: 30px;
+    display: inline-block;
+    position: relative;
+	margin-right: 5px;
+	margin-top: 15px;
+	
+	cursor: pointer;
+}
+.lb-ticket .ticket-number{
+	background-color: #0D406B;
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    font-family: Montserrat-Bold;
+    font-size: 24px;
+    height: 50px;
+	width: 50px;
+    line-height: 50px;
+   
+    text-align: center;
+    
+}
+.lb-ticket .game-results{
+	display: inline-block;
+    line-height: 19px;
+    padding: 5px 20px 5px 12px;
+    position: relative;
+    text-align: center;
+	vertical-align: bottom;
+}
+.lb-ticket .position{
+	display: block;
+	font-family: SourceSansPro-Regular;
+    font-size: 18px;
+}
+.lb-ticket .pot-value{
+	font-family: SourceSansPro-Semibold;
+    font-size: 18px;	
+}
+
+/*---------- / ticket -------------*/
+
+.zoola-pagination li{
+    float: left;
+    list-style: none;
+}
+.zoola-pagination li a{
+    border-radius: 20px;
+    font-size: 14px;
+     font-family: SourceSansPro-Regular;
+    padding: 5px 10px;
+}
+.zoola-pagination > li > a, .pagination > li > span {
+    background-color: #0D406B;
+    
+    color: #fff;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    margin-right: 10px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+}
+
+
+
+
+/* STATS OPTA Modal */
+.powered-by{
+	font-family: SourceSansPro-Regular;
+	color: #0d406b;
+	font-size: 18px;
+	vertical-align: middle;	
+}
+.stats{
+	font-family: SourceSansPro-Bold;
+	color: #0d406b;
+	font-size: 25px;
+	vertical-align: middle;	
+}
+.games-played{
+	margin-top: -20px;
+}
+.opta-line{
+	background-color: #0d406b;
+	height: 3px;
+	margin: 10px 50px;
+}
+.opta-vline{
+	border-left: 3px solid #0d406b;
+	height: 160px;
+	float: left;
+	margin: 10px 0px;
+}
+.comparison{
+	background-color: #fff;
+    border-radius: 35px;
+    display: block;
+    line-height: 28px;
+    margin-top: 5px;
+   min-width: 330px;
+   text-align: center;
+}
+.comp-left{
+	text-align: left;
+	float: left;
+}	
+.comp-right{
+	text-align: right;
+	float: right;
+}
+.comp-heading{
+	font-family: SourceSansPro-Light;
+	color: #0d406b;
+	font-size: 14px;
+	display: inline-block;	
+	padding-top: 5px;
+}
+.comparison span{
+	font-family: SourceSansPro-Semibold;
+	color: #0d406b;
+    font-size: 22px;
+	vertical-align: middle;	
+}
+.comp-left span{
+	padding-left: 8px;	
+}
+.comp-right span{
+	padding-right: 8px;	
+}
+.last-3-game{
+	margin-bottom: 8px;
+	margin-top: 7px;
+	display: inline-block;	
+}
+.score-box1{
+	color: #0D406B;
+    font-family: Montserrat-Bold;
+    font-size: 24px;
+	background: #d1d8e1 none repeat scroll 0 0;
+    border-radius: 100px;
+    float: left;
+    line-height: 16px;
+    padding: 15px 10px;
+    text-align: center;
+    width: 80px;	
+	position: relative;
+	z-index: 9999;
+}
+.last-3-game-left{
+	background-color: #fff;
+    border-radius: 35px;
+    display: inline-block;
+    float: left;
+    height: 25px;
+    margin-top: 11px;
+    position: relative;
+    width: 135px;
+	margin-right: -10px;
+}
+.last-3-game-right{
+	background-color: #fff;
+    border-radius: 35px;
+    display: inline-block;
+    float: left;
+    height: 25px;
+    margin-top: 11px;
+    position: relative;
+    width: 135px;
+	margin-left: -10px;
+}
+.last3game-text{
+	text-align: center;	
+	 padding-top: 2px;
+}
+.last-3-game-left img{
+	float: left;	
+	margin-top: -10px;
+}
+.last-3-game-right img{
+	float: right;
+	margin-top: -10px;	
+}
+.opta-v-divider{
+	background-color: #d1d8e1;
+	border-radius: 12px;
+	width: 4px;
+	height: 40px;	
+	position: relative;
+	z-index: 9999;
+	float: left;
+	top: 4px;
+}
+.last3game-left-text {
+    text-align: left;
+}
+.last3game-right-text {
+    text-align: right;
+}
+.last3game-left-text .lst3-middle{
+	font-size: 20px;
+	
+	line-height: 23px;	
+}
+.last3game-right-text .lst3-middle{
+	font-size: 20px;
+	
+	line-height: 23px;	
+}
+.lst3-middle img{
+	margin-top: -3px !important;
+	margin-left: 3px !important;
+	margin-right: 3px !important;	
+	float: none !important;	
+}
+.last-3-game-left-dead-ball {
+    background-color: #fff;
+    border-radius: 35px;
+    display: inline-block;
+    float: left;
+    height: 25px;
+    margin-right: -10px;
+    margin-top: 11px;
+    position: relative;
+    width: 155px;
+}
+.last-3-game-right-dead-ball {
+    background-color: #fff;
+    border-radius: 35px;
+    display: inline-block;
+    float: left;
+    height: 25px;
+    margin-left: -10px;
+    margin-top: 11px;
+    position: relative;
+    width: 175px;
+}
+.last-3-game-right-dead-ball img {
+    float: right;
+    margin-top: -10px;
+}
+.last-3-game-left-dead-ball img {
+    float: left;
+    margin-top: -10px;
+}
+.top-defenders-text{
+	line-height: 55px;
+	vertical-align: middle;	
+}
+.discipline-y-card span{
+	 font-family: SourceSansPro-Bold;	
+}
+.last-3-discipline{
+	width: 150px !important;	
+}
+/*------------ STATS OPTA Modal End ----------*/
+
+/*------ mini dashboard mobile  -----------*/
+.minidashboard-team{
+	display: inline-block;
+	margin-top: -60px;
+	margin-right: 30px;
+}
+.minidashboard-team img{
+	background-color: #e9edf1;
+    border-radius: 100%;
+    height: 120px;
+    padding: 15px;
+    width: 125px;	
+}
+.minidashboard-team .team-name {
+    background-color: #fff;
+    border-radius: 16px;
+    bottom: 50px;
+    display: block;
+    line-height: 20px;
+    margin: 0 15px;
+    padding: 0 8px;
+    position: relative;
+	text-align: center;
+}
+
+/*------ / mini dashboard mobile  -----------*/
+
+/*------- Player chat css ---------------*/
+.header-desktop{
+	background: #9caab6 !important;	
+}
+#flyzoo-embedded-chatroom{
+	
+}
+/*------- / Player chat css -----------*/
+
+/*-------------- / Leader Board css  -----------------------*/
+
+
+/*-------------- TEAM STATS  -----------------------*/
+
+.stats-team {
+    display: inline-block;
+}
+.stats-team img {
+    background-color: #e9edf1;
+    border-radius: 100%;
+    height: 195px;
+    padding: 25px;
+    width: 200px;
+}
+.stats-team .team-name {
+    background-color: #fff;
+    border-radius: 16px;
+    bottom: 70px;
+    display: block;
+    line-height: 20px;
+    margin: 0 25px;
+    padding: 5px;
+    position: relative;
+	text-align: center;
+}
+.stadium-box{
+	color: #0d406b;
+    font-family: SourceSansPro-Light;
+    font-size: 20px;
+	padding: 20px 10px;	
+	text-align: center;
+}
+.score-box-stats {
+    background: #d1d8e1 none repeat scroll 0 0;
+    border-radius: 100px;
+    color: #0d406b;
+    font-family: Montserrat-Bold;
+    font-size: 20px;
+    line-height: 16px;
+    padding: 5px;
+    text-align: center;
+    width: 80px;
+	display: inline-block;
+	margin: 5px auto;
+
+}
+
+.stats-players{
+	padding: 5px;
+	margin: 0px 5px;
+}
+.stats-players tr{
+	border-bottom: 2px solid #D1D8E1;
+	
+}
+.stats-players tr:last-child{
+	border-bottom: 0px solid #D1D8E1;
+	
+}
+.stats-players table th{
+	padding: 15px 5px;
+	font-size: 14px;
+	color: #0d406b;
+    font-family: SourceSansPro-Regular;
+
+}
+.stats-players table td{
+	padding: 15px 5px;
+	font-size: 18px;
+	color: #0d406b;
+    font-family: SourceSansPro-Light;
+}
+
+.match-stats-team {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+.match-stats-team img{
+	margin-top: -40px;
+    position: relative;
+    top: 45px;
+    width: 180px;
+    z-index: -2;
+}
+.match-team-name {
+    background: #e9edf1 none repeat scroll 0 0;
+    border-radius: 12px;
+    
+    color: #0d406b;
+    display: block;
+    font-family: SourceSansPro-Semibold;
+    font-size: 24px;
+    padding: 0 15px;
+    position: relative;
+}
+.match-vs{
+	font-family: SourceSansPro-Semibold;
+	color: #0d406b;
+	font-size: 24px;
+	border-radius: 50%;
+	background-color: #E9EDF1;
+	display: inline-block;
+	padding: 2px 10px;
+	margin: 0 15px;
+}
+.matchstats-slider .carousel-indicators{
+	position: relative;
+	width: 100%;
+	margin-left: auto;
+	margin-bottom: 5px;
+	left: 0;
+	bottom: 0;
+	
+}
+/*---- pz-calendar --------*/
+.pz-calendar .zoola-tabs li{
+	float: left;
+	margin-bottom: 0px;
+}
+.pz-calendar .zoola-tabs{
+	border-bottom: 3px solid #0d406b;	
+}
+.pz-calendar  .zoola-tabs > li.active > a, .pz-calendar  .zoola-tabs > li.active > a:hover, .pz-calendar  .zoola-tabs > li.active > a:focus{
+	background-color: #0d406b;
+	color: #fff;
+	border-color: #0d406b;
+}
+.pz-calendar .zoola-tabs > li > a{
+	font-family: SourceSansPro-Semibold;
+}
+.nav-tabs.zoola-tabs > li > a:hover{
+	border-color: transparent;
+}
+.pz-calendar .zoola-tabs > li:last-child > a {
+    margin-left: -3px;
+    z-index: 0;
+}
+.pz-calendar .zoola-tab-content .tab-pane {
+	padding: 10px;
+}
+.pz-calendar-date{
+	font-family: SourceSansPro-Regular;
+	color: #0d406b;
+	font-size: 18px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #0d406b;	
+	padding-left: 10px;
+}
+/*---- pz-calendar --------*/
+
+
+/*-------------- / TEAM STATS  -----------------------*/
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+/*--------- Footer Styles Start ---------*/
+
+.zoola-footer{
+	color: #fff;
+	font-family: SourceSansPro-Regular !important;
+	font-size: 20px;
+}
+.zoola-footer .f-title{
+    font-family: Montserrat-Regular;
+	font-size: 24px;
+	color: #D1D8E1;
+    letter-spacing: 1px;
+}
+.zoola-footer ul li{
+	list-style: none;
+	padding-top: 10px;
+}
+.zoola-footer ul{
+	padding-left: 0px;
+}
+.zoola-footer h2{
+	color: #fff;
+	font-size: 24px;
+	font-family: Montserrat-Regular;
+}
+.zoola-footer .social-icons{
+    text-align: center;
+    margin-top: 10px;
+}
+.zoola-footer .social-icons img{
+    width: 37px;
+}
+.zoola-footer .social-icons-img{
+	margin: 0 55px;	
+}
+.zoola-footer .footer-icons img{
+	margin: 0px 20px;
+}
+.zoola-footer hr{
+	background-color: #D1D8E1;
+    margin: 15px 0px;
+    height: 1px;
+}
+.footer-sign-up {
+    border: 2px solid #ffffff;
+	background-color: transparent;
+    border-radius: 10px;
+    color: #fff !important;
+    cursor: pointer;
+    margin: 30px 0px 0px 0px;
+    text-align: center;
+    display: block;
+	width: 100%;
+}
+.footer-sign-up:focus, .footer-sign-up:active, .footer-sign-up:hover{
+	color: #fff;	
+}
+.footer-sign-up h5{
+	margin: 0px !important;
+	padding: 10px 0;	
+}
+.zoola-footer a{
+    color: #d1d8e1;
+}
+.zoola-footer a:hover{
+    color: #d1d8e1;
+}
+/*--------- Footer Styles End ---------*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*------- My profile -------*/
+
+.myprofile-player-name{
+    font-family: Montserrat-Regular;
+	font-size: 26px;
+	color: #0D406B;
+    text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.myprofile-team {
+    background: #e9edf1 none repeat scroll 0 0;
+    border-radius: 100%;
+    display: inline-block;
+    height: 135px;
+    padding-top: 12px;
+    width: 145px;
+	margin-bottom: 20px;
+}
+.myprofile-label{
+    font-family: SourceSansPro-Light;
+    font-size: 20px;
+    color: #0D406B;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.myprofile-team  img{
+	width: 135px;
+    height: 115px;
+	
+	padding: 10px;
+}
+.myprofile-team .team-name{
+    border-radius: 16px;
+    bottom: 50px;
+    display: block;
+    line-height: 20px;
+    padding: 0px 5px;
+	margin: 0px 5px;
+    position: relative;
+    background-color: #fff;
+}
+.contact-capsle{
+	background-color: #e9edf1 !important;
+	border-radius: 35px;
+	padding: 2px 8px;
+	
+}
+.contact-info input{
+	background: none;
+	border: none;
+	padding: 2px 5px;
+}
+.change-avatar-slider .carousel-control{
+	width: 3%;
+	opacity: 1;
+	margin-top: 45%;
+	text-shadow: none;
+}
+.change-avatar-slider .carousel-control.left {
+    background-image: none;
+    background-repeat: no-repeat;
+	left: -10px;
+	
+	
+}
+.change-avatar-slider .carousel-control.right {
+    background-image: none;
+    background-repeat: no-repeat;
+	right: -10px;
+	
+}
+.change-avatar-slider .thumb {
+    cursor: pointer;
+    display: inline-block;
+    margin: 4px 8px;
+}
+.change-avatar-slider .thumb img {
+  width: 90px; 
+  border-radius: 50%;
+  border: 2px solid #D1D8E1;
+}
+.change-avatar{
+	padding: 20px;
+	min-height: 510px;
+}
+.change-avatar-slider .selected-avatar img{
+	border: 2px solid #0D406B;
+	
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 4px rgba(3, 64, 107, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 4px rgba(13, 64, 107, .6);
+     
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+/*------- / My profile -------*/
+
+
+
+
+.game-created-list{
+	margin: 0px auto;	
+}
+.game-created-list li{
+	list-style: none;
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+
+
+
+.comp-signup{
+     display: none;
+}
+#accountP-p-league .premier-team {
+    width: 125px;
+}
+#accountP-championship .premier-team {
+    width: 125px;
+}
+
+.LB-mobile {
+    padding-top: 5px;
+}
+.create-new{
+    font-size: 34px;
+}
+
+
+
+
+
+
+
+/* -------------------------------------- Responsive CSS  - Mobile -----------------------------------------------------------*/
+
+@media screen and (min-width: 360px) {
+.modal-dialog{
+    margin: 30px auto;
+    width: 360px;
+}
+
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 776px){
+
+.text-center-m{
+	text-align: center !important;			
+}
+.panel-default > .panel-heading {
+	padding: 15px;	
+}
+.panel-default .panel-heading a::after {
+	width: 20px;
+}
+
+
+
+
+
+
+.header .text-right, .header .text-left
+{
+		/*text-align: center !important;  */
+}
+.subheader .text-right, .subheader .text-left
+{
+		text-align: center !important;  
+}
+.score .text-right, .score .text-left
+{
+	text-align: center !important;  
+}	
+.zoola-tab-content .text-center{
+	text-align: center;	
+}
+.header .kickoff-cop1{
+	padding-top: 10px !important;	
+}
+.jersey{
+    margin-top: -35px;
+}
+.qn-points img {
+    width: 75px;
+}
+.qn-icons-list ul li{
+    float: left;
+    margin-right: 5px;
+}
+.qn-icons-list-right ul li{
+     float: right;
+}
+.qn-points ul{
+	padding-left: 0px;	
+	padding-right: 0px;	
+}
+.qn-icons-list ul li img {
+    width: 35px;
+}
+.qn-icons-list-right ul li img {
+    width: 35px;
+    margin-left: 5px;
+}
+.qn-icons-list ul li span {
+    color: #0d406b;
+    font-size: 24px;
+    padding-left: 5px;
+}
+.qn-icons-list-right ul li span {
+    color: #0d406b;
+    font-size: 24px;
+    padding-left: 5px;
+}
+.score-cop {
+    color: #0d406b;
+    font-family: Montserrat-Bold;
+    font-size: 36px;
+    line-height: 40px;
+}
+.modal-dialog{
+    margin: 30px auto;
+    width: 320px;
+}
+.score h2{
+    font-size: 18px;
+     padding-top: 0;
+}
+.score .team-x h2 img{
+    width: 75px;
+    margin-right: 0px;
+     margin-top: 5px;
+}
+.score .team-y h2 img{
+    width: 75px;
+    margin-left: 0px;
+    margin-top: 5px;
+}
+.score .team-x h2 span{
+    float: none;
+    padding-top: 0px;
+}
+.score .team-y h2 span{
+    float: none;
+    padding-top: 0px;
+}
+.qn-points .padding-left-40{
+    padding-left: 20px !important;
+}
+.ticket-title{
+    display: block;
+    padding-bottom: 10px;
+}
+.ticket-title .padding-right-30{
+    padding-right: 0px;
+}
+.find-some {
+    font-size: 21px;
+    padding-top: 0px;
+    text-align: right;
+	line-height: 22px;
+}
+.banner-text{
+	min-height: 100px;	
+	text-align: right;
+}
+.banner-text .btn-team-room{
+	 font-size: 16px;
+	 margin-top: 10px;
+	 border-radius: 20px;
+}
+.stats-header h2{
+	padding-top: 0px;	
+}
+.zoola-btn-viewgame{
+	margin-left: 0px;	
+}
+.capsle-people {
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+.pot-capsle {
+    position: relative;
+}
+.comparison{
+	min-width: 290px;
+}
+.opta-header .text-right{
+    text-align: center;
+}
+.top-defenders-text {
+    line-height: 25px;
+    vertical-align: middle;
+} 
+.customise-profile{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+.zoola-tab-content .tab-pane{
+	border-radius: 36px;	
+}
+.social-icons{
+	margin-top: 15px;	
+}
+.player-position{
+    margin-top: 5px;
+}
+.upcoming-game-numbers{
+    margin-top: 7px;
+}
+.zoola-btn-remove{
+    margin-top: 6px;
+}
+
+.statement .st-time{
+	display: inline-block;
+	padding-left: 20px;
+}
+.statement .st-description{
+	padding-top: 0px;
+	padding-left: 0px;
+}
+
+.zoola-footer .footer-icons img{
+	margin: 0px 5px;
+}
+
+.d-block-m{
+    display: block;
+}
+.modal-sm{
+	width: 300px !important;
+	margin-top: 20% !important;
+}
+/*------ My profile  ------------*/
+.premier-team{
+	display: inline-block;
+    margin: 5px 12px;
+    position: relative;
+    text-align: center;
+    width: 115px;
+}
+.change-avatar-slider .carousel-control{
+	width: 10%;
+	opacity: 1;
+	
+	text-shadow: none;
+}
+.change-avatar-slider .carousel-control.left {
+    background-image: none;
+    background-repeat: no-repeat;
+	left: -12px;
+}
+.change-avatar-slider .carousel-control.right {
+    background-image: none;
+    background-repeat: no-repeat;
+	right: -12px;
+}
+.change-avatar-slider .thumb {
+    cursor: pointer;
+    display: inline-block;
+    margin: 4px 8px;
+}
+.change-avatar-slider .thumb img {
+  width: 65px; 
+  border-radius: 50%;
+}
+.change-avatar-slider .carousel-control{
+	margin-top: 80%;
+}
+.zoola-tab-content .tab-pane {
+    border-radius: 18px;
+}
+/*------ / My profile  ------------*/
+
+
+/*-------Deposit limit ---------------*/
+.self-exclusion .topup-round-lightblue{
+    margin: 35px 0 0;
+}
+.self-exclusion {
+    padding: 20px;
+}
+/*------- / Deposit limit ---------------*/
+
+/*--------- Menu Css Mobile -----------*/
+.signup-button{
+    margin: 0 15px;
+    padding: 2px 20px;
+}
+.m-padding-top-5{
+    padding-top: 5px;
+}
+.menu-text{
+    padding: 4px;
+}
+/*--------- / Menu Css Mobile -----------*/
+
+/*--------- Social Share -----------*/
+.share-social img{
+	padding-left: 0px;	
+	width: 40px;
+}.share-social span{
+	 font-size: 20px;
+    line-height: 24px;
+}
+/*--------- / Social Share -----------*/
+
+/*------- Top up ---------------*/
+.topup-round-lightblue{
+	margin: 0px 50px;	
+}
+.my-profile .topup-round-lightblue{
+	margin: 0px;	
+}
+/*------- / Top up ---------------*/
+
+/*------- Leader Board ---------------*/
+.game-question{
+	padding-top: 0px;
+}
+.panel-title {
+    font-size: 22px !important;
+	letter-spacing: 1px;
+}
+.player-pot-value{
+	padding: 6px 12px;
+}
+
+.lb-ticket .game-results{
+    padding: 5px 15px 5px 4px;
+ }
+ .panel-default{
+	margin: 0px 10px;	
+}
+.answer{
+	width: 120px;
+}
+.number{
+    font-size: 18px;
+    line-height: 32px;
+    width: 35px;
+	height: 35px;
+	margin-top: 5px;
+}
+
+.lb-home-team{
+	margin-right: 15px;
+}
+.lb-away-team{
+	margin-left: 15px;
+}
+/*------- / Leader Board ---------------*/
+
+/*------- Stats Player ----------------*/
+.stats-players{
+	padding: 5px;
+	margin: 0px;
+}
+.stats-players table td{
+	padding: 15px 5px;
+	font-size: 16px;
+}
+.pz-calendar .zoola-tab-content .tab-pane {
+    padding: 0;
+}
+
+.match-stats-team img{
+	margin-top: -40px;
+    position: relative;
+    top: 45px;
+    width: 125px;
+}
+.match-team-name {
+    font-family: SourceSansPro-Semibold;
+    font-size: 16px;
+    padding: 0 5px;
+    position: relative;
+}
+.match-vs{
+	font-size: 16px;
+	padding: 0px 6px;
+	margin: 0 5px;
+}
+/*------- / Stats Player ----------------*/
+
+.go-to{
+	padding-left: 40px;	
+}
+
+/*------- Complete sign up --------------*/
+.comp-signup-left .row{
+	margin-right: -10px;
+}
+.comp-signup-right .row{
+	margin-left: -10px;
+}
+/*------- Complete sign up --------------*/
+
+
+}
+
+
+
+/*---------------------------------------------------------------- Responisive  CSS - Tablet -------------------------------------------------------------------------*/
+@media (min-width: 768px) and (max-width: 991px) {
+	
+.modal-dialog{
+    margin: 30px auto;
+    width: 750px !important;
+}
+.modal-sm{
+	width: 360px !important;
+	margin-top: 10% !important;
+}
+.d-block-m{
+    display: inline;
+}
+.text-center-m{
+	text-align: inherit !important;			
+}
+.panel-default > .panel-heading {
+	padding: 20px;	
+}
+.panel-default .panel-heading a::after {
+	width: 30px;
+}
+
+/*------- Complete sign up --------------*/
+.comp-signup-left .row{
+	margin-right: 10px;
+}
+.comp-signup-right .row{
+	margin-left: 10px;
+}
+/*------- Complete sign up --------------*/
+
+
+/*--------- Menu Css Tablet -----------*/
+.signup-button{
+    padding: 0px 30px;
+}
+.m-padding-top-5{
+    padding-top: 0px;
+}
+.menu-text {
+    padding: 4px 15px;
+}
+/*--------- / Menu Css Tablet -----------*/
+
+/*------- Leader Board ---------------*/
+.lb-ticket .game-results{
+    padding: 5px 20px 5px 8px;
+ }
+#BuyTicketModal .answer{
+    min-width: 150px;
+}
+#ViewTicketModal .answer{
+    width: 150px;
+}
+.player-pot-value{
+	padding: 6px 12px;
+}
+.game-question{
+	padding-top: 10px;
+}
+.panel-title {
+    font-size: 21px !important;
+}
+.panel-default{
+	margin: 0px 5px;	
+}
+.answer{
+	width: 150px;
+}
+.number{
+    font-size: 18px;
+    line-height: 37px;
+    width: 40px;
+	height: 40px;
+	margin-top: 3px;
+}
+.lb-home-team{
+	margin-right: -25px;
+}
+.lb-away-team{
+	margin-left: -25px;
+}
+.LB-playername{
+    color: #0d406b;
+    font-family: SourceSansPro-Semibold;
+    font-size: 20px;
+    position: relative;
+    margin-top: 0px;
+}
+.point-box1 {
+    font-size: 24px;
+     position: relative;
+	 margin: 0px auto;
+}
+.point-box1 .points{
+   
+    padding: 3px 5px 5px;
+}
+/*------- / Leader Board ---------------*/
+
+
+/*------- Stats Player ----------------*/
+
+.match-stats-team {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+.match-stats-team img{
+	margin-top: -40px;
+    position: relative;
+    top: 45px;
+    width: 180px;
+}
+.match-team-name {
+    font-family: SourceSansPro-Semibold;
+    font-size: 24px;
+    padding: 0 15px;
+    position: relative;
+}
+.match-vs{
+	font-size: 24px;
+	padding: 2px 10px;
+	margin: 0 15px;
+}
+.pz-calendar .zoola-tab-content .tab-pane {
+    padding: 10px;
+}
+.stats-players{
+	padding: 5px;
+	margin: 0px;
+}
+.stats-players table td{
+	padding: 15px 5px;
+	font-size: 18px;
+}
+/*------- / Stats Player ----------------*/
+
+
+/*------ My profile  ------------*/
+.avatar-slider .thumb {
+    cursor: pointer;
+    display: inline-block;
+    margin: 4px 4px;
+}
+.change-avatar-slider .carousel-control{
+	width: 10%;
+	opacity: 1;
+	margin-top: 50%;
+	text-shadow: none;
+}
+.change-avatar-slider .carousel-control.left {
+    background-image: none;
+    background-repeat: no-repeat;
+	left: -24px;
+}
+.change-avatar-slider .carousel-control.right {
+    background-image: none;
+    background-repeat: no-repeat;
+	right: -24px;
+}
+.change-avatar-slider .thumb {
+    cursor: pointer;
+    display: inline-block;
+    margin: 4px 8px;
+}
+.change-avatar-slider .thumb img {
+  width: 70px; 
+  border-radius: 50%;
+}
+.premier-team{
+    margin: 5px 20px;
+}
+.zoola-tab-content .tab-pane {
+    border-radius: 18px;
+}
+/*------ / My profile  ------------*/
+
+/*-------Deposit limit ---------------*/
+.self-exclusion .topup-round-lightblue{
+    margin: 35px 0 0;
+}
+.self-exclusion {
+    padding: 20px;
+}
+/*------- / Deposit limit ---------------*/
+
+/*------- Top up ---------------*/
+.topup-round-lightblue{
+	margin: 0px 15px;	
+}
+
+/*------- / Top up ---------------*/
+	
+/*--------- Social Share -----------*/
+.share-social img{
+	padding-top: 10px;	
+}
+.share-social span{
+	 font-size: 25px;
+    line-height: 30px;
+}
+/*--------- / Social Share -----------*/
+
+
+/*------- / Footer Styles -------*/
+.zoola-footer .footer-icons img{
+	margin: 0px 8px;
+}
+.go-to{
+	padding-left: 10px;	
+}
+
+/*------- / Footer Styles -------*/
+
+
+
+
+
+#accountP-p-league .premier-team {
+    width: 125px;
+     height: 90px;
+}
+#accountP-championship .premier-team {
+    width: 125px;
+}
+
+
+
+.qn-icons-list ul{
+		padding-left: 0px;
+		padding-right: 0px;	
+}
+.qn-points img {
+    width: 250px;
+}
+.qn-icons-list ul li{
+    float: none;
+    padding-left: 10px;
+}
+.qn-icons-list ul li img {
+    width: 40px;
+}
+.qn-icons-list-right ul li img {
+    width: 40px;
+}
+.qn-icons-list-right ul li{
+     float: none;
+     padding-right: 10px;
+}
+.qn-icons-list ul li span {
+    color: #0d406b;
+    font-size: 28px;
+    padding-left: 10px;
+}
+.qn-icons-list-right ul li span {
+    color: #0d406b;
+    font-size: 28px;
+    padding-left: 10px;
+}
+.jersey{
+    margin-top: 0px;
+}
+.score-cop {
+	font-family: Montserrat-Bold;
+	font-size: 44px;
+	color: #0D406B;
+	 line-height: 45px;
+}
+
+.view-stats{
+    margin-left: 15px;
+}	
+
+
+.capsle-price{
+    left: 38px;
+}
+.playername-cop1{
+    font-size: 20px;
+}
+.zoola-star{
+    
+}
+.zoola-btn-viewgame{
+	margin-left: -10px;	
+	 padding: 10px 16px;
+	 line-height: 23px;
+}
+.capsle-people{
+	margin-top: 20px;
+}
+.pot-capsle {
+    position: absolute;
+}
+.find-some {
+    font-size: 31px;
+    padding-top: 10px;
+	  line-height: 36px;
+	  text-align: center;
+}
+.banner-text{
+	min-height: 160px;
+	font-size: 30px;
+    line-height: 34px;
+	text-align: center;
+}
+.banner-text .btn-team-room {
+    font-size: 26px;
+    margin-top: 10px;
+	 border-radius: 5px;
+}
+
+
+.game-selection-dropdown::after{
+ top: -3px;	
+}
+
+.top-defenders-text {
+    line-height: 55px;
+    vertical-align: middle;
+}  
+.customise-profile{
+	margin-left: 0px;
+	margin-top: 43px;
+}
+.ticket-title{
+    display: inline-block;
+    padding-bottom: 0px;
+}
+.ticket-title .padding-right-30{
+    padding-right: 30px;
+}
+
+.social-icons {
+    margin-top: 0px;
+}
+
+#livegames .capsle-people , #upcoming_games .capsle-people , #past_games .capsle-people , #watch_list .capsle-people {
+    width: 90px;
+}
+#livegames .game-qns, #upcoming_games .game-qns, #past_games .game-qns, #watch_list .game-qns{
+    padding-left: 10px;
+}
+.zoola-btn-viewgame {
+    margin-top: 15px;
+}
+.player-position{
+    margin-top: 15px;
+}
+.upcoming-game-numbers{
+    margin-top: 15px;
+}
+.zoola-btn-remove{
+    margin-top: 16px;
+}
+.signup-button{
+     padding: 3px 30px;
+}
+.statement .st-time{
+	font-family: SourceSansPro-Bold;
+	padding-left: 0px;
+}
+.statement .st-description{
+	padding-top: 15px;
+	padding-left: 10px;
+}
+
+.md-playername{
+	font-size: 26px;
+}
+
+
+
+
+
+
+
+.game-selection-dropdown::after{
+ top: -4px;	
+}
+
+
+
+}
+
+
+
+@media only screen and (min-width : 360px){
+.modal-dialog{
+    margin: 30px auto;
+    width: 360px;
+}			
+}
+
+@media (min-width: 640px) and (orientation: landscape) {
+	
+.modal-dialog{
+    margin: 30px auto;
+    width: 750px;
+}	
+
+}
+
+@media (max-device-width: 480px) and (orientation: landscape) {
+.modal-dialog {
+    margin: 30px auto;
+    width: 450px;
+}	
+.menu-text {
+    padding: 0 12px;
+}
+.change-avatar-slider .carousel-control{
+	margin-top: 50%;	
+}
+}
+@media (max-device-width: 640px) and (orientation: landscape) {
+.modal-dialog{
+    margin: 30px auto;
+    width: 480px;
+}
+.change-avatar-slider .carousel-control{
+	margin-top: 30%;	
+}
+
+}
+
+
+
+@media screen and (min-width: 800px) and (max-width: 1280px) {
+.qn-points .padding-left-40{
+    padding-left: 10px;
+}
+.qn-points .padding-right-40{
+    padding-right: 10px;
+}
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+    .game-box {
+	   
+        min-width: 315px !important;
+    }
+.login-box input[type="checkbox"]{
+
+	padding: 8px;
+	border-radius: 6px;	
+}
+
+}
+
+
+
+
+/*---------------------------Responsive End-------------------------------*/

@@ -1,0 +1,8 @@
+<div [@dialog] *ngIf="visible" class="app-modal lighten-3">
+	<div  class="dialog animated grey lighten-3">
+		<ng-content></ng-content>
+		<div *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn"><i class="material-icons small valign-m white-text">clear</i></div>
+	</div>
+    <div *ngIf="visible" class="empty-overlay" (click)="close()"></div>
+</div>
+<div *ngIf="visible" class="overlay animated fadeIn"></div>

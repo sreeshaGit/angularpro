@@ -1,0 +1,86 @@
+<div class="row" *ngIf="showUpcoming">
+    <div class="col s12 m12 l12 xl12" *ngIf="matchUpcoming">
+        <span class="widget-title">{{staticWord?.Upcoming_Match}}</span>
+    </div>
+    <div class="col s12 m6 l6 xl6" *ngIf="matchUpcoming">
+        <div class="widget-score-board right-now bg-gradient white-text" [ngClass]="{'bg-football':matchUpcoming?.SportName=='Football', 'bg-tennis':matchUpcoming?.SportName=='Tennis'}">
+            <div class="bg-gradient-inner center-align" (click)="goToEventPage(matchUpcoming?.EventId,'upcoming')">
+                <div class="league-name" *ngIf="matchUpcoming?.SportName=='Football'">
+                    <span *ngIf="matchUpcoming?.Country != null && matchUpcoming?.Country != ''"> {{matchUpcoming?.Country}} / </span>
+                    {{matchUpcoming?.LeagueName}}
+                </div>
+                <div class="league-name tennis" *ngIf="matchUpcoming?.SportName=='Tennis'"><span *ngIf="matchUpcoming?.Provider != null && matchUpcoming?.Provider != ''">{{matchUpcoming?.Provider}} / </span>{{matchUpcoming?.TournamentName}}</div>
+                <div class="space-5"></div>
+                <div class="row no-margin center-align valign-wrapper">
+                    <div class="col s4 m4 l4 xl4">
+                        <img class="football-jersey" *ngIf="matchUpcoming?.SportName=='Football' &&  isUpcomingImage" [src]="'assets/img/football-jerseys/' + matchUpcoming?.HomeTeamId + '.png'" (error)="imageError()"/>
+                        <app-display-tennis-image [eventId]="matchUpcoming?.EventId" [flagPosition]="'home'" *ngIf="matchUpcoming?.SportName=='Tennis'"></app-display-tennis-image>
+                        <div class="team truncate">{{matchUpcoming?.SportName=='Football'?matchUpcoming?.HomeTeam:matchUpcoming?.Player1Lastname}}</div>
+                    </div>
+                    <div class="col s4 m4 l4 xl4 no-padding">
+                        <div *ngIf="matchUpcoming?.SportName=='Football'">
+                            {{matchUpcoming?.KickOffTime | dateFormat :'D' | async}}
+                        </div>
+                        <div *ngIf="matchUpcoming?.SportName=='Tennis'">
+                            {{matchUpcoming?.matchkickofftime | dateFormat :'D' | async}}
+                        </div>
+                        <div class="fixture-time" *ngIf="matchUpcoming?.SportName=='Football'">{{matchUpcoming?.KickOffTime | dateFormat :'T' | async}}</div>
+
+                        <div class="fixture-time" *ngIf="matchUpcoming?.SportName=='Tennis'">{{matchUpcoming?.matchkickofftime | dateFormat :'T' | async}}</div>
+                    </div>
+                    <div class="col s4 m4 l4 xl4">
+                        <img class="football-jersey" *ngIf="matchUpcoming?.SportName=='Football' &&  isUpcomingImage" [src]="'assets/img/football-jerseys/' + matchUpcoming?.AwayTeamId + '.png'" (error)="imageError()" />
+                        <app-display-tennis-image [eventId]="matchUpcoming?.EventId" [flagPosition]="'away'" *ngIf="matchUpcoming?.SportName=='Tennis'"></app-display-tennis-image>
+                        <div class="team truncate">{{matchUpcoming?.SportName=='Football'?matchUpcoming?.AwayTeam:matchUpcoming?.Player2Lastname}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m6 l6 xl6" *ngIf="matchUpcoming">
+        <div class="">
+            <div class="space-5"></div>
+            <span class="bet-assist ">{{staticWord?.Bet_Assist}}</span>
+            <div class="rtb">
+                {{matchUpcoming?.Text}}
+            </div>
+            <button class="btn waves-effect waves-light btn-odds" pam-button="" (click)="addToBetslip(matchUpcoming?.SelectionId,'upcoming')">
+                <span class="market">{{matchUpcoming?.SportName=='Football'?matchUpcoming?.MarketName:matchUpcoming?.Market}} - {{matchUpcoming?.SportName=='Football'?matchUpcoming?.OutcomeName:matchUpcoming?.Outcomedisplay}} </span>
+                <span class="odds">
+                    {{matchUpcoming | oddsFormat : kambiService.oddsFormat}}
+                </span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="upcoming-right-match-Loader" *ngIf="isUpcomingLoader">
+    <div class="row no-margin">
+        <div class="col s6 m3 l3 xl3 grey lighten-4 height-25 margin-top-5">
+            <span class="widget-title ">&nbsp;</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m6 l6 xl6">
+            <div class="widget-score-board grey lighten-4">
+
+            </div>
+        </div>
+        <div class="col s12 m6 l6 xl6">
+            <div class="row no-margin">
+                <div class="space-5"></div>
+                <div class="row no-margin">
+                    <div class="bet-assist grey lighten-4 col s2 m3 l2 xl2 margin-top-5">&nbsp;</div>
+                </div>
+                <div class="rtb">
+                    <div class="row no-margin">
+                        <div class="grey lighten-4 col s12 m12 l12 xl12 height-15 margin-bottom-5">&nbsp;</div>
+                    </div>
+                    <div class="row no-margin">
+                        <div class="grey lighten-4 col s6 m6 l6 xl4 height-15 margin-bottom-5">&nbsp;</div>
+                    </div>
+                </div>
+                <button class="btn grey lighten-4 btn-odds" pam-button="">&nbsp;</button>
+            </div>
+        </div>
+    </div>
+</div>

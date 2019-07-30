@@ -1,0 +1,418 @@
+.BLSBT-eventView-matchInfoBanner{
+    display: table;
+    width: 100%;
+    height: $BLSBT-eventView-matchInfoBanner-height;
+    background-image: url('../img/match-info-bg.png');
+    background-position: center bottom;
+    color: $BLSBT-eventView-matchInfoBanner-txtColor;
+    font-size: $BLSBT-eventView-matchInfoBanner-fontSize;
+    text-align: center;
+    .BLSBT-eventView-matchInfoBanner__content{
+        background-color: rgba(0,0,0,.65);
+        width: 100%;
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle; 
+    }
+    .BLSBT-eventView-matchInfoBanner__fixture{
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .BLSBT-eventView-matchInfoBanner__eventDate{
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    .BLSBT-eventView-matchInfoBanner_eventKickOff{
+
+    }
+    .BLSBT-eventView-matchInfoBanner__eventScore{
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: $BLSBT-eventView-matchInfoBanner__eventScore-txtColor;
+    }
+}
+
+.BLSBT-FB-eventView{
+    .BLSBT-matchBoxGroup{
+        .BLSBT-matchBox{
+            
+            &:last-child{
+                border-top: 1px solid $BLSBT-eventView-matchBox-borderTop-color;
+            }
+        }
+    }
+}
+
+.BLSBT-marquee{
+    background-color: $BLSBT-eventView-marquee-bg;
+    font-size: 12px;
+    color: $BLSBT-eventView-marquee-txtColor;
+    padding: 6px 0;
+    cursor: pointer;
+}
+
+.BLSBT-eventView-headTohead-teams{
+    background-color: $BLSBT-eventView-headTohead-teams-bg;
+    padding: 10px 12px;
+}
+.BLSBT-accordion{
+    .BLSBT-accordion-header{
+        background-color: $BLSBT-accordion-header-bg;
+        padding: 12px 12px;
+        color: $BLSBT-accordion-header-txtColor;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 3px;
+        cursor: pointer;
+        position: relative;
+        &:after{
+            content: url(../img/select-arrow-white.svg);
+            float: right;
+            pointer-events: none;
+            position: absolute;
+            right: 12px;
+            top: 15px;
+            line-height: 7px;
+        }
+    }
+}
+
+.BLSBT-lastGamesBox{
+    background-color: $BLSBT-lastGamesBox-bg;
+    padding: 8px 10px;
+    box-shadow: 1px 1px 5px 0 rgba(0,0,0,.2);
+    color: $BLSBT-lastGamesBox-txtColor;
+    font-size: $BLSBT-lastGamesBox-fontSize;
+    margin-bottom: 10px;
+    .BLSBT-lastGamesBox-title{
+        font-size: $BLSBT-lastGamesBox-title-fontSize;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    
+    .BLSBT-last3Games{
+        .BLSBT-last3Games-title{
+            font-weight: bold;
+            color: $BLSBT-last3Games-title-txtColor;
+            margin-bottom: 3px;
+        }
+        .BLSBT-last3GamesBox{
+            border: 1px solid $BLSBT-last3GamesBox-borderColor;
+            border-radius: 3px;
+            padding: 4px 6px;
+            margin-bottom: 5px;
+            background-color: $BLSBT-last3GamesBox-bg;
+            .BLSBT-score{
+                color: $BLSBT-last3GamesBox-score-txtColor;
+                font-weight: bold;
+            }
+            .BLSBT-date{
+                color: $BLSBT-last3GamesBox-date-txtColor;
+            }
+        }
+    }
+
+
+    .BLSBT-last10Games{
+        .BLSBT-last10Games-title{
+            font-weight: bold;
+            color: $BLSBT-last3Games-title-txtColor;
+            margin-bottom: 3px;
+        }
+        .BLSBT-last10Games-matchStatusList{
+            ul{
+                display: table;
+                table-layout: fixed;
+                width: 100%;
+                li{
+                    padding-right: 1px;
+                    display: table-cell;
+                    &:last-child{
+                        padding-right: 0;
+                    }
+                    >div{
+                        // width: 20px;
+                        height: $BLSBT-last10Games-matchStatusList-box-height;
+                        line-height: 18px;
+                        font-size: 12px;
+                        border-radius: 3px;
+                        font-weight: 600;
+                        text-align: center;
+                        margin-right: 2px;
+                        
+                        color: #FFF;
+                        background-color: #DDD;
+                        border: 1px solid transparent;
+                        cursor: pointer;
+                        &:hover, &.active{
+                            border: 1px solid #2a2a2a;                        
+                        }
+                        &.BLSBT-match-win{
+                            background-color: $BLSBT-last10Games-matchStatusList-box-matchWin-bg;
+                        }
+                        &.BLSBT-match-draw{
+                            background-color: $BLSBT-last10Games-matchStatusList-box-matchDraw-bg;
+                        }   
+                        &.BLSBT-match-loss{
+                            background-color: $BLSBT-last10Games-matchStatusList-box-matchLoss-bg;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.BLSBT-last10Games-WDL-matchInfoBanner{
+    display: table;
+    width: 100%;
+    height: $BLSBT-last10Games-WDL-matchInfoBanner-height;
+    background-image: url('../img/match-info-bg.png');
+    background-position: center bottom;
+    color: $BLSBT-last10Games-WDL-matchInfoBanner-txtColor;
+    font-size: $BLSBT-last10Games-WDL-matchInfoBanner-fontSize;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 5px;
+    .BLSBT-last10Games-WDL-matchInfoBanner__content{
+        background-color: rgba(0,0,0,.65);
+        width: 100%;
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle; 
+    }
+    .BLSBT-last10Games-WDL-matchInfoBanner__fixture{
+        font-size: $BLSBT-last10Games-WDL-matchInfoBanner__fixture-fontSize;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .BLSBT-last10Games-WDL-matchInfoBanner__eventScore{
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: $BLSBT-last10Games-WDL-matchInfoBanner__eventScore-txtColor;
+    }
+    .BLSBT-last10Games-WDL-matchInfoBanner_eventDate{
+
+    }
+}
+
+
+.BLSBT-lineUps{
+    display: table;
+    width: 100%;
+    height: 120px;
+    background-image: url('../img/lineups-bg.png');
+    background-position: center;
+    background-size: cover;
+    color: #FFF;
+    
+
+    .BLSBT-lineUps__content{
+        background-color: rgba(0,0,0,.5);
+        width: 100%;
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .BLSBT-teamPosition{
+        padding: 3px;
+        &.active{
+            border: 2px solid #FF7500;
+        }
+        &.awayTeam{
+           
+        }
+        ul{
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 4px;
+            width: 20px;
+            li{
+
+                .BLSBT-playerPosition{
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    text-align: center;
+                    line-height: 20px;
+                    background-color: #F2F2F2;
+                    color: #222;
+                    font-size: 11px;
+                    cursor: pointer;
+                    &.active{
+                        color: #FFF;
+                        background-color: #FF7500;
+                    }
+                }
+            }
+            &.BLSBT-2inRow{
+                li{
+                    padding: 12px 0;
+                }
+            }
+            
+            &.BLSBT-3inRow{
+                li{
+                    padding: 6px 0;
+                }
+            }
+            &.BLSBT-4inRow{
+                li{
+                    padding: 6px 0;
+                }
+            }
+            
+        }
+    }
+}
+
+
+.BLSBT-gameLineUpsPrediction{
+    font-size: 13px;
+    background-color: #FFF;
+    .BLSBT-homeAwayTeams{
+        ul{
+            margin: 10px 0;
+            display: inline-block;
+            width: 100%;
+            padding: 0 12px;
+            li{
+                width: 50%;
+                float: left;
+               >div{ 
+                text-align: center;
+                background-color: #dbdbdb;
+                border-radius: 4px;
+                padding: 8px 10px;
+                cursor: pointer;
+                &.active{
+                    background-color: #FF7500;
+                    color: #FFF;
+                }
+               }
+               &:first-child{
+                   padding-right: 5px;
+               }
+               &:last-child{
+                padding-left: 5px;
+            }
+            }
+        }
+    }
+    .BLSBT-teamLineUpsPrediction__title{
+        padding: 0 12px;
+        .BLSBT-manager{
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+    }
+    .teamLineUpsPrediction-list{
+        padding: 10px 0 20px;
+        li{
+            border-bottom: 1px solid #E5E5E5;
+            padding: 6px 6px 6px 12px;
+            
+            .BLSBT-position{
+                width: 24px;
+                height: 20px;
+                margin: 0 20px 0 3px;
+                background-color: #FF7500;
+                color: #FFF;
+                font-size: 12px;
+                text-align: center;
+                display: inline-block;
+                border-radius: 3px;
+                line-height: 20px;
+                font-weight: 600;
+            }
+            &:first-child{
+                border-top: 1px solid #E5E5E5;
+            }
+            &:nth-child(odd){
+                background-color: #FAFAFA;
+            }
+            &:nth-child(even){
+                
+            }
+        }
+    }
+}
+
+
+.BLSBT-playerProfile{
+    background-color: #FFF;
+   
+    box-shadow: 1px 1px 5px 0 rgba(0,0,0,.2);
+    color: #222;
+    font-size: 12px;
+    margin-bottom: 10px;
+
+    .BLSBT-playerProfile-header{
+        background-color: #FAFAFA;
+        border-bottom: 1px solid #E5E5E5;
+        padding: 6px 10px;
+        font-size: 14px;
+        
+        .BLSBT-playerProfile-header__teamName{
+            font-size: 11px;
+            color: #999;            
+        }  
+        .BLSBT-closeIcon{
+            margin-top: 8px;
+            cursor: pointer;
+        } 
+    }
+    .BLSBT-playerProfile-content{
+        padding: 8px 10px;
+    }
+    
+    .BLSBT-profileStats{
+        border-radius: 3px;
+        overflow: hidden;
+        display: inline-block;
+        width: 100%;
+        li{
+            background-color: #dbdbdb;
+            padding: 6px;
+            text-align: center;
+            color: #222;
+            font-size: 13px;
+            
+            width: 50%;
+            float: left;
+            cursor: pointer;
+            &.active{
+                background-color: #FF7500;
+                color: #FFF;
+                font-weight: 600;
+            }
+        }
+    }
+    
+    .BLSBT-profile-content{
+        ul{
+            display: inline-block;
+            width: 100%;
+            margin-top: 5px;
+            li{
+                float: left;
+                width: 50%;
+                padding: 4px 8px;
+
+                &:nth-child(odd){
+                    text-align: right;
+                    color: #999;
+                }
+                &:nth-child(even){
+                    text-align: left;
+                    
+                }
+            }
+        }
+    }
+}
+

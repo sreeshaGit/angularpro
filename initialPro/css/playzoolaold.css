@@ -1,0 +1,123 @@
+/* Plazoola CSS - Louis Whittal */
+/* V0.1 - 21/03/16 */
+
+/* ------ */
+/* GLOBAL */
+/* ------ */
+
+h1 {
+	font-family: Montserrat-Regular;
+	font-size: 54px;
+	color: #FFFFFF;
+}
+
+h2 {
+	font-family: SourceSansPro-Regular;
+	font-size: 29px;
+	color: #094284;
+}
+
+h3 {
+	font-family: Montserrat-Regular;
+	font-size: 25px;
+	color: #FFFFFF;
+}
+
+h4 {
+	font-family: Montserrat-Regular;
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+h5 {
+	font-family: SourceSansPro-Light;
+	font-size: 14px;
+	color: #343434;
+}
+
+h6 {
+	font-family: Montserrat-Bold;
+	font-size: 10px;
+	color: #094284;
+}
+
+/* ------ */
+/* HEADER */
+/* ------ */
+
+.headr {
+	background: #094284;
+	height: 120px;
+}
+
+.subheadr {
+	background: #DCE5F1;
+	height: 170px;
+}
+
+.bt-tr1 {
+	border: 1px solid #094284;
+	border-radius: 8px;
+}
+
+/* GAME BOX - As seen on "Game Selection" layout */
+
+.game-box {
+	background: #F3F3F3;
+	padding: 12px;
+	height:340px;
+	width:325px;
+}
+
+.gbx-fixture {
+	background: #FFFFFF;
+	height: 70px;
+}
+
+.gbx-name {
+	background: #094284;
+	height:70px;
+}
+
+.gbx-md-left {
+	opacity: 0.06;
+	background: #4A90E2;
+	width:152px;
+	height:125px;
+}
+
+.gbx-md-right {
+	opacity: 0.13;
+	background: #4A90E2;
+	width:152px;
+	height:125px;
+}
+
+.gbx-cta {
+	background: #42ABEE;
+	height: 46px;
+}
+
+.bt-tr1 {
+	border: 1px solid #094284;
+	border-radius: 8px;
+}
+
+.small-cop1 {
+	font-family: SourceSansPro-Regular;
+	font-size: 14px;
+	color: #2E3841;
+}
+
+.med-cop1 {
+	font-family: SourceSansPro-Regular;
+	font-size: 18px;
+	color: #2E3841;
+}
+
+.medl-cop1 {
+	font-family: SourceSansPro-Regular;
+	font-size: 26px;
+	color: #2E3841;
+}
+

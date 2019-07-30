@@ -1,0 +1,1453 @@
+/* Plazoola CSS V0.2 - Louis Whittal */
+
+/* ------ */
+/* GLOBAL */
+/* ------ */
+
+@font-face {
+	        font-family: SourceSansPro-Light;
+	        src: url('fonts/SourceSansPro/SourceSansPro-Light.ttf');
+        }
+@font-face {
+	        font-family: SourceSansPro-Regular;
+	        src: url('fonts/SourceSansPro/SourceSansPro-Regular.ttf');
+        }
+@font-face {
+	        font-family: SourceSansPro-Semibold;
+	        src: url('fonts/SourceSansPro/SourceSansPro-Semibold.ttf');
+        }
+@font-face {
+	        font-family: Montserrat-Regular;
+	        src: url('fonts/Montserrat/Montserrat-Regular.ttf');
+        }
+@font-face {
+	        font-family: Montserrat-Bold;
+	        src: url('fonts/Montserrat/Montserrat-Bold.ttf');
+        }
+@media screen and (max-width: 776px) and (min-width: 320px) {
+    .game-box {
+        width: 320px;
+    }
+	.supheader-dropdown{
+		top: 0px !important;
+	}
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    .lastitem{
+        padding-right:0px;
+    }
+    
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+    .game-box {
+        width: 315px;
+        min-width: 315px !important;
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+    .filterStyle {
+        margin-top:0px !important;
+    }
+    .valign {
+        padding-top: 15px !important;
+    }
+}
+
+h1 {
+    font-family: Montserrat-Regular;
+    font-size: 54px;
+    color: #FFFFFF;
+}
+
+body {
+    font-family: SourceSansPro-Regular;
+}
+
+h2 {
+    font-family: SourceSansPro-Regular;
+    font-size: 29px;
+    color: #132D43;
+}
+
+h3 {
+    font-family: Montserrat-Regular;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+h4 {
+    font-family: Montserrat-Regular;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+h5 {
+    font-family: SourceSansPro-Light;
+    font-size: 14px;
+    color: #343434;
+}
+
+h6 {
+    font-family: Montserrat-Bold;
+    font-size: 10px;
+    color: #132D43;
+}
+
+.pointer-hand{
+    cursor:pointer;
+}
+
+/* ------ */
+/* HEADER */
+/* ------ */
+
+/* Rectangle 3: */
+.menur {
+    background: #FF5900;
+    height: 85px;
+}
+
+.gamebox-container{
+    position: relative;
+    
+}
+
+.headr {
+    background: #132D43;
+    min-height: 120px;
+}
+.footer {
+    background: #132D43;
+    min-height: 265px;
+    margin-top: 60px;
+}
+.subheadr {
+    background: #D1D8E1;
+    min-height: 170px;
+    min-width: 380px;
+}
+
+.bt-tr1 {
+    border: 1px solid #132D43;
+    border-radius: 8px;
+}
+
+/* GAME BOX - As seen on Game Selection layout */
+
+.game-box {
+    background: #F3F3F3;
+    padding: 12px;
+    height: 340px;
+    min-width: 325px;
+	/*color:#294978;*/
+}
+
+
+
+.gbx-fixture {
+    background: #FFFFFF;
+    height: 70px;
+}
+
+.gbx-name {
+    background: #FF5900;
+    height: 70px;
+}
+
+.gbx-md-left {
+    opacity: 0.06;
+    background: #ECE5E1;
+    /*width:152px;*/
+    height: 125px;
+}
+
+.gbx-md-right {
+    opacity: 0.13;
+    background: #EDDCD2;
+    /*width:152px;*/
+    height: 125px;
+}
+
+.gbx-cta {
+    background: #6ECD03;
+    height: 46px;
+}
+
+.bt-tr1 {
+    border: 1px solid #132D43;
+    border-radius: 8px;
+}
+
+.small-cop1 {
+    font-family: SourceSansPro-Regular;
+    font-size: 14px;
+    color: #2E3841;
+}
+
+.med-cop1 {
+    font-family: SourceSansPro-Regular;
+    font-size: 18px;
+    color: #2E3841;
+}
+
+.medl-cop1 {
+    font-family: SourceSansPro-Regular;
+    font-size: 26px;
+    color: #2E3841;
+}
+
+
+/* GAME LANDING- As seen on Leaderboard - Pre-match 0.7  */
+
+.score-cop {
+    font-family: Montserrat-Bold;
+    font-size: 44px;
+    color: #0C2D5D;
+}
+
+.score-box {
+    background: #D1D8E1;
+    border-radius: 100px;
+}
+
+.alt-tabl1 {
+    background: rgba(12,44,93,0.19);
+}
+
+
+.buy-box-tr {
+    border: 1px solid #0C2D5D;
+    border-radius: 8px;
+}
+
+.buy-box-blu {
+    background: #0C2D5D;
+    border: 1px solid #0C2D5D;
+    border-radius: 8px;
+}
+
+.buy-box-cta {
+    background: #6ECD03;
+    border-radius: 8px;
+}
+
+.tvalue-cop1 {
+    font-family: SourceSansPro-Semibold;
+    font-size: 27px;
+    color: #0C2D5D;
+}
+
+.playernam-cop1 {
+    font-family: SourceSansPro-Semibold;
+    font-size: 24px;
+    color: #0C2D5D;
+}
+
+.quest-answ {
+    font-family: SourceSansPro-Semibold;
+    font-size: 17px;
+    color: #0C2D5D;
+}
+
+.player-answ {
+    font-family: SourceSansPro-Regular;
+    font-size: 17px;
+    color: #0C2D5D;
+}
+
+.player-pnts {
+    font-family: SourceSansPro-Regular;
+    font-size: 17px;
+    color: #9BA0A7;
+}
+
+.h2h-box {
+    background: #FFFFFF;
+    border-radius: 39px;
+}
+
+.kickoff-cop1 {
+    font-family: Montserrat-Regular;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.point-box1 {
+    background: #FFFFFF;
+    border: 2px solid #9AACC8;
+    border-radius: 21px;
+}
+
+
+
+/*Custom CSS for Game selection*/
+
+
+.kickoff {
+    top: -2px;
+}
+.plusStyle{
+    font-size: 75px;
+}
+.zoolaStandStyle{
+     padding: 3px;
+}
+.zoolaStandTextStyle{
+    margin-top: 2px;
+}
+.teamLogo-right { /*used for both game and fixture*/
+    padding-left: 3px;
+}
+
+.zoola_standard { /*used for both game and fixture*/
+    height: 35px;
+}
+
+#Layer_1 > .cls-1 {
+    fill: #333 !important;
+}
+
+.no-padding { /*used for both game and fixture*/
+    padding: 0px;
+}
+
+.no-padding-left { /*used for both game and fixture*/
+    padding-left: 0px;
+}
+
+.no-padding-right { /*used for both game and fixture*/
+    padding-right: 0px;
+}
+
+.gbx-fixture {
+    padding: 10px;
+}
+
+.profile-pic {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+.headr { /*Used in both game selection and fixture selection*/
+    color: #FFF;
+}
+
+.game-box { /*Used in both game selection and fixture selection*/
+    margin: 0px auto;
+    margin-top: 30px !important;
+}
+
+.viewGame { /*Used in both game selection and fixture selection*/
+    margin-top: 8px;
+    color: #FFF;
+}
+
+.createNew {
+    background-color: #6ecd03;
+    color: #FFF;
+    height: 100%;
+    padding-top: 6%;
+}
+
+.gbx-md-left-2 { /*Used in both game selection and fixture selection*/
+    margin-top: 5px;
+}
+
+.valign { /*Used in both game selection and fixture selection*/
+    padding-top: 50px;
+}
+
+.filterStyle {
+        color: #132D43;
+        background-color: #d1d8e1;
+        margin-top:60px;
+    }
+
+.bt-tr1-custom {
+    width: 179px;
+	font-size: 23px;
+}
+
+.height-50 {
+    height: 50%;
+}
+
+.height-100 {
+    height: 100%;
+}
+
+.valign-margin {
+    margin-top: 50%;
+}
+
+.padding-top-16 {
+    padding-top: 16%;
+}
+
+.padding-top-8 {
+    padding-top: 8%;
+}
+
+.padding-top-11 {
+    padding-top: 11%;
+}
+
+.padding-top-4 {
+    padding-top: 4px;
+}
+
+.headr h1 { /*Used in both game selection and fixture selection*/
+    margin-top: 26px;
+}
+
+.gameTypeLock {
+    font-size: 14px;
+}
+
+.game-box-potpound {
+    font-size: 19px;
+    margin-left: 15px;
+}
+
+.game-box-smallpound {
+    font-size: 12px;
+}
+
+.game-box-smallpound-text {
+    font-size: 18px;
+}
+
+.game-box-smallpound-text1 {
+	margin-left:2px
+}
+
+.bigpot {
+    margin-top: -5px;
+}
+
+.peoplePadding {
+    padding-top: 10px;
+}
+
+.peopleicon {
+    margin-left: 12px;
+}
+
+.peoplecount {
+    margin-left: 20px;
+}
+
+.supheader{
+    min-height:85px;
+    background:#ff6600; 
+    color:#FFF;
+    font-size:38px;
+    }
+/*.supheader img {
+  float: left;
+}*/
+
+.supheader h1 {
+  position: relative;
+  margin-top:5px;
+}
+.supheader-logo {
+  margin-top:7px;
+}
+.supheader-dropdown{
+	cursor: pointer;
+    top: 21px;
+}
+.wrapText{
+	word-wrap: break-word;
+}
+/*Custom CSS for Fixture Selection*/
+
+.vs {
+    margin-top: 28%;
+    z-index: 1000;
+    padding-left: 22px;
+}
+.font-40 {
+    font-size: 30px;
+}
+
+.font-30 {
+    font-size: 30px;
+}
+
+.font-25 {
+    font-size: 25px;
+}
+
+.font-20 {
+    font-size: 20px;
+}
+
+.vertical-text {
+    transform: rotate(180deg);
+    writing-mode: vertical-rl;
+}
+
+.paddingTop4 {
+    padding-top: 4px;
+}
+
+.paddingTop2 {
+    padding-top: 2px;
+}
+
+.paddingTop3 {
+    padding-top: 3px;
+}
+
+.zoolaAmout {
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.maxBigpot{
+    vertical-align:middle;
+}
+.MaxpotPound{
+    font-size:17px;
+}
+.Maxpotamount{
+    font-size:24px;
+}
+.datepicker{
+	top: 312px !important;
+    
+}
+#date{
+	width:0px !important;
+}
+ #date {
+            /*display:none;*/
+            visibility:hidden;
+        }
+
+ /*CSS for signup*/
+
+ .lsignup-box{
+        background:#D1D8E1;
+        border-radius:44px;
+        width:480px;
+        height:340px;
+    }
+ .lsignup-box1{
+        
+        width:360px;
+        height:480px;
+    }
+ .signup3{
+        padding-top:22px;
+        overflow:hidden
+    }
+     .quest-text{
+            font-family:SourceSansPro-Regular;
+            font-size:40px;
+            color:#0C2D5D;
+        }
+     .quest-text1{
+         margin-top:200px;
+     }
+    .text-box{
+        border-radius:10px;
+        width:300px;
+    }
+    .signup{
+        padding-top:40px;
+        margin-top: 25px;
+        }
+    .signup1{
+        bottom:40px;
+        right:18px;
+    }
+    .text1{
+        font-size:x-large;
+        color:#0C2D5D;
+        padding-right:5px;
+    }
+    .btn-block1{
+            height:60px;
+            background-color:#6ECD03;
+             width:380px;
+            position:center
+            }
+    .signup2{
+        height:110px;
+        padding-right:20px;
+        margin-left:8px;
+    }
+   
+    .heigh{
+        height:50px;
+        border-radius:6px;
+    }
+    .btn-success{
+        border-color:#6ECD03;
+    }
+    .image1{
+        top:50px;
+        padding-left:30px;
+    }
+    
+     .btn-font {
+        font-size:36px;
+       font-family:Montserrat-Regular;
+        }
+     .checkboxtext{
+         font-size:large;
+         color:#0C2D5D;
+     }
+     .text3{
+         font-size:x-large;
+            color:#0C2D5D;
+     }
+     .checkbox{
+        width: 25px;
+        height: 25px;
+        position:relative;
+        vertical-align: top;
+        border-radius:6px;
+        float: left;
+     }
+
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+/*  Default Css */
+
+.menur {
+	background: #FF5900;
+	height: 85px;
+}
+
+.header {
+	background: #132D43;
+	min-height: 120px;
+	padding: 0px;
+}
+
+.subheader {
+	background: #D1D8E1;
+	/* min-height: 80px;*/
+   
+}
+
+.bt-tr1 {
+	border: 1px solid #132D43;
+	border-radius: 8px;
+}
+
+.logo-title{
+		font-family: Montserrat-Bold;
+		font-size: 28px;
+		color: #fff;
+		padding-top: 15px;
+}
+
+.bg-zoola-green{
+	background: #6ECD03 !important;
+}
+
+.bg-zoola-blue{
+	background: #0c2d5d !important;
+}
+.bg-zoola-orange{
+	background: #ff5900 !important;
+}
+.blue{
+	color: #0c2d5d !important;
+}
+
+
+.pointer-hand{
+ cursor: pointer;	
+}
+
+.navbar {
+    border-radius: 0px !important;
+}
+.navbar-default {
+    
+    border-color: #FF5900;
+}
+
+.no-margin-bottom{
+	margin-bottom: 0px !important;	
+}
+.white{
+ color: #fff !important;	
+}
+.orange{
+	color: #ff5900 !important;	
+}
+
+.light-blue{
+ color: #d1d8e1 !important;	
+}
+.no-margin{
+	margin: 0px;
+}
+.margin-top-10{
+	margin-top: 10px !important;
+}
+
+.padding-top-10{
+	padding-top: 10px;	
+}
+.padding-top-20{
+	padding-top: 20px;	
+}
+.padding-top-30{
+	padding-top: 30px;	
+}
+.padding-top-40{
+	padding-top: 40px;	
+}
+.padding-10{
+	padding: 10px;	
+}
+.padding-20{
+	padding: 20px;	
+}
+
+.padding-left-10{
+	padding-left: 10px;	
+}
+.padding-bottom-10{
+	padding-bottom: 10px;	
+}
+.padding-bottom-20{
+	padding-bottom: 20px;	
+}
+
+
+.padding-right-30{
+	padding-right: 30px;	
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus
+{
+	 color: #fff !important;
+	 background-color: #FF5900 !important;
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
+	background-color: none !important;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+	background-color: none !important;
+}
+
+.kickoff-cop2 {
+    color: #ffffff;
+    font-family: Montserrat-Regular;
+    font-size: 29px;
+	
+}
+
+.qn-icons-list{
+	display: inline-block;	
+}
+
+.qn-icons-list img{
+	float: left;	
+}
+.qn-icons-list ul li{
+	list-style: none;
+	padding-top: 15px;
+		
+}
+.qn-icons-list ul{
+	
+	float: left;
+}
+.qn-icons-list ul li span{
+	font-size: 28px;
+	color: 	#132d43;
+	padding-left: 10px;
+	
+}
+.qn-icons-list ul li img{
+	
+	width: 40px;
+}
+/* Accordian css */
+
+.panel-title {
+	font-family: Montserrat-Regular;
+    color: #fff;
+    font-size: 32px;
+	font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.panel-default > .panel-heading {
+    background-color: #ff5900;
+    border-color: #ff5900;
+    color: #fff;
+}
+
+
+/* /Accordian css */
+
+/* Game Questions css */
+	.game-qns{
+		
+		padding: 15px;
+	}
+.number{
+	border-radius: 50%;
+	border: 2px solid #0c2d5d;
+	padding: 8px 12px 8px 18px;
+	font-family: Montserrat-bold;
+	font-size: 24px;
+	position: relative;
+	top: 5px;
+}
+.number-img{
+	padding-left: 10px;	
+}
+.bg-light-blue{
+	
+	background-color: #d1d8e1 ;
+}
+.bg-light-blue-1{
+	
+	background-color: #b7c9e2 ;
+}
+.panel-body{
+	padding: 0px;	
+}
+ 
+ .zoola-toggle{
+		display: inline-flex;
+		 
+ }
+ 
+ .zoola-toggle span{
+	padding-right: 20px; 
+	padding-left: 20px;
+	
+ }
+ 
+ .time-tags{
+	border-radius: 50px;
+	border: 3px solid #0c2d5d;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	width: 120px;
+	text-align: center;
+	float: left;
+ }
+ .time-tags .time{
+	font-size: 22px;
+	color: #0c2d5d;
+	display: inline;
+ }
+ 
+ .time-tag-big{
+	 border-radius: 50px;
+	border: 3px solid #0c2d5d;
+	color: #0c2d5d;
+	font-size: 22px;
+	display: inline-flex;
+	background-color: #fff;
+	cursor: pointer;
+ }
+ .time-tag-big .middle{
+	
+	padding: 4px 8px; 
+	
+	text-align: center;
+	float: left;
+	  padding: 5px 15px;
+ }
+  .time-tag-big .left{
+	  text-align: center;
+	  float: left;
+	    padding: 5px 15px;
+		border-radius: 50px 0px 0px 50px;
+  }
+  
+  
+  .time-tag-big .right{
+	  text-align: center;
+	  float: left;
+	  padding: 5px 15px;
+	  border-radius: 0px 50px 50px 0px;
+  }
+  
+  .time-tag-big .active{
+	  background-color: #0c2d5d !important;
+	  color: #fff !important;
+  }
+  
+  
+  
+  .view-stats{
+	   border-radius: 50px;
+	border: 3px solid #0c2d5d;
+	color: #0c2d5d;
+	display: inline-flex;
+	 background-color: #fff;
+	 margin-bottom: 15px;
+	
+  }
+  .view-stats .right{
+	  background-color: #0c2d5d;
+	  font-size: 14px;
+	line-height: 12px;
+	color: #fff;
+	float: left;
+	padding: 3px 12px;
+	font-weight: bold;
+  }
+ .view-stats .border-radius-right{
+	border-radius: 0px 50px 50px 0px; 
+	
+ }
+   .view-stats .left{
+	   
+	   padding: 3px 12px;
+   }
+   
+  .close-tag{
+		margin-right: 15px;  
+		cursor: pointer;
+		display: inline-block;
+  }
+  
+  .close-tag .close-icon{
+	  border: 3px solid #0c2d5d;
+	  border-radius: 8px;
+	  padding: 1px 4px 3px;
+	  margin-bottom: 5px;
+	  position: relative;
+	  bottom: 3px;
+	  min-width: 50px;
+  }
+/* /Game Questions css */
+
+
+.leaderboard-number{
+	font-size: 26px;
+    padding-top: 24px;
+    display: inline-block;
+   font-weight: bold;
+    text-align: center;
+	
+}
+.height-85{
+	min-height: 80px;	
+}
+
+.btn-sale{
+	border: 1px solid #0c2d5d;
+    border-radius: 8px;
+    display: inline-block;
+    padding: 5px 9px;
+    text-align: center;
+}
+
+.valign-middle{
+	display: table;
+		
+}
+
+
+
+.col-centered{
+	float: none;
+	margin: 0 auto;
+}
+
+.text-gray{
+		color: #737272;
+		font-size: 18px;
+}
+
+.view-more{
+	background-color: #f8f8f8;	
+	
+}
+.cell-later .active{
+ 	background-color: #0c2d5d;
+	color: #fff;
+}
+
+
+/* BuyTicketModal Modal Start */
+
+.BuyTicketModal{
+	border-radius: 25px;
+	border: 3px solid #0c2d5d;	
+}
+
+.answer{
+	border-radius: 21px;
+    display: inline-block;
+    font-size: 23px;
+    line-height: 18px;
+    padding: 10px 15px;
+    text-align: center;
+    width: 150px;	
+}
+.question{
+	color: #0c2d5d;
+    font-family: SourceSansPro-Regular;
+    font-size: 23px;
+    vertical-align: middle;
+	
+}
+.modal-dialog {
+    margin: 30px auto;
+    width: 750px;
+}
+
+.space-10{
+margin: 10px auto;	
+padding: 5px 0px;
+}
+
+.doble-points{
+	font-family: SourceSansPro-Regular;
+	 font-size: 10px;
+	 line-height: 10px;	
+	 display: inline-table;
+}
+/* BuyTicketModal End */
+
+
+/* Toggle css */
+/* ============================================================
+  COMMON
+============================================================ */
+#wrapper {
+  min-width: 600px;
+}
+
+.settings {
+  display: table;
+  width: 100%;
+}
+.settings .row {
+  display: table-row;
+}
+.settings .question,
+.settings .switch {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px;
+}
+.settings .question {
+  width: 600px;
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+}
+
+/* ============================================================
+  COMMON
+============================================================ */
+.cmn-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.cmn-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ============================================================
+  SWITCH 1 - ROUND
+============================================================ */
+input.cmn-toggle-round + label {
+  padding: 2px;
+  width: 120px;
+  height: 60px;
+  background-color: #dddddd;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+}
+input.cmn-toggle-round + label:before, input.cmn-toggle-round + label:after {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  content: "";
+}
+input.cmn-toggle-round + label:before {
+  right: 1px;
+  background-color: #f1f1f1;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+  -webkit-transition: background 0.4s;
+  -moz-transition: background 0.4s;
+  -o-transition: background 0.4s;
+  transition: background 0.4s;
+}
+input.cmn-toggle-round + label:after {
+  width: 58px;
+  background-color: #fff;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  -webkit-transition: margin 0.4s;
+  -moz-transition: margin 0.4s;
+  -o-transition: margin 0.4s;
+  transition: margin 0.4s;
+}
+input.cmn-toggle-round:checked + label:before {
+  background-color: #8ce196;
+}
+input.cmn-toggle-round:checked + label:after {
+  margin-left: 60px;
+}
+
+/* ============================================================
+  SWITCH 2 - ROUND FLAT
+============================================================ */
+input.cmn-toggle-round-flat + label {
+  padding: 2px;
+  width: 120px;
+  height: 60px;
+  background-color: #dddddd;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+  -webkit-transition: background 0.4s;
+  -moz-transition: background 0.4s;
+  -o-transition: background 0.4s;
+  transition: background 0.4s;
+}
+input.cmn-toggle-round-flat + label:before, input.cmn-toggle-round-flat + label:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+input.cmn-toggle-round-flat + label:before {
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  background-color: #fff;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+  -webkit-transition: background 0.4s;
+  -moz-transition: background 0.4s;
+  -o-transition: background 0.4s;
+  transition: background 0.4s;
+}
+input.cmn-toggle-round-flat + label:after {
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  width: 52px;
+  background-color: #dddddd;
+  -webkit-border-radius: 52px;
+  -moz-border-radius: 52px;
+  -ms-border-radius: 52px;
+  -o-border-radius: 52px;
+  border-radius: 52px;
+  -webkit-transition: margin 0.4s, background 0.4s;
+  -moz-transition: margin 0.4s, background 0.4s;
+  -o-transition: margin 0.4s, background 0.4s;
+  transition: margin 0.4s, background 0.4s;
+}
+input.cmn-toggle-round-flat:checked + label {
+  background-color: #8ce196;
+}
+input.cmn-toggle-round-flat:checked + label:after {
+  margin-left: 60px;
+  background-color: #8ce196;
+}
+
+/* ============================================================
+  SWITCH 3 - YES NO
+============================================================ */
+input.cmn-toggle-yes-no + label {
+  padding: 2px;
+  width: 120px;
+  height: 60px;
+}
+input.cmn-toggle-yes-no + label:before, input.cmn-toggle-yes-no + label:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+  text-align: center;
+  line-height: 60px;
+}
+input.cmn-toggle-yes-no + label:before {
+  background-color: #dddddd;
+  content: attr(data-off);
+  -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -moz-transform 0.5s;
+  -o-transition: -o-transform 0.5s;
+  transition: transform 0.5s;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+input.cmn-toggle-yes-no + label:after {
+  background-color: #8ce196;
+  content: attr(data-on);
+  -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -moz-transform 0.5s;
+  -o-transition: -o-transform 0.5s;
+  transition: transform 0.5s;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+input.cmn-toggle-yes-no:checked + label:before {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+input.cmn-toggle-yes-no:checked + label:after {
+  -webkit-transform: rotateY(0);
+  -moz-transform: rotateY(0);
+  -ms-transform: rotateY(0);
+  -o-transform: rotateY(0);
+  transform: rotateY(0);
+}
+
+/* /Togggle css */
+
+     
+ /*-------------- Login CSS  Start  -----------------*/
+
+ .login-box
+ {
+	background:#D1D8E1;
+	border-radius: 44px;
+	/*width:420px;*/
+	border: none;
+}
+.login-footer{
+	border-radius: 0px 0px 45px 45px;
+	
+}
+
+.login-footer h2{
+	font-family: Montserrat-Regular;
+    font-size: 38px;
+	color: #fff !important;	
+}
+.top-txt {
+ font-family: SourceSansPro-Regular;
+ font-size: 24px;
+ color: #0C2D5D; 
+ padding-bottom: 5px;
+}
+.login-box .form-control{
+	
+	font-family: SourceSansPro-Regular;
+ 	font-size: 20px;
+	color: #0C2D5D; 
+	border-radius: 8px;
+	border: none;
+	height: 50px;
+	
+}
+.padding-leftright-30{
+	padding: 0px 30px;	
+}
+.padding-30{
+	padding: 30px;
+}
+.forgotten{
+	font-size: 16px;	
+}
+.zoola-btn .btn-success {
+    background-color: #6ecd03 ;
+    border-color: #6ecd03 ;
+    color: #fff;
+	
+}
+.zoola-btn h2 {
+    color: #fff !important;
+    font-family: Montserrat-Regular;
+    font-size: 38px;
+}
+ /*-------------- Login CSS  End  -----------------*/
+
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+
+       
+/* ------------ Responsive CSS Start----------------------------- */ 		
+
+@media screen and (max-width: 776px) and (min-width: 320px) {
+.game-box {
+	   width:320px;
+}
+
+.header .text-right, .header .text-left
+	{
+		text-align: center !important;  
+	}
+.subheader .text-right, .subheader .text-left
+	{
+		text-align: center !important;  
+	}
+.score .text-right, .score .text-left
+	{
+		text-align: center !important;  
+	}
+	
+.header .kickoff-cop1{
+	padding-top: 10px !important;	
+}
+.qn-points img{
+	width: 72%;	
+}
+.qn-points ul{
+	padding-left: 0px;	
+	padding-right: 0px;	
+}
+
+.qn-points .qn-icons-list ul li{
+	padding-top: 8px;	
+}
+.qn-points .qn-icons-list ul li img{
+	width: 35px;
+}
+.qn-points .qn-icons-list ul li span{
+	 font-size: 24px;	
+}
+.panel-title{
+	font-size: 28px !important;
+}
+.leaderboard-mobile .col-xs-12, .col-xs-6{
+	padding: 5px 0px 10px 0px;	
+}
+.btn-sale{
+	margin-top: 5px;
+}
+
+.modal-dialog{
+    margin: 30px auto;
+    width: 320px !important;
+}
+#BuyTicketModal .text-right{
+	
+	text-align: left;
+}
+#ViewTicketModal .text-right{
+	text-align: left;
+}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.qn-icons-list ul{
+		padding-left: 0px;
+		padding-right: 0px;	
+	}
+	
+.btn-sale{
+	float: right;	
+	margin-right: 20px;
+}
+.modal-dialog{
+    margin: 30px auto;
+    width: 750px !important;
+}
+	
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+    .game-box {
+	    width:315px;
+        min-width: 315px !important;
+    }
+}
+
+/* ------------ Responsive CSS End----------------------------- */     
+        
+       
+      
+       /* ---------- Menu Css -----------------*/
+
+.main-menu-txt {
+ font-family: SourceSansPro-Regular;
+ font-size: 28px;
+ color: #193B5A;
+}
+
+.menu-text{
+ color: #ffbb99;
+    display: inline-block;
+    font-family: SourceSansPro-Semibold;
+    font-size: 18px;
+    padding: 0 20px;
+    text-align: center;
+}
+.signup-button {
+
+    background: #74db00 none repeat scroll 0 0;
+    border: 2px solid #ffffff;
+    border-radius: 23px;
+    color: #fff;
+    display: inline-block;
+    font-family: SourceSansPro-Semibold;
+    font-size: 24px;
+    margin-right: 20px;
+    padding: 3px 18px;
+    position: relative;
+    text-align: center;
+    top: -15px;
+    width: 160px;
+}
+
+/* ---------- Menu Css End -----------------*/
+      
+
+   

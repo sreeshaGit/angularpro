@@ -1,0 +1,175 @@
+/*------------ Horse Findr ----------------*/
+.hf-filters{
+	display: inline-block;
+    margin: 10px 0 0;
+    padding: 0 !important;
+	width: 100%;
+}
+.hf-filters li{
+	width: 50%;
+	float: left;
+	/*padding: 0 15px;*/
+	margin-bottom: 10px;
+	list-style: none;
+}
+.hf-filters li:nth-child(odd){
+	padding-right: 10px;
+}
+.hf-filters li:nth-child(even){
+	padding-left: 10px;
+}
+.hf-filters li .btn-hf-filter{
+	background-color: #FFF;
+	border: 2px solid #DDD;
+	border-radius: 2px;
+	box-shadow: none;
+	color: #000;
+	font-size: 13px;
+	font-weight: 500;
+	height: 36px;
+	line-height: 32px;
+	margin: 0;
+	min-height: 36px;
+	padding: 0 10px;
+	text-transform: none;
+	width: 100%;    
+}
+.hf-filters li .btn-hf-filter.selected{
+	border: 2px solid #249752;
+}
+.hf-more{
+	background-color: #aabeb2;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	text-align: center;
+}
+.select-racecourse{
+	padding: 0 30px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+.rc-txt{
+	background-color: #adaeb0;
+	border-radius: 4px 0 0 4px;
+	font-size: 16px;
+	font-weight: 700;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	width: 100%;
+}
+.select-racecourse .rc-select .item{	
+	background-color: #dadfe5;
+	border-radius: 0 4px 4px 0;
+	height: 40px;
+	min-height: 40px;
+	padding-left: 0;
+}
+.select-racecourse ion-select .item-cover {
+    height: auto;
+}
+.select-racecourse .rc-select .item .item-inner{
+	border-bottom: none;
+}
+.select-racecourse .rc-select {
+	height: 40px;
+	text-align: center;	
+}
+.hf-reset-showbets{
+	padding: 0 30px;
+	margin-bottom: 8px;
+}
+.btn-reset{
+	color: #FFF;
+	font-size: 14px;
+	font-weight: 600;
+	height: 40px;
+	line-height: 40px;
+	margin: 0;
+	max-height: 40px;
+	padding: 0 3px;
+	text-align: center;
+	text-transform: none;
+	width: 100%;
+}
+.btn-showbets{
+	color: #000;
+}
+.hf-horses{
+	align-self: center;
+	border: 2px solid #249752;
+	border-radius: 6px;
+	color: #000;
+	font-size: 32px;
+	font-weight: 700;
+	height: 50px;
+	line-height: 46px;
+	margin: 0 auto;
+	text-align: center;
+	/*width: 70px;*/
+}
+.hf-range-slider .mat-slider-track-background{
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.hf-range-slider .mat-slider:hover .mat-slider-track-background{
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.hf-range-slider .mat-slider-horizontal{
+	margin-top: 30px !important;
+}
+.hf-range-slider  .mat-slider-horizontal .mat-slider-thumb-label{
+	top: -50px !important;
+}
+.trainer-jockey{
+	font-size: 12px;
+	margin-left: 5px;
+}
+.mrg-bet-box.hr-result .fixture{
+	margin-left: 5px;
+}
+.silk{
+	width: 40px;
+}
+.odds-text{
+	position: relative;
+	top: 15px;
+}
+.horse-details{
+	height: 60px !important;
+}
+.hf-results .accordian-header{
+	background-color: #CCC;
+	border-top: 1px solid #464646;
+	border-bottom: 1px solid #464646;
+	font-size: 16px;
+	font-weight: 600;	
+	padding: 10px 0 10px 10px;
+}
+.hf-results .accordian-content .MrG-Bet{
+	padding-top: 15px !important;
+	padding-bottom: 15px !important;
+}
+.hr-result.mrg-bet-box .box-content .rtb {
+    min-height: auto !important;
+	height: auto;
+}
+.cdk-overlay-backdrop{
+	
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 776px){
+	
+	
+}
+
+@media (min-width: 360px) and (max-width: 640px){
+	
+	
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	
+
+
+}

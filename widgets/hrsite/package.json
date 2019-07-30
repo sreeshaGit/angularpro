@@ -1,0 +1,34 @@
+{
+  "name": "HorseFinder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot",
+    "build": "browserify -t [ babelify --presets [ react ] ] main.js -o myIndex.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.20.0",
+    "babel-loader": "^6.2.9",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babelify": "^7.3.0",
+    "odds-converter": "^1.0.4",
+    "react": "^15.4.1",
+    "react-bootstrap": "^0.30.7",
+    "react-bootstrap-dropdown": "^0.3.0",
+    "react-bootstrap-dropdown-menu": "^1.1.6",
+    "react-bootstrap-slider": "^1.1.3",
+    "react-dom": "^15.4.1",
+    "react-gauge": "0.0.5",
+    "react-native-simple-gauge": "^0.1.2",
+    "react-progressbar.js": "^0.2.0",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.22.0"
+  }
+}

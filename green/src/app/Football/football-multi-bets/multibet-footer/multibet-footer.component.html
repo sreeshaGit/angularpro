@@ -1,0 +1,20 @@
+<div class="sticker-footer multibet-footer">
+    <div class="mrg-content">
+        <div class="row valign-wrapper" *ngIf="subArrayOfMultiBets?.length>0">
+            <div class="col s5 m3 l3 xl3">
+                <div class="total-odds">
+                    {{totalOddsText}} <span *ngIf="totalOddsText != null && totalOddsText != ''">:</span>
+                    <span class="odds">{{totalOdds}}</span>
+                </div>
+            </div>
+            <div class="col s7 m6 l6 xl6">
+                <button pam-Button class="btn waves-effect waves-light btn-odds add-betslip margin-top-15 margin-bottom-15"
+                        (click)="addToBetslip()">
+                    {{addAllToBetslipText}}
+                </button>
+            </div>
+            <div class="col s6 m3 l3 xl3 hide-on-small-and-down">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,145 @@
+<div class="BL-products grey lighten-3">
+    <div class="header green white-text">
+        <div class="row valign-wrapper">
+            <div class="col s2 m2 l2 xl2"><div class="valign-wrapper"></div></div>
+            <div class="col s8 m8 l8 xl8 ">
+                <div class="center-align title">
+                    {{staticWordsData?.staticWords?.Horse_Finder}}
+                </div>
+            </div>
+            <div class="col s2 m2 l2 xl2 "><div class="right-align"></div></div>
+        </div>
+    </div>
+    <div class="mrg-content">
+        <div class="row">
+            <div class="space-5"></div>
+
+        </div>
+        <div class="row">
+            <div class="col s12 m12 l12 xl12">
+                <div class="center-align">
+                    {{staticWordsData?.staticWords?.Select_from_the_filters_below_to_find_your_best_horse_racing_bets}}
+                </div>
+                <ul class="hf-filters" *ngFor="let filter of catFilter"> 
+                    <li *ngFor="let item of filter; let i = index;">
+                        <button  [ngClass]="{'btn waves-effect waves-green btn-hf-filter selected':item.selected, 'btn waves-effect waves-green btn-hf-filter':true}"
+                                (click)="selectFilter(i,item.FilterID,item.CategoryName)">
+                        {{item.CategoryName}}
+                        </button>
+                    </li>                  
+                </ul>
+                <div class="center-align">
+                    <button class="btn-floating waves-effect waves-light green" (click)="showMore()">
+                         <i class="material-icons white-text">{{this.expand?'expand_less':'expand_more'}}</i>
+                    </button>
+                </div>
+            </div>
+            <div class="col s12 m12 l12 xl12 ">
+                <div class="row no-margin">
+					<div class="space-10"></div>
+				</div>
+                <div class="mrg-inputfield">
+                   <label>{{staticWordsData?.staticWords?.Select_Courses}}</label>                           
+                    <md-select multiple [(ngModel)]="selectedVal" name="selectedVal" (change)="showHorses(selectedVal,'racecourse')">
+                        <md-option  *ngFor="let racecourse of getRaceCourse" [value]="racecourse.Name">{{racecourse.Name}}</md-option>                        
+                    </md-select>                    
+                </div>
+                <div class="row no-margin valign-wrapper">
+                    <div class="col s2 m1 l2 xl1 no-padding">
+                		<span class="odds-text">{{staticWordsData?.staticWords?.HF_Odds}}</span>
+                	</div>
+                    <div class="col s10 m11 l10 xl11 hf-range-slider">
+                        <md-slider *ngIf="isSliderData" min="0" max="10" [(ngModel)]="this.slideValue" [thumb-label]="true"
+                                   name="oddsSlider" (change)="showHorses(selectedVal,'odds')" (input)="showOdds($event)">
+                        </md-slider> 
+                    </div>
+                </div>
+                <div class="row no-margin ">
+                    <div class="col s12 m12 l12 xl12 no-padding center-align">
+                        {{staticWordsData?.staticWords?.Applicable_horses}}
+                    </div>
+                </div>
+                <div class="row no-margin valign-wrapper">
+                    <div class="col s4 m5 l4 xl5 no-padding">
+                        <button class="btn waves-effect waves-light btn-odds" (click)="resetFilters()">{{staticWordsData?.staticWords?.Reset}}</button>
+                    </div>
+                    <div class="col s4 m2 l4 xl2">
+                        <div class="hf-horses">{{horseLength}}</div>
+                    </div>
+                    <div class="col s4 m5 l4 xl5 no-padding">
+                        <button class="btn waves-effect waves-light btn-odds orange" (click)="showBets(selectedVal)">
+                             {{staticWordsData?.staticWords?.Show_Bets}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+        <div class="row" *ngFor="let items of subArrayOfHorses; let i = index">
+            <div class="col s12 m6 l6 xl6" *ngFor="let item of items; let j = index">
+                <div class="mrg-bet-box hr-result">
+                    <div class="box-header valign-wrapper">
+                        <div class="row no-margin grey-text lighten-1 w100 valign-wrapper">
+                            <div class="col s8 m8 l8 xl8 no-padding truncate">
+                               {{staticWordsData?.staticWords?.UK_and_Ireland}} / {{item.CourseName}}
+                            </div>
+                            <div class="col s4 m4 l4 xl4 right-align no-padding">                               
+                                {{item.RaceDate | dateFormat :'HF' | async}}                                                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-content">
+                        <div class="row no-margin valign-wrapper margin-bottom-10 pointer-hand" (click)="showHideRTB('best_'+ i + j)">
+                            <div class="col s2 m2 l2 xl2 no-padding center-align">
+                                <img class="silk valign-m" src="https://content-cache.cdnbf.net/feeds_images/Horses/SilkColours/{{item.SilkImageURL}}" />
+                            </div>
+                            <div class="col s11 m9 l9 xl9 no-padding horse-details">
+                                <div class="fixture truncate">{{item.HorseName}}</div>
+                                <div class="trainer-jockey"><span class="green-text">
+                                    {{staticWordsData?.staticWords?.Trainer_Jockey}}:</span> {{item.TrainerName}} / {{item.JockeyName}}
+                                </div>
+                            </div>
+                            <div class="col s1 m1 l1 xl1 right-align no-padding">
+                            	<i class="material-icons" *ngIf="this.accordionItem == 'best_'+ i + j">expand_less</i>  
+                                <i class="material-icons" *ngIf="this.accordionItem != 'best_'+ i + j">expand_more</i>                            
+                            </div>
+                        </div>
+                        <div [ngClass]="{'row no-margin slideDown':true,'rtb-hide':accordionItem != 'best_' + i + j}">
+                        	<div class="rtb">
+								{{item.Comments}}
+							</div>
+                        </div>                        
+                        <div class="row no-margin valign-wrapper">
+                            <div class="col s12 m12 l12 xl12 no-padding">
+                                <button class="btn waves-effect waves-light btn-odds" (click)="addToBetslip(item.SelectionId)">
+                                    <span class="market">{{staticWordsData?.staticWords?.HF_To_Win}}</span>
+                                    <span class="odds">
+                                        {{item | oddsFormat : kambiService.oddsFormat}}
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        <div class="row"><div class="space-10"></div></div>       
+        <div class="row valign-wrapper sticker-footer grey lighten-3" *ngIf="horseData?.length > 1 && showBetslip == true">            
+			<div class="col s12 m6 l6 xl6 col-centered">
+				<button pam-Button class="btn waves-effect waves-light btn-odds add-betslip" (click)="addAllToBetslip()">
+                         {{staticWordsData?.staticWords?.HF_Add_all_to_Betslip}}
+                </button>
+			</div>            
+		</div>       
+        <div class="row no-margin"><div class="space-5"></div></div>
+    </div>
+    <div class="row no-margin" *ngIf="errorText">
+        <div class="col s12 m12 l12 xl12 center-align  info-text accent-2">
+            <div class="space-5"></div>
+            <div>{{staticWordsData?.staticWords?.No_horses_to_display}}</div>
+            <div class="space-10"></div>
+        </div>
+    </div>
+</div>

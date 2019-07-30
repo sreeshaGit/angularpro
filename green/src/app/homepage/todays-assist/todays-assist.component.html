@@ -1,0 +1,140 @@
+<div class="grey lighten-4">
+    <div class="mrg-content">
+        <div class="row no-margin valign-wrapper todayassits">
+            <div class="col s12 m8 l8 xl8 no-padding">
+                <div class="bet-assist">{{todaysAssistBets?.length > 0 || combinedLiveData?.length>0?staticWord?.Bet_Assist:''}}</div><span class="widget-title">{{todaysAssistBets?.length>0 || combinedLiveData?.length > 0 ?staticWord?.Todays_Assists:''}}</span>
+            </div>
+            <div class="col s4 m4 l4 xl4 no-padding right-align">
+                <span class="see-all" (click)="todaysAssistToggle()" [hidden]="!todaysAssistSeeAll">{{todaysAssistBets?.length>0?staticWord?.See_All:''}}</span>
+                <span class="see-all" (click)="todaysAssistToggle()" [hidden]="todaysAssistSeeAll">{{staticWord?.Show_less}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row no-margin" [hidden]="!todaysAssistSeeAll">
+        <div class="carousel-TodaysAssist">
+            <div class="gallery-cell" *ngFor="let item of todaysAssistBets">
+                <div class="todays-assist-item" *ngIf="item.isLive">
+                    <div class="mrg-bet-box animated fadeIn">
+                        <div class="box-header valign-wrapper">
+                            <div class="row no-margin grey-text lighten-1 w100 valign-wrapper">
+                                <div class="col s8 m8 l8 xl8 no-padding truncate">
+                                    <span class="bet-assist live">{{staticWord?.Live}}</span>{{item.translatedSportName}} {{item.country!=null && item.country != ''?'/ '+item.country:''}} / {{item.leaguename}}
+                                </div>
+                                <div class="col s4 m4 l4 xl4 right-align no-padding" *ngIf="item.sport == 'Football'">
+                                    <div class="setScoreTxt">{{item.matchminute}}'</div>
+                                    <div class="tennisScore green-text">{{item.score}}</div>
+                                </div>
+                                <div class="col s4 m4 l4 xl4 right-align no-padding " *ngIf="item.sport == 'Tennis'">
+                                    <app-home-tennis-live-score [eventId]="item.eventId" [scorePosition]="'todaysAssist'"></app-home-tennis-live-score>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <div class="fixture truncate" (click)="goToEventPage(item.eventId,'TodayAssist')">{{item.eventname}}</div>
+                            <div class="rtb">
+                                {{item.text}}
+                            </div>
+                            <div class="row no-margin valign-wrapper">
+                                <div class="col s12 m12 l12 xl12 no-padding">
+                                    <button class="btn waves-effect waves-light btn-odds" pam-button="" (click)="addToBetslip(item.selectionId,'rightnow')"><span class="market">{{item.market}} - {{item.outcomeDisplay}}</span> <span class="odds"><app-live-odds [eventId]="item.eventId" [marketId]="item.marketId" [outcomeId]="item.selectionId"></app-live-odds></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="todays-assist-item" *ngIf="!item.isLive">
+                    <div class="mrg-bet-box animated fadeIn">
+                        <div class="box-header valign-wrapper">
+                            <div class="row no-margin grey-text lighten-1 w100 valign-wrapper">
+                                <div class="col s8 m8 l8 xl8 no-padding truncate">
+                                    {{item.translatedSportName}} {{item.country!=null && item.country != ''?'/ '+item.country:''}} / {{item.leaguename}}
+                                </div>
+                                <div class="col s4 m4 l4 xl4 right-align no-padding">
+                                    {{item.kickOffTime | dateFormat :'DT' | async}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <div class="fixture truncate" (click)="goToEventPage(item.eventId,'TodayAssist')">{{item.eventname}}</div>
+                            <div class="rtb">
+                                {{item.text}}
+                            </div>
+                            <div class="row no-margin valign-wrapper">
+                                <div class="col s12 m12 l12 xl12 no-padding">
+                                    <button class="btn waves-effect waves-light btn-odds" (click)="addToBetslip(item.selectionId,'highlight')">
+                                        <span class="market">{{item.market}} - {{item.outcomeDisplay}} </span> <span class="odds">
+                                            {{kambiService.oddsFormat=="fractional"?item.oddsFractional:kambiService.oddsFormat=="american"?item.oddsAmerican:item.oddsDecimal}}
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mrg-content todays-assist-seeall">
+        <div class="row" [hidden]="todaysAssistSeeAll">
+            
+            <div class="col s12 m6 l6 xl4" *ngFor="let item of todaysAssistBets">
+                <div class="mrg-bet-box animated fadeIn" *ngIf="item.isLive">
+                    <div class="box-header valign-wrapper">
+                        <div class="row no-margin grey-text lighten-1 w100 valign-wrapper">
+                            <div class="col s12 m12 l12 xl12 no-padding truncate">
+                                <span class="bet-assist live">{{staticWord?.Live}}</span>{{item.translatedSportName}} {{item.country!=null && item.country != ''?'/ '+item.country:''}} / {{item.leaguename}}
+                            </div>
+                            <div class="col s4 m4 l4 xl4 right-align no-padding" *ngIf="item.sport == 'Football'">
+                                <div class="setScoreTxt">{{item.matchminute}}'</div>
+                                <div class="tennisScore green-text">{{item.score}}</div>
+                            </div>
+                            <div class="col s4 m4 l4 xl4 right-align no-padding " *ngIf="item.sport == 'Tennis'">
+                                <app-home-tennis-live-score [eventId]="item.eventId" [scorePosition]="'todaysAssist'"></app-home-tennis-live-score>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-content">
+                        <div class="fixture truncate" (click)="goToEventPage(item.eventId,'TodayAssist')">{{item.eventname}}</div>
+                        <div class="rtb">
+                            {{item.text}}
+                        </div>
+                        <div class="row no-margin valign-wrapper">
+                            <div class="col s12 m12 l12 xl12 no-padding">
+                                <button class="btn waves-effect waves-light btn-odds" pam-button="" (click)="addToBetslip(item.selectionId,'rightnow')"><span class="market">{{item.market}} - {{item.outcomeDisplay}}</span> <span class="odds"><app-live-odds [eventId]="item.eventId" [marketId]="item.marketId" [outcomeId]="item.selectionId"></app-live-odds></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mrg-bet-box animated fadeIn" *ngIf="!item.isLive">
+                    <div class="box-header valign-wrapper">
+                        <div class="row no-margin grey-text lighten-1 w100 valign-wrapper">
+                            <div class="col s8 m8 l8 xl8 no-padding truncate">
+                                {{item.translatedSportName}} {{item.country!=null && item.country != ''?'/ '+item.country:''}} / {{item.leaguename}}
+                            </div>
+                            <div class="col s4 m4 l4 xl4 right-align no-padding">
+                                {{item.kickOffTime | dateFormat :'DT' | async}}
+                            </div>                         
+                        </div>
+                    </div>
+                    <div class="box-content">
+                        <div class="fixture truncate" (click)="goToEventPage(item.eventId,'TodayAssist')">
+                            {{item.eventname}}
+                        </div>
+                        <div class="rtb">
+                            {{item.text}}
+                        </div>
+                        <div class="row no-margin valign-wrapper">
+                            <div class="col s12 m12 l12 xl12 no-padding">
+                                <button class="btn waves-effect waves-light btn-odds" (click)="addToBetslip(item.selectionId,'highlight')"><span class="market">{{item.market}} - {{item.outcomeDisplay}} </span> <span class="odds">{{item | oddsFormat : kambiService.oddsFormat}}</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row no-margin"><div class="space-10"></div></div>
+</div>

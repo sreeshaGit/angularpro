@@ -1,0 +1,48 @@
+<div class="mrg-widget mrg-Highlights">
+    <div class="row no-margin valign-wrapper" *ngIf="isDataResponse">
+        <div class="col s12 m8 l8 xl8 no-padding">
+            <span class="widget-title">{{staticWord?.Highlights_Today}}</span>
+        </div>
+        <div class="col s12 m4 l4 xl4 no-padding right-align">
+            <span class="see-all"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="space-5"></div>
+    </div>
+    <div class="row">
+        <div class="col s12 m12 l6 xl6" *ngFor="let item of highlights">
+            <div class="Highlighted-match">
+                <div class="row no-margin">
+                    <div class="col s9 m9 l9 xl9 no-padding">
+                        <div class="fixture truncate" (click)="goToEventPage(item.id, 'highlight')">{{item.name}}</div>
+                        <div class="sports-league">{{item.tsport}} - {{item.tgroup}}</div>
+                    </div>
+                    <div class="col s3 m3 l3 xl3 no-padding right-align">
+                        <div class="time">{{item.start | dateFormat :'D' | async}}</div>
+                        <div class="time">{{item.start | dateFormat :'T' | async}}</div>
+                    </div>
+                </div>
+                <div class="row no-margin" *ngIf="item.sport=='FOOTBALL'">
+                    <div class="col s4 m4 l4 xl4" [ngClass]="{'padding-right-4':i==0 || i==1,'padding-left-4':i==1 || i==2,'no-padding-left':i==0,'no-padding-right':i==2}"
+                        *ngFor="let items of item.outcomes; let i=index">
+                        <button class="btn waves-effect waves-light btn-odds" (click)="addToBetslip(items.id,'highlight')">
+                            <span class="market">{{items.label==1?item.homeName:items.label=='X'?staticWord?.Draw:items.label==2?item.awayName:''}}</span>
+                            <span class="odds">{{items | oddsFormat : kambiService.oddsFormat}}</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row no-margin" *ngIf="item.sport=='TENNIS'">
+                    <div class="col s6 m6 l6 xl6" [ngClass]="{'padding-right-4 no-padding-left':i==0,'padding-left-4 no-padding-right':i==1}"
+                        *ngFor="let items of item.outcomes; let i=index">
+                        <button class="btn waves-effect waves-light btn-odds" (click)="addToBetslip(items.id,'highlight')">
+                            <span class="market">{{items.label==1?item.homeName:items.label==2?item.awayName:''}} </span>
+                            <span class="odds">{{items | oddsFormat : kambiService.oddsFormat}}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="divider margin-top-10 margin-bottom-10"></div>
+        </div>
+    </div>
+</div>

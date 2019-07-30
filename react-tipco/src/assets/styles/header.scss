@@ -1,0 +1,53 @@
+// ============================================================
+// Top Header CSS
+// ============================================================
+.BLRetail-inFocus-header {
+    background-color: $BLRetail-inFocus-header-bg;
+    height: 100px;
+    color: $BLRetail-inFocus-header-txtColor; //padding: 25px 40px;
+    .BLRetail-logo {
+        display: inline-block;
+        background-color: $BLRetail-inFocus-header-logo-bg;
+        padding: 25px 40px 25px 40px;
+        position: relative;
+        transform: skew(-20deg);
+        -webkit-transform: skew(-20deg);
+        -moz-transform: skew(-20deg);
+        -ms-transform: skew(-20deg);
+        -o-transform: skew(-20deg);
+        img {
+            transform: skew(20deg);
+            -webkit-transform: skew(20deg);
+            -moz-transform: skew(20deg);
+            -ms-transform: skew(20deg);
+            -o-transform: skew(20deg);
+        }
+        &::before {
+            background-color: $BLRetail-inFocus-header-logo-bg;
+            transform: skew(20deg);
+            -webkit-transform: skew(20deg);
+            -moz-transform: skew(20deg);
+            -ms-transform: skew(20deg);
+            -o-transform: skew(20deg);
+            display: block;
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 20px;
+            top: 0;
+            left: 0;
+        }
+    }
+    .BLRetail-inFocus-header__subLogo {
+        font-size: $BLRetail-inFocus-header__subLogo-fontSize;
+        text-transform: uppercase;
+        vertical-align: middle;
+        margin: 0 15px;
+        font-weight: 400;
+    }
+    .BLRetail-inFocus-header__dateTime {
+        font-size: $BLRetail-inFocus-header__dateTime-fontSize;
+        font-weight: 500;
+        vertical-align: middle;
+    }
+}

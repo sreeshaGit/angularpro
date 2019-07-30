@@ -1,0 +1,38 @@
+/*-------------- Highlights Today -----------------*/
+.Highlighted-match .fixture{
+    font-weight: 500;
+    font-size: 12px;
+    cursor: pointer;
+}
+.Highlighted-match .sports-league{
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.Highlighted-match .time{
+    font-size: 12px;
+}
+.Highlighted-match .btn-odds .market{
+    width: 75%;
+}
+.Highlighted-match .btn-odds .odds{
+    width: 25%;
+}
+/*-------------- Highlights Today End-----------------*/
+@media screen and (min-width: 320px) and (max-width: 776px){
+.Highlighted-match .btn-odds{
+    padding: 0 4px;
+}
+.Highlighted-match .btn-odds .market{
+    width: 55%;
+}
+.Highlighted-match .btn-odds .odds{
+    width: 45%;
+}	
+	
+}
+@media (min-width: 768px) and (max-width: 991px) {
+.Highlighted-match .btn-odds{
+    padding: 0 10px;
+}
+	
+}

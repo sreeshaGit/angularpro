@@ -1,0 +1,109 @@
+<div class="BL-products grey lighten-3">
+    <div class="header green white-text">
+        <div class="row no-margin valign-wrapper">
+            <div class="col s2 m2 l2 xl2 no-padding-left"><div class="valign-wrapper"></div></div>
+            <div class="col s8 m8 l8 xl8 ">
+                <div class="center-align title">{{staticWordsData?.staticWords?.Live_Tennis}}
+                    <span class="bet-assist">{{staticWordsData?.staticWords?.Bet_Assists}}</span>
+                </div>
+            </div>
+            <div class="col s2 m2 l2 xl2 no-padding-right">
+                <div class="right-align"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mrg-content">
+        <div class="row" *ngIf="!errorText">
+            <div class="col s12 m6 l6 xl6" *ngFor="let item of liveBetsData">
+                <div class="mrg-bet-box">
+                    <div class="box-header valign-wrapper">
+                        <div class="row no-margin grey-text lighten-1 w100 valign-wrapper">
+                            <div class="col s12 m12 l12 xl12 no-padding">
+                                {{item.translatedSportName}} / {{item.country}} / {{item.league}}
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="box-content">
+                        <div class="row no-margin">                         
+                            <app-tennis-live-score [eventId]="item.eventId"
+                                                   [scorePosition]="'todaysAssist'"
+                                                   [home]="item.home"
+                                                   [away]="item.away">
+                            </app-tennis-live-score>
+                        </div>
+                        <div class="rtb">
+                            {{item.text}}
+                        </div>
+                        <div class="row no-margin valign-wrapper">
+                            <div class="col s12 m12 l12 xl12 no-padding">
+                                <button pam-Button class="btn waves-effect waves-light btn-odds" (click)="addToBetslip(item.outcomeId)">
+                                    <span class="market">{{item.marketName}} - {{item.outcomeDisplay}}</span>
+                                    <span class="odds">
+                                        <app-live-odds [eventId]="item.eventId"
+                                                       [marketId]="item.marketId"
+                                                       [outcomeId]="item.outcomeId">
+                                        </app-live-odds>
+                                    </span>
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngIf="liveBetsData?.length < 1">
+            <div class="row no-margin"><div class="space-5"></div></div>
+            <div class="col s12 m12 l12 xl12 center-align info-text">
+                {{staticWordsData?.staticWords?.Upcoming_Match}}
+            </div>
+        </div>
+        <div class="row" *ngIf="liveBetsData?.length < 1" >
+            <div class="col s12 m6 l6 xl6" *ngFor="let item of tennisBets | slice:0:2">
+                <div class="mrg-bet-box ">
+                    <div class="box-header valign-wrapper">
+                        <div class="row no-margin grey-text lighten-1 w100 valign-wrapper">
+                            <div class="col s8 m8 l8 xl8 no-padding truncate">
+                                {{item.translatedSportName}} / {{item.country}} / {{item.league}}
+                            </div>
+                            <div class="col s4 m4 l4 xl4 right-align no-padding">
+                                {{item.kickOffTime | dateFormat :'DT' | async }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-content">
+                        <div class="fixture truncate">{{item.name}}</div>
+                        <div class="rtb">
+                            {{item.text}}
+                        </div>
+                        <div class="row no-margin valign-wrapper">
+                            <div class="col s12 m12 l12 xl12 no-padding">
+                                <button pam-Button class="btn waves-effect waves-light btn-odds" (click)="addToBetslip(item.outcomeId)">
+                                    <span class="market truncate">
+                                        {{item.marketName}} - {{item.outcomeDisplay}}
+                                    </span>
+                                    <span class="odds">
+                                        {{item | oddsFormat : kambiService.oddsFormat}}
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row"><div class="space-5"></div></div>
+        <div class="row valign-wrapper sticker-footer grey lighten-3" *ngIf="liveBetsData?.length > 1">
+            <div class="col s12 m6 l6 xl6 col-centered">
+                <button pam-Button class="btn waves-effect waves-light btn-odds add-betslip" (click)="addAllToBetslip()">{{staticWordsData?.staticWords?.Add_all_to_Betslip}}</button>
+            </div>
+        </div>
+        <div class="row no-margin"><div class="space-5"></div></div>
+        <div class="row no-margin">
+            <div class="col s12 m12 l12 xl12 center-align info-text" *ngIf="errorText && preErrorText">
+                {{staticWordsData?.staticWords?.Sorry_we_couldnt_return_any_events_Please_try_again_later}}
+            </div>
+        </div>
+        <div class="row no-margin"><div class="space-5"></div></div>    
+    </div>
+</div>

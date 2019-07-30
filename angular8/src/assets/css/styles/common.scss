@@ -1,0 +1,195 @@
+.BL-btn {
+    cursor: pointer;
+    padding: 0 12px;
+    border: 0;
+	white-space: normal;
+	position: relative;
+	width: 100%;
+	
+}
+.BL-btn-marketOdds {
+    height: $BL-btn-marketOdds-height;    
+    background-color: $BL-btn-marketOdds-bg;
+    color: $BL-btn-marketOdds-txtColor;
+	font-size: $BL-btn-marketOdds-fontSize;
+	padding: 0 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	border: 1px solid $BL-btn-marketOdds-borderColor;
+	border-radius: $BL-btn-borderRadius;
+	.BL-marketOutcome{
+		flex: 1 1 0;
+		text-align: left;
+		font-weight: normal;
+		// .BL-market{
+			
+		// }
+		// .BL-outcome{
+
+		// }
+	}
+	
+	.BL-odds{
+		font-weight: bold;
+		text-align: right;
+		min-width: 34px;
+		color: $BL-btn-marketOdds-odds-txtColor;
+	} 
+	&.active{
+		background-color: $BL-btn-marketOdds-active-bg;
+		color: $BL-btn-marketOdds-active-txtColor;
+		border-color: $BL-btn-marketOdds-active-borderColor;
+		&:hover{
+			background-color: $BL-btn-marketOdds-active-hover-bg;
+			color: $BL-btn-marketOdds-active-hover-txtColor;
+		}
+		.BL-odds{
+			color: $BL-btn-marketOdds-active-oddsColor;
+		}
+	}
+	&:hover{
+        background-color: $BL-btn-marketOdds-hover-bg;
+		color: $BL-btn-marketOdds-hover-txtColor;
+		border-color: $BL-btn-marketOdds-hover-borderColor;
+	}
+	&.BL-btnDisabled{
+		pointer-events: none;
+		
+	}
+}
+
+.BL-btn-addAllToBetslip{
+		height: $BL-btn-addAllToBetslip-height;
+		background-color: $BL-btn-addAllToBetslip-bg;
+		text-align: center;
+		color: $BL-btn-addAllToBetslip-txtColor;
+		font-size: $BL-btn-addAllToBetslip-fontSize;
+		border-radius: 0;
+		font-weight: bold;
+        &.BL-HF-btnDisabled{
+            background-color: $BL-HF-btnDisabled-bg;
+            color: $BL-HF-btnDisabled-txtColor;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        
+}
+
+/*------------- SBTech Widget-filter -----------*/
+.BL-select {
+    border-radius: $BL-formControl-borderRadius;
+	position: relative;
+	background-color: $BL-select-bg;
+	select {
+		border: 0;		
+		width: 100%;
+		height: $BL-formControl-height;
+		font-size: $BL-select-fontSize;
+		color: $BL-formControl-txtColor;  
+		padding: 0 25px 0 10px;
+		border-radius: 3px;
+		outline: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-ms-appearance: none;
+		-o-appearance: none;
+		appearance: none;
+		background: transparent;
+		&:focus{
+			outline: none;
+		}
+	}
+	&:after{
+		content: url("src/assets/img/select-arrow.svg");
+		float: right;
+		pointer-events: none;
+		position: absolute;
+		right: 10px;
+		top: 15px;
+        line-height: 7px;
+	}
+	
+}
+    
+.BL-formControl{
+    input[type=text]{
+        height: $BL-formControl-height;
+        border: 1px solid $BL-input-borderColor;
+        border-radius: $BL-formControl-borderRadius;
+        padding: 0 12px;
+        background-color: $BL-input-bg;
+        width: 100%;
+        color: $BL-formControl-txtColor;
+        font-size: $BL-input-fontSize;
+        font-weight: normal;
+    }
+}
+
+.BL-erroMsgBox{
+	display: flex;
+	align-items:  center;
+	justify-content:  center;
+	text-align: center;
+	height: 50px;
+	border-radius: $BL-errorMsgBox-borderRadius;
+	border: 1px solid $BL-errorMsgBox-borderColor;
+	color: $BL-errorMsg-txtColor;
+	font-size: $BL-errorMsg-fontSize;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* React Carousel Css*/
+.BL-carousel .carousel-control {
+    display: none;
+}
+.BL-carousel .carousel-indicators {
+    display: none;
+}
+.BL-headerRight .BL-carousel-control {
+    cursor: pointer;
+	top: 4px;
+    position: absolute;
+    img{
+		width: 12px;
+		max-width: 100%;
+    }
+}
+.BL-headerRight .BL-carousel-control.left {    
+    left: 0;    
+}
+.BL-headerRight .BL-carousel-control.right {
+    right: 0;  
+}
+.BL-headerRight .BL-carousel-control.disabled {
+    opacity: 0.2;
+    cursor: default;
+}
+
+
+/*------------- Loader --------------*/
+.BL-loader{
+	text-align: center;
+	img{
+		width: 30px;
+	}
+}
+
+.BL-rj-loader{
+	height: 150px;
+	border-radius: 3px;
+	background-color: #FFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

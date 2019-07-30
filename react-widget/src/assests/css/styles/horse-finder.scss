@@ -1,0 +1,575 @@
+.BLSBT-HF-widget {
+    .BLSBT-HF-widgetHeader {
+        text-align: center;
+        padding: 5px 0 20px;
+        .BLSBT-HF-logo {
+            font-size: 26px;
+            color: $BLSBT-HF-logo-txtColor;
+            font-weight: 600;
+            .BLSBT-HF-logoSubPart {
+                color: $BLSBT-HF-logo-subPart-txtColor;
+            }
+        }
+    }
+    .BLSBT-HF-widgetContent {
+        //background-color: #FFF;
+        // border-radius: 0 0 3px 3px;
+    }
+    .BLSBT-mainMenu {
+        //background-color: #22242A;
+        ul {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            li {
+                display: table-cell;
+                vertical-align: middle;
+                padding-right: 1px;
+                .BLSBT-mainMenu-item {
+                    background-color: $BLSBT-mainMenu-item-bg;
+                    border-bottom: 2px solid transparent;
+                    color: $BLSBT-mainMenu-item-txtColor;
+                    font-size: $BLSBT-mainMenu-item-fontSize;
+                    padding: 12px 5px;
+                    text-align: center;
+                    border-radius: 4px 4px 0 0;
+                    cursor: pointer; // text-transform: uppercase;
+                    &.active {
+                        border-bottom: 2px solid $BLSBT-mainMenu-item-active-borderBottomColor;
+                        font-weight: 600;
+                        color: $BLSBT-mainMenu-item-active-txtColor;
+                    }
+                }
+            }
+        }
+    }
+    .BLSBT-widget-mainContent {
+        background-color: $BLSBT-widget-mainContent-bg;
+        border-radius: 0 0 4px 4px;
+        overflow: hidden;
+    }
+    /*----- Quick Serach -------  */
+    .BLSBT-horsesArcSlider {
+        background-image: url(../img/hf-slider-bg.jpg);
+        height: 160px;
+        display: table;
+        width: 100%;
+        background-size: cover;
+        .BLSBT-horsesArcSlider-content {
+            background-color: rgba(0, 0, 0, 0.55);
+            height: 100%;
+            display: table-cell;
+            vertical-align: middle;
+            position: relative;
+        }
+        .BLSBT-horsesArcSlider-progressBar {
+            height: 100%;
+        }
+        .BLSBT-btnShowHorses {
+            background-color: $BLSBT-btnShowHorses-bg;
+            font-size: 12px;
+            color: $BLSBT-btnShowHorses-txtColor;
+            width: 75px;
+            height: 26px;
+            padding: 0;
+            margin: 0 auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 10px;
+            z-index: 999;
+        }
+        .BLSBT-horsesArcSlider-refreshIcon {
+            display: inline-block;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            cursor: pointer;
+            color: #FFF;
+        }
+        #progressTxt {
+            color: $BLSBT-horsesArcSlider-txtColor;
+            display: block;
+            font-size: $BLSBT-horsesArcSlider-racesCount-fontSize;
+            line-height: 22px;
+            position: relative;
+            text-align: center;
+            top: 60px;
+        }
+        #progressTxt div {
+            font-size: $BLSBT-horsesArcSlider-horses-txtColor;
+            line-height: 30px;
+        }
+        .horsetext {
+            font-size: 22px;
+        }
+        canvas {
+            display: block;
+            left: 0;
+            margin: 0 auto;
+            position: absolute;
+            right: 0;
+            top: 15px;
+            transition: width 2s ease, height 2s linear;
+            -moz-transition: width 2s ease, height 2s linear;
+            -webkit-transition: width 2s ease, height 2s linear;
+            z-index: 1;
+        }
+        #graph canvas:last-child {
+            z-index: 0;
+        }
+    }
+    .BLSBT-quickSearch-content {
+        padding: 10px;
+    }
+    .BLSBT-timeForm {
+        .BLSBT-timeForm-toggle {
+            .react-toggle-track {
+                width: 100px !important;
+                height: 30px !important;
+                background-color: $BLSBT-timeForm-toggle-bg;
+                &::after {
+                    content: $BLSBT-timeForm-toggle-content;
+                    position: absolute;
+                    color: $BLSBT-timeForm-toggle-txtColor;
+                    font-weight: bold;
+                    font-size: $BLSBT-timeForm-toggle-fontSize;
+                    top: 9px;
+                    right: 7px;
+                }
+            }
+            .react-toggle--checked {
+                .react-toggle-track {
+                    background-color: $BLSBT-timeForm-toggle-active-bg;
+                    &::after {
+                        right: auto;
+                        left: 7px;
+                    }
+                }
+                .react-toggle-thumb {
+                    left: auto;
+                    border-color: $BLSBT-timeForm-toggle-active-bg;
+                    right: 1px;
+                }
+            }
+            .react-toggle-thumb {
+                height: 28px !important;
+                width: 28px !important;
+                -webkit-box-shadow: none !important;
+                box-shadow: none !important;
+                outline: none !important;
+            }
+        }
+        .BLSBT-timeForm-rating {
+            ul {
+                display: inline-block;
+                margin-top: 3px;
+                li {
+                    cursor: pointer;
+                    float: left;
+                    padding: 0 2px;
+                    color: $BLSBT-timeForm-rating-starColor;
+                    i {
+                        font-size: $BLSBT-timeForm-rating-starSize;
+                    }
+                    &.active {
+                        color: $BLSBT-timeForm-rating-starActiveColor;
+                    }
+                }
+            }
+        }
+    }
+    .BLSBT-infoMessage {
+        font-size: 11px;
+        text-align: center;
+        color: $BLSBT-infoMessage-txtColor;
+    }
+    .BLSBT-HF-filters {
+        .BLSBT-raceCourseFilter {
+            ul {
+                display: table;
+                table-layout: fixed;
+                width: 100%;
+                border: 1px solid $BLSBT-raceCourseFilter-borderColor;
+                background-color: $BLSBT-raceCourseFilter-bg;
+                margin-bottom: 7px;
+                border-radius: 3px;
+                li {
+                    display: table-cell;
+                    vertical-align: middle;
+                    font-size: $BLSBT-raceCourseFilter-fontSize;
+                    color: $BLSBT-raceCourseFilter-txtColor;
+                    text-align: center;
+                    form{
+                        padding: 0;
+                    }
+                }
+            }
+            .BLSBT-multiSelect {
+                position: relative;
+                .BLSBT-select {
+                    background-color: $BLSBT-raceCourseFilter-multiSelect-bg;
+                    border-radius: 0 3px 3px 0;
+                    height: 40px;
+                    text-align: left;
+                    padding: 12px 15px 10px 10px;
+                    cursor: pointer;
+                }
+                .BLSBT-multiSelect-dropDownMenu {
+                    position: absolute;
+                    width: 100%;
+                    background-color: $BLSBT-raceCourseFilter-multiSelect-dropDownMenu-bg;
+                    border: 1px solid $BLSBT-raceCourseFilter-multiSelect-dropDownMenu-borderColor;
+                    padding: 4px;
+                    text-align: left;
+                    display: none;
+                    label{
+                        width: 100%;
+                        display: inline-block;
+                        margin: 3px 0;
+                        padding-top: 0;
+                        text-indent: 0;
+                        span{
+                           position: relative;
+                        //    top: -2px;
+                        }
+                    }
+                }
+            }
+        }
+        .BLSBT-filterList {
+            ul {
+                display: table;
+                width: 100%;
+                li {
+                    display: table-cell;
+                    vertical-align: middle;
+                    font-size: 12px;
+                    text-align: center;
+                    width: 49%;
+                    float: left;
+                    padding: 6px 2px;
+                    border: 1px solid $BLSBT-HF-filters-borderColor;
+                    background-color: $BLSBT-HF-filters-bg;
+                    border-radius: 3px;
+                    margin-bottom: 7px;
+                    color: $BLSBT-HF-filters-txtColor;
+                    cursor: pointer;
+                    &:nth-child(even) {
+                        float: right;
+                    }
+                    &.active {
+                        background-color: $BLSBT-HF-filters-active-bg;
+                        color: $BLSBT-HF-filters-active-txtColor;
+                        font-weight: 600;
+                        border: 1px solid $BLSBT-HF-filters-active-bg;
+                        i {
+                            color: $BLSBT-HF-filters-star-active-color;
+                        }
+                    }
+                    i {
+                        float: left;
+                        font-size: 10px;
+                        vertical-align: middle;
+                        margin: 2px 0 0 2px;
+                        color: $BLSBT-HF-filters-star-color;
+                    }
+                }
+            }
+        }
+    }
+    .BLSBT-note {
+        
+        font-size: $BLSBT-note-fontSize;
+        color: $BLSBT-note-txtColor;
+        i {
+            color: $BLSBT-note-star-color;
+            font-size: $BLSBT-note-star-fontSize;
+        }
+    }
+    /*---------- Quick Search Results ----------*/
+    .BLSBT-quickSearchResults {
+        .BLSBT-quickSearchResults-header {
+            padding: 6px;
+            background-color: $BLSBT-quickSearchResults-header-bg;
+            font-size: 13px;
+            border-bottom: 1px solid $BLSBT-quickSearchResults-header-borderColor;
+            .BLSBT-quickSearchResults-back {
+                font-size: 15px;
+                cursor: pointer;
+            }
+        }
+    }
+    .BLSBT-HF-matchBoxGroup {
+        max-height: 500px;
+        overflow-y: auto;
+        .BLSBT-HF-matchBox {
+            border-bottom: 1px solid $BLSBT-HF-matchBox-borderBottomColor;
+            color: $BLSBT-HF-matchBox-txtColor;
+            background-color: $BLSBT-HF-matchBox-bg;
+            .accordion__title {
+                width: calc(100% - 60px);
+                display: inline-block;
+                vertical-align: middle;
+                &:focus{
+                    outline: none;
+                }
+            }
+            .BLSBT-HF-odds {
+                width: 60px;
+                display: inline-block;
+                position: relative;
+                vertical-align: middle;
+                padding-right: 8px;
+            }
+            .BLSBT-btnHFodds {
+                background-color: $BLSBT-btnHFodds-bg;
+                font-size: $BLSBT-btnHFodds-fontSize;
+                padding: 0;
+                height: $BLSBT-btnHFodds-height;
+                width: 100%;
+                border: 0;
+                font-weight: 600;
+                color: $BLSBT-btnHFodds-txtColor;
+                &.active {
+                    background-color: $BLSBT-btnHFodds-active-bg;
+                    color: $BLSBT-btnHFodds-active-txtColor;
+                }
+            }
+            .BLSBT-HF-matchBox-content {
+                padding: 5px 10px 8px 20px;
+                position: relative;
+                cursor: pointer;
+                &:before {
+                    content: "\E901";
+                    font-family: 'BLSBT-icons' !important;
+                    font-size: 11px;
+                    display: inline-block;
+                    top: 50%;
+                    position: absolute;
+                    left: 4px;
+                    transform: translateY(-50%);
+                }
+            }
+            [aria-selected="true"] .BLSBT-HF-matchBox-content {
+                &:before {
+                    content: "\e903";
+                }
+            }
+            .BLSBT-HF-silk {
+                display: inline-block;
+                vertical-align: top;
+                width: 30px;
+                vertical-align: middle;
+                img {
+                    width: 25px;
+                }
+            }
+            .BLSBT-raceDetails {
+                display: inline-block;
+                vertical-align: middle;
+                width: calc(100% - 30px);
+            }
+            .BLSBT-horseName-horseRating {
+                .BLSBT-horseRating {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-left: 5px;
+                    li {
+                        float: left;
+                        font-size: 10px;
+                        color: $BLSBT-horseRating-txtColor;
+                        padding: 0 1px;
+                        &.active {
+                            color: $BLSBT-horseRating-active-txtColor;
+                        }
+                    }
+                }
+            }
+            .BLSBT-horseName {
+                display: inline-block;
+                font-size: 12px;
+                font-weight: 600;
+            }
+            .BLSBT-raceKickOff {
+                font-size: 11px;
+                margin-top: 3px;
+            }
+            .BLSBT-HF-accordionBody {
+                background-color: $BLSBT-HF-accordionBody-bg;
+                padding: 6px 10px;
+            }
+            .BLSBT-HF-rtb {
+                font-size: 11px;
+                color: $BLSBT-HF-rtb-txtColor;
+                .BLSBT-trainer-jockey {
+                    margin-bottom: 3px;
+                }
+                .BLSBT-trainer-jockey__title {
+                    color: $BLSBT-trainer-jockey__title-txtColor;
+                }
+                .BLSBT-trainer-jockey__txt {
+                    color: $BLSBT-trainer-jockey__txtColor;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+    /*------- Quick Search - Best Backed Horses -----------*/
+    .BLSBT-HF-quickSearch-bestBacked {
+        &.BLSBT-HF-bestBacked {
+            .BLSBT-raceDetails {
+                padding: 5px 10px 8px;
+                width: 100%;
+            }
+        }
+        .BLSBT-HF-quickSearch-bestBacked__header {
+            overflow: auto;
+            background-color: $BLSBT-HF-quickSearch-bestBacked__header-bg;
+            padding: 6px 0;
+            color: $BLSBT-HF-quickSearch-bestBacked__header-txtColor;
+            .BLSBT-HF-oddsDropedPercentage__title {
+                width: 130px;
+                float: right;
+                font-size: 11px;
+                ul {
+                    display: table;
+                    table-layout: fixed;
+                    width: 100%;
+                    li {
+                        display: table-cell;
+                        vertical-align: middle;
+                        text-align: center;
+                        &:last-child {
+                            padding-right: 5px;
+                            width: 55px;
+                        }
+                    }
+                }
+            }
+        }
+        .BLSBT-HF-matchBoxGroup {
+            .BLSBT-HF-matchBox {
+                .accordion__title {
+                    width: calc(100% - 130px);
+                }
+                .BLSBT-HF-oddsDropedPercentage {
+                    width: 130px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    font-size: 12px;
+                    ul {
+                        display: table;
+                        table-layout: fixed;
+                        width: 100%;
+                        li {
+                            display: table-cell;
+                            vertical-align: middle;
+                            text-align: center;
+                            &:last-child {
+                                width: 55px;
+                                padding-right: 5px;
+                            }
+                            .BLSBT-dropped {
+                                color: $BLSBT-dropped-txtColor;
+                            }
+                        }
+                    }
+                }
+                .BLSBT-horseRating{
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+
+
+    /*----------- A to Z Search -----------------*/
+    .BLSBT-AtoZ-search{
+
+        .BLSBT-AtoZ-searchBox{
+            padding: 8px;
+            input{
+                padding-right: 25px;                
+                font-size: 14px;
+                color: $BLSBT-AtoZ-searchBox-txtColor;
+            }
+            .BLSBT-inputGroup-addon{
+                position: relative; 
+                &:after{
+                    font-family: 'BLSBT-icons' !important;
+                    content: "\e909";
+                    font-size: 16px;
+                    display: inline-block;
+                    top: 50%;
+                    position: absolute;
+                    right: 10px;
+                    color: $BLSBT-AtoZ-searchBox-addonColor;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+        .BLSBT-serachByLetter{
+            background-color: $BLSBT-serachByLetter-bg;
+            color: $BLSBT-serachByLetter-txtColor;
+            font-size: 13px;
+            overflow: auto;
+            text-align: center;
+            padding: 8px;
+            ul{
+                li{
+                    width: 25px;
+                    height: 25px;
+                    margin-right: 2px;
+                    line-height: 24px;
+                    text-transform: uppercase;
+                    float: left;
+                    cursor: pointer;
+                    &.active{
+                        background-color: $BLSBT-serachByLetter-active-bg;
+                        border-radius: 50%;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

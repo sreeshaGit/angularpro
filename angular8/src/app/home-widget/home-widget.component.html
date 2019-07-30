@@ -1,0 +1,15 @@
+
+<div class="BL-widget" *ngIf = "!eventSport && !eventId">
+  <app-header></app-header>
+ 
+  <div class="animated fadeIn">     
+      <app-tennis *ngIf="sportSel == 'Tennis'" [betsToDisplay]="betsToDisplay"></app-tennis>
+      <app-soccer *ngIf="sportSel == 'Soccer'" [betsToDisplay]="betsToDisplay"></app-soccer>
+      <app-ice-hockey *ngIf="sportSel == 'Ice Hockey'" [betsToDisplay]="betsToDisplay"></app-ice-hockey>
+  </div>
+  <app-footer></app-footer>
+</div>
+
+<app-tennis-event [eventId] = "eventId" *ngIf = "eventId && eventSport == 'tennis'"></app-tennis-event>
+<app-soccer-event [eventId] = "eventId" *ngIf = "eventId && eventSport == 'soccer'"></app-soccer-event>
+<app-ice-hockey-event [eventId] = "eventId" *ngIf = "eventId && eventSport == 'ice-hockey'"></app-ice-hockey-event>

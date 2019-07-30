@@ -1,0 +1,54 @@
+//====================================
+//Buttons
+//====================================
+.btn{
+	cursor: pointer;
+	padding: 0 15px;
+	border: none;
+	border-radius: 3px;
+	// white-space: nowrap;
+	font-size: 12px; 
+	height: 42px;
+	width: 100%;
+	&:focus{
+		outline: none;
+		box-shadow: none;
+	}
+}
+
+
+
+.BLRetail-btnOdds{
+	height: 250px;
+	width: 50%;
+	border-radius: 5px;
+	background-color: $BLRetail-btnOdds-bg;
+	color: $BLRetail-btnOdds-txtColor;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 0 10px;
+	position: relative;
+	.BLRetail-btnOdds__outCome{		
+		font-size: 30px;
+		line-height: 34px;
+		margin-top: 8px;
+	}
+	.BLRetail-btnOdds__odds{		
+		font-size: 54px;
+		font-weight: 500;
+		line-height: 55px;
+		margin-top: 5px;
+	}
+	
+	&:hover{
+		background-color: $BLRetail-btnOdds-bg;;
+		color: $BLRetail-btnOdds-txtColor;
+	}
+	&.active{
+		background-color: $BLRetail-btnOdds-bg;;
+		color: $BLRetail-btnOdds-txtColor;
+	}	
+	
+}
+
+

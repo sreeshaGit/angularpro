@@ -1,0 +1,96 @@
+<div class="col s12 m12 l12 xl12 mrg-banner-slider no-padding">
+    <div
+        class="mrg-slide"
+        [ngClass]="{'football': dynamicBanner?.data?.sportName == 'Football', 'tennis': dynamicBanner?.data?.sportName == 'Tennis'}"
+        [ngStyle]="{'background-image': dynamicBanner?.data?.image ? 'url(' + dynamicBanner?.data?.image + ')' : null}"
+        *ngIf="dynamicBanner?.data?.hasData">
+        <div
+            class="banner-content mrg-skew"
+            [ngClass]="{'with-event-link': dynamicBanner?.data?.eventId}">
+            <div class="banner-inner">
+                <div class="bet-assist" *ngIf="dynamicBanner?.data?.hasBetAssist">{{staticWordsData?.staticWords?.Bet_Assist}}</div>
+                <div class="b-kickoff" *ngIf="!dynamicBanner?.data?.isLive && dynamicBanner?.data?.kickOffTime">{{dynamicBanner?.data?.kickOffTime | dateFormat :'DTT' | async}}</div>
+                <span class="bet-assist live" *ngIf="dynamicBanner?.data?.isLive">{{staticWordsData?.staticWords?.Live}}</span>
+                <div class="b-kickoff" *ngIf="dynamicBanner?.data?.isLive && dynamicBanner?.data?.sportName == 'Football'">
+                    {{dynamicBanner?.data?.matchMinute}}'
+                </div>
+                <div class="b-league truncate">
+                    {{dynamicBanner?.data?.translatedSportName}}
+                    <span *ngIf="dynamicBanner?.data?.country != null && dynamicBanner?.data?.country != ''">/ {{dynamicBanner?.data?.country}}</span>
+                    <span *ngIf="dynamicBanner?.data?.league != null && dynamicBanner?.data?.league != ''">/ {{dynamicBanner?.data?.league}}</span>
+                </div>
+
+                <div class="b-fixture truncate" (click)="goToEventPage(dynamicBanner?.data?.eventId, 'banner')" *ngIf="!dynamicBanner?.data?.isLive">
+                    {{dynamicBanner?.data?.name}}
+                </div>
+                <!--Football score start-->
+                <div class="football-live-score b-fixture truncate" *ngIf="dynamicBanner?.data?.isLive && dynamicBanner?.data?.sportName == 'Football'">
+                    <span class="score">{{dynamicBanner?.data?.score.split("-")[0]}}</span>
+                    <span class="player" (click)="goToEventPage(dynamicBanner?.data?.eventId, 'banner')">{{dynamicBanner?.data?.home}}</span>
+                </div>
+                <div class="football-live-score b-fixture truncate" *ngIf="dynamicBanner?.data?.isLive && dynamicBanner?.data?.sportName == 'Football'">
+                    <span class="score">{{dynamicBanner?.data?.score.split("-")[1]}}</span>
+                    <span class="player" (click)="goToEventPage(dynamicBanner?.data?.eventId, 'banner')">{{dynamicBanner?.data?.away}}</span>
+                </div>
+                <!--Football score end-->
+
+                <!--Tennis score start-->
+                <div class="tennis-live-score b-fixture" *ngIf="dynamicBanner?.data?.isLive && dynamicBanner?.data?.sportName == 'Tennis'">
+                    <div class="row no-margin">
+                        <div class="col s12 m12 l12 xl12 no-padding truncate">
+                            <app-home-tennis-live-score [isBannerHome]="true" [eventId]="dynamicBanner?.data?.eventId"></app-home-tennis-live-score>
+                            <span (click)="goToEventPage(dynamicBanner?.data?.eventId, 'banner')">{{dynamicBanner?.data?.home}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tennis-live-score b-fixture" *ngIf="dynamicBanner?.data?.isLive && dynamicBanner?.data?.sportName == 'Tennis'">
+                    <div class="row no-margin">
+                        <div class="col s12 m12 l12 xl12 no-padding truncate">
+                            <app-home-tennis-live-score [isBannerAway]="true" [eventId]="dynamicBanner?.data?.eventId"></app-home-tennis-live-score>
+                            <span (click)="goToEventPage(dynamicBanner?.data?.eventId, 'banner')">{{dynamicBanner?.data?.away}}</span>
+                        </div>
+                    </div>
+                </div>
+                <!--Tennis score end-->
+
+                <div class="b-rtb">{{dynamicBanner?.data?.text}}</div>
+                <span class="marketOtherSport" *ngIf="!dynamicBanner?.data?.buttonText">
+                    {{dynamicBanner?.data?.markets?.marketName}}
+                </span>
+                <div class="row no-margin">
+                    <div class="col s12 m6 l4 xl4 multiple-outcome"
+                         *ngFor="let items of dynamicBanner?.data?.markets?.selection;">
+                        <button class="btn waves-effect waves-light btn-odds"
+                                [ngClass]="{ 'static-btn-text': dynamicBanner?.data?.buttonText }"
+                                (click)="mainCTAClicked(items)">
+                            <span class="market" *ngIf="dynamicBanner?.data?.buttonText">
+                                {{dynamicBanner?.data?.buttonText}}
+                            </span>
+                            <span class="market" *ngIf="!dynamicBanner?.data?.buttonText">
+                                {{items?.outcomeName}} {{items?.subMarketname}}
+                            </span>
+                            <span class="odds" *ngIf="!dynamicBanner?.data?.isLive">
+                                {{items | oddsFormat : kambi.oddsFormat}}
+                            </span>
+                            <span class="odds" *ngIf="dynamicBanner?.data?.isLive">
+                                <app-live-odds [eventId]="dynamicBanner?.data?.eventId"
+                                               [marketId]="dynamicBanner?.data?.markets?.marketId"
+                                               [outcomeId]="items?.outcomeId"></app-live-odds>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light btn-odds"
+                        [ngClass]="{ 'static-btn-text': dynamicBanner?.data?.buttonText }"
+                        (click)="mainCTAClicked(dynamicBanner?.data)"
+                        *ngIf="dynamicBanner?.data?.buttonText">
+                    <span class="market" *ngIf="dynamicBanner?.data?.buttonText">
+                        {{dynamicBanner?.data?.buttonText}}
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="mrg-slide football" *ngIf="!dynamicBanner?.data?.hasData"></div>
+    <div class="mrg-loader grey lighten-4" *ngIf="!dynamicBanner?.data"></div>
+</div>
