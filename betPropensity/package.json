@@ -28,7 +28,7 @@
     "file-saver": "^2.0.0",
     "highcharts": "^7.0.0",
     "highcharts-angular": "^2.3.1",
-    "moment": "^2.22.1",
+    "moment": "^2.29.4",
     "ng-pick-datetime": "^5.2.6",
     "ng2-dragula": "^2.1.1",
     "ngx-cookie-service": "^1.0.10",
